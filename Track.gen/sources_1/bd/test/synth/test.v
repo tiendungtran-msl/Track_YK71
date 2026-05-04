@@ -1,0 +1,216 @@
+//Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+//Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+//--------------------------------------------------------------------------------
+//Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
+//Date        : Mon May  4 09:20:22 2026
+//Host        : MSN running 64-bit major release  (build 9200)
+//Command     : generate_target test.bd
+//Design      : test
+//Purpose     : IP block netlist
+//--------------------------------------------------------------------------------
+`timescale 1 ps / 1 ps
+
+(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "test.hwdef" *) 
+module test
+   (DDR_addr,
+    DDR_ba,
+    DDR_cas_n,
+    DDR_ck_n,
+    DDR_ck_p,
+    DDR_cke,
+    DDR_cs_n,
+    DDR_dm,
+    DDR_dq,
+    DDR_dqs_n,
+    DDR_dqs_p,
+    DDR_odt,
+    DDR_ras_n,
+    DDR_reset_n,
+    DDR_we_n,
+    FIXED_IO_ddr_vrn,
+    FIXED_IO_ddr_vrp,
+    FIXED_IO_mio,
+    FIXED_IO_ps_clk,
+    FIXED_IO_ps_porb,
+    FIXED_IO_ps_srstb,
+    pulse_delay_0,
+    pulse_target_0,
+    r0_YBK_0,
+    r0_YB_0,
+    strobe_1_0,
+    strobe_2_0);
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CK_N" *) inout DDR_ck_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CK_P" *) inout DDR_ck_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CKE" *) inout DDR_cke;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CS_N" *) inout DDR_cs_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR DM" *) inout [3:0]DDR_dm;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR DQ" *) inout [31:0]DDR_dq;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR DQS_N" *) inout [3:0]DDR_dqs_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR DQS_P" *) inout [3:0]DDR_dqs_p;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ODT" *) inout DDR_odt;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR RAS_N" *) inout DDR_ras_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR RESET_N" *) inout DDR_reset_n;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR WE_N" *) inout DDR_we_n;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false" *) inout FIXED_IO_ddr_vrn;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP" *) inout FIXED_IO_ddr_vrp;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO" *) inout [53:0]FIXED_IO_mio;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
+  (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  output pulse_delay_0;
+  output pulse_target_0;
+  output r0_YBK_0;
+  output r0_YB_0;
+  output strobe_1_0;
+  output strobe_2_0;
+
+  wire [14:0]DDR_addr;
+  wire [2:0]DDR_ba;
+  wire DDR_cas_n;
+  wire DDR_ck_n;
+  wire DDR_ck_p;
+  wire DDR_cke;
+  wire DDR_cs_n;
+  wire [3:0]DDR_dm;
+  wire [31:0]DDR_dq;
+  wire [3:0]DDR_dqs_n;
+  wire [3:0]DDR_dqs_p;
+  wire DDR_odt;
+  wire DDR_ras_n;
+  wire DDR_reset_n;
+  wire DDR_we_n;
+  wire FIXED_IO_ddr_vrn;
+  wire FIXED_IO_ddr_vrp;
+  wire [53:0]FIXED_IO_mio;
+  wire FIXED_IO_ps_clk;
+  wire FIXED_IO_ps_porb;
+  wire FIXED_IO_ps_srstb;
+  wire clk_wiz_0_clk_out1;
+  wire [31:0]controller_0_spd_width;
+  wire [31:0]discriminator_0_error;
+  wire [31:0]discriminator_0_overlap1_cnt;
+  wire [31:0]discriminator_0_overlap2_cnt;
+  wire processing_system7_0_FCLK_CLK0;
+  wire processing_system7_0_FCLK_RESET0_N;
+  wire pulse_delay_0;
+  wire pulse_gen_0_r_GM;
+  wire pulse_target_0;
+  wire r0_YBK_0;
+  wire r0_YB_0;
+  wire strobe_1_0;
+  wire strobe_2_0;
+
+  test_clk_wiz_0_0 clk_wiz_0
+       (.clk_in1(processing_system7_0_FCLK_CLK0),
+        .clk_out1(clk_wiz_0_clk_out1),
+        .resetn(processing_system7_0_FCLK_RESET0_N));
+  test_controller_0_0 controller_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .error(discriminator_0_error),
+        .overlap1_cnt(discriminator_0_overlap1_cnt),
+        .overlap2_cnt(discriminator_0_overlap2_cnt),
+        .r0_YB(r0_YB_0),
+        .rst_n(processing_system7_0_FCLK_RESET0_N),
+        .spd_width(controller_0_spd_width));
+  test_discriminator_0_0 discriminator_0
+       (.clk_fast(clk_wiz_0_clk_out1),
+        .error(discriminator_0_error),
+        .overlap1_cnt(discriminator_0_overlap1_cnt),
+        .overlap2_cnt(discriminator_0_overlap2_cnt),
+        .pulse_target(pulse_target_0),
+        .r_GM(pulse_gen_0_r_GM),
+        .rst_n(processing_system7_0_FCLK_RESET0_N),
+        .strobe_1(strobe_1_0),
+        .strobe_2(strobe_2_0));
+  test_processing_system7_0_0 processing_system7_0
+       (.DDR_Addr(DDR_addr),
+        .DDR_BankAddr(DDR_ba),
+        .DDR_CAS_n(DDR_cas_n),
+        .DDR_CKE(DDR_cke),
+        .DDR_CS_n(DDR_cs_n),
+        .DDR_Clk(DDR_ck_p),
+        .DDR_Clk_n(DDR_ck_n),
+        .DDR_DM(DDR_dm),
+        .DDR_DQ(DDR_dq),
+        .DDR_DQS(DDR_dqs_p),
+        .DDR_DQS_n(DDR_dqs_n),
+        .DDR_DRSTB(DDR_reset_n),
+        .DDR_ODT(DDR_odt),
+        .DDR_RAS_n(DDR_ras_n),
+        .DDR_VRN(FIXED_IO_ddr_vrn),
+        .DDR_VRP(FIXED_IO_ddr_vrp),
+        .DDR_WEB(DDR_we_n),
+        .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
+        .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
+        .I2C0_SCL_I(1'b0),
+        .I2C0_SDA_I(1'b0),
+        .MIO(FIXED_IO_mio),
+        .M_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
+        .M_AXI_GP0_ARREADY(1'b0),
+        .M_AXI_GP0_AWREADY(1'b0),
+        .M_AXI_GP0_BID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M_AXI_GP0_BRESP({1'b0,1'b0}),
+        .M_AXI_GP0_BVALID(1'b0),
+        .M_AXI_GP0_RDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M_AXI_GP0_RID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M_AXI_GP0_RLAST(1'b0),
+        .M_AXI_GP0_RRESP({1'b0,1'b0}),
+        .M_AXI_GP0_RVALID(1'b0),
+        .M_AXI_GP0_WREADY(1'b0),
+        .PS_CLK(FIXED_IO_ps_clk),
+        .PS_PORB(FIXED_IO_ps_porb),
+        .PS_SRSTB(FIXED_IO_ps_srstb),
+        .S_AXI_HP0_ACLK(processing_system7_0_FCLK_CLK0),
+        .S_AXI_HP0_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_ARBURST({1'b0,1'b1}),
+        .S_AXI_HP0_ARCACHE({1'b0,1'b0,1'b1,1'b1}),
+        .S_AXI_HP0_ARID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_ARLEN({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_ARLOCK({1'b0,1'b0}),
+        .S_AXI_HP0_ARPROT({1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_ARQOS({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_ARSIZE({1'b0,1'b1,1'b1}),
+        .S_AXI_HP0_ARVALID(1'b0),
+        .S_AXI_HP0_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_AWBURST({1'b0,1'b1}),
+        .S_AXI_HP0_AWCACHE({1'b0,1'b0,1'b1,1'b1}),
+        .S_AXI_HP0_AWID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_AWLEN({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_AWLOCK({1'b0,1'b0}),
+        .S_AXI_HP0_AWPROT({1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_AWQOS({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_AWSIZE({1'b0,1'b1,1'b1}),
+        .S_AXI_HP0_AWVALID(1'b0),
+        .S_AXI_HP0_BREADY(1'b0),
+        .S_AXI_HP0_RDISSUECAP1_EN(1'b0),
+        .S_AXI_HP0_RREADY(1'b0),
+        .S_AXI_HP0_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_WID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_HP0_WLAST(1'b0),
+        .S_AXI_HP0_WRISSUECAP1_EN(1'b0),
+        .S_AXI_HP0_WSTRB({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
+        .S_AXI_HP0_WVALID(1'b0),
+        .USB0_VBUS_PWRFAULT(1'b0));
+  test_pulse_gen_0_0 pulse_gen_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .pulse_delay(pulse_delay_0),
+        .r0_YB(r0_YB_0),
+        .r0_YBK(r0_YBK_0),
+        .r_GM(pulse_gen_0_r_GM),
+        .rst_n(processing_system7_0_FCLK_RESET0_N),
+        .spd_width(controller_0_spd_width),
+        .strobe_1(strobe_1_0),
+        .strobe_2(strobe_2_0));
+  test_sync_0_0 sync_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .r0_YB(r0_YB_0),
+        .rst_n(processing_system7_0_FCLK_RESET0_N));
+  test_target_0_0 target_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .pulse_target(pulse_target_0),
+        .r0_YB(r0_YB_0),
+        .rst_n(processing_system7_0_FCLK_RESET0_N));
+endmodule

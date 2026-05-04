@@ -1,0 +1,85 @@
+{
+   "ActiveEmotionalView":"Reduced Jogs",
+   "Default View_ScaleFactor":"0.978856",
+   "Default View_TopLeft":"-47,3",
+   "ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_ExpandedHierarchyInLayout":"",
+   "Reduced Jogs_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1520 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1520 -y 90 -defaultsOSRD
+preplace port port-id_r0_YB_0 -pg 1 -lvl 5 -x 1520 -y 850 -defaultsOSRD
+preplace port port-id_pulse_target_0 -pg 1 -lvl 5 -x 1520 -y 510 -defaultsOSRD
+preplace port port-id_strobe_2_0 -pg 1 -lvl 5 -x 1520 -y 230 -defaultsOSRD
+preplace port port-id_strobe_1_0 -pg 1 -lvl 5 -x 1520 -y 190 -defaultsOSRD
+preplace port port-id_pulse_delay_0 -pg 1 -lvl 5 -x 1520 -y 150 -defaultsOSRD
+preplace port port-id_r0_YBK_0 -pg 1 -lvl 5 -x 1520 -y 270 -defaultsOSRD
+preplace inst sync_0 -pg 1 -lvl 3 -x 860 -y 870 -defaultsOSRD -pinY clk 20L -pinY rst_n 40L -pinY r0_YB 20R
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 860 -y 40 -defaultsOSRD -pinY DDR 20R -pinY FIXED_IO 50R -pinY IIC_0 70R -pinY USBIND_0 90R -pinY S_AXI_HP0_FIFO_CTRL 20L -pinY M_AXI_GP0 110R -pinY S_AXI_HP0 40L -pinY TTC0_WAVE0_OUT 130R -pinY TTC0_WAVE1_OUT 150R -pinY TTC0_WAVE2_OUT 170R -pinY M_AXI_GP0_ACLK 290L -pinY S_AXI_HP0_ACLK 310L -pinY FCLK_CLK0 290R -pinY FCLK_RESET0_N 310R
+preplace inst target_0 -pg 1 -lvl 4 -x 1290 -y 450 -defaultsOSRD -pinY clk 20L -pinY rst_n 40L -pinY r0_YB 60L -pinY pulse_target 60R
+preplace inst pulse_gen_0 -pg 1 -lvl 4 -x 1290 -y 130 -swap {2 3 1 0 5 4 7 9 11 12 13 14 6 8 10} -defaultsOSRD -pinY clk 200L -pinY rst_n 220L -pinY r0_YB 180L -pinBusY spd_width 160L -pinBusY time_dis 40R -pinY pulse_delay 20R -pinY pulse_show_cen 80R -pinY pulse_r 120R -pinY pulse_r_cds 160R -pinY pulse_connect 180R -pinY pulse_sel 200R -pinY r_GM 220R -pinY strobe_1 60R -pinY strobe_2 100R -pinY r0_YBK 140R
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 130 -y 430 -swap {0 1 3 2} -defaultsOSRD -pinY resetn 20L -pinY clk_in1 40L -pinY clk_out1 40R -pinY locked 20R
+preplace inst discriminator_0 -pg 1 -lvl 2 -x 450 -y 630 -swap {3 4 2 0 1 5 7 8 9 6} -defaultsOSRD -pinY clk_fast 80L -pinY rst_n 100L -pinY r_GM 60L -pinY strobe_1 20L -pinY strobe_2 40L -pinY pulse_target 140L -pinBusY error 60R -pinBusY overlap1_cnt 80R -pinBusY overlap2_cnt 100R -pinY valid 20R
+preplace inst controller_0 -pg 1 -lvl 3 -x 860 -y 630 -swap {0 1 5 2 3 4 6 7 8} -defaultsOSRD -pinY clk 20L -pinY rst_n 40L -pinY r0_YB 120L -pinBusY error 60L -pinBusY overlap1_cnt 80L -pinBusY overlap2_cnt 100L -pinBusY spd_width 20R -pinY tracking 40R -pinY scan_dir 60R
+preplace netloc sync_0_r0_YB 1 2 3 640 810 1140 850 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 40 530 NJ 530 600 430 1120
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 20 550 240 550 620 490 1080
+preplace netloc target_0_pulse_target 1 1 4 300 830 NJ 830 NJ 830 1480
+preplace netloc pulse_gen_0_strobe_2 1 1 4 280 570 NJ 570 NJ 570 1460
+preplace netloc pulse_gen_0_strobe_1 1 1 4 300 590 NJ 590 NJ 590 1500
+preplace netloc pulse_gen_0_pulse_delay 1 4 1 NJ 150
+preplace netloc pulse_gen_0_r0_YBK 1 4 1 NJ 270
+preplace netloc clk_wiz_0_clk_out1 1 1 1 220 470n
+preplace netloc pulse_gen_0_r_GM 1 1 4 260 410 NJ 410 NJ 410 1440
+preplace netloc discriminator_0_error 1 2 1 N 690
+preplace netloc discriminator_0_overlap1_cnt 1 2 1 N 710
+preplace netloc discriminator_0_overlap2_cnt 1 2 1 N 730
+preplace netloc controller_0_spd_width 1 3 1 1100 290n
+preplace netloc processing_system7_0_DDR 1 3 2 NJ 60 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ 90 NJ
+levelinfo -pg 1 0 130 450 860 1290 1520
+pagesize -pg 1 -db -bbox -sgen 0 0 1660 970
+",
+   "Reduced Jogs_ScaleFactor":"0.81639",
+   "Reduced Jogs_TopLeft":"-126,2",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1360 -y 50 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1360 -y 80 -defaultsOSRD
+preplace port port-id_r0_YB_0 -pg 1 -lvl 5 -x 1360 -y 680 -defaultsOSRD
+preplace port port-id_pulse_target_0 -pg 1 -lvl 5 -x 1360 -y 510 -defaultsOSRD
+preplace port port-id_strobe_2_0 -pg 1 -lvl 5 -x 1360 -y 220 -defaultsOSRD
+preplace port port-id_strobe_1_0 -pg 1 -lvl 5 -x 1360 -y 180 -defaultsOSRD
+preplace port port-id_pulse_delay_0 -pg 1 -lvl 5 -x 1360 -y 140 -defaultsOSRD
+preplace port port-id_r0_YBK_0 -pg 1 -lvl 5 -x 1360 -y 260 -defaultsOSRD
+preplace inst sync_0 -pg 1 -lvl 3 -x 770 -y 740 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 770 -y 150 -defaultsOSRD
+preplace inst target_0 -pg 1 -lvl 4 -x 1170 -y 510 -defaultsOSRD
+preplace inst pulse_gen_0 -pg 1 -lvl 4 -x 1170 -y 240 -swap {0 3 2 1 5 4 7 9 11 12 13 14 6 8 10} -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 550 -swap {0 1 3 2} -defaultsOSRD
+preplace inst discriminator_0 -pg 1 -lvl 2 -x 380 -y 550 -swap {3 4 2 0 1 5 7 8 9 6} -defaultsOSRD
+preplace inst controller_0 -pg 1 -lvl 3 -x 770 -y 550 -swap {0 1 5 2 3 4 6 7 8} -defaultsOSRD
+preplace netloc sync_0_r0_YB 1 2 3 550 660 1020 680 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 680 NJ 680 530 410 1010
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 20 480 200 660 540 440 990
+preplace netloc target_0_pulse_target 1 1 4 230 670 NJ 670 NJ 670 1320
+preplace netloc pulse_gen_0_strobe_2 1 1 4 230 430 NJ 430 NJ 430 1330
+preplace netloc pulse_gen_0_strobe_1 1 1 4 220 420 NJ 420 NJ 420 1340
+preplace netloc pulse_gen_0_pulse_delay 1 4 1 NJ 140
+preplace netloc pulse_gen_0_r0_YBK 1 4 1 NJ 260
+preplace netloc clk_wiz_0_clk_out1 1 1 1 N 560
+preplace netloc pulse_gen_0_r_GM 1 1 4 210 400 NJ 400 NJ 400 1320
+preplace netloc discriminator_0_error 1 2 1 N 540
+preplace netloc discriminator_0_overlap1_cnt 1 2 1 N 560
+preplace netloc discriminator_0_overlap2_cnt 1 2 1 N 580
+preplace netloc controller_0_spd_width 1 3 1 1000 230n
+preplace netloc processing_system7_0_DDR 1 3 2 NJ 60 1340J
+preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ 80 NJ
+levelinfo -pg 1 0 110 380 770 1170 1360
+pagesize -pg 1 -db -bbox -sgen 0 0 1500 810
+"
+}
+{
+   "da_clkrst_cnt":"1",
+   "da_ps7_cnt":"1"
+}

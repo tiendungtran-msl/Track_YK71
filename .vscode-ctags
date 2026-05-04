@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/mnt/d/Nhung/FPGA/Track/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+BUILD_DIR	Makefile	/^BUILD_DIR ?= build$/;"	m
+GTKWAVE	Makefile	/^GTKWAVE  ?= gtkwave$/;"	m
+IVERILOG	Makefile	/^IVERILOG ?= iverilog$/;"	m
+OUT_DIR	Makefile	/^OUT_DIR := $(BUILD_DIR)\/$(TOP)$/;"	m
+RTL_DIR	Makefile	/^RTL_DIR   ?= src$/;"	m
+RTL_SRCS	Makefile	/^RTL_SRCS ?= $(wildcard $(RTL_DIR)\/*.v)$/;"	m
+SHELL	Makefile	/^SHELL := \/bin\/bash$/;"	m
+SIM_EXE	Makefile	/^SIM_EXE := $(OUT_DIR)\/simv$/;"	m
+SRCS	Makefile	/^SRCS     ?= $(RTL_SRCS) $(TB)$/;"	m
+TB	Makefile	/^TB  ?= $(TB_DIR)\/$(TOP).v$/;"	m
+TB_DIR	Makefile	/^TB_DIR    ?= sim$/;"	m
+TOP	Makefile	/^TOP ?= tb_sync$/;"	m
+VVP	Makefile	/^VVP      ?= vvp$/;"	m
+all	Makefile	/^all: run$/;"	t
+clean	Makefile	/^clean:$/;"	t
+compile	Makefile	/^compile:$/;"	t
+list	Makefile	/^list:$/;"	t
+run	Makefile	/^run: compile$/;"	t
+wave	Makefile	/^wave: run$/;"	t

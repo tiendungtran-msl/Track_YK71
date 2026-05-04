@@ -1,0 +1,33 @@
++====================+===========================+==============================================+
+| Launch Setup Clock | Launch Hold Clock         | Pin                                          |
++====================+===========================+==============================================+
+| clk_fpga_0         | clk_fpga_0                | test_i/controller_0/inst/spd_width_reg[1]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[15]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[14]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[4]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[5]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[2]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[3]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[0]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[1]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/scan_dir_reg/D      |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[11]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[13]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[10]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[12]/D  |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/state_reg/D         |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[8]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[6]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[9]/D   |
+| clk_fpga_0         | clk_out1_test_clk_wiz_0_0 | test_i/controller_0/inst/lock_cnt_reg[7]/D   |
+| clk_fpga_0         | clk_fpga_0                | test_i/target_0/inst/delay_current_reg[9]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/target_0/inst/delay_current_reg[14]/D |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[25]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[29]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[31]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/target_0/inst/delay_current_reg[0]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[24]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[30]/D  |
+| clk_fpga_0         | clk_fpga_0                | test_i/target_0/inst/moving_near_reg/D       |
+| clk_fpga_0         | clk_fpga_0                | test_i/pulse_gen_0/inst/frame_cnt_reg[21]/D  |
++--------------------+---------------------------+----------------------------------------------+

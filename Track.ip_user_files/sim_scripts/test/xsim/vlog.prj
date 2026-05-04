@@ -1,0 +1,10 @@
+verilog xil_defaultlib --include "E:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" --include "../../../../Track.gen/sources_1/bd/test/ipshared/ec67/hdl" --include "../../../../Track.gen/sources_1/bd/test/ipshared/8391/hdl" \
+"../../../bd/test/ip/test_sync_0_0/sim/test_sync_0_0.v" \
+"../../../bd/test/ip/test_processing_system7_0_0/sim/test_processing_system7_0_0.v" \
+"../../../bd/test/sim/test.v" \
+"../../../bd/test/ip/test_target_0_0/sim/test_target_0_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
