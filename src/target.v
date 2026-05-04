@@ -33,7 +33,6 @@ module target #(
     // Registers điều khiển vị trí
     reg [CNT_W-1:0] delay_current; 
     reg [CNT_W-1:0] delay_latched; 
-    reg             moving_near;   
 
     // Accumulator đếm phần lẻ
     reg [ACC_FRAC_BITS-1:0] frac_accum;
@@ -55,7 +54,6 @@ module target #(
             r0_yb_d       <= 1'b0;
             delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
             delay_latched <= DELAY_MAX_CYCLES[CNT_W-1:0];
-            moving_near   <= 1'b1; 
             frac_accum    <= {ACC_FRAC_BITS{1'b0}};
             frame_cnt     <= {CNT_W{1'b0}};
             frame_active  <= 1'b0;
@@ -75,21 +73,12 @@ module target #(
                 step_trigger = next_acc_sum >> ACC_FRAC_BITS;
                 frac_accum   <= next_acc_sum[ACC_FRAC_BITS-1:0];
 
-                // Cập nhật khoảng cách: Dịch chuyển tọa độ nếu step_trigger > 0
-                if (moving_near) begin
-                    if (delay_current <= (DELAY_MIN_CYCLES[CNT_W-1:0] + step_trigger)) begin
-                        delay_current <= DELAY_MIN_CYCLES[CNT_W-1:0];
-                        moving_near   <= 1'b0; // Đổi hướng
-                    end else begin
-                        delay_current <= delay_current - step_trigger;
-                    end
+                // Cập nhật khoảng cách: Chỉ di chuyển 1 chiều từ xa vào gần
+                if (delay_current <= (DELAY_MIN_CYCLES[CNT_W-1:0] + step_trigger)) begin
+                    // Đã tới gần (MIN), nhảy ngược ra xa lặp lại kịch bản
+                    delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
                 end else begin
-                    if (delay_current >= (DELAY_MAX_CYCLES[CNT_W-1:0] - step_trigger)) begin
-                        delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
-                        moving_near   <= 1'b1; // Đổi hướng
-                    end else begin
-                        delay_current <= delay_current + step_trigger;
-                    end
+                    delay_current <= delay_current - step_trigger;
                 end
             end 
             // 3. Logic đếm runtime trong quá trình xuất xung

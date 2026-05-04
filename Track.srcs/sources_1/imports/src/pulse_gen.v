@@ -42,9 +42,6 @@ module pulse_gen #(
     // Tín hiệu điều khiển vòng bám
     input  wire [31:0] spd_width,      // Độ rộng xung CП3 (số chu kỳ CLK)
 
-    // Kết quả đo đạc
-    output reg  [31:0] time_dis,       // Thời gian giữ chậm chứa thông tin cự ly
-
     // Các xung đầu ra
     output wire        pulse_delay,    // Xung giữ chậm (CП3)
     output wire        pulse_show_cen, // Xung hiển thị trung tâm (ЗИРС)
@@ -165,30 +162,5 @@ module pulse_gen #(
 
     // Cửa sóng bám sát 2 (CSBS2)
     assign strobe_2       = frame_active && (frame_cnt >= t_stb2) && (frame_cnt < t_stb2 + STROBE_W);
-
-    // =========================================================================
-    // ĐO THỜI GIAN LƯU TRỮ TỌA ĐỘ MỤC TIÊU LÊN TÍN HIỆU TIME_DIS
-    // =========================================================================
-    // Dò sườn xuống của cửa sóng CSBS1 để update time_dis (khớp thời gian vùng giao nhau 2 cửa sóng)
-    reg strobe_1_d;
-    wire strobe_1_fall = strobe_1_d & ~strobe_1;
-
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            strobe_1_d <= 1'b0;
-            time_dis   <= 32'd0;
-        end else begin
-            strobe_1_d <= strobe_1;
-            
-            // Xóa ở đầu mỗi khung PRI
-            if (r0_yb_rise) begin
-                time_dis <= 32'd0;
-            end 
-            // Cập nhật giá trị time_dis tại điểm rơi giao giữa strobe_1 -> strobe_2
-            else if (strobe_1_fall) begin
-                time_dis <= frame_cnt;
-            end
-        end
-    end
 
 endmodule

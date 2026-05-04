@@ -70,6 +70,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Nhung/FPGA/Track/Track.cache/wt [current_project]
 set_property parent.project_path D:/Nhung/FPGA/Track/Track.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part myir.com:mys-7z020:part0:2.1 [current_project]

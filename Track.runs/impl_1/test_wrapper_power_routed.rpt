@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date             : Mon May  4 09:25:38 2026
+| Date             : Mon May  4 10:31:02 2026
 | Host             : MSN running 64-bit major release  (build 9200)
 | Command          : report_power -file test_wrapper_power_routed.rpt -pb test_wrapper_power_summary_routed.pb -rpx test_wrapper_power_routed.rpx
 | Design           : test_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.779        |
+| Total On-Chip Power (W)  | 1.780        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.632        |
+| Dynamic (W)              | 1.633        |
 | Device Static (W)        | 0.147        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 64.5         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.009 |        6 |       --- |             --- |
-| Slice Logic    |     0.005 |     1624 |       --- |             --- |
-|   LUT as Logic |     0.004 |      749 |     53200 |            1.41 |
-|   CARRY4       |    <0.001 |      194 |     13300 |            1.46 |
-|   Register     |    <0.001 |      406 |    106400 |            0.38 |
+| Clocks         |     0.010 |        6 |       --- |             --- |
+| Slice Logic    |     0.005 |     1629 |       --- |             --- |
+|   LUT as Logic |     0.004 |      725 |     53200 |            1.36 |
+|   CARRY4       |    <0.001 |      186 |     13300 |            1.40 |
+|   Register     |    <0.001 |      433 |    106400 |            0.41 |
 |   Others       |     0.000 |      146 |       --- |             --- |
-| Signals        |     0.006 |     1047 |       --- |             --- |
+| Signals        |     0.005 |     1062 |       --- |             --- |
 | MMCM           |     0.107 |        1 |         4 |           25.00 |
 | I/O            |     0.004 |        6 |       125 |            4.80 |
 | PS7            |     1.502 |        1 |       --- |             --- |
 | Static Power   |     0.147 |          |           |                 |
-| Total          |     1.779 |          |           |                 |
+| Total          |     1.780 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.036 |       0.020 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.037 |       0.021 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.075 |       0.059 |      0.016 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -152,20 +152,20 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| test_wrapper             |     1.632 |
-|   test_i                 |     1.628 |
+| test_wrapper             |     1.633 |
+|   test_i                 |     1.630 |
 |     clk_wiz_0            |     0.108 |
 |       inst               |     0.108 |
 |     controller_0         |     0.006 |
 |       inst               |     0.006 |
-|     discriminator_0      |     0.004 |
-|       inst               |     0.004 |
+|     discriminator_0      |     0.005 |
+|       inst               |     0.005 |
 |     processing_system7_0 |     1.502 |
 |       inst               |     1.502 |
-|     pulse_gen_0          |     0.004 |
-|       inst               |     0.004 |
-|     target_0             |     0.003 |
-|       inst               |     0.003 |
+|     pulse_gen_0          |     0.005 |
+|       inst               |     0.005 |
+|     target_0             |     0.002 |
+|       inst               |     0.002 |
 +--------------------------+-----------+
 
 

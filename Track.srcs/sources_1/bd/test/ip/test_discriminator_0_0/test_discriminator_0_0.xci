@@ -44,8 +44,7 @@
         "pulse_target": [ { "direction": "in" } ],
         "error": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "overlap1_cnt": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "overlap2_cnt": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "valid": [ { "direction": "out" } ]
+        "overlap2_cnt": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
       },
       "interfaces": {
         "rst_n": {

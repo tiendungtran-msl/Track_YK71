@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-// Date        : Mon May  4 08:19:45 2026
+// Date        : Mon May  4 10:27:19 2026
 // Host        : MSN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_sim_netlist.v
@@ -49,30 +49,56 @@ module test_target_0_0_target
   input clk;
   input rst_n;
 
-  wire \_inferred__0/i__carry__0_n_0 ;
-  wire \_inferred__0/i__carry__0_n_1 ;
-  wire \_inferred__0/i__carry__0_n_2 ;
-  wire \_inferred__0/i__carry__0_n_3 ;
-  wire \_inferred__0/i__carry__1_n_0 ;
-  wire \_inferred__0/i__carry__1_n_1 ;
-  wire \_inferred__0/i__carry__1_n_2 ;
-  wire \_inferred__0/i__carry__1_n_3 ;
-  wire \_inferred__0/i__carry__2_n_0 ;
-  wire \_inferred__0/i__carry__2_n_1 ;
-  wire \_inferred__0/i__carry__2_n_2 ;
-  wire \_inferred__0/i__carry__2_n_3 ;
-  wire \_inferred__0/i__carry__3_n_2 ;
-  wire \_inferred__0/i__carry__3_n_3 ;
-  wire \_inferred__0/i__carry_n_0 ;
-  wire \_inferred__0/i__carry_n_1 ;
-  wire \_inferred__0/i__carry_n_2 ;
-  wire \_inferred__0/i__carry_n_3 ;
+  wire _carry__0_i_1_n_0;
+  wire _carry__0_i_2_n_0;
+  wire _carry__0_i_3_n_0;
+  wire _carry__0_i_4_n_0;
+  wire _carry__0_i_5_n_0;
+  wire _carry__0_i_6_n_0;
+  wire _carry__0_i_7_n_0;
+  wire _carry__0_n_0;
+  wire _carry__0_n_1;
+  wire _carry__0_n_2;
+  wire _carry__0_n_3;
+  wire _carry__1_i_1_n_0;
+  wire _carry__1_i_2_n_0;
+  wire _carry__1_i_3_n_0;
+  wire _carry__1_i_4_n_0;
+  wire _carry__1_i_5_n_0;
+  wire _carry__1_i_6_n_0;
+  wire _carry__1_i_7_n_0;
+  wire _carry__1_i_8_n_0;
+  wire _carry__1_n_0;
+  wire _carry__1_n_1;
+  wire _carry__1_n_2;
+  wire _carry__1_n_3;
+  wire _carry__2_i_1_n_0;
+  wire _carry__2_i_2_n_0;
+  wire _carry__2_i_3_n_0;
+  wire _carry__2_i_4_n_0;
+  wire _carry__2_i_5_n_0;
+  wire _carry__2_i_6_n_0;
+  wire _carry__2_i_7_n_0;
+  wire _carry__2_i_8_n_0;
+  wire _carry__2_n_0;
+  wire _carry__2_n_1;
+  wire _carry__2_n_2;
+  wire _carry__2_n_3;
+  wire _carry__3_i_1_n_0;
+  wire _carry__3_i_2_n_0;
+  wire _carry__3_i_3_n_0;
+  wire _carry__3_n_2;
+  wire _carry__3_n_3;
+  wire _carry_i_1_n_0;
+  wire _carry_i_2_n_0;
+  wire _carry_i_3_n_0;
+  wire _carry_i_4_n_0;
+  wire _carry_n_0;
+  wire _carry_n_1;
+  wire _carry_n_2;
+  wire _carry_n_3;
   wire clk;
   wire [16:0]delay_current;
-  wire [16:0]delay_current0;
-  wire delay_current00;
-  wire [16:0]delay_current01_in;
-  wire delay_current1__8;
   wire delay_current1_carry__0_i_1_n_0;
   wire delay_current1_carry__0_i_2_n_0;
   wire delay_current1_carry__0_i_3_n_0;
@@ -96,14 +122,6 @@ module test_target_0_0_target
   wire delay_current1_carry_n_1;
   wire delay_current1_carry_n_2;
   wire delay_current1_carry_n_3;
-  wire \delay_current1_inferred__0/i__carry__0_n_0 ;
-  wire \delay_current1_inferred__0/i__carry__0_n_1 ;
-  wire \delay_current1_inferred__0/i__carry__0_n_2 ;
-  wire \delay_current1_inferred__0/i__carry__0_n_3 ;
-  wire \delay_current1_inferred__0/i__carry_n_0 ;
-  wire \delay_current1_inferred__0/i__carry_n_1 ;
-  wire \delay_current1_inferred__0/i__carry_n_2 ;
-  wire \delay_current1_inferred__0/i__carry_n_3 ;
   wire delay_current4_carry__0_n_0;
   wire delay_current4_carry__0_n_1;
   wire delay_current4_carry__0_n_2;
@@ -137,73 +155,73 @@ module test_target_0_0_target
   wire delay_current4_carry_n_4;
   wire delay_current4_carry_n_5;
   wire delay_current4_carry_n_6;
-  wire \delay_current[0]_i_1_n_0 ;
-  wire \delay_current[10]_i_1_n_0 ;
-  wire \delay_current[11]_i_1_n_0 ;
+  wire \delay_current[11]_i_2_n_0 ;
+  wire \delay_current[11]_i_3_n_0 ;
   wire \delay_current[11]_i_4_n_0 ;
   wire \delay_current[11]_i_5_n_0 ;
   wire \delay_current[11]_i_6_n_0 ;
   wire \delay_current[11]_i_7_n_0 ;
-  wire \delay_current[12]_i_1_n_0 ;
-  wire \delay_current[13]_i_1_n_0 ;
-  wire \delay_current[14]_i_1_n_0 ;
-  wire \delay_current[15]_i_1_n_0 ;
+  wire \delay_current[11]_i_8_n_0 ;
+  wire \delay_current[11]_i_9_n_0 ;
+  wire \delay_current[15]_i_2_n_0 ;
+  wire \delay_current[15]_i_3_n_0 ;
   wire \delay_current[15]_i_4_n_0 ;
   wire \delay_current[15]_i_5_n_0 ;
   wire \delay_current[15]_i_6_n_0 ;
   wire \delay_current[15]_i_7_n_0 ;
-  wire \delay_current[16]_i_1_n_0 ;
-  wire \delay_current[16]_i_4_n_0 ;
-  wire \delay_current[1]_i_1_n_0 ;
-  wire \delay_current[2]_i_1_n_0 ;
-  wire \delay_current[3]_i_1_n_0 ;
+  wire \delay_current[15]_i_8_n_0 ;
+  wire \delay_current[15]_i_9_n_0 ;
+  wire \delay_current[16]_i_2_n_0 ;
+  wire \delay_current[3]_i_10_n_0 ;
+  wire \delay_current[3]_i_2_n_0 ;
+  wire \delay_current[3]_i_3_n_0 ;
   wire \delay_current[3]_i_4_n_0 ;
   wire \delay_current[3]_i_5_n_0 ;
   wire \delay_current[3]_i_6_n_0 ;
   wire \delay_current[3]_i_7_n_0 ;
   wire \delay_current[3]_i_8_n_0 ;
-  wire \delay_current[4]_i_1_n_0 ;
-  wire \delay_current[5]_i_1_n_0 ;
-  wire \delay_current[6]_i_1_n_0 ;
-  wire \delay_current[7]_i_1_n_0 ;
+  wire \delay_current[3]_i_9_n_0 ;
+  wire \delay_current[7]_i_2_n_0 ;
+  wire \delay_current[7]_i_3_n_0 ;
   wire \delay_current[7]_i_4_n_0 ;
   wire \delay_current[7]_i_5_n_0 ;
   wire \delay_current[7]_i_6_n_0 ;
   wire \delay_current[7]_i_7_n_0 ;
-  wire \delay_current[8]_i_1_n_0 ;
-  wire \delay_current[9]_i_1_n_0 ;
-  wire \delay_current_reg[11]_i_2_n_0 ;
-  wire \delay_current_reg[11]_i_2_n_1 ;
-  wire \delay_current_reg[11]_i_2_n_2 ;
-  wire \delay_current_reg[11]_i_2_n_3 ;
-  wire \delay_current_reg[11]_i_3_n_0 ;
-  wire \delay_current_reg[11]_i_3_n_1 ;
-  wire \delay_current_reg[11]_i_3_n_2 ;
-  wire \delay_current_reg[11]_i_3_n_3 ;
-  wire \delay_current_reg[15]_i_2_n_0 ;
-  wire \delay_current_reg[15]_i_2_n_1 ;
-  wire \delay_current_reg[15]_i_2_n_2 ;
-  wire \delay_current_reg[15]_i_2_n_3 ;
-  wire \delay_current_reg[15]_i_3_n_0 ;
-  wire \delay_current_reg[15]_i_3_n_1 ;
-  wire \delay_current_reg[15]_i_3_n_2 ;
-  wire \delay_current_reg[15]_i_3_n_3 ;
-  wire \delay_current_reg[3]_i_2_n_0 ;
-  wire \delay_current_reg[3]_i_2_n_1 ;
-  wire \delay_current_reg[3]_i_2_n_2 ;
-  wire \delay_current_reg[3]_i_2_n_3 ;
-  wire \delay_current_reg[3]_i_3_n_0 ;
-  wire \delay_current_reg[3]_i_3_n_1 ;
-  wire \delay_current_reg[3]_i_3_n_2 ;
-  wire \delay_current_reg[3]_i_3_n_3 ;
-  wire \delay_current_reg[7]_i_2_n_0 ;
-  wire \delay_current_reg[7]_i_2_n_1 ;
-  wire \delay_current_reg[7]_i_2_n_2 ;
-  wire \delay_current_reg[7]_i_2_n_3 ;
-  wire \delay_current_reg[7]_i_3_n_0 ;
-  wire \delay_current_reg[7]_i_3_n_1 ;
-  wire \delay_current_reg[7]_i_3_n_2 ;
-  wire \delay_current_reg[7]_i_3_n_3 ;
+  wire \delay_current[7]_i_8_n_0 ;
+  wire \delay_current[7]_i_9_n_0 ;
+  wire \delay_current_reg[11]_i_1_n_0 ;
+  wire \delay_current_reg[11]_i_1_n_1 ;
+  wire \delay_current_reg[11]_i_1_n_2 ;
+  wire \delay_current_reg[11]_i_1_n_3 ;
+  wire \delay_current_reg[11]_i_1_n_4 ;
+  wire \delay_current_reg[11]_i_1_n_5 ;
+  wire \delay_current_reg[11]_i_1_n_6 ;
+  wire \delay_current_reg[11]_i_1_n_7 ;
+  wire \delay_current_reg[15]_i_1_n_0 ;
+  wire \delay_current_reg[15]_i_1_n_1 ;
+  wire \delay_current_reg[15]_i_1_n_2 ;
+  wire \delay_current_reg[15]_i_1_n_3 ;
+  wire \delay_current_reg[15]_i_1_n_4 ;
+  wire \delay_current_reg[15]_i_1_n_5 ;
+  wire \delay_current_reg[15]_i_1_n_6 ;
+  wire \delay_current_reg[15]_i_1_n_7 ;
+  wire \delay_current_reg[16]_i_1_n_7 ;
+  wire \delay_current_reg[3]_i_1_n_0 ;
+  wire \delay_current_reg[3]_i_1_n_1 ;
+  wire \delay_current_reg[3]_i_1_n_2 ;
+  wire \delay_current_reg[3]_i_1_n_3 ;
+  wire \delay_current_reg[3]_i_1_n_4 ;
+  wire \delay_current_reg[3]_i_1_n_5 ;
+  wire \delay_current_reg[3]_i_1_n_6 ;
+  wire \delay_current_reg[3]_i_1_n_7 ;
+  wire \delay_current_reg[7]_i_1_n_0 ;
+  wire \delay_current_reg[7]_i_1_n_1 ;
+  wire \delay_current_reg[7]_i_1_n_2 ;
+  wire \delay_current_reg[7]_i_1_n_3 ;
+  wire \delay_current_reg[7]_i_1_n_4 ;
+  wire \delay_current_reg[7]_i_1_n_5 ;
+  wire \delay_current_reg[7]_i_1_n_6 ;
+  wire \delay_current_reg[7]_i_1_n_7 ;
   wire [16:0]delay_latched;
   wire [15:2]frac_accum;
   wire frame_active_i_1_n_0;
@@ -265,56 +283,10 @@ module test_target_0_0_target
   wire \frame_cnt_reg[8]_i_1_n_5 ;
   wire \frame_cnt_reg[8]_i_1_n_6 ;
   wire \frame_cnt_reg[8]_i_1_n_7 ;
-  wire i__carry__0_i_1_n_0;
-  wire i__carry__0_i_2_n_0;
-  wire i__carry__0_i_3_n_0;
-  wire i__carry__0_i_4_n_0;
-  wire i__carry__0_i_5_n_0;
-  wire i__carry__0_i_6_n_0;
-  wire i__carry__0_i_7_n_0;
-  wire i__carry_i_1__0_n_0;
-  wire i__carry_i_1__1_n_0;
-  wire i__carry_i_1__2_n_0;
-  wire i__carry_i_1__3_n_0;
-  wire i__carry_i_1__4_n_0;
-  wire i__carry_i_1_n_0;
-  wire i__carry_i_2__0_n_0;
-  wire i__carry_i_2__1_n_0;
-  wire i__carry_i_2__2_n_0;
-  wire i__carry_i_2__3_n_0;
-  wire i__carry_i_2__4_n_0;
-  wire i__carry_i_2_n_0;
-  wire i__carry_i_3__0_n_0;
-  wire i__carry_i_3__1_n_0;
-  wire i__carry_i_3__2_n_0;
-  wire i__carry_i_3__3_n_0;
-  wire i__carry_i_3__4_n_0;
-  wire i__carry_i_3_n_0;
-  wire i__carry_i_4__0_n_0;
-  wire i__carry_i_4__1_n_0;
-  wire i__carry_i_4__2_n_0;
-  wire i__carry_i_4__3_n_0;
-  wire i__carry_i_4_n_0;
-  wire i__carry_i_5__0_n_0;
-  wire i__carry_i_5__1_n_0;
-  wire i__carry_i_5__2_n_0;
-  wire i__carry_i_5_n_0;
-  wire i__carry_i_6__0_n_0;
-  wire i__carry_i_6__1_n_0;
-  wire i__carry_i_6__2_n_0;
-  wire i__carry_i_6_n_0;
-  wire i__carry_i_7__0_n_0;
-  wire i__carry_i_7__1_n_0;
-  wire i__carry_i_7__2_n_0;
-  wire i__carry_i_7_n_0;
-  wire i__carry_i_8__0_n_0;
-  wire i__carry_i_8__1_n_0;
-  wire i__carry_i_8_n_0;
-  wire moving_near_i_1_n_0;
-  wire moving_near_reg_n_0;
+  wire [16:16]p_0_in;
   wire pulse_target;
   wire pulse_target0;
-  wire pulse_target2__9;
+  wire pulse_target2;
   wire pulse_target2_carry__0_i_1_n_0;
   wire pulse_target2_carry__0_i_2_n_0;
   wire pulse_target2_carry__0_i_3_n_0;
@@ -346,27 +318,21 @@ module test_target_0_0_target
   wire r0_yb_d;
   wire rst_n;
   wire sync_rise;
-  wire [3:0]\NLW__inferred__0/i__carry_O_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__0_O_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__1_O_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__2_O_UNCONNECTED ;
-  wire [3:2]\NLW__inferred__0/i__carry__3_CO_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__3_O_UNCONNECTED ;
+  wire [3:0]NLW__carry_O_UNCONNECTED;
+  wire [3:0]NLW__carry__0_O_UNCONNECTED;
+  wire [3:0]NLW__carry__1_O_UNCONNECTED;
+  wire [3:0]NLW__carry__2_O_UNCONNECTED;
+  wire [3:2]NLW__carry__3_CO_UNCONNECTED;
+  wire [3:0]NLW__carry__3_O_UNCONNECTED;
   wire [3:0]NLW_delay_current1_carry_O_UNCONNECTED;
   wire [3:0]NLW_delay_current1_carry__0_O_UNCONNECTED;
   wire [3:1]NLW_delay_current1_carry__1_CO_UNCONNECTED;
   wire [3:0]NLW_delay_current1_carry__1_O_UNCONNECTED;
-  wire [3:0]\NLW_delay_current1_inferred__0/i__carry_O_UNCONNECTED ;
-  wire [3:0]\NLW_delay_current1_inferred__0/i__carry__0_O_UNCONNECTED ;
-  wire [3:1]\NLW_delay_current1_inferred__0/i__carry__1_CO_UNCONNECTED ;
-  wire [3:0]\NLW_delay_current1_inferred__0/i__carry__1_O_UNCONNECTED ;
   wire [0:0]NLW_delay_current4_carry_O_UNCONNECTED;
   wire [2:2]NLW_delay_current4_carry__2_CO_UNCONNECTED;
   wire [3:3]NLW_delay_current4_carry__2_O_UNCONNECTED;
-  wire [3:0]\NLW_delay_current_reg[16]_i_2_CO_UNCONNECTED ;
-  wire [3:1]\NLW_delay_current_reg[16]_i_2_O_UNCONNECTED ;
-  wire [3:0]\NLW_delay_current_reg[16]_i_3_CO_UNCONNECTED ;
-  wire [3:1]\NLW_delay_current_reg[16]_i_3_O_UNCONNECTED ;
+  wire [3:0]\NLW_delay_current_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:1]\NLW_delay_current_reg[16]_i_1_O_UNCONNECTED ;
   wire [3:0]\NLW_frame_cnt_reg[16]_i_1_CO_UNCONNECTED ;
   wire [3:1]\NLW_frame_cnt_reg[16]_i_1_O_UNCONNECTED ;
   wire [3:0]NLW_pulse_target2_carry_O_UNCONNECTED;
@@ -374,41 +340,243 @@ module test_target_0_0_target
   wire [3:1]NLW_pulse_target2_carry__1_CO_UNCONNECTED;
   wire [3:0]NLW_pulse_target2_carry__1_O_UNCONNECTED;
 
-  CARRY4 \_inferred__0/i__carry 
+  CARRY4 _carry
        (.CI(1'b0),
-        .CO({\_inferred__0/i__carry_n_0 ,\_inferred__0/i__carry_n_1 ,\_inferred__0/i__carry_n_2 ,\_inferred__0/i__carry_n_3 }),
+        .CO({_carry_n_0,_carry_n_1,_carry_n_2,_carry_n_3}),
         .CYINIT(1'b1),
         .DI(frame_cnt_reg[3:0]),
-        .O(\NLW__inferred__0/i__carry_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_1__2_n_0,i__carry_i_2__2_n_0,i__carry_i_3__2_n_0,i__carry_i_4__3_n_0}));
-  CARRY4 \_inferred__0/i__carry__0 
-       (.CI(\_inferred__0/i__carry_n_0 ),
-        .CO({\_inferred__0/i__carry__0_n_0 ,\_inferred__0/i__carry__0_n_1 ,\_inferred__0/i__carry__0_n_2 ,\_inferred__0/i__carry__0_n_3 }),
+        .O(NLW__carry_O_UNCONNECTED[3:0]),
+        .S({_carry_i_1_n_0,_carry_i_2_n_0,_carry_i_3_n_0,_carry_i_4_n_0}));
+  CARRY4 _carry__0
+       (.CI(_carry_n_0),
+        .CO({_carry__0_n_0,_carry__0_n_1,_carry__0_n_2,_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({i__carry_i_1__0_n_0,i__carry_i_2__0_n_0,i__carry_i_3__0_n_0,delay_latched[4]}),
-        .O(\NLW__inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_4__2_n_0,i__carry_i_5__0_n_0,i__carry_i_6__0_n_0,i__carry_i_7__0_n_0}));
-  CARRY4 \_inferred__0/i__carry__1 
-       (.CI(\_inferred__0/i__carry__0_n_0 ),
-        .CO({\_inferred__0/i__carry__1_n_0 ,\_inferred__0/i__carry__1_n_1 ,\_inferred__0/i__carry__1_n_2 ,\_inferred__0/i__carry__1_n_3 }),
+        .DI({_carry__0_i_1_n_0,_carry__0_i_2_n_0,_carry__0_i_3_n_0,delay_latched[4]}),
+        .O(NLW__carry__0_O_UNCONNECTED[3:0]),
+        .S({_carry__0_i_4_n_0,_carry__0_i_5_n_0,_carry__0_i_6_n_0,_carry__0_i_7_n_0}));
+  LUT2 #(
+    .INIT(4'h6)) 
+    _carry__0_i_1
+       (.I0(frame_cnt_reg[7]),
+        .I1(delay_latched[7]),
+        .O(_carry__0_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    _carry__0_i_2
+       (.I0(delay_latched[6]),
+        .I1(frame_cnt_reg[6]),
+        .O(_carry__0_i_2_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    _carry__0_i_3
+       (.I0(delay_latched[4]),
+        .O(_carry__0_i_3_n_0));
+  LUT4 #(
+    .INIT(16'h6966)) 
+    _carry__0_i_4
+       (.I0(frame_cnt_reg[7]),
+        .I1(delay_latched[7]),
+        .I2(delay_latched[6]),
+        .I3(frame_cnt_reg[6]),
+        .O(_carry__0_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h2DD2)) 
+    _carry__0_i_5
+       (.I0(delay_latched[5]),
+        .I1(frame_cnt_reg[5]),
+        .I2(frame_cnt_reg[6]),
+        .I3(delay_latched[6]),
+        .O(_carry__0_i_5_n_0));
+  LUT3 #(
+    .INIT(8'h69)) 
+    _carry__0_i_6
+       (.I0(frame_cnt_reg[5]),
+        .I1(delay_latched[5]),
+        .I2(delay_latched[4]),
+        .O(_carry__0_i_6_n_0));
+  LUT2 #(
+    .INIT(4'h6)) 
+    _carry__0_i_7
+       (.I0(frame_cnt_reg[4]),
+        .I1(delay_latched[4]),
+        .O(_carry__0_i_7_n_0));
+  CARRY4 _carry__1
+       (.CI(_carry__0_n_0),
+        .CO({_carry__1_n_0,_carry__1_n_1,_carry__1_n_2,_carry__1_n_3}),
         .CYINIT(1'b0),
-        .DI({i__carry_i_1__3_n_0,i__carry_i_2__1_n_0,i__carry_i_3__3_n_0,i__carry_i_4__0_n_0}),
-        .O(\NLW__inferred__0/i__carry__1_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_5__1_n_0,i__carry_i_6__1_n_0,i__carry_i_7__1_n_0,i__carry_i_8__0_n_0}));
-  CARRY4 \_inferred__0/i__carry__2 
-       (.CI(\_inferred__0/i__carry__1_n_0 ),
-        .CO({\_inferred__0/i__carry__2_n_0 ,\_inferred__0/i__carry__2_n_1 ,\_inferred__0/i__carry__2_n_2 ,\_inferred__0/i__carry__2_n_3 }),
+        .DI({_carry__1_i_1_n_0,_carry__1_i_2_n_0,_carry__1_i_3_n_0,_carry__1_i_4_n_0}),
+        .O(NLW__carry__1_O_UNCONNECTED[3:0]),
+        .S({_carry__1_i_5_n_0,_carry__1_i_6_n_0,_carry__1_i_7_n_0,_carry__1_i_8_n_0}));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__1_i_1
+       (.I0(frame_cnt_reg[10]),
+        .I1(delay_latched[10]),
+        .O(_carry__1_i_1_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__1_i_2
+       (.I0(frame_cnt_reg[9]),
+        .I1(delay_latched[9]),
+        .O(_carry__1_i_2_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__1_i_3
+       (.I0(frame_cnt_reg[8]),
+        .I1(delay_latched[8]),
+        .O(_carry__1_i_3_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__1_i_4
+       (.I0(frame_cnt_reg[7]),
+        .I1(delay_latched[7]),
+        .O(_carry__1_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__1_i_5
+       (.I0(delay_latched[10]),
+        .I1(frame_cnt_reg[10]),
+        .I2(frame_cnt_reg[11]),
+        .I3(delay_latched[11]),
+        .O(_carry__1_i_5_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__1_i_6
+       (.I0(delay_latched[9]),
+        .I1(frame_cnt_reg[9]),
+        .I2(frame_cnt_reg[10]),
+        .I3(delay_latched[10]),
+        .O(_carry__1_i_6_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__1_i_7
+       (.I0(delay_latched[8]),
+        .I1(frame_cnt_reg[8]),
+        .I2(frame_cnt_reg[9]),
+        .I3(delay_latched[9]),
+        .O(_carry__1_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__1_i_8
+       (.I0(delay_latched[7]),
+        .I1(frame_cnt_reg[7]),
+        .I2(frame_cnt_reg[8]),
+        .I3(delay_latched[8]),
+        .O(_carry__1_i_8_n_0));
+  CARRY4 _carry__2
+       (.CI(_carry__1_n_0),
+        .CO({_carry__2_n_0,_carry__2_n_1,_carry__2_n_2,_carry__2_n_3}),
         .CYINIT(1'b0),
-        .DI({i__carry_i_1__4_n_0,i__carry_i_2__4_n_0,i__carry_i_3__4_n_0,i__carry_i_4__1_n_0}),
-        .O(\NLW__inferred__0/i__carry__2_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_5__2_n_0,i__carry_i_6__2_n_0,i__carry_i_7__2_n_0,i__carry_i_8__1_n_0}));
-  CARRY4 \_inferred__0/i__carry__3 
-       (.CI(\_inferred__0/i__carry__2_n_0 ),
-        .CO({\NLW__inferred__0/i__carry__3_CO_UNCONNECTED [3:2],\_inferred__0/i__carry__3_n_2 ,\_inferred__0/i__carry__3_n_3 }),
+        .DI({_carry__2_i_1_n_0,_carry__2_i_2_n_0,_carry__2_i_3_n_0,_carry__2_i_4_n_0}),
+        .O(NLW__carry__2_O_UNCONNECTED[3:0]),
+        .S({_carry__2_i_5_n_0,_carry__2_i_6_n_0,_carry__2_i_7_n_0,_carry__2_i_8_n_0}));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__2_i_1
+       (.I0(frame_cnt_reg[14]),
+        .I1(delay_latched[14]),
+        .O(_carry__2_i_1_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__2_i_2
+       (.I0(frame_cnt_reg[13]),
+        .I1(delay_latched[13]),
+        .O(_carry__2_i_2_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__2_i_3
+       (.I0(frame_cnt_reg[12]),
+        .I1(delay_latched[12]),
+        .O(_carry__2_i_3_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__2_i_4
+       (.I0(frame_cnt_reg[11]),
+        .I1(delay_latched[11]),
+        .O(_carry__2_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__2_i_5
+       (.I0(delay_latched[14]),
+        .I1(frame_cnt_reg[14]),
+        .I2(frame_cnt_reg[15]),
+        .I3(delay_latched[15]),
+        .O(_carry__2_i_5_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__2_i_6
+       (.I0(delay_latched[13]),
+        .I1(frame_cnt_reg[13]),
+        .I2(frame_cnt_reg[14]),
+        .I3(delay_latched[14]),
+        .O(_carry__2_i_6_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__2_i_7
+       (.I0(delay_latched[12]),
+        .I1(frame_cnt_reg[12]),
+        .I2(frame_cnt_reg[13]),
+        .I3(delay_latched[13]),
+        .O(_carry__2_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__2_i_8
+       (.I0(delay_latched[11]),
+        .I1(frame_cnt_reg[11]),
+        .I2(frame_cnt_reg[12]),
+        .I3(delay_latched[12]),
+        .O(_carry__2_i_8_n_0));
+  CARRY4 _carry__3
+       (.CI(_carry__2_n_0),
+        .CO({NLW__carry__3_CO_UNCONNECTED[3:2],_carry__3_n_2,_carry__3_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,i__carry_i_1__1_n_0}),
-        .O(\NLW__inferred__0/i__carry__3_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,i__carry_i_2__3_n_0,i__carry_i_3__1_n_0}));
+        .DI({1'b0,1'b0,1'b0,_carry__3_i_1_n_0}),
+        .O(NLW__carry__3_O_UNCONNECTED[3:0]),
+        .S({1'b0,1'b0,_carry__3_i_2_n_0,_carry__3_i_3_n_0}));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__3_i_1
+       (.I0(frame_cnt_reg[15]),
+        .I1(delay_latched[15]),
+        .O(_carry__3_i_1_n_0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    _carry__3_i_2
+       (.I0(frame_cnt_reg[16]),
+        .I1(delay_latched[16]),
+        .O(_carry__3_i_2_n_0));
+  LUT4 #(
+    .INIT(16'hD22D)) 
+    _carry__3_i_3
+       (.I0(delay_latched[15]),
+        .I1(frame_cnt_reg[15]),
+        .I2(frame_cnt_reg[16]),
+        .I3(delay_latched[16]),
+        .O(_carry__3_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    _carry_i_1
+       (.I0(frame_cnt_reg[3]),
+        .I1(delay_latched[3]),
+        .O(_carry_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    _carry_i_2
+       (.I0(frame_cnt_reg[2]),
+        .I1(delay_latched[2]),
+        .O(_carry_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    _carry_i_3
+       (.I0(frame_cnt_reg[1]),
+        .I1(delay_latched[1]),
+        .O(_carry_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    _carry_i_4
+       (.I0(frame_cnt_reg[0]),
+        .I1(delay_latched[0]),
+        .O(_carry_i_4_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 delay_current1_carry
        (.CI(1'b0),
@@ -485,11 +653,11 @@ module test_target_0_0_target
        (.I0(delay_current[5]),
         .O(delay_current1_carry_i_1_n_0));
   LUT3 #(
-    .INIT(8'h02)) 
+    .INIT(8'h04)) 
     delay_current1_carry_i_2
-       (.I0(delay_current00),
-        .I1(delay_current[1]),
-        .I2(delay_current[0]),
+       (.I0(delay_current[0]),
+        .I1(p_0_in),
+        .I2(delay_current[1]),
         .O(delay_current1_carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -506,40 +674,16 @@ module test_target_0_0_target
   LUT2 #(
     .INIT(4'h1)) 
     delay_current1_carry_i_5
-       (.I0(delay_current[3]),
-        .I1(delay_current[2]),
+       (.I0(delay_current[2]),
+        .I1(delay_current[3]),
         .O(delay_current1_carry_i_5_n_0));
   LUT3 #(
     .INIT(8'h09)) 
     delay_current1_carry_i_6
-       (.I0(delay_current00),
+       (.I0(p_0_in),
         .I1(delay_current[0]),
         .I2(delay_current[1]),
         .O(delay_current1_carry_i_6_n_0));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \delay_current1_inferred__0/i__carry 
-       (.CI(1'b0),
-        .CO({\delay_current1_inferred__0/i__carry_n_0 ,\delay_current1_inferred__0/i__carry_n_1 ,\delay_current1_inferred__0/i__carry_n_2 ,\delay_current1_inferred__0/i__carry_n_3 }),
-        .CYINIT(1'b1),
-        .DI({i__carry_i_1_n_0,i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0}),
-        .O(\NLW_delay_current1_inferred__0/i__carry_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_5_n_0,i__carry_i_6_n_0,i__carry_i_7_n_0,i__carry_i_8_n_0}));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \delay_current1_inferred__0/i__carry__0 
-       (.CI(\delay_current1_inferred__0/i__carry_n_0 ),
-        .CO({\delay_current1_inferred__0/i__carry__0_n_0 ,\delay_current1_inferred__0/i__carry__0_n_1 ,\delay_current1_inferred__0/i__carry__0_n_2 ,\delay_current1_inferred__0/i__carry__0_n_3 }),
-        .CYINIT(1'b0),
-        .DI({i__carry__0_i_1_n_0,1'b0,i__carry__0_i_2_n_0,i__carry__0_i_3_n_0}),
-        .O(\NLW_delay_current1_inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({i__carry__0_i_4_n_0,i__carry__0_i_5_n_0,i__carry__0_i_6_n_0,i__carry__0_i_7_n_0}));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \delay_current1_inferred__0/i__carry__1 
-       (.CI(\delay_current1_inferred__0/i__carry__0_n_0 ),
-        .CO({\NLW_delay_current1_inferred__0/i__carry__1_CO_UNCONNECTED [3:1],delay_current1__8}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(\NLW_delay_current1_inferred__0/i__carry__1_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,1'b0,delay_current[16]}));
   CARRY4 delay_current4_carry
        (.CI(1'b0),
         .CO({delay_current4_carry_n_0,delay_current4_carry_n_1,delay_current4_carry_n_2,delay_current4_carry_n_3}),
@@ -578,7 +722,7 @@ module test_target_0_0_target
         .O(delay_current4_carry__1_i_3_n_0));
   CARRY4 delay_current4_carry__2
        (.CI(delay_current4_carry__1_n_0),
-        .CO({delay_current00,NLW_delay_current4_carry__2_CO_UNCONNECTED[2],delay_current4_carry__2_n_2,delay_current4_carry__2_n_3}),
+        .CO({p_0_in,NLW_delay_current4_carry__2_CO_UNCONNECTED[2],delay_current4_carry__2_n_2,delay_current4_carry__2_n_3}),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,frac_accum[14],1'b0}),
         .O({NLW_delay_current4_carry__2_O_UNCONNECTED[3],delay_current4_carry__2_n_5,delay_current4_carry__2_n_6,delay_current4_carry__2_n_7}),
@@ -593,432 +737,331 @@ module test_target_0_0_target
     delay_current4_carry_i_1
        (.I0(frac_accum[2]),
         .O(delay_current4_carry_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[0]_i_1 
-       (.I0(delay_current01_in[0]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[0]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[0]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hEEEE00F0)) 
-    \delay_current[10]_i_1 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[11]_i_2 
        (.I0(delay_current1_carry__1_n_3),
-        .I1(delay_current01_in[10]),
-        .I2(delay_current0[10]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[10]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFCAAFC)) 
-    \delay_current[11]_i_1 
+        .O(\delay_current[11]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[11]_i_3 
        (.I0(delay_current1_carry__1_n_3),
-        .I1(delay_current1__8),
-        .I2(delay_current0[11]),
-        .I3(moving_near_reg_n_0),
-        .I4(delay_current01_in[11]),
-        .O(\delay_current[11]_i_1_n_0 ));
+        .O(\delay_current[11]_i_3_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[11]_i_4 
-       (.I0(delay_current[11]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[11]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[11]_i_5 
-       (.I0(delay_current[10]),
-        .O(\delay_current[11]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \delay_current[11]_i_6 
-       (.I0(delay_current[9]),
-        .O(\delay_current[11]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \delay_current[11]_i_7 
-       (.I0(delay_current[8]),
-        .O(\delay_current[11]_i_7_n_0 ));
-  LUT5 #(
-    .INIT(32'h00EEF0EE)) 
-    \delay_current[12]_i_1 
-       (.I0(delay_current1__8),
-        .I1(delay_current0[12]),
-        .I2(delay_current01_in[12]),
-        .I3(moving_near_reg_n_0),
-        .I4(delay_current1_carry__1_n_3),
-        .O(\delay_current[12]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h00EEF0EE)) 
-    \delay_current[13]_i_1 
-       (.I0(delay_current1__8),
-        .I1(delay_current0[13]),
-        .I2(delay_current01_in[13]),
-        .I3(moving_near_reg_n_0),
-        .I4(delay_current1_carry__1_n_3),
-        .O(\delay_current[13]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hEEEE00F0)) 
-    \delay_current[14]_i_1 
        (.I0(delay_current1_carry__1_n_3),
-        .I1(delay_current01_in[14]),
-        .I2(delay_current0[14]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[14]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[15]_i_1 
-       (.I0(delay_current01_in[15]),
+        .O(\delay_current[11]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'hD)) 
+    \delay_current[11]_i_6 
+       (.I0(delay_current[11]),
         .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[15]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[15]_i_1_n_0 ));
+        .O(\delay_current[11]_i_6_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[11]_i_7 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[10]),
+        .O(\delay_current[11]_i_7_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[11]_i_8 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[9]),
+        .O(\delay_current[11]_i_8_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[11]_i_9 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[8]),
+        .O(\delay_current[11]_i_9_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[15]_i_2 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[15]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[15]_i_3 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[15]_i_3_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[15]_i_4 
-       (.I0(delay_current[15]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[15]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[15]_i_5 
-       (.I0(delay_current[14]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[15]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \delay_current[15]_i_6 
-       (.I0(delay_current[13]),
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[15]),
         .O(\delay_current[15]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \delay_current[15]_i_7 
-       (.I0(delay_current[12]),
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[14]),
         .O(\delay_current[15]_i_7_n_0 ));
-  LUT5 #(
-    .INIT(32'h00EEF0EE)) 
-    \delay_current[16]_i_1 
-       (.I0(delay_current1__8),
-        .I1(delay_current0[16]),
-        .I2(delay_current01_in[16]),
-        .I3(moving_near_reg_n_0),
-        .I4(delay_current1_carry__1_n_3),
-        .O(\delay_current[16]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'hD)) 
+    \delay_current[15]_i_8 
+       (.I0(delay_current[13]),
+        .I1(delay_current1_carry__1_n_3),
+        .O(\delay_current[15]_i_8_n_0 ));
+  LUT2 #(
+    .INIT(4'hD)) 
+    \delay_current[15]_i_9 
+       (.I0(delay_current[12]),
+        .I1(delay_current1_carry__1_n_3),
+        .O(\delay_current[15]_i_9_n_0 ));
+  LUT2 #(
+    .INIT(4'hD)) 
+    \delay_current[16]_i_2 
+       (.I0(delay_current[16]),
+        .I1(delay_current1_carry__1_n_3),
+        .O(\delay_current[16]_i_2_n_0 ));
+  LUT3 #(
+    .INIT(8'h21)) 
+    \delay_current[3]_i_10 
+       (.I0(p_0_in),
+        .I1(delay_current1_carry__1_n_3),
+        .I2(delay_current[0]),
+        .O(\delay_current[3]_i_10_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \delay_current[16]_i_4 
-       (.I0(delay_current[16]),
-        .O(\delay_current[16]_i_4_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[1]_i_1 
-       (.I0(delay_current01_in[1]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[1]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[1]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[2]_i_1 
-       (.I0(delay_current01_in[2]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[2]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[2]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[3]_i_1 
-       (.I0(delay_current01_in[3]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[3]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[3]_i_1_n_0 ));
+    \delay_current[3]_i_2 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[3]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[3]_i_3 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[3]_i_3_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[3]_i_4 
-       (.I0(delay_current[3]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[3]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[3]_i_5 
-       (.I0(delay_current[2]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[3]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \delay_current[3]_i_6 
-       (.I0(delay_current[1]),
+       (.I0(p_0_in),
+        .I1(delay_current1_carry__1_n_3),
         .O(\delay_current[3]_i_6_n_0 ));
   LUT2 #(
-    .INIT(4'h9)) 
+    .INIT(4'h1)) 
     \delay_current[3]_i_7 
-       (.I0(delay_current00),
-        .I1(delay_current[0]),
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[3]),
         .O(\delay_current[3]_i_7_n_0 ));
   LUT2 #(
-    .INIT(4'h6)) 
+    .INIT(4'h1)) 
     \delay_current[3]_i_8 
-       (.I0(delay_current[0]),
-        .I1(delay_current00),
-        .O(\delay_current[3]_i_8_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[4]_i_1 
-       (.I0(delay_current01_in[4]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[4]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[4]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hEEEE00F0)) 
-    \delay_current[5]_i_1 
        (.I0(delay_current1_carry__1_n_3),
-        .I1(delay_current01_in[5]),
-        .I2(delay_current0[5]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[5]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[6]_i_1 
-       (.I0(delay_current01_in[6]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[6]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[6]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h00EEF0EE)) 
-    \delay_current[7]_i_1 
-       (.I0(delay_current1__8),
-        .I1(delay_current0[7]),
-        .I2(delay_current01_in[7]),
-        .I3(moving_near_reg_n_0),
-        .I4(delay_current1_carry__1_n_3),
-        .O(\delay_current[7]_i_1_n_0 ));
+        .I1(delay_current[2]),
+        .O(\delay_current[3]_i_8_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[3]_i_9 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[1]),
+        .O(\delay_current[3]_i_9_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[7]_i_2 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[7]_i_2_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \delay_current[7]_i_3 
+       (.I0(delay_current1_carry__1_n_3),
+        .O(\delay_current[7]_i_3_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[7]_i_4 
-       (.I0(delay_current[7]),
+       (.I0(delay_current1_carry__1_n_3),
         .O(\delay_current[7]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \delay_current[7]_i_5 
-       (.I0(delay_current[6]),
-        .O(\delay_current[7]_i_5_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \delay_current[7]_i_6 
-       (.I0(delay_current[5]),
-        .O(\delay_current[7]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \delay_current[7]_i_7 
-       (.I0(delay_current[4]),
-        .O(\delay_current[7]_i_7_n_0 ));
-  LUT5 #(
-    .INIT(32'h222200F0)) 
-    \delay_current[8]_i_1 
-       (.I0(delay_current01_in[8]),
-        .I1(delay_current1_carry__1_n_3),
-        .I2(delay_current0[8]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[8]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hEEEE00F0)) 
-    \delay_current[9]_i_1 
        (.I0(delay_current1_carry__1_n_3),
-        .I1(delay_current01_in[9]),
-        .I2(delay_current0[9]),
-        .I3(delay_current1__8),
-        .I4(moving_near_reg_n_0),
-        .O(\delay_current[9]_i_1_n_0 ));
+        .O(\delay_current[7]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'hD)) 
+    \delay_current[7]_i_6 
+       (.I0(delay_current[7]),
+        .I1(delay_current1_carry__1_n_3),
+        .O(\delay_current[7]_i_6_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[7]_i_7 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[6]),
+        .O(\delay_current[7]_i_7_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[7]_i_8 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[5]),
+        .O(\delay_current[7]_i_8_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \delay_current[7]_i_9 
+       (.I0(delay_current1_carry__1_n_3),
+        .I1(delay_current[4]),
+        .O(\delay_current[7]_i_9_n_0 ));
   FDCE \delay_current_reg[0] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[0]_i_1_n_0 ),
+        .D(\delay_current_reg[3]_i_1_n_7 ),
         .Q(delay_current[0]));
   FDCE \delay_current_reg[10] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[10]_i_1_n_0 ),
+        .D(\delay_current_reg[11]_i_1_n_5 ),
         .Q(delay_current[10]));
   FDPE \delay_current_reg[11] 
        (.C(clk),
         .CE(sync_rise),
-        .D(\delay_current[11]_i_1_n_0 ),
+        .D(\delay_current_reg[11]_i_1_n_4 ),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_current[11]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[11]_i_2 
-       (.CI(\delay_current_reg[7]_i_2_n_0 ),
-        .CO({\delay_current_reg[11]_i_2_n_0 ,\delay_current_reg[11]_i_2_n_1 ,\delay_current_reg[11]_i_2_n_2 ,\delay_current_reg[11]_i_2_n_3 }),
+  CARRY4 \delay_current_reg[11]_i_1 
+       (.CI(\delay_current_reg[7]_i_1_n_0 ),
+        .CO({\delay_current_reg[11]_i_1_n_0 ,\delay_current_reg[11]_i_1_n_1 ,\delay_current_reg[11]_i_1_n_2 ,\delay_current_reg[11]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(delay_current0[11:8]),
-        .S(delay_current[11:8]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[11]_i_3 
-       (.CI(\delay_current_reg[7]_i_3_n_0 ),
-        .CO({\delay_current_reg[11]_i_3_n_0 ,\delay_current_reg[11]_i_3_n_1 ,\delay_current_reg[11]_i_3_n_2 ,\delay_current_reg[11]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI(delay_current[11:8]),
-        .O(delay_current01_in[11:8]),
-        .S({\delay_current[11]_i_4_n_0 ,\delay_current[11]_i_5_n_0 ,\delay_current[11]_i_6_n_0 ,\delay_current[11]_i_7_n_0 }));
+        .DI({\delay_current[11]_i_2_n_0 ,\delay_current[11]_i_3_n_0 ,\delay_current[11]_i_4_n_0 ,\delay_current[11]_i_5_n_0 }),
+        .O({\delay_current_reg[11]_i_1_n_4 ,\delay_current_reg[11]_i_1_n_5 ,\delay_current_reg[11]_i_1_n_6 ,\delay_current_reg[11]_i_1_n_7 }),
+        .S({\delay_current[11]_i_6_n_0 ,\delay_current[11]_i_7_n_0 ,\delay_current[11]_i_8_n_0 ,\delay_current[11]_i_9_n_0 }));
   FDPE \delay_current_reg[12] 
        (.C(clk),
         .CE(sync_rise),
-        .D(\delay_current[12]_i_1_n_0 ),
+        .D(\delay_current_reg[15]_i_1_n_7 ),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_current[12]));
   FDPE \delay_current_reg[13] 
        (.C(clk),
         .CE(sync_rise),
-        .D(\delay_current[13]_i_1_n_0 ),
+        .D(\delay_current_reg[15]_i_1_n_6 ),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_current[13]));
   FDCE \delay_current_reg[14] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[14]_i_1_n_0 ),
+        .D(\delay_current_reg[15]_i_1_n_5 ),
         .Q(delay_current[14]));
   FDCE \delay_current_reg[15] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[15]_i_1_n_0 ),
+        .D(\delay_current_reg[15]_i_1_n_4 ),
         .Q(delay_current[15]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[15]_i_2 
-       (.CI(\delay_current_reg[11]_i_3_n_0 ),
-        .CO({\delay_current_reg[15]_i_2_n_0 ,\delay_current_reg[15]_i_2_n_1 ,\delay_current_reg[15]_i_2_n_2 ,\delay_current_reg[15]_i_2_n_3 }),
+  CARRY4 \delay_current_reg[15]_i_1 
+       (.CI(\delay_current_reg[11]_i_1_n_0 ),
+        .CO({\delay_current_reg[15]_i_1_n_0 ,\delay_current_reg[15]_i_1_n_1 ,\delay_current_reg[15]_i_1_n_2 ,\delay_current_reg[15]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(delay_current[15:12]),
-        .O(delay_current01_in[15:12]),
-        .S({\delay_current[15]_i_4_n_0 ,\delay_current[15]_i_5_n_0 ,\delay_current[15]_i_6_n_0 ,\delay_current[15]_i_7_n_0 }));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[15]_i_3 
-       (.CI(\delay_current_reg[11]_i_2_n_0 ),
-        .CO({\delay_current_reg[15]_i_3_n_0 ,\delay_current_reg[15]_i_3_n_1 ,\delay_current_reg[15]_i_3_n_2 ,\delay_current_reg[15]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(delay_current0[15:12]),
-        .S(delay_current[15:12]));
+        .DI({\delay_current[15]_i_2_n_0 ,\delay_current[15]_i_3_n_0 ,\delay_current[15]_i_4_n_0 ,\delay_current[15]_i_5_n_0 }),
+        .O({\delay_current_reg[15]_i_1_n_4 ,\delay_current_reg[15]_i_1_n_5 ,\delay_current_reg[15]_i_1_n_6 ,\delay_current_reg[15]_i_1_n_7 }),
+        .S({\delay_current[15]_i_6_n_0 ,\delay_current[15]_i_7_n_0 ,\delay_current[15]_i_8_n_0 ,\delay_current[15]_i_9_n_0 }));
   FDPE \delay_current_reg[16] 
        (.C(clk),
         .CE(sync_rise),
-        .D(\delay_current[16]_i_1_n_0 ),
+        .D(\delay_current_reg[16]_i_1_n_7 ),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_current[16]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[16]_i_2 
-       (.CI(\delay_current_reg[15]_i_3_n_0 ),
-        .CO(\NLW_delay_current_reg[16]_i_2_CO_UNCONNECTED [3:0]),
+  CARRY4 \delay_current_reg[16]_i_1 
+       (.CI(\delay_current_reg[15]_i_1_n_0 ),
+        .CO(\NLW_delay_current_reg[16]_i_1_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_delay_current_reg[16]_i_2_O_UNCONNECTED [3:1],delay_current0[16]}),
-        .S({1'b0,1'b0,1'b0,delay_current[16]}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[16]_i_3 
-       (.CI(\delay_current_reg[15]_i_2_n_0 ),
-        .CO(\NLW_delay_current_reg[16]_i_3_CO_UNCONNECTED [3:0]),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_delay_current_reg[16]_i_3_O_UNCONNECTED [3:1],delay_current01_in[16]}),
-        .S({1'b0,1'b0,1'b0,\delay_current[16]_i_4_n_0 }));
+        .O({\NLW_delay_current_reg[16]_i_1_O_UNCONNECTED [3:1],\delay_current_reg[16]_i_1_n_7 }),
+        .S({1'b0,1'b0,1'b0,\delay_current[16]_i_2_n_0 }));
   FDCE \delay_current_reg[1] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[1]_i_1_n_0 ),
+        .D(\delay_current_reg[3]_i_1_n_6 ),
         .Q(delay_current[1]));
   FDCE \delay_current_reg[2] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[2]_i_1_n_0 ),
+        .D(\delay_current_reg[3]_i_1_n_5 ),
         .Q(delay_current[2]));
   FDCE \delay_current_reg[3] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[3]_i_1_n_0 ),
+        .D(\delay_current_reg[3]_i_1_n_4 ),
         .Q(delay_current[3]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[3]_i_2 
+  CARRY4 \delay_current_reg[3]_i_1 
        (.CI(1'b0),
-        .CO({\delay_current_reg[3]_i_2_n_0 ,\delay_current_reg[3]_i_2_n_1 ,\delay_current_reg[3]_i_2_n_2 ,\delay_current_reg[3]_i_2_n_3 }),
-        .CYINIT(1'b1),
-        .DI(delay_current[3:0]),
-        .O(delay_current01_in[3:0]),
-        .S({\delay_current[3]_i_4_n_0 ,\delay_current[3]_i_5_n_0 ,\delay_current[3]_i_6_n_0 ,\delay_current[3]_i_7_n_0 }));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[3]_i_3 
-       (.CI(1'b0),
-        .CO({\delay_current_reg[3]_i_3_n_0 ,\delay_current_reg[3]_i_3_n_1 ,\delay_current_reg[3]_i_3_n_2 ,\delay_current_reg[3]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,delay_current[0]}),
-        .O(delay_current0[3:0]),
-        .S({delay_current[3:1],\delay_current[3]_i_8_n_0 }));
+        .CO({\delay_current_reg[3]_i_1_n_0 ,\delay_current_reg[3]_i_1_n_1 ,\delay_current_reg[3]_i_1_n_2 ,\delay_current_reg[3]_i_1_n_3 }),
+        .CYINIT(\delay_current[3]_i_2_n_0 ),
+        .DI({\delay_current[3]_i_3_n_0 ,\delay_current[3]_i_4_n_0 ,\delay_current[3]_i_5_n_0 ,\delay_current[3]_i_6_n_0 }),
+        .O({\delay_current_reg[3]_i_1_n_4 ,\delay_current_reg[3]_i_1_n_5 ,\delay_current_reg[3]_i_1_n_6 ,\delay_current_reg[3]_i_1_n_7 }),
+        .S({\delay_current[3]_i_7_n_0 ,\delay_current[3]_i_8_n_0 ,\delay_current[3]_i_9_n_0 ,\delay_current[3]_i_10_n_0 }));
   FDCE \delay_current_reg[4] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[4]_i_1_n_0 ),
+        .D(\delay_current_reg[7]_i_1_n_7 ),
         .Q(delay_current[4]));
   FDCE \delay_current_reg[5] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[5]_i_1_n_0 ),
+        .D(\delay_current_reg[7]_i_1_n_6 ),
         .Q(delay_current[5]));
   FDCE \delay_current_reg[6] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[6]_i_1_n_0 ),
+        .D(\delay_current_reg[7]_i_1_n_5 ),
         .Q(delay_current[6]));
   FDPE \delay_current_reg[7] 
        (.C(clk),
         .CE(sync_rise),
-        .D(\delay_current[7]_i_1_n_0 ),
+        .D(\delay_current_reg[7]_i_1_n_4 ),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_current[7]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[7]_i_2 
-       (.CI(\delay_current_reg[3]_i_3_n_0 ),
-        .CO({\delay_current_reg[7]_i_2_n_0 ,\delay_current_reg[7]_i_2_n_1 ,\delay_current_reg[7]_i_2_n_2 ,\delay_current_reg[7]_i_2_n_3 }),
+  CARRY4 \delay_current_reg[7]_i_1 
+       (.CI(\delay_current_reg[3]_i_1_n_0 ),
+        .CO({\delay_current_reg[7]_i_1_n_0 ,\delay_current_reg[7]_i_1_n_1 ,\delay_current_reg[7]_i_1_n_2 ,\delay_current_reg[7]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(delay_current0[7:4]),
-        .S(delay_current[7:4]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \delay_current_reg[7]_i_3 
-       (.CI(\delay_current_reg[3]_i_2_n_0 ),
-        .CO({\delay_current_reg[7]_i_3_n_0 ,\delay_current_reg[7]_i_3_n_1 ,\delay_current_reg[7]_i_3_n_2 ,\delay_current_reg[7]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI(delay_current[7:4]),
-        .O(delay_current01_in[7:4]),
-        .S({\delay_current[7]_i_4_n_0 ,\delay_current[7]_i_5_n_0 ,\delay_current[7]_i_6_n_0 ,\delay_current[7]_i_7_n_0 }));
+        .DI({\delay_current[7]_i_2_n_0 ,\delay_current[7]_i_3_n_0 ,\delay_current[7]_i_4_n_0 ,\delay_current[7]_i_5_n_0 }),
+        .O({\delay_current_reg[7]_i_1_n_4 ,\delay_current_reg[7]_i_1_n_5 ,\delay_current_reg[7]_i_1_n_6 ,\delay_current_reg[7]_i_1_n_7 }),
+        .S({\delay_current[7]_i_6_n_0 ,\delay_current[7]_i_7_n_0 ,\delay_current[7]_i_8_n_0 ,\delay_current[7]_i_9_n_0 }));
   FDCE \delay_current_reg[8] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[8]_i_1_n_0 ),
+        .D(\delay_current_reg[11]_i_1_n_7 ),
         .Q(delay_current[8]));
   FDCE \delay_current_reg[9] 
        (.C(clk),
         .CE(sync_rise),
         .CLR(pulse_target_i_2_n_0),
-        .D(\delay_current[9]_i_1_n_0 ),
+        .D(\delay_current_reg[11]_i_1_n_6 ),
         .Q(delay_current[9]));
   FDCE \delay_latched_reg[0] 
        (.C(clk),
@@ -1538,321 +1581,6 @@ module test_target_0_0_target
         .CLR(pulse_target_i_2_n_0),
         .D(\frame_cnt_reg[8]_i_1_n_6 ),
         .Q(frame_cnt_reg[9]));
-  LUT2 #(
-    .INIT(4'hE)) 
-    i__carry__0_i_1
-       (.I0(delay_current[14]),
-        .I1(delay_current[15]),
-        .O(i__carry__0_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
-    i__carry__0_i_2
-       (.I0(delay_current[10]),
-        .I1(delay_current[11]),
-        .O(i__carry__0_i_2_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
-    i__carry__0_i_3
-       (.I0(delay_current[8]),
-        .I1(delay_current[9]),
-        .O(i__carry__0_i_3_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    i__carry__0_i_4
-       (.I0(delay_current[14]),
-        .I1(delay_current[15]),
-        .O(i__carry__0_i_4_n_0));
-  LUT2 #(
-    .INIT(4'h8)) 
-    i__carry__0_i_5
-       (.I0(delay_current[12]),
-        .I1(delay_current[13]),
-        .O(i__carry__0_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    i__carry__0_i_6
-       (.I0(delay_current[11]),
-        .I1(delay_current[10]),
-        .O(i__carry__0_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    i__carry__0_i_7
-       (.I0(delay_current[8]),
-        .I1(delay_current[9]),
-        .O(i__carry__0_i_7_n_0));
-  LUT3 #(
-    .INIT(8'hE0)) 
-    i__carry_i_1
-       (.I0(delay_current00),
-        .I1(delay_current[6]),
-        .I2(delay_current[7]),
-        .O(i__carry_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    i__carry_i_1__0
-       (.I0(frame_cnt_reg[7]),
-        .I1(delay_latched[7]),
-        .O(i__carry_i_1__0_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_1__1
-       (.I0(frame_cnt_reg[15]),
-        .I1(delay_latched[15]),
-        .O(i__carry_i_1__1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_1__2
-       (.I0(frame_cnt_reg[3]),
-        .I1(delay_latched[3]),
-        .O(i__carry_i_1__2_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_1__3
-       (.I0(frame_cnt_reg[10]),
-        .I1(delay_latched[10]),
-        .O(i__carry_i_1__3_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_1__4
-       (.I0(frame_cnt_reg[14]),
-        .I1(delay_latched[14]),
-        .O(i__carry_i_1__4_n_0));
-  LUT3 #(
-    .INIT(8'h0E)) 
-    i__carry_i_2
-       (.I0(delay_current[5]),
-        .I1(delay_current[4]),
-        .I2(delay_current00),
-        .O(i__carry_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_2__0
-       (.I0(delay_latched[6]),
-        .I1(frame_cnt_reg[6]),
-        .O(i__carry_i_2__0_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_2__1
-       (.I0(frame_cnt_reg[9]),
-        .I1(delay_latched[9]),
-        .O(i__carry_i_2__1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_2__2
-       (.I0(frame_cnt_reg[2]),
-        .I1(delay_latched[2]),
-        .O(i__carry_i_2__2_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_2__3
-       (.I0(frame_cnt_reg[16]),
-        .I1(delay_latched[16]),
-        .O(i__carry_i_2__3_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_2__4
-       (.I0(frame_cnt_reg[13]),
-        .I1(delay_latched[13]),
-        .O(i__carry_i_2__4_n_0));
-  LUT3 #(
-    .INIT(8'h0E)) 
-    i__carry_i_3
-       (.I0(delay_current[3]),
-        .I1(delay_current[2]),
-        .I2(delay_current00),
-        .O(i__carry_i_3_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    i__carry_i_3__0
-       (.I0(delay_latched[4]),
-        .O(i__carry_i_3__0_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_3__1
-       (.I0(delay_latched[15]),
-        .I1(frame_cnt_reg[15]),
-        .I2(frame_cnt_reg[16]),
-        .I3(delay_latched[16]),
-        .O(i__carry_i_3__1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_3__2
-       (.I0(frame_cnt_reg[1]),
-        .I1(delay_latched[1]),
-        .O(i__carry_i_3__2_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_3__3
-       (.I0(frame_cnt_reg[8]),
-        .I1(delay_latched[8]),
-        .O(i__carry_i_3__3_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_3__4
-       (.I0(frame_cnt_reg[12]),
-        .I1(delay_latched[12]),
-        .O(i__carry_i_3__4_n_0));
-  LUT3 #(
-    .INIT(8'h0E)) 
-    i__carry_i_4
-       (.I0(delay_current[1]),
-        .I1(delay_current[0]),
-        .I2(delay_current00),
-        .O(i__carry_i_4_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_4__0
-       (.I0(frame_cnt_reg[7]),
-        .I1(delay_latched[7]),
-        .O(i__carry_i_4__0_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    i__carry_i_4__1
-       (.I0(frame_cnt_reg[11]),
-        .I1(delay_latched[11]),
-        .O(i__carry_i_4__1_n_0));
-  LUT4 #(
-    .INIT(16'h6966)) 
-    i__carry_i_4__2
-       (.I0(frame_cnt_reg[7]),
-        .I1(delay_latched[7]),
-        .I2(delay_latched[6]),
-        .I3(frame_cnt_reg[6]),
-        .O(i__carry_i_4__2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_4__3
-       (.I0(frame_cnt_reg[0]),
-        .I1(delay_latched[0]),
-        .O(i__carry_i_4__3_n_0));
-  LUT3 #(
-    .INIT(8'h18)) 
-    i__carry_i_5
-       (.I0(delay_current[6]),
-        .I1(delay_current00),
-        .I2(delay_current[7]),
-        .O(i__carry_i_5_n_0));
-  LUT4 #(
-    .INIT(16'h2DD2)) 
-    i__carry_i_5__0
-       (.I0(delay_latched[5]),
-        .I1(frame_cnt_reg[5]),
-        .I2(frame_cnt_reg[6]),
-        .I3(delay_latched[6]),
-        .O(i__carry_i_5__0_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_5__1
-       (.I0(delay_latched[10]),
-        .I1(frame_cnt_reg[10]),
-        .I2(frame_cnt_reg[11]),
-        .I3(delay_latched[11]),
-        .O(i__carry_i_5__1_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_5__2
-       (.I0(delay_latched[14]),
-        .I1(frame_cnt_reg[14]),
-        .I2(frame_cnt_reg[15]),
-        .I3(delay_latched[15]),
-        .O(i__carry_i_5__2_n_0));
-  LUT3 #(
-    .INIT(8'h81)) 
-    i__carry_i_6
-       (.I0(delay_current00),
-        .I1(delay_current[4]),
-        .I2(delay_current[5]),
-        .O(i__carry_i_6_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    i__carry_i_6__0
-       (.I0(frame_cnt_reg[5]),
-        .I1(delay_latched[5]),
-        .I2(delay_latched[4]),
-        .O(i__carry_i_6__0_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_6__1
-       (.I0(delay_latched[9]),
-        .I1(frame_cnt_reg[9]),
-        .I2(frame_cnt_reg[10]),
-        .I3(delay_latched[10]),
-        .O(i__carry_i_6__1_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_6__2
-       (.I0(delay_latched[13]),
-        .I1(frame_cnt_reg[13]),
-        .I2(frame_cnt_reg[14]),
-        .I3(delay_latched[14]),
-        .O(i__carry_i_6__2_n_0));
-  LUT3 #(
-    .INIT(8'h81)) 
-    i__carry_i_7
-       (.I0(delay_current00),
-        .I1(delay_current[2]),
-        .I2(delay_current[3]),
-        .O(i__carry_i_7_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    i__carry_i_7__0
-       (.I0(frame_cnt_reg[4]),
-        .I1(delay_latched[4]),
-        .O(i__carry_i_7__0_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_7__1
-       (.I0(delay_latched[8]),
-        .I1(frame_cnt_reg[8]),
-        .I2(frame_cnt_reg[9]),
-        .I3(delay_latched[9]),
-        .O(i__carry_i_7__1_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_7__2
-       (.I0(delay_latched[12]),
-        .I1(frame_cnt_reg[12]),
-        .I2(frame_cnt_reg[13]),
-        .I3(delay_latched[13]),
-        .O(i__carry_i_7__2_n_0));
-  LUT3 #(
-    .INIT(8'h81)) 
-    i__carry_i_8
-       (.I0(delay_current[0]),
-        .I1(delay_current00),
-        .I2(delay_current[1]),
-        .O(i__carry_i_8_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_8__0
-       (.I0(delay_latched[7]),
-        .I1(frame_cnt_reg[7]),
-        .I2(frame_cnt_reg[8]),
-        .I3(delay_latched[8]),
-        .O(i__carry_i_8__0_n_0));
-  LUT4 #(
-    .INIT(16'hD22D)) 
-    i__carry_i_8__1
-       (.I0(delay_latched[11]),
-        .I1(frame_cnt_reg[11]),
-        .I2(frame_cnt_reg[12]),
-        .I3(delay_latched[12]),
-        .O(i__carry_i_8__1_n_0));
-  LUT5 #(
-    .INIT(32'hCCCC2ECC)) 
-    moving_near_i_1
-       (.I0(delay_current1__8),
-        .I1(moving_near_reg_n_0),
-        .I2(delay_current1_carry__1_n_3),
-        .I3(r0_YB),
-        .I4(r0_yb_d),
-        .O(moving_near_i_1_n_0));
-  FDPE moving_near_reg
-       (.C(clk),
-        .CE(1'b1),
-        .D(moving_near_i_1_n_0),
-        .PRE(pulse_target_i_2_n_0),
-        .Q(moving_near_reg_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 pulse_target2_carry
        (.CI(1'b0),
@@ -1936,7 +1664,7 @@ module test_target_0_0_target
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 pulse_target2_carry__1
        (.CI(pulse_target2_carry__0_n_0),
-        .CO({NLW_pulse_target2_carry__1_CO_UNCONNECTED[3:1],pulse_target2__9}),
+        .CO({NLW_pulse_target2_carry__1_CO_UNCONNECTED[3:1],pulse_target2}),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,pulse_target2_carry__1_i_1_n_0}),
         .O(NLW_pulse_target2_carry__1_O_UNCONNECTED[3:0]),
@@ -2020,9 +1748,9 @@ module test_target_0_0_target
   LUT3 #(
     .INIT(8'h40)) 
     pulse_target_i_1
-       (.I0(\_inferred__0/i__carry__3_n_2 ),
+       (.I0(_carry__3_n_2),
         .I1(frame_active_reg_n_0),
-        .I2(pulse_target2__9),
+        .I2(pulse_target2),
         .O(pulse_target0));
   LUT1 #(
     .INIT(2'h1)) 

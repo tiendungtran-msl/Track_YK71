@@ -60,7 +60,6 @@ module test_pulse_gen_0_0 (
   rst_n,
   r0_YB,
   spd_width,
-  time_dis,
   pulse_delay,
   pulse_show_cen,
   pulse_r,
@@ -83,7 +82,6 @@ input wire clk;
 input wire rst_n;
 input wire r0_YB;
 input wire [31 : 0] spd_width;
-output wire [31 : 0] time_dis;
 output wire pulse_delay;
 output wire pulse_show_cen;
 output wire pulse_r;
@@ -106,7 +104,6 @@ output wire r0_YBK;
     .rst_n(rst_n),
     .r0_YB(r0_YB),
     .spd_width(spd_width),
-    .time_dis(time_dis),
     .pulse_delay(pulse_delay),
     .pulse_show_cen(pulse_show_cen),
     .pulse_r(pulse_r),

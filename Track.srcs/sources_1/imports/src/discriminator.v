@@ -30,8 +30,7 @@ module discriminator (
     // Kết quả đo lường (Xuất ở miền 400MHz, ổn định đến PRI tiếp theo)
     output reg signed [31:0] error,        
     output reg        [31:0] overlap1_cnt, 
-    output reg        [31:0] overlap2_cnt,
-    output wire              valid         // Cờ (1 chu kỳ clk_fast) báo kết quả mới
+    output reg        [31:0] overlap2_cnt
 );
 
     // =========================================================================
@@ -106,8 +105,6 @@ module discriminator (
     // =========================================================================
     reg [31:0] cnt1, cnt2;
     reg        valid_reg;
-
-    assign valid = valid_reg;
 
     always @(posedge clk_fast or negedge rst_n) begin
         if (!rst_n) begin

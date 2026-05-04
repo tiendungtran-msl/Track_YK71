@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Mon May  4 09:21:49 2026
+-- Date        : Mon May  4 10:27:20 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_discriminator_0_0/test_discriminator_0_0_sim_netlist.vhdl
@@ -20,7 +20,6 @@ entity test_discriminator_0_0_discriminator is
     error : out STD_LOGIC_VECTOR ( 31 downto 0 );
     overlap1_cnt : out STD_LOGIC_VECTOR ( 31 downto 0 );
     overlap2_cnt : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    valid : out STD_LOGIC;
     clk_fast : in STD_LOGIC;
     r_GM : in STD_LOGIC;
     strobe_2 : in STD_LOGIC;
@@ -3103,14 +3102,6 @@ error0_carry_i_4: unisim.vcomponents.LUT2
       D => \p_0_in__0\(1),
       Q => tgt_s
     );
-valid_reg_reg: unisim.vcomponents.FDCE
-     port map (
-      C => clk_fast,
-      CE => '1',
-      CLR => \error[31]_i_2_n_0\,
-      D => window_finish,
-      Q => valid
-    );
 \win_cnt[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"0D"
@@ -3424,8 +3415,7 @@ entity test_discriminator_0_0 is
     pulse_target : in STD_LOGIC;
     error : out STD_LOGIC_VECTOR ( 31 downto 0 );
     overlap1_cnt : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    overlap2_cnt : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    valid : out STD_LOGIC
+    overlap2_cnt : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of test_discriminator_0_0 : entity is true;
@@ -3457,7 +3447,6 @@ inst: entity work.test_discriminator_0_0_discriminator
       r_GM => r_GM,
       rst_n => rst_n,
       strobe_1 => strobe_1,
-      strobe_2 => strobe_2,
-      valid => valid
+      strobe_2 => strobe_2
     );
 end STRUCTURE;

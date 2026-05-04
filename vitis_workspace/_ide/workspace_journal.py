@@ -30,3 +30,9 @@ status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../test_wrapper.
 
 status = platform.build()
 
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../test_wrapper.xsa")
+
+status = platform.build()
+
+vitis.dispose()
+

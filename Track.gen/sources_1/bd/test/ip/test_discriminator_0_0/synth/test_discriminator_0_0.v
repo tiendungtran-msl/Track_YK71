@@ -64,8 +64,7 @@ module test_discriminator_0_0 (
   pulse_target,
   error,
   overlap1_cnt,
-  overlap2_cnt,
-  valid
+  overlap2_cnt
 );
 
 input wire clk_fast;
@@ -80,7 +79,6 @@ input wire pulse_target;
 output wire [31 : 0] error;
 output wire [31 : 0] overlap1_cnt;
 output wire [31 : 0] overlap2_cnt;
-output wire valid;
 
   discriminator inst (
     .clk_fast(clk_fast),
@@ -91,7 +89,6 @@ output wire valid;
     .pulse_target(pulse_target),
     .error(error),
     .overlap1_cnt(overlap1_cnt),
-    .overlap2_cnt(overlap2_cnt),
-    .valid(valid)
+    .overlap2_cnt(overlap2_cnt)
   );
 endmodule

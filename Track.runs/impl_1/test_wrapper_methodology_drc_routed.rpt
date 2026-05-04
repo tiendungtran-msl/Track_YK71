@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon May  4 09:25:37 2026
+| Date         : Mon May  4 10:31:01 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file test_wrapper_methodology_drc_routed.rpt -pb test_wrapper_methodology_drc_routed.pb -rpx test_wrapper_methodology_drc_routed.rpx
 | Design       : test_wrapper
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 47
+             Checks found: 51
 +-----------+------------------+----------------------------------------------------+--------+
 | Rule      | Severity         | Description                                        | Checks |
 +-----------+------------------+----------------------------------------------------+--------+
@@ -31,7 +31,7 @@ Table of Contents
 | TIMING-6  | Critical Warning | No common primary clock between related clocks     | 2      |
 | TIMING-7  | Critical Warning | No common node between related clocks              | 2      |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1      |
-| TIMING-16 | Warning          | Large setup violation                              | 35     |
+| TIMING-16 | Warning          | Large setup violation                              | 39     |
 | TIMING-18 | Warning          | Missing input or output delay                      | 6      |
 +-----------+------------------+----------------------------------------------------+--------+
 
@@ -69,177 +69,197 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.564 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[6]/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/stb2_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.002 ns between test_i/target_0/inst/frac_accum_reg[6]/C (clocked by clk_fpga_0) and test_i/target_0/inst/delay_current_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.624 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[9]/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/r_gm_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.078 ns between test_i/target_0/inst/frac_accum_reg[6]/C (clocked by clk_fpga_0) and test_i/target_0/inst/delay_current_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.629 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[8]/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/stb1_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.086 ns between test_i/target_0/inst/frac_accum_reg[6]/C (clocked by clk_fpga_0) and test_i/target_0/inst/delay_current_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.979 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.099 ns between test_i/target_0/inst/frac_accum_reg[6]/C (clocked by clk_fpga_0) and test_i/target_0/inst/delay_current_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -1.981 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.429 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[9]_replica_2/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/r_gm_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -2.034 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.475 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[5]_replica/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/stb1_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -2.047 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[28]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.493 ns between test_i/pulse_gen_0/inst/spd_width_latch_reg[3]_replica_2/C (clocked by clk_fpga_0) and test_i/discriminator_0/inst/stb2_ff_reg[0]/D (clocked by clk_out1_test_clk_wiz_0_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -2.058 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.995 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[27]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -2.078 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[31]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.050 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[20]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -2.126 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.054 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -2.133 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.057 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -2.135 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.058 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[28]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -2.155 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.090 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[26]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -2.157 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.138 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[29]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -2.163 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.148 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[18]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -2.179 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.150 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[30]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -2.248 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.152 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[31]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -2.249 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.155 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -2.251 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.155 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[21]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -2.296 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[19]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.182 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[17]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -2.296 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[30]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.228 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[5]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -2.298 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.230 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[3]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -2.298 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[29]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.231 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -2.383 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[27]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.247 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[14]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#25 Warning
 Large setup violation  
-There is a large setup violation of -2.387 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.247 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[2]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#26 Warning
 Large setup violation  
-There is a large setup violation of -2.387 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[22]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.286 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[23]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#27 Warning
 Large setup violation  
-There is a large setup violation of -2.452 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.295 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[11]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#28 Warning
 Large setup violation  
-There is a large setup violation of -2.485 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[9]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.297 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[1]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#29 Warning
 Large setup violation  
-There is a large setup violation of -2.488 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.345 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[24]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#30 Warning
 Large setup violation  
-There is a large setup violation of -2.513 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.411 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[12]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#31 Warning
 Large setup violation  
-There is a large setup violation of -2.520 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.460 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[15]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#32 Warning
 Large setup violation  
-There is a large setup violation of -2.521 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.589 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#33 Warning
 Large setup violation  
-There is a large setup violation of -2.524 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.623 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#34 Warning
 Large setup violation  
-There is a large setup violation of -2.582 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[4]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.626 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[13]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#35 Warning
 Large setup violation  
-There is a large setup violation of -2.763 ns between test_i/discriminator_0/inst/error_reg[1]/C (clocked by clk_out1_test_clk_wiz_0_0) and test_i/controller_0/inst/spd_width_reg[0]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.638 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[6]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -2.671 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[7]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -2.704 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[10]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -2.736 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[16]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -2.744 ns between test_i/controller_0/inst/corr_residual_reg[1]/C (clocked by clk_fpga_0) and test_i/controller_0/inst/spd_width_reg[8]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

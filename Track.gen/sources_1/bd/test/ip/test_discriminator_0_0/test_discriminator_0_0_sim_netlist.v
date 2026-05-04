@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-// Date        : Mon May  4 09:21:49 2026
+// Date        : Mon May  4 10:27:20 2026
 // Host        : MSN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_discriminator_0_0/test_discriminator_0_0_sim_netlist.v
@@ -25,8 +25,7 @@ module test_discriminator_0_0
     pulse_target,
     error,
     overlap1_cnt,
-    overlap2_cnt,
-    valid);
+    overlap2_cnt);
   input clk_fast;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
   input r_GM;
@@ -36,7 +35,6 @@ module test_discriminator_0_0
   output [31:0]error;
   output [31:0]overlap1_cnt;
   output [31:0]overlap2_cnt;
-  output valid;
 
   wire clk_fast;
   wire [31:0]error;
@@ -47,7 +45,6 @@ module test_discriminator_0_0
   wire rst_n;
   wire strobe_1;
   wire strobe_2;
-  wire valid;
 
   test_discriminator_0_0_discriminator inst
        (.clk_fast(clk_fast),
@@ -58,8 +55,7 @@ module test_discriminator_0_0
         .r_GM(r_GM),
         .rst_n(rst_n),
         .strobe_1(strobe_1),
-        .strobe_2(strobe_2),
-        .valid(valid));
+        .strobe_2(strobe_2));
 endmodule
 
 (* ORIG_REF_NAME = "discriminator" *) 
@@ -67,7 +63,6 @@ module test_discriminator_0_0_discriminator
    (error,
     overlap1_cnt,
     overlap2_cnt,
-    valid,
     clk_fast,
     r_GM,
     strobe_2,
@@ -77,7 +72,6 @@ module test_discriminator_0_0_discriminator
   output [31:0]error;
   output [31:0]overlap1_cnt;
   output [31:0]overlap2_cnt;
-  output valid;
   input clk_fast;
   input r_GM;
   input strobe_2;
@@ -365,7 +359,6 @@ module test_discriminator_0_0_discriminator
   wire strobe_1;
   wire strobe_2;
   wire tgt_s;
-  wire valid;
   wire \win_cnt[5]_i_2_n_0 ;
   wire \win_cnt[9]_i_1_n_0 ;
   wire \win_cnt[9]_i_3_n_0 ;
@@ -2268,12 +2261,6 @@ module test_discriminator_0_0_discriminator
         .CLR(\error[31]_i_2_n_0 ),
         .D(p_0_in__0),
         .Q(tgt_s));
-  FDCE valid_reg_reg
-       (.C(clk_fast),
-        .CE(1'b1),
-        .CLR(\error[31]_i_2_n_0 ),
-        .D(window_finish),
-        .Q(valid));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h0D)) 

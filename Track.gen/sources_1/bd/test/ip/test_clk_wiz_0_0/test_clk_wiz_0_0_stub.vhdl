@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Mon May  4 09:21:47 2026
+-- Date        : Mon May  4 09:21:46 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top test_clk_wiz_0_0 -prefix
+--               test_clk_wiz_0_0_ test_clk_wiz_0_0_stub.vhdl
 -- Design      : test_clk_wiz_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

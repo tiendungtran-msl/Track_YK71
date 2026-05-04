@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Mon May  4 08:19:45 2026
+-- Date        : Mon May  4 10:27:19 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_sim_netlist.vhdl
@@ -27,29 +27,55 @@ entity test_target_0_0_target is
 end test_target_0_0_target;
 
 architecture STRUCTURE of test_target_0_0_target is
-  signal \_inferred__0/i__carry__0_n_0\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__0_n_1\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__0_n_2\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__0_n_3\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__1_n_0\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__1_n_1\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__1_n_2\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__1_n_3\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__2_n_0\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__2_n_1\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__2_n_2\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__2_n_3\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__3_n_2\ : STD_LOGIC;
-  signal \_inferred__0/i__carry__3_n_3\ : STD_LOGIC;
-  signal \_inferred__0/i__carry_n_0\ : STD_LOGIC;
-  signal \_inferred__0/i__carry_n_1\ : STD_LOGIC;
-  signal \_inferred__0/i__carry_n_2\ : STD_LOGIC;
-  signal \_inferred__0/i__carry_n_3\ : STD_LOGIC;
+  signal \_carry__0_i_1_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_2_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_3_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_4_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_5_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_6_n_0\ : STD_LOGIC;
+  signal \_carry__0_i_7_n_0\ : STD_LOGIC;
+  signal \_carry__0_n_0\ : STD_LOGIC;
+  signal \_carry__0_n_1\ : STD_LOGIC;
+  signal \_carry__0_n_2\ : STD_LOGIC;
+  signal \_carry__0_n_3\ : STD_LOGIC;
+  signal \_carry__1_i_1_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_2_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_3_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_4_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_5_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_6_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_7_n_0\ : STD_LOGIC;
+  signal \_carry__1_i_8_n_0\ : STD_LOGIC;
+  signal \_carry__1_n_0\ : STD_LOGIC;
+  signal \_carry__1_n_1\ : STD_LOGIC;
+  signal \_carry__1_n_2\ : STD_LOGIC;
+  signal \_carry__1_n_3\ : STD_LOGIC;
+  signal \_carry__2_i_1_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_2_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_3_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_4_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_5_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_6_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_7_n_0\ : STD_LOGIC;
+  signal \_carry__2_i_8_n_0\ : STD_LOGIC;
+  signal \_carry__2_n_0\ : STD_LOGIC;
+  signal \_carry__2_n_1\ : STD_LOGIC;
+  signal \_carry__2_n_2\ : STD_LOGIC;
+  signal \_carry__2_n_3\ : STD_LOGIC;
+  signal \_carry__3_i_1_n_0\ : STD_LOGIC;
+  signal \_carry__3_i_2_n_0\ : STD_LOGIC;
+  signal \_carry__3_i_3_n_0\ : STD_LOGIC;
+  signal \_carry__3_n_2\ : STD_LOGIC;
+  signal \_carry__3_n_3\ : STD_LOGIC;
+  signal \_carry_i_1_n_0\ : STD_LOGIC;
+  signal \_carry_i_2_n_0\ : STD_LOGIC;
+  signal \_carry_i_3_n_0\ : STD_LOGIC;
+  signal \_carry_i_4_n_0\ : STD_LOGIC;
+  signal \_carry_n_0\ : STD_LOGIC;
+  signal \_carry_n_1\ : STD_LOGIC;
+  signal \_carry_n_2\ : STD_LOGIC;
+  signal \_carry_n_3\ : STD_LOGIC;
   signal delay_current : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal delay_current0 : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal delay_current00 : STD_LOGIC;
-  signal delay_current01_in : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal \delay_current1__8\ : STD_LOGIC;
   signal \delay_current1_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \delay_current1_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \delay_current1_carry__0_i_3_n_0\ : STD_LOGIC;
@@ -73,14 +99,6 @@ architecture STRUCTURE of test_target_0_0_target is
   signal delay_current1_carry_n_1 : STD_LOGIC;
   signal delay_current1_carry_n_2 : STD_LOGIC;
   signal delay_current1_carry_n_3 : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry__0_n_0\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry__0_n_1\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry__0_n_2\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry__0_n_3\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry_n_0\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry_n_1\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry_n_2\ : STD_LOGIC;
-  signal \delay_current1_inferred__0/i__carry_n_3\ : STD_LOGIC;
   signal \delay_current4_carry__0_n_0\ : STD_LOGIC;
   signal \delay_current4_carry__0_n_1\ : STD_LOGIC;
   signal \delay_current4_carry__0_n_2\ : STD_LOGIC;
@@ -114,73 +132,73 @@ architecture STRUCTURE of test_target_0_0_target is
   signal delay_current4_carry_n_4 : STD_LOGIC;
   signal delay_current4_carry_n_5 : STD_LOGIC;
   signal delay_current4_carry_n_6 : STD_LOGIC;
-  signal \delay_current[0]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[10]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[11]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current[11]_i_2_n_0\ : STD_LOGIC;
+  signal \delay_current[11]_i_3_n_0\ : STD_LOGIC;
   signal \delay_current[11]_i_4_n_0\ : STD_LOGIC;
   signal \delay_current[11]_i_5_n_0\ : STD_LOGIC;
   signal \delay_current[11]_i_6_n_0\ : STD_LOGIC;
   signal \delay_current[11]_i_7_n_0\ : STD_LOGIC;
-  signal \delay_current[12]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[13]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[14]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[15]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current[11]_i_8_n_0\ : STD_LOGIC;
+  signal \delay_current[11]_i_9_n_0\ : STD_LOGIC;
+  signal \delay_current[15]_i_2_n_0\ : STD_LOGIC;
+  signal \delay_current[15]_i_3_n_0\ : STD_LOGIC;
   signal \delay_current[15]_i_4_n_0\ : STD_LOGIC;
   signal \delay_current[15]_i_5_n_0\ : STD_LOGIC;
   signal \delay_current[15]_i_6_n_0\ : STD_LOGIC;
   signal \delay_current[15]_i_7_n_0\ : STD_LOGIC;
-  signal \delay_current[16]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[16]_i_4_n_0\ : STD_LOGIC;
-  signal \delay_current[1]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[2]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[3]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current[15]_i_8_n_0\ : STD_LOGIC;
+  signal \delay_current[15]_i_9_n_0\ : STD_LOGIC;
+  signal \delay_current[16]_i_2_n_0\ : STD_LOGIC;
+  signal \delay_current[3]_i_10_n_0\ : STD_LOGIC;
+  signal \delay_current[3]_i_2_n_0\ : STD_LOGIC;
+  signal \delay_current[3]_i_3_n_0\ : STD_LOGIC;
   signal \delay_current[3]_i_4_n_0\ : STD_LOGIC;
   signal \delay_current[3]_i_5_n_0\ : STD_LOGIC;
   signal \delay_current[3]_i_6_n_0\ : STD_LOGIC;
   signal \delay_current[3]_i_7_n_0\ : STD_LOGIC;
   signal \delay_current[3]_i_8_n_0\ : STD_LOGIC;
-  signal \delay_current[4]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[5]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[6]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[7]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current[3]_i_9_n_0\ : STD_LOGIC;
+  signal \delay_current[7]_i_2_n_0\ : STD_LOGIC;
+  signal \delay_current[7]_i_3_n_0\ : STD_LOGIC;
   signal \delay_current[7]_i_4_n_0\ : STD_LOGIC;
   signal \delay_current[7]_i_5_n_0\ : STD_LOGIC;
   signal \delay_current[7]_i_6_n_0\ : STD_LOGIC;
   signal \delay_current[7]_i_7_n_0\ : STD_LOGIC;
-  signal \delay_current[8]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current[9]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_2_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_2_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_2_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_3_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_3_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[11]_i_3_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_2_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_2_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_2_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_3_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_3_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[15]_i_3_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_2_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_2_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_2_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_3_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_3_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[3]_i_3_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_2_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_2_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_2_n_3\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_3_n_1\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_3_n_2\ : STD_LOGIC;
-  signal \delay_current_reg[7]_i_3_n_3\ : STD_LOGIC;
+  signal \delay_current[7]_i_8_n_0\ : STD_LOGIC;
+  signal \delay_current[7]_i_9_n_0\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_1\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_2\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_3\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_4\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_5\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_6\ : STD_LOGIC;
+  signal \delay_current_reg[11]_i_1_n_7\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_1\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_2\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_3\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_4\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_5\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_6\ : STD_LOGIC;
+  signal \delay_current_reg[15]_i_1_n_7\ : STD_LOGIC;
+  signal \delay_current_reg[16]_i_1_n_7\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_1\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_2\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_3\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_4\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_5\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_6\ : STD_LOGIC;
+  signal \delay_current_reg[3]_i_1_n_7\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_0\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_1\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_2\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_3\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_4\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_5\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_6\ : STD_LOGIC;
+  signal \delay_current_reg[7]_i_1_n_7\ : STD_LOGIC;
   signal delay_latched : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal frac_accum : STD_LOGIC_VECTOR ( 15 downto 2 );
   signal frame_active_i_1_n_0 : STD_LOGIC;
@@ -242,55 +260,9 @@ architecture STRUCTURE of test_target_0_0_target is
   signal \frame_cnt_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \frame_cnt_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \frame_cnt_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal \i__carry__0_i_1_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_2_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_3_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_4_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_5_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_6_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_7_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1__3_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1__4_n_0\ : STD_LOGIC;
-  signal \i__carry_i_1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2__3_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2__4_n_0\ : STD_LOGIC;
-  signal \i__carry_i_2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3__3_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3__4_n_0\ : STD_LOGIC;
-  signal \i__carry_i_3_n_0\ : STD_LOGIC;
-  signal \i__carry_i_4__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_4__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_4__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_4__3_n_0\ : STD_LOGIC;
-  signal \i__carry_i_4_n_0\ : STD_LOGIC;
-  signal \i__carry_i_5__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_5__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_5__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_5_n_0\ : STD_LOGIC;
-  signal \i__carry_i_6__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_6__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_6__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_6_n_0\ : STD_LOGIC;
-  signal \i__carry_i_7__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_7__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_7__2_n_0\ : STD_LOGIC;
-  signal \i__carry_i_7_n_0\ : STD_LOGIC;
-  signal \i__carry_i_8__0_n_0\ : STD_LOGIC;
-  signal \i__carry_i_8__1_n_0\ : STD_LOGIC;
-  signal \i__carry_i_8_n_0\ : STD_LOGIC;
-  signal moving_near_i_1_n_0 : STD_LOGIC;
-  signal moving_near_reg_n_0 : STD_LOGIC;
+  signal p_0_in : STD_LOGIC_VECTOR ( 16 to 16 );
   signal pulse_target0 : STD_LOGIC;
-  signal \pulse_target2__9\ : STD_LOGIC;
+  signal pulse_target2 : STD_LOGIC;
   signal \pulse_target2_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \pulse_target2_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \pulse_target2_carry__0_i_3_n_0\ : STD_LOGIC;
@@ -320,27 +292,21 @@ architecture STRUCTURE of test_target_0_0_target is
   signal pulse_target_i_2_n_0 : STD_LOGIC;
   signal r0_yb_d : STD_LOGIC;
   signal sync_rise : STD_LOGIC;
-  signal \NLW__inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW__inferred__0/i__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW__inferred__0/i__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW__inferred__0/i__carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW__inferred__0/i__carry__3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW__inferred__0/i__carry__3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__carry__3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal \NLW__carry__3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_delay_current1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_delay_current1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_delay_current1_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \NLW_delay_current1_carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_delay_current1_inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_delay_current1_inferred__0/i__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_delay_current1_inferred__0/i__carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_delay_current1_inferred__0/i__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_delay_current4_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \NLW_delay_current4_carry__2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 2 to 2 );
   signal \NLW_delay_current4_carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_delay_current_reg[16]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_delay_current_reg[16]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_delay_current_reg[16]_i_3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_delay_current_reg[16]_i_3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_delay_current_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_delay_current_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \NLW_frame_cnt_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_frame_cnt_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal NLW_pulse_target2_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -351,20 +317,7 @@ architecture STRUCTURE of test_target_0_0_target is
   attribute COMPARATOR_THRESHOLD of delay_current1_carry : label is 11;
   attribute COMPARATOR_THRESHOLD of \delay_current1_carry__0\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \delay_current1_carry__1\ : label is 11;
-  attribute COMPARATOR_THRESHOLD of \delay_current1_inferred__0/i__carry\ : label is 11;
-  attribute COMPARATOR_THRESHOLD of \delay_current1_inferred__0/i__carry__0\ : label is 11;
-  attribute COMPARATOR_THRESHOLD of \delay_current1_inferred__0/i__carry__1\ : label is 11;
   attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \delay_current_reg[11]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[11]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[15]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[15]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[16]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[16]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[3]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[3]_i_3\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[7]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \delay_current_reg[7]_i_3\ : label is 35;
   attribute ADDER_THRESHOLD of \frame_cnt_reg[0]_i_2\ : label is 11;
   attribute ADDER_THRESHOLD of \frame_cnt_reg[12]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \frame_cnt_reg[16]_i_1\ : label is 11;
@@ -374,88 +327,380 @@ architecture STRUCTURE of test_target_0_0_target is
   attribute COMPARATOR_THRESHOLD of \pulse_target2_carry__0\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \pulse_target2_carry__1\ : label is 11;
 begin
-\_inferred__0/i__carry\: unisim.vcomponents.CARRY4
+\_carry\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \_inferred__0/i__carry_n_0\,
-      CO(2) => \_inferred__0/i__carry_n_1\,
-      CO(1) => \_inferred__0/i__carry_n_2\,
-      CO(0) => \_inferred__0/i__carry_n_3\,
+      CO(3) => \_carry_n_0\,
+      CO(2) => \_carry_n_1\,
+      CO(1) => \_carry_n_2\,
+      CO(0) => \_carry_n_3\,
       CYINIT => '1',
       DI(3 downto 0) => frame_cnt_reg(3 downto 0),
-      O(3 downto 0) => \NLW__inferred__0/i__carry_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_1__2_n_0\,
-      S(2) => \i__carry_i_2__2_n_0\,
-      S(1) => \i__carry_i_3__2_n_0\,
-      S(0) => \i__carry_i_4__3_n_0\
+      O(3 downto 0) => \NLW__carry_O_UNCONNECTED\(3 downto 0),
+      S(3) => \_carry_i_1_n_0\,
+      S(2) => \_carry_i_2_n_0\,
+      S(1) => \_carry_i_3_n_0\,
+      S(0) => \_carry_i_4_n_0\
     );
-\_inferred__0/i__carry__0\: unisim.vcomponents.CARRY4
+\_carry__0\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__0/i__carry_n_0\,
-      CO(3) => \_inferred__0/i__carry__0_n_0\,
-      CO(2) => \_inferred__0/i__carry__0_n_1\,
-      CO(1) => \_inferred__0/i__carry__0_n_2\,
-      CO(0) => \_inferred__0/i__carry__0_n_3\,
+      CI => \_carry_n_0\,
+      CO(3) => \_carry__0_n_0\,
+      CO(2) => \_carry__0_n_1\,
+      CO(1) => \_carry__0_n_2\,
+      CO(0) => \_carry__0_n_3\,
       CYINIT => '0',
-      DI(3) => \i__carry_i_1__0_n_0\,
-      DI(2) => \i__carry_i_2__0_n_0\,
-      DI(1) => \i__carry_i_3__0_n_0\,
+      DI(3) => \_carry__0_i_1_n_0\,
+      DI(2) => \_carry__0_i_2_n_0\,
+      DI(1) => \_carry__0_i_3_n_0\,
       DI(0) => delay_latched(4),
-      O(3 downto 0) => \NLW__inferred__0/i__carry__0_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_4__2_n_0\,
-      S(2) => \i__carry_i_5__0_n_0\,
-      S(1) => \i__carry_i_6__0_n_0\,
-      S(0) => \i__carry_i_7__0_n_0\
+      O(3 downto 0) => \NLW__carry__0_O_UNCONNECTED\(3 downto 0),
+      S(3) => \_carry__0_i_4_n_0\,
+      S(2) => \_carry__0_i_5_n_0\,
+      S(1) => \_carry__0_i_6_n_0\,
+      S(0) => \_carry__0_i_7_n_0\
     );
-\_inferred__0/i__carry__1\: unisim.vcomponents.CARRY4
+\_carry__0_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => frame_cnt_reg(7),
+      I1 => delay_latched(7),
+      O => \_carry__0_i_1_n_0\
+    );
+\_carry__0_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => delay_latched(6),
+      I1 => frame_cnt_reg(6),
+      O => \_carry__0_i_2_n_0\
+    );
+\_carry__0_i_3\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => delay_latched(4),
+      O => \_carry__0_i_3_n_0\
+    );
+\_carry__0_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"6966"
+    )
+        port map (
+      I0 => frame_cnt_reg(7),
+      I1 => delay_latched(7),
+      I2 => delay_latched(6),
+      I3 => frame_cnt_reg(6),
+      O => \_carry__0_i_4_n_0\
+    );
+\_carry__0_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"2DD2"
+    )
+        port map (
+      I0 => delay_latched(5),
+      I1 => frame_cnt_reg(5),
+      I2 => frame_cnt_reg(6),
+      I3 => delay_latched(6),
+      O => \_carry__0_i_5_n_0\
+    );
+\_carry__0_i_6\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"69"
+    )
+        port map (
+      I0 => frame_cnt_reg(5),
+      I1 => delay_latched(5),
+      I2 => delay_latched(4),
+      O => \_carry__0_i_6_n_0\
+    );
+\_carry__0_i_7\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => frame_cnt_reg(4),
+      I1 => delay_latched(4),
+      O => \_carry__0_i_7_n_0\
+    );
+\_carry__1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__0/i__carry__0_n_0\,
-      CO(3) => \_inferred__0/i__carry__1_n_0\,
-      CO(2) => \_inferred__0/i__carry__1_n_1\,
-      CO(1) => \_inferred__0/i__carry__1_n_2\,
-      CO(0) => \_inferred__0/i__carry__1_n_3\,
+      CI => \_carry__0_n_0\,
+      CO(3) => \_carry__1_n_0\,
+      CO(2) => \_carry__1_n_1\,
+      CO(1) => \_carry__1_n_2\,
+      CO(0) => \_carry__1_n_3\,
       CYINIT => '0',
-      DI(3) => \i__carry_i_1__3_n_0\,
-      DI(2) => \i__carry_i_2__1_n_0\,
-      DI(1) => \i__carry_i_3__3_n_0\,
-      DI(0) => \i__carry_i_4__0_n_0\,
-      O(3 downto 0) => \NLW__inferred__0/i__carry__1_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_5__1_n_0\,
-      S(2) => \i__carry_i_6__1_n_0\,
-      S(1) => \i__carry_i_7__1_n_0\,
-      S(0) => \i__carry_i_8__0_n_0\
+      DI(3) => \_carry__1_i_1_n_0\,
+      DI(2) => \_carry__1_i_2_n_0\,
+      DI(1) => \_carry__1_i_3_n_0\,
+      DI(0) => \_carry__1_i_4_n_0\,
+      O(3 downto 0) => \NLW__carry__1_O_UNCONNECTED\(3 downto 0),
+      S(3) => \_carry__1_i_5_n_0\,
+      S(2) => \_carry__1_i_6_n_0\,
+      S(1) => \_carry__1_i_7_n_0\,
+      S(0) => \_carry__1_i_8_n_0\
     );
-\_inferred__0/i__carry__2\: unisim.vcomponents.CARRY4
+\_carry__1_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(10),
+      I1 => delay_latched(10),
+      O => \_carry__1_i_1_n_0\
+    );
+\_carry__1_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(9),
+      I1 => delay_latched(9),
+      O => \_carry__1_i_2_n_0\
+    );
+\_carry__1_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(8),
+      I1 => delay_latched(8),
+      O => \_carry__1_i_3_n_0\
+    );
+\_carry__1_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(7),
+      I1 => delay_latched(7),
+      O => \_carry__1_i_4_n_0\
+    );
+\_carry__1_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(10),
+      I1 => frame_cnt_reg(10),
+      I2 => frame_cnt_reg(11),
+      I3 => delay_latched(11),
+      O => \_carry__1_i_5_n_0\
+    );
+\_carry__1_i_6\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(9),
+      I1 => frame_cnt_reg(9),
+      I2 => frame_cnt_reg(10),
+      I3 => delay_latched(10),
+      O => \_carry__1_i_6_n_0\
+    );
+\_carry__1_i_7\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(8),
+      I1 => frame_cnt_reg(8),
+      I2 => frame_cnt_reg(9),
+      I3 => delay_latched(9),
+      O => \_carry__1_i_7_n_0\
+    );
+\_carry__1_i_8\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(7),
+      I1 => frame_cnt_reg(7),
+      I2 => frame_cnt_reg(8),
+      I3 => delay_latched(8),
+      O => \_carry__1_i_8_n_0\
+    );
+\_carry__2\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__0/i__carry__1_n_0\,
-      CO(3) => \_inferred__0/i__carry__2_n_0\,
-      CO(2) => \_inferred__0/i__carry__2_n_1\,
-      CO(1) => \_inferred__0/i__carry__2_n_2\,
-      CO(0) => \_inferred__0/i__carry__2_n_3\,
+      CI => \_carry__1_n_0\,
+      CO(3) => \_carry__2_n_0\,
+      CO(2) => \_carry__2_n_1\,
+      CO(1) => \_carry__2_n_2\,
+      CO(0) => \_carry__2_n_3\,
       CYINIT => '0',
-      DI(3) => \i__carry_i_1__4_n_0\,
-      DI(2) => \i__carry_i_2__4_n_0\,
-      DI(1) => \i__carry_i_3__4_n_0\,
-      DI(0) => \i__carry_i_4__1_n_0\,
-      O(3 downto 0) => \NLW__inferred__0/i__carry__2_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_5__2_n_0\,
-      S(2) => \i__carry_i_6__2_n_0\,
-      S(1) => \i__carry_i_7__2_n_0\,
-      S(0) => \i__carry_i_8__1_n_0\
+      DI(3) => \_carry__2_i_1_n_0\,
+      DI(2) => \_carry__2_i_2_n_0\,
+      DI(1) => \_carry__2_i_3_n_0\,
+      DI(0) => \_carry__2_i_4_n_0\,
+      O(3 downto 0) => \NLW__carry__2_O_UNCONNECTED\(3 downto 0),
+      S(3) => \_carry__2_i_5_n_0\,
+      S(2) => \_carry__2_i_6_n_0\,
+      S(1) => \_carry__2_i_7_n_0\,
+      S(0) => \_carry__2_i_8_n_0\
     );
-\_inferred__0/i__carry__3\: unisim.vcomponents.CARRY4
+\_carry__2_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(14),
+      I1 => delay_latched(14),
+      O => \_carry__2_i_1_n_0\
+    );
+\_carry__2_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(13),
+      I1 => delay_latched(13),
+      O => \_carry__2_i_2_n_0\
+    );
+\_carry__2_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(12),
+      I1 => delay_latched(12),
+      O => \_carry__2_i_3_n_0\
+    );
+\_carry__2_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(11),
+      I1 => delay_latched(11),
+      O => \_carry__2_i_4_n_0\
+    );
+\_carry__2_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(14),
+      I1 => frame_cnt_reg(14),
+      I2 => frame_cnt_reg(15),
+      I3 => delay_latched(15),
+      O => \_carry__2_i_5_n_0\
+    );
+\_carry__2_i_6\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(13),
+      I1 => frame_cnt_reg(13),
+      I2 => frame_cnt_reg(14),
+      I3 => delay_latched(14),
+      O => \_carry__2_i_6_n_0\
+    );
+\_carry__2_i_7\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(12),
+      I1 => frame_cnt_reg(12),
+      I2 => frame_cnt_reg(13),
+      I3 => delay_latched(13),
+      O => \_carry__2_i_7_n_0\
+    );
+\_carry__2_i_8\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(11),
+      I1 => frame_cnt_reg(11),
+      I2 => frame_cnt_reg(12),
+      I3 => delay_latched(12),
+      O => \_carry__2_i_8_n_0\
+    );
+\_carry__3\: unisim.vcomponents.CARRY4
      port map (
-      CI => \_inferred__0/i__carry__2_n_0\,
-      CO(3 downto 2) => \NLW__inferred__0/i__carry__3_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \_inferred__0/i__carry__3_n_2\,
-      CO(0) => \_inferred__0/i__carry__3_n_3\,
+      CI => \_carry__2_n_0\,
+      CO(3 downto 2) => \NLW__carry__3_CO_UNCONNECTED\(3 downto 2),
+      CO(1) => \_carry__3_n_2\,
+      CO(0) => \_carry__3_n_3\,
       CYINIT => '0',
       DI(3 downto 1) => B"000",
-      DI(0) => \i__carry_i_1__1_n_0\,
-      O(3 downto 0) => \NLW__inferred__0/i__carry__3_O_UNCONNECTED\(3 downto 0),
+      DI(0) => \_carry__3_i_1_n_0\,
+      O(3 downto 0) => \NLW__carry__3_O_UNCONNECTED\(3 downto 0),
       S(3 downto 2) => B"00",
-      S(1) => \i__carry_i_2__3_n_0\,
-      S(0) => \i__carry_i_3__1_n_0\
+      S(1) => \_carry__3_i_2_n_0\,
+      S(0) => \_carry__3_i_3_n_0\
+    );
+\_carry__3_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(15),
+      I1 => delay_latched(15),
+      O => \_carry__3_i_1_n_0\
+    );
+\_carry__3_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => frame_cnt_reg(16),
+      I1 => delay_latched(16),
+      O => \_carry__3_i_2_n_0\
+    );
+\_carry__3_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"D22D"
+    )
+        port map (
+      I0 => delay_latched(15),
+      I1 => frame_cnt_reg(15),
+      I2 => frame_cnt_reg(16),
+      I3 => delay_latched(16),
+      O => \_carry__3_i_3_n_0\
+    );
+\_carry_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => frame_cnt_reg(3),
+      I1 => delay_latched(3),
+      O => \_carry_i_1_n_0\
+    );
+\_carry_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => frame_cnt_reg(2),
+      I1 => delay_latched(2),
+      O => \_carry_i_2_n_0\
+    );
+\_carry_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => frame_cnt_reg(1),
+      I1 => delay_latched(1),
+      O => \_carry_i_3_n_0\
+    );
+\_carry_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => frame_cnt_reg(0),
+      I1 => delay_latched(0),
+      O => \_carry_i_4_n_0\
     );
 delay_current1_carry: unisim.vcomponents.CARRY4
      port map (
@@ -584,12 +829,12 @@ delay_current1_carry_i_1: unisim.vcomponents.LUT1
     );
 delay_current1_carry_i_2: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"02"
+      INIT => X"04"
     )
         port map (
-      I0 => delay_current00,
-      I1 => delay_current(1),
-      I2 => delay_current(0),
+      I0 => delay_current(0),
+      I1 => p_0_in(16),
+      I2 => delay_current(1),
       O => delay_current1_carry_i_2_n_0
     );
 delay_current1_carry_i_3: unisim.vcomponents.LUT2
@@ -615,8 +860,8 @@ delay_current1_carry_i_5: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(3),
-      I1 => delay_current(2),
+      I0 => delay_current(2),
+      I1 => delay_current(3),
       O => delay_current1_carry_i_5_n_0
     );
 delay_current1_carry_i_6: unisim.vcomponents.LUT3
@@ -624,57 +869,10 @@ delay_current1_carry_i_6: unisim.vcomponents.LUT3
       INIT => X"09"
     )
         port map (
-      I0 => delay_current00,
+      I0 => p_0_in(16),
       I1 => delay_current(0),
       I2 => delay_current(1),
       O => delay_current1_carry_i_6_n_0
-    );
-\delay_current1_inferred__0/i__carry\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \delay_current1_inferred__0/i__carry_n_0\,
-      CO(2) => \delay_current1_inferred__0/i__carry_n_1\,
-      CO(1) => \delay_current1_inferred__0/i__carry_n_2\,
-      CO(0) => \delay_current1_inferred__0/i__carry_n_3\,
-      CYINIT => '1',
-      DI(3) => \i__carry_i_1_n_0\,
-      DI(2) => \i__carry_i_2_n_0\,
-      DI(1) => \i__carry_i_3_n_0\,
-      DI(0) => \i__carry_i_4_n_0\,
-      O(3 downto 0) => \NLW_delay_current1_inferred__0/i__carry_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry_i_5_n_0\,
-      S(2) => \i__carry_i_6_n_0\,
-      S(1) => \i__carry_i_7_n_0\,
-      S(0) => \i__carry_i_8_n_0\
-    );
-\delay_current1_inferred__0/i__carry__0\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current1_inferred__0/i__carry_n_0\,
-      CO(3) => \delay_current1_inferred__0/i__carry__0_n_0\,
-      CO(2) => \delay_current1_inferred__0/i__carry__0_n_1\,
-      CO(1) => \delay_current1_inferred__0/i__carry__0_n_2\,
-      CO(0) => \delay_current1_inferred__0/i__carry__0_n_3\,
-      CYINIT => '0',
-      DI(3) => \i__carry__0_i_1_n_0\,
-      DI(2) => '0',
-      DI(1) => \i__carry__0_i_2_n_0\,
-      DI(0) => \i__carry__0_i_3_n_0\,
-      O(3 downto 0) => \NLW_delay_current1_inferred__0/i__carry__0_O_UNCONNECTED\(3 downto 0),
-      S(3) => \i__carry__0_i_4_n_0\,
-      S(2) => \i__carry__0_i_5_n_0\,
-      S(1) => \i__carry__0_i_6_n_0\,
-      S(0) => \i__carry__0_i_7_n_0\
-    );
-\delay_current1_inferred__0/i__carry__1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current1_inferred__0/i__carry__0_n_0\,
-      CO(3 downto 1) => \NLW_delay_current1_inferred__0/i__carry__1_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \delay_current1__8\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_delay_current1_inferred__0/i__carry__1_O_UNCONNECTED\(3 downto 0),
-      S(3 downto 1) => B"000",
-      S(0) => delay_current(16)
     );
 delay_current4_carry: unisim.vcomponents.CARRY4
      port map (
@@ -757,7 +955,7 @@ delay_current4_carry: unisim.vcomponents.CARRY4
 \delay_current4_carry__2\: unisim.vcomponents.CARRY4
      port map (
       CI => \delay_current4_carry__1_n_0\,
-      CO(3) => delay_current00,
+      CO(3) => p_0_in(16),
       CO(2) => \NLW_delay_current4_carry__2_CO_UNCONNECTED\(2),
       CO(1) => \delay_current4_carry__2_n_2\,
       CO(0) => \delay_current4_carry__2_n_3\,
@@ -790,48 +988,28 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       I0 => frac_accum(2),
       O => delay_current4_carry_i_1_n_0
     );
-\delay_current[0]_i_1\: unisim.vcomponents.LUT5
+\delay_current[11]_i_2\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"222200F0"
-    )
-        port map (
-      I0 => delay_current01_in(0),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(0),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[0]_i_1_n_0\
-    );
-\delay_current[10]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EEEE00F0"
+      INIT => X"1"
     )
         port map (
       I0 => \delay_current1_carry__1_n_3\,
-      I1 => delay_current01_in(10),
-      I2 => delay_current0(10),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[10]_i_1_n_0\
+      O => \delay_current[11]_i_2_n_0\
     );
-\delay_current[11]_i_1\: unisim.vcomponents.LUT5
+\delay_current[11]_i_3\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"FFFCAAFC"
+      INIT => X"1"
     )
         port map (
       I0 => \delay_current1_carry__1_n_3\,
-      I1 => \delay_current1__8\,
-      I2 => delay_current0(11),
-      I3 => moving_near_reg_n_0,
-      I4 => delay_current01_in(11),
-      O => \delay_current[11]_i_1_n_0\
+      O => \delay_current[11]_i_3_n_0\
     );
 \delay_current[11]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(11),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[11]_i_4_n_0\
     );
 \delay_current[11]_i_5\: unisim.vcomponents.LUT1
@@ -839,79 +1017,67 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(10),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[11]_i_5_n_0\
     );
-\delay_current[11]_i_6\: unisim.vcomponents.LUT1
+\delay_current[11]_i_6\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
+      INIT => X"D"
     )
         port map (
-      I0 => delay_current(9),
+      I0 => delay_current(11),
+      I1 => \delay_current1_carry__1_n_3\,
       O => \delay_current[11]_i_6_n_0\
     );
-\delay_current[11]_i_7\: unisim.vcomponents.LUT1
+\delay_current[11]_i_7\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
-    )
-        port map (
-      I0 => delay_current(8),
-      O => \delay_current[11]_i_7_n_0\
-    );
-\delay_current[12]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00EEF0EE"
-    )
-        port map (
-      I0 => \delay_current1__8\,
-      I1 => delay_current0(12),
-      I2 => delay_current01_in(12),
-      I3 => moving_near_reg_n_0,
-      I4 => \delay_current1_carry__1_n_3\,
-      O => \delay_current[12]_i_1_n_0\
-    );
-\delay_current[13]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00EEF0EE"
-    )
-        port map (
-      I0 => \delay_current1__8\,
-      I1 => delay_current0(13),
-      I2 => delay_current01_in(13),
-      I3 => moving_near_reg_n_0,
-      I4 => \delay_current1_carry__1_n_3\,
-      O => \delay_current[13]_i_1_n_0\
-    );
-\delay_current[14]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EEEE00F0"
     )
         port map (
       I0 => \delay_current1_carry__1_n_3\,
-      I1 => delay_current01_in(14),
-      I2 => delay_current0(14),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[14]_i_1_n_0\
+      I1 => delay_current(10),
+      O => \delay_current[11]_i_7_n_0\
     );
-\delay_current[15]_i_1\: unisim.vcomponents.LUT5
+\delay_current[11]_i_8\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"222200F0"
+      INIT => X"1"
     )
         port map (
-      I0 => delay_current01_in(15),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(15),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[15]_i_1_n_0\
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(9),
+      O => \delay_current[11]_i_8_n_0\
+    );
+\delay_current[11]_i_9\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(8),
+      O => \delay_current[11]_i_9_n_0\
+    );
+\delay_current[15]_i_2\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[15]_i_2_n_0\
+    );
+\delay_current[15]_i_3\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[15]_i_3_n_0\
     );
 \delay_current[15]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(15),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[15]_i_4_n_0\
     );
 \delay_current[15]_i_5\: unisim.vcomponents.LUT1
@@ -919,87 +1085,86 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(14),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[15]_i_5_n_0\
     );
-\delay_current[15]_i_6\: unisim.vcomponents.LUT1
+\delay_current[15]_i_6\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(15),
+      O => \delay_current[15]_i_6_n_0\
+    );
+\delay_current[15]_i_7\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(14),
+      O => \delay_current[15]_i_7_n_0\
+    );
+\delay_current[15]_i_8\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"D"
     )
         port map (
       I0 => delay_current(13),
-      O => \delay_current[15]_i_6_n_0\
+      I1 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[15]_i_8_n_0\
     );
-\delay_current[15]_i_7\: unisim.vcomponents.LUT1
+\delay_current[15]_i_9\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
+      INIT => X"D"
     )
         port map (
       I0 => delay_current(12),
-      O => \delay_current[15]_i_7_n_0\
+      I1 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[15]_i_9_n_0\
     );
-\delay_current[16]_i_1\: unisim.vcomponents.LUT5
+\delay_current[16]_i_2\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"00EEF0EE"
+      INIT => X"D"
     )
         port map (
-      I0 => \delay_current1__8\,
-      I1 => delay_current0(16),
-      I2 => delay_current01_in(16),
-      I3 => moving_near_reg_n_0,
-      I4 => \delay_current1_carry__1_n_3\,
-      O => \delay_current[16]_i_1_n_0\
+      I0 => delay_current(16),
+      I1 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[16]_i_2_n_0\
     );
-\delay_current[16]_i_4\: unisim.vcomponents.LUT1
+\delay_current[3]_i_10\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"21"
+    )
+        port map (
+      I0 => p_0_in(16),
+      I1 => \delay_current1_carry__1_n_3\,
+      I2 => delay_current(0),
+      O => \delay_current[3]_i_10_n_0\
+    );
+\delay_current[3]_i_2\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(16),
-      O => \delay_current[16]_i_4_n_0\
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[3]_i_2_n_0\
     );
-\delay_current[1]_i_1\: unisim.vcomponents.LUT5
+\delay_current[3]_i_3\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"222200F0"
+      INIT => X"1"
     )
         port map (
-      I0 => delay_current01_in(1),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(1),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[1]_i_1_n_0\
-    );
-\delay_current[2]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"222200F0"
-    )
-        port map (
-      I0 => delay_current01_in(2),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(2),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[2]_i_1_n_0\
-    );
-\delay_current[3]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"222200F0"
-    )
-        port map (
-      I0 => delay_current01_in(3),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(3),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[3]_i_1_n_0\
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[3]_i_3_n_0\
     );
 \delay_current[3]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(3),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[3]_i_4_n_0\
     );
 \delay_current[3]_i_5\: unisim.vcomponents.LUT1
@@ -1007,89 +1172,67 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(2),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[3]_i_5_n_0\
     );
-\delay_current[3]_i_6\: unisim.vcomponents.LUT1
+\delay_current[3]_i_6\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(1),
+      I0 => p_0_in(16),
+      I1 => \delay_current1_carry__1_n_3\,
       O => \delay_current[3]_i_6_n_0\
     );
 \delay_current[3]_i_7\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"9"
+      INIT => X"1"
     )
         port map (
-      I0 => delay_current00,
-      I1 => delay_current(0),
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(3),
       O => \delay_current[3]_i_7_n_0\
     );
 \delay_current[3]_i_8\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => delay_current(0),
-      I1 => delay_current00,
-      O => \delay_current[3]_i_8_n_0\
-    );
-\delay_current[4]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"222200F0"
-    )
-        port map (
-      I0 => delay_current01_in(4),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(4),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[4]_i_1_n_0\
-    );
-\delay_current[5]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EEEE00F0"
+      INIT => X"1"
     )
         port map (
       I0 => \delay_current1_carry__1_n_3\,
-      I1 => delay_current01_in(5),
-      I2 => delay_current0(5),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[5]_i_1_n_0\
+      I1 => delay_current(2),
+      O => \delay_current[3]_i_8_n_0\
     );
-\delay_current[6]_i_1\: unisim.vcomponents.LUT5
+\delay_current[3]_i_9\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"222200F0"
+      INIT => X"1"
     )
         port map (
-      I0 => delay_current01_in(6),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(6),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[6]_i_1_n_0\
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(1),
+      O => \delay_current[3]_i_9_n_0\
     );
-\delay_current[7]_i_1\: unisim.vcomponents.LUT5
+\delay_current[7]_i_2\: unisim.vcomponents.LUT1
     generic map(
-      INIT => X"00EEF0EE"
+      INIT => X"1"
     )
         port map (
-      I0 => \delay_current1__8\,
-      I1 => delay_current0(7),
-      I2 => delay_current01_in(7),
-      I3 => moving_near_reg_n_0,
-      I4 => \delay_current1_carry__1_n_3\,
-      O => \delay_current[7]_i_1_n_0\
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[7]_i_2_n_0\
+    );
+\delay_current[7]_i_3\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      O => \delay_current[7]_i_3_n_0\
     );
 \delay_current[7]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(7),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[7]_i_4_n_0\
     );
 \delay_current[7]_i_5\: unisim.vcomponents.LUT1
@@ -1097,55 +1240,51 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => delay_current(6),
+      I0 => \delay_current1_carry__1_n_3\,
       O => \delay_current[7]_i_5_n_0\
     );
-\delay_current[7]_i_6\: unisim.vcomponents.LUT1
+\delay_current[7]_i_6\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"1"
+      INIT => X"D"
     )
         port map (
-      I0 => delay_current(5),
+      I0 => delay_current(7),
+      I1 => \delay_current1_carry__1_n_3\,
       O => \delay_current[7]_i_6_n_0\
     );
-\delay_current[7]_i_7\: unisim.vcomponents.LUT1
+\delay_current[7]_i_7\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
-    )
-        port map (
-      I0 => delay_current(4),
-      O => \delay_current[7]_i_7_n_0\
-    );
-\delay_current[8]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"222200F0"
-    )
-        port map (
-      I0 => delay_current01_in(8),
-      I1 => \delay_current1_carry__1_n_3\,
-      I2 => delay_current0(8),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[8]_i_1_n_0\
-    );
-\delay_current[9]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EEEE00F0"
     )
         port map (
       I0 => \delay_current1_carry__1_n_3\,
-      I1 => delay_current01_in(9),
-      I2 => delay_current0(9),
-      I3 => \delay_current1__8\,
-      I4 => moving_near_reg_n_0,
-      O => \delay_current[9]_i_1_n_0\
+      I1 => delay_current(6),
+      O => \delay_current[7]_i_7_n_0\
+    );
+\delay_current[7]_i_8\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(5),
+      O => \delay_current[7]_i_8_n_0\
+    );
+\delay_current[7]_i_9\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \delay_current1_carry__1_n_3\,
+      I1 => delay_current(4),
+      O => \delay_current[7]_i_9_n_0\
     );
 \delay_current_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[0]_i_1_n_0\,
+      D => \delay_current_reg[3]_i_1_n_7\,
       Q => delay_current(0)
     );
 \delay_current_reg[10]\: unisim.vcomponents.FDCE
@@ -1153,49 +1292,43 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[10]_i_1_n_0\,
+      D => \delay_current_reg[11]_i_1_n_5\,
       Q => delay_current(10)
     );
 \delay_current_reg[11]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
       CE => sync_rise,
-      D => \delay_current[11]_i_1_n_0\,
+      D => \delay_current_reg[11]_i_1_n_4\,
       PRE => pulse_target_i_2_n_0,
       Q => delay_current(11)
     );
-\delay_current_reg[11]_i_2\: unisim.vcomponents.CARRY4
+\delay_current_reg[11]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \delay_current_reg[7]_i_2_n_0\,
-      CO(3) => \delay_current_reg[11]_i_2_n_0\,
-      CO(2) => \delay_current_reg[11]_i_2_n_1\,
-      CO(1) => \delay_current_reg[11]_i_2_n_2\,
-      CO(0) => \delay_current_reg[11]_i_2_n_3\,
+      CI => \delay_current_reg[7]_i_1_n_0\,
+      CO(3) => \delay_current_reg[11]_i_1_n_0\,
+      CO(2) => \delay_current_reg[11]_i_1_n_1\,
+      CO(1) => \delay_current_reg[11]_i_1_n_2\,
+      CO(0) => \delay_current_reg[11]_i_1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => delay_current0(11 downto 8),
-      S(3 downto 0) => delay_current(11 downto 8)
-    );
-\delay_current_reg[11]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current_reg[7]_i_3_n_0\,
-      CO(3) => \delay_current_reg[11]_i_3_n_0\,
-      CO(2) => \delay_current_reg[11]_i_3_n_1\,
-      CO(1) => \delay_current_reg[11]_i_3_n_2\,
-      CO(0) => \delay_current_reg[11]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => delay_current(11 downto 8),
-      O(3 downto 0) => delay_current01_in(11 downto 8),
-      S(3) => \delay_current[11]_i_4_n_0\,
-      S(2) => \delay_current[11]_i_5_n_0\,
-      S(1) => \delay_current[11]_i_6_n_0\,
-      S(0) => \delay_current[11]_i_7_n_0\
+      DI(3) => \delay_current[11]_i_2_n_0\,
+      DI(2) => \delay_current[11]_i_3_n_0\,
+      DI(1) => \delay_current[11]_i_4_n_0\,
+      DI(0) => \delay_current[11]_i_5_n_0\,
+      O(3) => \delay_current_reg[11]_i_1_n_4\,
+      O(2) => \delay_current_reg[11]_i_1_n_5\,
+      O(1) => \delay_current_reg[11]_i_1_n_6\,
+      O(0) => \delay_current_reg[11]_i_1_n_7\,
+      S(3) => \delay_current[11]_i_6_n_0\,
+      S(2) => \delay_current[11]_i_7_n_0\,
+      S(1) => \delay_current[11]_i_8_n_0\,
+      S(0) => \delay_current[11]_i_9_n_0\
     );
 \delay_current_reg[12]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
       CE => sync_rise,
-      D => \delay_current[12]_i_1_n_0\,
+      D => \delay_current_reg[15]_i_1_n_7\,
       PRE => pulse_target_i_2_n_0,
       Q => delay_current(12)
     );
@@ -1203,7 +1336,7 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
      port map (
       C => clk,
       CE => sync_rise,
-      D => \delay_current[13]_i_1_n_0\,
+      D => \delay_current_reg[15]_i_1_n_6\,
       PRE => pulse_target_i_2_n_0,
       Q => delay_current(13)
     );
@@ -1212,7 +1345,7 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[14]_i_1_n_0\,
+      D => \delay_current_reg[15]_i_1_n_5\,
       Q => delay_current(14)
     );
 \delay_current_reg[15]\: unisim.vcomponents.FDCE
@@ -1220,72 +1353,55 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[15]_i_1_n_0\,
+      D => \delay_current_reg[15]_i_1_n_4\,
       Q => delay_current(15)
     );
-\delay_current_reg[15]_i_2\: unisim.vcomponents.CARRY4
+\delay_current_reg[15]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \delay_current_reg[11]_i_3_n_0\,
-      CO(3) => \delay_current_reg[15]_i_2_n_0\,
-      CO(2) => \delay_current_reg[15]_i_2_n_1\,
-      CO(1) => \delay_current_reg[15]_i_2_n_2\,
-      CO(0) => \delay_current_reg[15]_i_2_n_3\,
+      CI => \delay_current_reg[11]_i_1_n_0\,
+      CO(3) => \delay_current_reg[15]_i_1_n_0\,
+      CO(2) => \delay_current_reg[15]_i_1_n_1\,
+      CO(1) => \delay_current_reg[15]_i_1_n_2\,
+      CO(0) => \delay_current_reg[15]_i_1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => delay_current(15 downto 12),
-      O(3 downto 0) => delay_current01_in(15 downto 12),
-      S(3) => \delay_current[15]_i_4_n_0\,
-      S(2) => \delay_current[15]_i_5_n_0\,
-      S(1) => \delay_current[15]_i_6_n_0\,
-      S(0) => \delay_current[15]_i_7_n_0\
-    );
-\delay_current_reg[15]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current_reg[11]_i_2_n_0\,
-      CO(3) => \delay_current_reg[15]_i_3_n_0\,
-      CO(2) => \delay_current_reg[15]_i_3_n_1\,
-      CO(1) => \delay_current_reg[15]_i_3_n_2\,
-      CO(0) => \delay_current_reg[15]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => delay_current0(15 downto 12),
-      S(3 downto 0) => delay_current(15 downto 12)
+      DI(3) => \delay_current[15]_i_2_n_0\,
+      DI(2) => \delay_current[15]_i_3_n_0\,
+      DI(1) => \delay_current[15]_i_4_n_0\,
+      DI(0) => \delay_current[15]_i_5_n_0\,
+      O(3) => \delay_current_reg[15]_i_1_n_4\,
+      O(2) => \delay_current_reg[15]_i_1_n_5\,
+      O(1) => \delay_current_reg[15]_i_1_n_6\,
+      O(0) => \delay_current_reg[15]_i_1_n_7\,
+      S(3) => \delay_current[15]_i_6_n_0\,
+      S(2) => \delay_current[15]_i_7_n_0\,
+      S(1) => \delay_current[15]_i_8_n_0\,
+      S(0) => \delay_current[15]_i_9_n_0\
     );
 \delay_current_reg[16]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
       CE => sync_rise,
-      D => \delay_current[16]_i_1_n_0\,
+      D => \delay_current_reg[16]_i_1_n_7\,
       PRE => pulse_target_i_2_n_0,
       Q => delay_current(16)
     );
-\delay_current_reg[16]_i_2\: unisim.vcomponents.CARRY4
+\delay_current_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \delay_current_reg[15]_i_3_n_0\,
-      CO(3 downto 0) => \NLW_delay_current_reg[16]_i_2_CO_UNCONNECTED\(3 downto 0),
+      CI => \delay_current_reg[15]_i_1_n_0\,
+      CO(3 downto 0) => \NLW_delay_current_reg[16]_i_1_CO_UNCONNECTED\(3 downto 0),
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_delay_current_reg[16]_i_2_O_UNCONNECTED\(3 downto 1),
-      O(0) => delay_current0(16),
+      O(3 downto 1) => \NLW_delay_current_reg[16]_i_1_O_UNCONNECTED\(3 downto 1),
+      O(0) => \delay_current_reg[16]_i_1_n_7\,
       S(3 downto 1) => B"000",
-      S(0) => delay_current(16)
-    );
-\delay_current_reg[16]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current_reg[15]_i_2_n_0\,
-      CO(3 downto 0) => \NLW_delay_current_reg[16]_i_3_CO_UNCONNECTED\(3 downto 0),
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_delay_current_reg[16]_i_3_O_UNCONNECTED\(3 downto 1),
-      O(0) => delay_current01_in(16),
-      S(3 downto 1) => B"000",
-      S(0) => \delay_current[16]_i_4_n_0\
+      S(0) => \delay_current[16]_i_2_n_0\
     );
 \delay_current_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[1]_i_1_n_0\,
+      D => \delay_current_reg[3]_i_1_n_6\,
       Q => delay_current(1)
     );
 \delay_current_reg[2]\: unisim.vcomponents.FDCE
@@ -1293,7 +1409,7 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[2]_i_1_n_0\,
+      D => \delay_current_reg[3]_i_1_n_5\,
       Q => delay_current(2)
     );
 \delay_current_reg[3]\: unisim.vcomponents.FDCE
@@ -1301,44 +1417,36 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[3]_i_1_n_0\,
+      D => \delay_current_reg[3]_i_1_n_4\,
       Q => delay_current(3)
     );
-\delay_current_reg[3]_i_2\: unisim.vcomponents.CARRY4
+\delay_current_reg[3]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \delay_current_reg[3]_i_2_n_0\,
-      CO(2) => \delay_current_reg[3]_i_2_n_1\,
-      CO(1) => \delay_current_reg[3]_i_2_n_2\,
-      CO(0) => \delay_current_reg[3]_i_2_n_3\,
-      CYINIT => '1',
-      DI(3 downto 0) => delay_current(3 downto 0),
-      O(3 downto 0) => delay_current01_in(3 downto 0),
-      S(3) => \delay_current[3]_i_4_n_0\,
-      S(2) => \delay_current[3]_i_5_n_0\,
-      S(1) => \delay_current[3]_i_6_n_0\,
-      S(0) => \delay_current[3]_i_7_n_0\
-    );
-\delay_current_reg[3]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \delay_current_reg[3]_i_3_n_0\,
-      CO(2) => \delay_current_reg[3]_i_3_n_1\,
-      CO(1) => \delay_current_reg[3]_i_3_n_2\,
-      CO(0) => \delay_current_reg[3]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 1) => B"000",
-      DI(0) => delay_current(0),
-      O(3 downto 0) => delay_current0(3 downto 0),
-      S(3 downto 1) => delay_current(3 downto 1),
-      S(0) => \delay_current[3]_i_8_n_0\
+      CO(3) => \delay_current_reg[3]_i_1_n_0\,
+      CO(2) => \delay_current_reg[3]_i_1_n_1\,
+      CO(1) => \delay_current_reg[3]_i_1_n_2\,
+      CO(0) => \delay_current_reg[3]_i_1_n_3\,
+      CYINIT => \delay_current[3]_i_2_n_0\,
+      DI(3) => \delay_current[3]_i_3_n_0\,
+      DI(2) => \delay_current[3]_i_4_n_0\,
+      DI(1) => \delay_current[3]_i_5_n_0\,
+      DI(0) => \delay_current[3]_i_6_n_0\,
+      O(3) => \delay_current_reg[3]_i_1_n_4\,
+      O(2) => \delay_current_reg[3]_i_1_n_5\,
+      O(1) => \delay_current_reg[3]_i_1_n_6\,
+      O(0) => \delay_current_reg[3]_i_1_n_7\,
+      S(3) => \delay_current[3]_i_7_n_0\,
+      S(2) => \delay_current[3]_i_8_n_0\,
+      S(1) => \delay_current[3]_i_9_n_0\,
+      S(0) => \delay_current[3]_i_10_n_0\
     );
 \delay_current_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[4]_i_1_n_0\,
+      D => \delay_current_reg[7]_i_1_n_7\,
       Q => delay_current(4)
     );
 \delay_current_reg[5]\: unisim.vcomponents.FDCE
@@ -1346,7 +1454,7 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[5]_i_1_n_0\,
+      D => \delay_current_reg[7]_i_1_n_6\,
       Q => delay_current(5)
     );
 \delay_current_reg[6]\: unisim.vcomponents.FDCE
@@ -1354,50 +1462,44 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[6]_i_1_n_0\,
+      D => \delay_current_reg[7]_i_1_n_5\,
       Q => delay_current(6)
     );
 \delay_current_reg[7]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
       CE => sync_rise,
-      D => \delay_current[7]_i_1_n_0\,
+      D => \delay_current_reg[7]_i_1_n_4\,
       PRE => pulse_target_i_2_n_0,
       Q => delay_current(7)
     );
-\delay_current_reg[7]_i_2\: unisim.vcomponents.CARRY4
+\delay_current_reg[7]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \delay_current_reg[3]_i_3_n_0\,
-      CO(3) => \delay_current_reg[7]_i_2_n_0\,
-      CO(2) => \delay_current_reg[7]_i_2_n_1\,
-      CO(1) => \delay_current_reg[7]_i_2_n_2\,
-      CO(0) => \delay_current_reg[7]_i_2_n_3\,
+      CI => \delay_current_reg[3]_i_1_n_0\,
+      CO(3) => \delay_current_reg[7]_i_1_n_0\,
+      CO(2) => \delay_current_reg[7]_i_1_n_1\,
+      CO(1) => \delay_current_reg[7]_i_1_n_2\,
+      CO(0) => \delay_current_reg[7]_i_1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => delay_current0(7 downto 4),
-      S(3 downto 0) => delay_current(7 downto 4)
-    );
-\delay_current_reg[7]_i_3\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \delay_current_reg[3]_i_2_n_0\,
-      CO(3) => \delay_current_reg[7]_i_3_n_0\,
-      CO(2) => \delay_current_reg[7]_i_3_n_1\,
-      CO(1) => \delay_current_reg[7]_i_3_n_2\,
-      CO(0) => \delay_current_reg[7]_i_3_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => delay_current(7 downto 4),
-      O(3 downto 0) => delay_current01_in(7 downto 4),
-      S(3) => \delay_current[7]_i_4_n_0\,
-      S(2) => \delay_current[7]_i_5_n_0\,
-      S(1) => \delay_current[7]_i_6_n_0\,
-      S(0) => \delay_current[7]_i_7_n_0\
+      DI(3) => \delay_current[7]_i_2_n_0\,
+      DI(2) => \delay_current[7]_i_3_n_0\,
+      DI(1) => \delay_current[7]_i_4_n_0\,
+      DI(0) => \delay_current[7]_i_5_n_0\,
+      O(3) => \delay_current_reg[7]_i_1_n_4\,
+      O(2) => \delay_current_reg[7]_i_1_n_5\,
+      O(1) => \delay_current_reg[7]_i_1_n_6\,
+      O(0) => \delay_current_reg[7]_i_1_n_7\,
+      S(3) => \delay_current[7]_i_6_n_0\,
+      S(2) => \delay_current[7]_i_7_n_0\,
+      S(1) => \delay_current[7]_i_8_n_0\,
+      S(0) => \delay_current[7]_i_9_n_0\
     );
 \delay_current_reg[8]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[8]_i_1_n_0\,
+      D => \delay_current_reg[11]_i_1_n_7\,
       Q => delay_current(8)
     );
 \delay_current_reg[9]\: unisim.vcomponents.FDCE
@@ -1405,7 +1507,7 @@ delay_current4_carry_i_1: unisim.vcomponents.LUT1
       C => clk,
       CE => sync_rise,
       CLR => pulse_target_i_2_n_0,
-      D => \delay_current[9]_i_1_n_0\,
+      D => \delay_current_reg[11]_i_1_n_6\,
       Q => delay_current(9)
     );
 \delay_latched_reg[0]\: unisim.vcomponents.FDCE
@@ -2143,461 +2245,6 @@ frame_active_reg: unisim.vcomponents.FDCE
       D => \frame_cnt_reg[8]_i_1_n_6\,
       Q => frame_cnt_reg(9)
     );
-\i__carry__0_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => delay_current(14),
-      I1 => delay_current(15),
-      O => \i__carry__0_i_1_n_0\
-    );
-\i__carry__0_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => delay_current(10),
-      I1 => delay_current(11),
-      O => \i__carry__0_i_2_n_0\
-    );
-\i__carry__0_i_3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => delay_current(8),
-      I1 => delay_current(9),
-      O => \i__carry__0_i_3_n_0\
-    );
-\i__carry__0_i_4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => delay_current(14),
-      I1 => delay_current(15),
-      O => \i__carry__0_i_4_n_0\
-    );
-\i__carry__0_i_5\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => delay_current(12),
-      I1 => delay_current(13),
-      O => \i__carry__0_i_5_n_0\
-    );
-\i__carry__0_i_6\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => delay_current(11),
-      I1 => delay_current(10),
-      O => \i__carry__0_i_6_n_0\
-    );
-\i__carry__0_i_7\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => delay_current(8),
-      I1 => delay_current(9),
-      O => \i__carry__0_i_7_n_0\
-    );
-\i__carry_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E0"
-    )
-        port map (
-      I0 => delay_current00,
-      I1 => delay_current(6),
-      I2 => delay_current(7),
-      O => \i__carry_i_1_n_0\
-    );
-\i__carry_i_1__0\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => frame_cnt_reg(7),
-      I1 => delay_latched(7),
-      O => \i__carry_i_1__0_n_0\
-    );
-\i__carry_i_1__1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(15),
-      I1 => delay_latched(15),
-      O => \i__carry_i_1__1_n_0\
-    );
-\i__carry_i_1__2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => frame_cnt_reg(3),
-      I1 => delay_latched(3),
-      O => \i__carry_i_1__2_n_0\
-    );
-\i__carry_i_1__3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(10),
-      I1 => delay_latched(10),
-      O => \i__carry_i_1__3_n_0\
-    );
-\i__carry_i_1__4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(14),
-      I1 => delay_latched(14),
-      O => \i__carry_i_1__4_n_0\
-    );
-\i__carry_i_2\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"0E"
-    )
-        port map (
-      I0 => delay_current(5),
-      I1 => delay_current(4),
-      I2 => delay_current00,
-      O => \i__carry_i_2_n_0\
-    );
-\i__carry_i_2__0\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => delay_latched(6),
-      I1 => frame_cnt_reg(6),
-      O => \i__carry_i_2__0_n_0\
-    );
-\i__carry_i_2__1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(9),
-      I1 => delay_latched(9),
-      O => \i__carry_i_2__1_n_0\
-    );
-\i__carry_i_2__2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => frame_cnt_reg(2),
-      I1 => delay_latched(2),
-      O => \i__carry_i_2__2_n_0\
-    );
-\i__carry_i_2__3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(16),
-      I1 => delay_latched(16),
-      O => \i__carry_i_2__3_n_0\
-    );
-\i__carry_i_2__4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(13),
-      I1 => delay_latched(13),
-      O => \i__carry_i_2__4_n_0\
-    );
-\i__carry_i_3\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"0E"
-    )
-        port map (
-      I0 => delay_current(3),
-      I1 => delay_current(2),
-      I2 => delay_current00,
-      O => \i__carry_i_3_n_0\
-    );
-\i__carry_i_3__0\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => delay_latched(4),
-      O => \i__carry_i_3__0_n_0\
-    );
-\i__carry_i_3__1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(15),
-      I1 => frame_cnt_reg(15),
-      I2 => frame_cnt_reg(16),
-      I3 => delay_latched(16),
-      O => \i__carry_i_3__1_n_0\
-    );
-\i__carry_i_3__2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => frame_cnt_reg(1),
-      I1 => delay_latched(1),
-      O => \i__carry_i_3__2_n_0\
-    );
-\i__carry_i_3__3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(8),
-      I1 => delay_latched(8),
-      O => \i__carry_i_3__3_n_0\
-    );
-\i__carry_i_3__4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(12),
-      I1 => delay_latched(12),
-      O => \i__carry_i_3__4_n_0\
-    );
-\i__carry_i_4\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"0E"
-    )
-        port map (
-      I0 => delay_current(1),
-      I1 => delay_current(0),
-      I2 => delay_current00,
-      O => \i__carry_i_4_n_0\
-    );
-\i__carry_i_4__0\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(7),
-      I1 => delay_latched(7),
-      O => \i__carry_i_4__0_n_0\
-    );
-\i__carry_i_4__1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => frame_cnt_reg(11),
-      I1 => delay_latched(11),
-      O => \i__carry_i_4__1_n_0\
-    );
-\i__carry_i_4__2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"6966"
-    )
-        port map (
-      I0 => frame_cnt_reg(7),
-      I1 => delay_latched(7),
-      I2 => delay_latched(6),
-      I3 => frame_cnt_reg(6),
-      O => \i__carry_i_4__2_n_0\
-    );
-\i__carry_i_4__3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => frame_cnt_reg(0),
-      I1 => delay_latched(0),
-      O => \i__carry_i_4__3_n_0\
-    );
-\i__carry_i_5\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"18"
-    )
-        port map (
-      I0 => delay_current(6),
-      I1 => delay_current00,
-      I2 => delay_current(7),
-      O => \i__carry_i_5_n_0\
-    );
-\i__carry_i_5__0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"2DD2"
-    )
-        port map (
-      I0 => delay_latched(5),
-      I1 => frame_cnt_reg(5),
-      I2 => frame_cnt_reg(6),
-      I3 => delay_latched(6),
-      O => \i__carry_i_5__0_n_0\
-    );
-\i__carry_i_5__1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(10),
-      I1 => frame_cnt_reg(10),
-      I2 => frame_cnt_reg(11),
-      I3 => delay_latched(11),
-      O => \i__carry_i_5__1_n_0\
-    );
-\i__carry_i_5__2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(14),
-      I1 => frame_cnt_reg(14),
-      I2 => frame_cnt_reg(15),
-      I3 => delay_latched(15),
-      O => \i__carry_i_5__2_n_0\
-    );
-\i__carry_i_6\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"81"
-    )
-        port map (
-      I0 => delay_current00,
-      I1 => delay_current(4),
-      I2 => delay_current(5),
-      O => \i__carry_i_6_n_0\
-    );
-\i__carry_i_6__0\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"69"
-    )
-        port map (
-      I0 => frame_cnt_reg(5),
-      I1 => delay_latched(5),
-      I2 => delay_latched(4),
-      O => \i__carry_i_6__0_n_0\
-    );
-\i__carry_i_6__1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(9),
-      I1 => frame_cnt_reg(9),
-      I2 => frame_cnt_reg(10),
-      I3 => delay_latched(10),
-      O => \i__carry_i_6__1_n_0\
-    );
-\i__carry_i_6__2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(13),
-      I1 => frame_cnt_reg(13),
-      I2 => frame_cnt_reg(14),
-      I3 => delay_latched(14),
-      O => \i__carry_i_6__2_n_0\
-    );
-\i__carry_i_7\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"81"
-    )
-        port map (
-      I0 => delay_current00,
-      I1 => delay_current(2),
-      I2 => delay_current(3),
-      O => \i__carry_i_7_n_0\
-    );
-\i__carry_i_7__0\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => frame_cnt_reg(4),
-      I1 => delay_latched(4),
-      O => \i__carry_i_7__0_n_0\
-    );
-\i__carry_i_7__1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(8),
-      I1 => frame_cnt_reg(8),
-      I2 => frame_cnt_reg(9),
-      I3 => delay_latched(9),
-      O => \i__carry_i_7__1_n_0\
-    );
-\i__carry_i_7__2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(12),
-      I1 => frame_cnt_reg(12),
-      I2 => frame_cnt_reg(13),
-      I3 => delay_latched(13),
-      O => \i__carry_i_7__2_n_0\
-    );
-\i__carry_i_8\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"81"
-    )
-        port map (
-      I0 => delay_current(0),
-      I1 => delay_current00,
-      I2 => delay_current(1),
-      O => \i__carry_i_8_n_0\
-    );
-\i__carry_i_8__0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(7),
-      I1 => frame_cnt_reg(7),
-      I2 => frame_cnt_reg(8),
-      I3 => delay_latched(8),
-      O => \i__carry_i_8__0_n_0\
-    );
-\i__carry_i_8__1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"D22D"
-    )
-        port map (
-      I0 => delay_latched(11),
-      I1 => frame_cnt_reg(11),
-      I2 => frame_cnt_reg(12),
-      I3 => delay_latched(12),
-      O => \i__carry_i_8__1_n_0\
-    );
-moving_near_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"CCCC2ECC"
-    )
-        port map (
-      I0 => \delay_current1__8\,
-      I1 => moving_near_reg_n_0,
-      I2 => \delay_current1_carry__1_n_3\,
-      I3 => r0_YB,
-      I4 => r0_yb_d,
-      O => moving_near_i_1_n_0
-    );
-moving_near_reg: unisim.vcomponents.FDPE
-     port map (
-      C => clk,
-      CE => '1',
-      D => moving_near_i_1_n_0,
-      PRE => pulse_target_i_2_n_0,
-      Q => moving_near_reg_n_0
-    );
 pulse_target2_carry: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -2726,7 +2373,7 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
      port map (
       CI => \pulse_target2_carry__0_n_0\,
       CO(3 downto 1) => \NLW_pulse_target2_carry__1_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \pulse_target2__9\,
+      CO(0) => pulse_target2,
       CYINIT => '0',
       DI(3 downto 1) => B"000",
       DI(0) => \pulse_target2_carry__1_i_1_n_0\,
@@ -2845,9 +2492,9 @@ pulse_target_i_1: unisim.vcomponents.LUT3
       INIT => X"40"
     )
         port map (
-      I0 => \_inferred__0/i__carry__3_n_2\,
+      I0 => \_carry__3_n_2\,
       I1 => frame_active_reg_n_0,
-      I2 => \pulse_target2__9\,
+      I2 => pulse_target2,
       O => pulse_target0
     );
 pulse_target_i_2: unisim.vcomponents.LUT1

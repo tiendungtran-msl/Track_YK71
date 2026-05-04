@@ -1497,11 +1497,6 @@
             "left": "31",
             "right": "0"
           },
-          "time_dis": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
           "pulse_delay": {
             "direction": "O"
           },
@@ -1623,9 +1618,6 @@
             "direction": "O",
             "left": "31",
             "right": "0"
-          },
-          "valid": {
-            "direction": "O"
           }
         }
       },
@@ -1748,21 +1740,21 @@
           "sync_0/clk",
           "processing_system7_0/S_AXI_HP0_ACLK",
           "processing_system7_0/M_AXI_GP0_ACLK",
-          "target_0/clk",
-          "pulse_gen_0/clk",
           "clk_wiz_0/clk_in1",
-          "controller_0/clk"
+          "controller_0/clk",
+          "pulse_gen_0/clk",
+          "target_0/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
           "sync_0/rst_n",
-          "target_0/rst_n",
-          "pulse_gen_0/rst_n",
-          "discriminator_0/rst_n",
           "clk_wiz_0/resetn",
-          "controller_0/rst_n"
+          "controller_0/rst_n",
+          "discriminator_0/rst_n",
+          "pulse_gen_0/rst_n",
+          "target_0/rst_n"
         ]
       },
       "pulse_gen_0_pulse_delay": {
@@ -1801,9 +1793,9 @@
         "ports": [
           "sync_0/r0_YB",
           "r0_YB_0",
-          "target_0/r0_YB",
+          "controller_0/r0_YB",
           "pulse_gen_0/r0_YB",
-          "controller_0/r0_YB"
+          "target_0/r0_YB"
         ]
       },
       "target_0_pulse_target": {
