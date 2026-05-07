@@ -2,23 +2,20 @@
 // ============================================================================
 // Module  : discriminator
 // Project : Tracking / Discriminator
-// Clock   : clk_fast (Continuous 400 MHz -> 2.5 ns/cycle)
+// Clock   : clk_fast (Continuous 400 MHz), clk (200 MHz)
 //
-// Nguyên lý hoạt động:
-//   1. Cross Clock Domain (CDC): Đưa tín hiệu r_GM, strobe_1, strobe_2, 
-//      pulse_target (từ miền 200MHz) sang miền 400MHz bằng 2-FF Synchronizer.
-//   2. Bộ tạo Cửa sổ (Window Enable): Sườn lên r_GM kích hoạt một cửa sổ
-//      "window_active" dài 1.5 us (600 chu kỳ của 400MHz).
-//   3. Trong thời gian cửa sổ sáng:
-//        cnt1 += 1 khi strobe_1 trùng pulse_target
-//        cnt2 += 1 khi strobe_2 trùng pulse_target
-//   4. Đóng cửa sổ:
-//        Cập nhật overlap1, overlap2 và error = cnt1 - cnt2.
-//        Phát cờ valid.
+// Nguyên lý hoạt động (Cập nhật CDC):
+//   1. clk_fast (400 MHz) chỉ dùng để tạo cửa sổ 1.5 us và đếm số lượng 
+//      trùng mẫu (cnt1, cnt2).
+//   2. Cờ window_finish từ miền 400 MHz được đồng bộ qua miền 200 MHz.
+//   3. Tại miền 200 MHz, khi nhận được cờ báo kết thúc, lấy các giá trị
+//      cnt1 và cnt2 (lúc này đã ổn định) để thực hiện phép trừ tính error
+//      và gán cờ has_signal, nhằm giảm tải timing ở tần số cao.
 // ============================================================================
 
 module discriminator (
-    input  wire        clk_fast,       // Clock 400 MHz (Chạy liên tục)
+    input  wire        clk,            // Clock 200 MHz (Xử lý logic, tính toán)
+    input  wire        clk_fast,       // Clock 400 MHz (Bắt mẫu độ phân giải cao)
     input  wire        rst_n,
 
     // Tín hiệu từ miền chậm (200 MHz)
@@ -27,10 +24,9 @@ module discriminator (
     input  wire        strobe_2,       // Cửa sóng bám sát 2
     input  wire        pulse_target,   // Tín hiệu mục tiêu
 
-    // Kết quả đo lường (Xuất ở miền 400MHz, ổn định đến PRI tiếp theo)
+    // Kết quả đo lường (Xuất ở miền 200MHz, ổn định đến PRI tiếp theo)
     output reg signed [31:0] error,        
-    output reg        [31:0] overlap1_cnt, 
-    output reg        [31:0] overlap2_cnt
+    output reg               has_signal
 );
 
     // =========================================================================
@@ -42,7 +38,7 @@ module discriminator (
     localparam integer WIN_W      = $clog2(WIN_CYCLES);
 
     // =========================================================================
-    // 1. CDC - ĐỒNG BỘ TÍN HIỆU TỪ 200MHZ SANG 400MHZ
+    // 1. MIỀN CLK_FAST (400 MHz): ĐỒNG BỘ TÍN HIỆU & TẠO CỬA SỔ
     // =========================================================================
     reg [2:0] r_gm_ff;
     reg [1:0] stb1_ff, stb2_ff, tgt_ff;
@@ -63,18 +59,14 @@ module discriminator (
         end
     end
 
-    // Rút trích tín hiệu đã đồng bộ
-    wire r_gm_rise = r_gm_ff[1] & ~r_gm_ff[2]; // Bắt sườn lên sau đồng bộ
+    wire r_gm_rise = r_gm_ff[1] & ~r_gm_ff[2];
     wire stb1_s    = stb1_ff[1];
     wire stb2_s    = stb2_ff[1];
     wire tgt_s     = tgt_ff[1];
 
-    // =========================================================================
-    // 2. MẠCH TẠO CỬA SỔ (WINDOW GENERATOR) DÀI 1.5 us
-    // =========================================================================
     reg [WIN_W-1:0] win_cnt;
     reg             window_active;
-    reg             window_active_d; // Dùng để dò sườn xuống cửa sổ
+    reg             window_active_d;
 
     always @(posedge clk_fast or negedge rst_n) begin
         if (!rst_n) begin
@@ -89,7 +81,7 @@ module discriminator (
                 win_cnt       <= {WIN_W{1'b0}};
             end else if (window_active) begin
                 if (win_cnt == WIN_CYCLES - 1) begin
-                    window_active <= 1'b0; // Đóng cửa sổ sau 1.5us
+                    window_active <= 1'b0;
                 end else begin
                     win_cnt <= win_cnt + 1'b1;
                 end
@@ -97,45 +89,65 @@ module discriminator (
         end
     end
 
-    // Phát hiện hết thời gian 1.5us
     wire window_finish = window_active_d & ~window_active;
 
     // =========================================================================
-    // 3. ĐẾM SỐ LƯỢNG TRÙNG MẪU VÀ TÍNH SAI LỆCH
+    // 2. MIỀN CLK_FAST (400 MHz): ĐẾM SỐ LƯỢNG TRÙNG MẪU VÀ CHỐT DỮ LIỆU
     // =========================================================================
     reg [31:0] cnt1, cnt2;
-    reg        valid_reg;
+    reg [31:0] cnt1_hold, cnt2_hold;
+    reg        ready_toggle_fast;
 
     always @(posedge clk_fast or negedge rst_n) begin
         if (!rst_n) begin
-            cnt1         <= 32'd0;
-            cnt2         <= 32'd0;
-            overlap1_cnt <= 32'd0;
-            overlap2_cnt <= 32'd0;
-            error        <= 32'sd0;
-            valid_reg    <= 1'b0;
+            cnt1              <= 32'd0;
+            cnt2              <= 32'd0;
+            cnt1_hold         <= 32'd0;
+            cnt2_hold         <= 32'd0;
+            ready_toggle_fast <= 1'b0;
         end else begin
-            valid_reg <= 1'b0; // Mặc định hạ cờ valid
-
-            // Bắt đầu 1.5us: Xóa thanh ghi đếm cục bộ
             if (r_gm_rise) begin 
                 cnt1 <= 32'd0;
                 cnt2 <= 32'd0;
-            end 
-            // Cửa sổ đang mở: Đếm xung nếu overlap
-            else if (window_active) begin
-                // strobe 1 và strobe 2 nối tiếp không trùng nhau, an toàn để đếm độc lập
-                if (stb1_s & tgt_s) cnt1 <= cnt1 + 32'd1;
-                if (stb2_s & tgt_s) cnt2 <= cnt2 + 32'd1;
+            end else if (window_active) begin
+                if (stb1_s & tgt_s) cnt1 <= cnt1 + 1'b1;
+                if (stb2_s & tgt_s) cnt2 <= cnt2 + 1'b1;
             end
 
-            // Cửa sổ kết thúc: Cập nhật kết quả tính error và bật xung valid xác nhận
+            // Khi kết thúc cửa sổ, chốt kết quả và lật bit báo cờ ready
             if (window_finish) begin
-                overlap1_cnt <= cnt1;
-                overlap2_cnt <= cnt2;
-                error        <= $signed(cnt1) - $signed(cnt2);
-                valid_reg    <= 1'b1;
+                cnt1_hold         <= cnt1;
+                cnt2_hold         <= cnt2;
+                ready_toggle_fast <= ~ready_toggle_fast;
             end
+        end
+    end
+
+    // =========================================================================
+    // 3. MIỀN CLK (200 MHz): ĐỒNG BỘ CỜ & CẬP NHẬT KẾT QUẢ TÍNH TOÁN
+    // =========================================================================
+    reg [2:0] ready_toggle_sync;
+
+    // Bộ đồng bộ (Toggle Synchronizer) sang miền chậm
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            ready_toggle_sync <= 3'b0;
+        end else begin
+            ready_toggle_sync <= {ready_toggle_sync[1:0], ready_toggle_fast};
+        end
+    end
+
+    // Phát hiện thay đổi của bit toggle (báo hiệu dữ liệu mới đã sẵn sàng)
+    wire data_ready = ready_toggle_sync[2] ^ ready_toggle_sync[1];
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            error        <= 32'sd0;
+            has_signal   <= 1'b0;
+        end else if (data_ready) begin
+            // Ổn định và an toàn về Timing ở tần số 200 MHz
+            error      <= $signed(cnt1_hold) - $signed(cnt2_hold);
+            has_signal <= (cnt1_hold != 32'd0) || (cnt2_hold != 32'd0);
         end
     end
 

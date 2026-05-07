@@ -60,7 +60,7 @@ os_config:
       permission: read_write
       type: string
       value: ps7_uart_1
-      default: ps7_uart_1
+      default: ps7_uart_0
       options:
       - None
       - ps7_uart_0
@@ -72,7 +72,7 @@ os_config:
       permission: read_write
       type: string
       value: ps7_uart_1
-      default: ps7_uart_1
+      default: ps7_uart_0
       options:
       - None
       - ps7_uart_0

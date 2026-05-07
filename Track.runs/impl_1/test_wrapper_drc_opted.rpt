@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon May  4 10:29:25 2026
+| Date         : Thu May  7 15:11:53 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : report_drc -file test_wrapper_drc_opted.rpt -pb test_wrapper_drc_opted.pb -rpx test_wrapper_drc_opted.rpx
 | Design       : test_wrapper
@@ -24,12 +24,28 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 0
-+------+----------+-------------+--------+
-| Rule | Severity | Description | Checks |
-+------+----------+-------------+--------+
-+------+----------+-------------+--------+
+             Checks found: 3
++-----------+----------+------------------+--------+
+| Rule      | Severity | Description      | Checks |
++-----------+----------+------------------+--------+
+| REQP-1615 | Warning  | use_IOB_register | 3      |
++-----------+----------+------------------+--------+
 
 2. REPORT DETAILS
 -----------------
+REQP-1615#1 Warning
+use_IOB_register  
+The FDCE cell test_i/pulse_gen_0/inst/strobe_1_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
+Related violations: <none>
+
+REQP-1615#2 Warning
+use_IOB_register  
+The FDCE cell test_i/pulse_gen_0/inst/strobe_2_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
+Related violations: <none>
+
+REQP-1615#3 Warning
+use_IOB_register  
+The FDCE cell test_i/sync_0/inst/r0_YB_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
+Related violations: <none>
+
 

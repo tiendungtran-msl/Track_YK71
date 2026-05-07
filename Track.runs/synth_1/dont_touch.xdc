@@ -24,7 +24,40 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_clk_wi
 # IP: bd/test/ip/test_discriminator_0_0/test_discriminator_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_discriminator_0_0 || ORIG_REF_NAME==test_discriminator_0_0} -quiet] -quiet
 
-# IP: bd/test/ip/test_controller_0_0/test_controller_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_controller_0_0 || ORIG_REF_NAME==test_controller_0_0} -quiet] -quiet
+# IP: bd/test/ip/test_microblaze_0_0/test_microblaze_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_microblaze_0_0 || ORIG_REF_NAME==test_microblaze_0_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_dlmb_v10_0/test_dlmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_dlmb_v10_0 || ORIG_REF_NAME==test_dlmb_v10_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_ilmb_v10_0/test_ilmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_ilmb_v10_0 || ORIG_REF_NAME==test_ilmb_v10_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_dlmb_bram_if_cntlr_0/test_dlmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==test_dlmb_bram_if_cntlr_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_ilmb_bram_if_cntlr_0/test_ilmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==test_ilmb_bram_if_cntlr_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_lmb_bram_0/test_lmb_bram_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_lmb_bram_0 || ORIG_REF_NAME==test_lmb_bram_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_microblaze_0_axi_intc_0 || ORIG_REF_NAME==test_microblaze_0_axi_intc_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_microblaze_0_xlconcat_0/test_microblaze_0_xlconcat_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_microblaze_0_xlconcat_0 || ORIG_REF_NAME==test_microblaze_0_xlconcat_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_mdm_1_0/test_mdm_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_mdm_1_0 || ORIG_REF_NAME==test_mdm_1_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_rst_ps7_0_200M_0/test_rst_ps7_0_200M_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_rst_ps7_0_200M_0 || ORIG_REF_NAME==test_rst_ps7_0_200M_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_controller_connect_0_0/test_controller_connect_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_controller_connect_0_0 || ORIG_REF_NAME==test_controller_connect_0_0} -quiet] -quiet
+
+# IP: bd/test/ip/test_smartconnect_0_1/test_smartconnect_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_smartconnect_0_1 || ORIG_REF_NAME==test_smartconnect_0_1} -quiet] -quiet
 
 # XDC: d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/test_ooc.xdc

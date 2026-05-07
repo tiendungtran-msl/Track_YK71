@@ -56,6 +56,7 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module test_discriminator_0_0 (
+  clk,
   clk_fast,
   rst_n,
   r_GM,
@@ -63,10 +64,13 @@ module test_discriminator_0_0 (
   strobe_2,
   pulse_target,
   error,
-  overlap1_cnt,
-  overlap2_cnt
+  has_signal
 );
 
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+(* X_INTERFACE_MODE = "slave" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
+input wire clk;
 input wire clk_fast;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 (* X_INTERFACE_MODE = "slave" *)
@@ -77,10 +81,10 @@ input wire strobe_1;
 input wire strobe_2;
 input wire pulse_target;
 output wire [31 : 0] error;
-output wire [31 : 0] overlap1_cnt;
-output wire [31 : 0] overlap2_cnt;
+output wire has_signal;
 
   discriminator inst (
+    .clk(clk),
     .clk_fast(clk_fast),
     .rst_n(rst_n),
     .r_GM(r_GM),
@@ -88,7 +92,6 @@ output wire [31 : 0] overlap2_cnt;
     .strobe_2(strobe_2),
     .pulse_target(pulse_target),
     .error(error),
-    .overlap1_cnt(overlap1_cnt),
-    .overlap2_cnt(overlap2_cnt)
+    .has_signal(has_signal)
   );
 endmodule

@@ -1,0 +1,200 @@
+$date
+	Wed May  6 09:40:49 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_pulse_gen $end
+$var reg 1 ! rst_n $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var reg 1 " r0_YB $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var reg 1 # pulse_target $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var reg 32 $ spd_width [31:0] $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 % pulse_delay $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 & pulse_show_cen $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 ' pulse_r $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 ( pulse_r_cds $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 ) pulse_connect $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 * pulse_sel $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 + r_GM $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 , strobe_1 $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 - strobe_2 $end
+$upscope $end
+$scope module tb_pulse_gen $end
+$var wire 1 . r0_YBK $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+b10011100010000 $
+0#
+0"
+0!
+$end
+#100000
+1!
+#200000
+1"
+#207500
+1%
+#1600000
+0"
+#50202500
+1&
+0%
+#51602500
+0&
+#70202500
+1'
+#70402500
+1(
+#71602500
+0'
+#71702500
+1+
+#71802500
+0(
+#71902500
+1)
+#72002500
+1*
+#72202500
+1,
+#72552500
+1-
+0,
+#72557500
+1.
+#72902500
+0-
+#73102500
+0+
+#73302500
+0)
+#73402500
+0*
+#73957500
+0.
+#560200000
+1"
+b100111000100000 $
+#560207500
+1%
+#561600000
+0"
+#660202500
+1&
+0%
+#661602500
+0&
+#680202500
+1'
+#680402500
+1(
+#681602500
+0'
+#681702500
+1+
+#681802500
+0(
+#681902500
+1)
+#682002500
+1*
+#682202500
+1,
+#682552500
+1-
+0,
+#682557500
+1.
+#682902500
+0-
+#683102500
+0+
+#683302500
+0)
+#683402500
+0*
+#683957500
+0.
+#1120200000
+1"
+b111010100110000 $
+#1120207500
+1%
+#1121600000
+0"
+#1270202500
+1&
+0%
+#1271602500
+0&
+#1290202500
+1'
+#1290402500
+1(
+#1291602500
+0'
+#1291702500
+1+
+#1291802500
+0(
+#1291902500
+1)
+#1292002500
+1*
+#1292202500
+1,
+#1292552500
+1-
+0,
+#1292557500
+1.
+#1292902500
+0-
+#1293102500
+0+
+#1293302500
+0)
+#1293402500
+0*
+#1293957500
+0.
+#1680200000

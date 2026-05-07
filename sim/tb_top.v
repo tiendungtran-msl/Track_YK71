@@ -43,8 +43,7 @@ module tb_top;
     
     // Discriminator Out
     wire signed [31:0] error;
-    wire [31:0] overlap1_cnt;
-    wire [31:0] overlap2_cnt;
+    wire has_signal;
     
     // Controller Out
     wire [31:0] spd_width;
@@ -112,8 +111,7 @@ module tb_top;
         .strobe_2(strobe_2),
         .pulse_target(pulse_target),
         .error(error),
-        .overlap1_cnt(overlap1_cnt),
-        .overlap2_cnt(overlap2_cnt)
+        .has_signal(has_signal)
     );
 
     // 5. Controller (FSM loop)
@@ -125,8 +123,7 @@ module tb_top;
         .rst_n(rst_n),
         .r0_YB(r0_YB),
         .error(error),
-        .overlap1_cnt(overlap1_cnt),
-        .overlap2_cnt(overlap2_cnt),
+        .has_signal(has_signal),
         .spd_width(spd_width),
         .tracking(tracking),
         .scan_dir(scan_dir)
@@ -155,8 +152,7 @@ module tb_top;
         $dumpvars(0, r0_YBK);
         $dumpvars(0, discriminator_inst.valid_reg);
         $dumpvars(0, error);
-        $dumpvars(0, overlap1_cnt);
-        $dumpvars(0, overlap2_cnt);
+        $dumpvars(0, has_signal);
         $dumpvars(0, spd_width);
         $dumpvars(0, tracking);
         $dumpvars(0, scan_dir);
@@ -232,8 +228,8 @@ module tb_top;
         end
 
         if ((pri_count <= 6) || (pri_count % 10 == 0)) begin
-            $display("[%t] PRI=%0d (tracking=%b, scan_dir=%b, spd_width=%0d, error=%0d, ov1=%0d, ov2=%0d)",
-                     $realtime, pri_count, tracking, scan_dir, spd_width, error, overlap1_cnt, overlap2_cnt);
+            $display("[%t] PRI=%0d (tracking=%b, scan_dir=%b, spd_width=%0d, error=%0d, has_signal=%b)",
+                     $realtime, pri_count, tracking, scan_dir, spd_width, error, has_signal);
         end
     end
 
@@ -256,8 +252,8 @@ module tb_top;
             end
 
             if ((valid_count <= 6) || (valid_count % 12 == 0)) begin
-                $display("[%t] VALID (tracking=%b, error=%0d, ov1=%0d, ov2=%0d, spd=%0d)",
-                         $realtime, tracking, error, overlap1_cnt, overlap2_cnt, spd_width);
+                $display("[%t] VALID (tracking=%b, error=%0d, has_signal=%b, spd=%0d)",
+                         $realtime, tracking, error, has_signal, spd_width);
             end
         end
     end

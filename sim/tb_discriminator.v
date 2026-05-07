@@ -14,8 +14,7 @@ module tb_discriminator();
 
     // Output của discriminator
     wire signed [31:0] error;
-    wire [31:0] overlap1_cnt;
-    wire [31:0] overlap2_cnt;
+    wire has_signal;
 
     discriminator dut (
         .clk_fast(clk_fast),
@@ -25,8 +24,7 @@ module tb_discriminator();
         .strobe_2(strobe_2),
         .pulse_target(pulse_target),
         .error(error),
-        .overlap1_cnt(overlap1_cnt),
-        .overlap2_cnt(overlap2_cnt)
+        .has_signal(has_signal)
     );
 
     // Tạo clk_fast 400MHz (Chu kỳ = 2.5ns -> Đảo trạng thái sau 1.25ns)
@@ -38,8 +36,8 @@ module tb_discriminator();
     // Log kết quả khi valid bật lên
     always @(posedge clk_fast) begin
         if (dut.valid_reg) begin
-            $display("[%0t ns] VALID: error = %0d, overlap1 = %0d, overlap2 = %0d\n", 
-                     $realtime, error, overlap1_cnt, overlap2_cnt);
+            $display("[%0t ns] VALID: error = %0d, has_signal = %b\n", 
+                     $realtime, error, has_signal);
         end
     end
 
@@ -57,8 +55,7 @@ module tb_discriminator();
         $dumpvars(0, pulse_target);
         $dumpvars(0, dut.valid_reg);
         $dumpvars(0, error);
-        $dumpvars(0, overlap1_cnt);
-        $dumpvars(0, overlap2_cnt);
+        $dumpvars(0, has_signal);
     `endif
 
         // Khởi tạo

@@ -41,10 +41,12 @@ module target #(
     reg [CNT_W-1:0] frame_cnt;
     reg             frame_active;
 
-    // Tối ưu hóa: Dùng biến integer cục bộ (blocking) để tính toán Accumulator chỉ 1 lần mỗi PRI
-    // Giảm logic combinational thừa và tiết kiệm tiêu thụ năng lượng.
-    integer next_acc_sum;
-    integer step_trigger;
+    // Pipeline 2-stage cho accumulator để rút ngắn đường logic:
+    // Stage-1: chốt tổng fractional tại đầu PRI.
+    // Stage-2: cập nhật frac_accum và delay_current ở chu kỳ kế tiếp.
+    reg [31:0]            frac_sum_pipe;
+    reg                   frac_pipe_valid;
+    wire [CNT_W-1:0]      step_from_pipe = frac_sum_pipe[31:ACC_FRAC_BITS];
 
     // =========================================================================
     // LOGIC ĐIỀU KHIỂN TỌA ĐỘ VÀ PHÁT XUNG MỤC TIÊU
@@ -55,6 +57,8 @@ module target #(
             delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
             delay_latched <= DELAY_MAX_CYCLES[CNT_W-1:0];
             frac_accum    <= {ACC_FRAC_BITS{1'b0}};
+            frac_sum_pipe <= 32'd0;
+            frac_pipe_valid <= 1'b0;
             frame_cnt     <= {CNT_W{1'b0}};
             frame_active  <= 1'b0;
             pulse_target  <= 1'b0;
@@ -62,35 +66,40 @@ module target #(
             // 1. Chốt sườn xung PRI
             r0_yb_d <= r0_YB;
 
-            // 2. Logic xử lý đầu PRI (Tính toán tọa độ tiếp theo)
+            // 2. Logic xử lý đầu PRI (chốt tọa độ hiện hành và stage-1 accumulator)
             if (sync_rise) begin
                 frame_active  <= 1'b1;
                 frame_cnt     <= {CNT_W{1'b0}};
                 delay_latched <= delay_current; // Chốt tọa độ báo cáo trong PRI này
-
-                // Tích lũy fractional step
-                next_acc_sum = frac_accum + ACC_STEP_VAL;
-                step_trigger = next_acc_sum >> ACC_FRAC_BITS;
-                frac_accum   <= next_acc_sum[ACC_FRAC_BITS-1:0];
-
-                // Cập nhật khoảng cách: Chỉ di chuyển 1 chiều từ xa vào gần
-                if (delay_current <= (DELAY_MIN_CYCLES[CNT_W-1:0] + step_trigger)) begin
-                    // Đã tới gần (MIN), nhảy ngược ra xa lặp lại kịch bản
-                    delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
-                end else begin
-                    delay_current <= delay_current - step_trigger;
-                end
+                frac_sum_pipe <= {{(32-ACC_FRAC_BITS){1'b0}}, frac_accum} + ACC_STEP_VAL;
+                frac_pipe_valid <= 1'b1;
             end 
-            // 3. Logic đếm runtime trong quá trình xuất xung
-            else if (frame_active) begin
-                if (frame_cnt == PRI_CYCLES - 1) begin
-                    frame_active <= 1'b0;
-                end else begin
-                    frame_cnt <= frame_cnt + 1'b1;
+            else begin
+                // 3. Logic đếm runtime trong quá trình xuất xung
+                if (frame_active) begin
+                    if (frame_cnt == PRI_CYCLES - 1) begin
+                        frame_active <= 1'b0;
+                    end else begin
+                        frame_cnt <= frame_cnt + 1'b1;
+                    end
+                end
+
+                // 4. Stage-2 accumulator và cập nhật khoảng cách
+                if (frac_pipe_valid) begin
+                    frac_pipe_valid <= 1'b0;
+                    frac_accum <= frac_sum_pipe[ACC_FRAC_BITS-1:0];
+
+                    // Cập nhật khoảng cách: Chỉ di chuyển 1 chiều từ xa vào gần
+                    if (delay_current <= (DELAY_MIN_CYCLES[CNT_W-1:0] + step_from_pipe)) begin
+                        // Đã tới gần (MIN), nhảy ngược ra xa lặp lại kịch bản
+                        delay_current <= DELAY_MAX_CYCLES[CNT_W-1:0];
+                    end else begin
+                        delay_current <= delay_current - step_from_pipe;
+                    end
                 end
             end
 
-            // 4. Phát xung mục tiêu
+            // 5. Phát xung mục tiêu
             if (frame_active && 
                (frame_cnt >= delay_latched) && 
                (frame_cnt < (delay_latched + PULSE_WIDTH_CYCLES))) begin

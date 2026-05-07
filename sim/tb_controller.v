@@ -5,8 +5,7 @@ module tb_controller;
     reg rst_n;
     reg r0_YB;
     reg signed [31:0] error;
-    reg [31:0] overlap1_cnt;
-    reg [31:0] overlap2_cnt;
+    reg has_signal;
 
     wire [31:0] spd_width;
     wire tracking;
@@ -18,8 +17,7 @@ module tb_controller;
         .rst_n(rst_n),
         .r0_YB(r0_YB),
         .error(error),
-        .overlap1_cnt(overlap1_cnt),
-        .overlap2_cnt(overlap2_cnt),
+        .has_signal(has_signal),
         .spd_width(spd_width),
         .tracking(tracking),
         .scan_dir(scan_dir)
@@ -57,8 +55,7 @@ module tb_controller;
         $dumpvars(0, rst_n);
         $dumpvars(0, r0_YB);
         $dumpvars(0, error);
-        $dumpvars(0, overlap1_cnt);
-        $dumpvars(0, overlap2_cnt);
+        $dumpvars(0, has_signal);
         $dumpvars(0, spd_width);
         $dumpvars(0, tracking);
         $dumpvars(0, scan_dir);
@@ -69,8 +66,7 @@ module tb_controller;
         rst_n = 0;
         r0_YB = 0;
         error = 0;
-        overlap1_cnt = 0;
-        overlap2_cnt = 0;
+        has_signal = 0;
         
         #100 rst_n = 1;
         
@@ -83,8 +79,7 @@ module tb_controller;
         $display("[%t] Sau 3 PRI, spd_width = %0d, scan_dir = %b, tracking = %b", $realtime, spd_width, scan_dir, tracking);
 
         $display("\n--- PHASE 2: TARGET DETECTED (Phát hiện và Khoá bám) ---");
-        overlap1_cnt = 50; 
-        overlap2_cnt = 30; // has_signal = 1
+        has_signal = 1; // has_signal = 1
         error = 80;        
         // Cần đợi LOCK_THR (2 PRI) để chuyển qua TRACK
         wait_pri(2);
@@ -101,8 +96,7 @@ module tb_controller;
         $display("[%t] Thay đổi error = %0d -> spd_width = %0d (Đã tăng theo phần bù mới)", $realtime, error, spd_width);
 
         $display("\n--- PHASE 4: TARGET LOST (Mất mục tiêu, quay lại sục sạo) ---");
-        overlap1_cnt = 0;
-        overlap2_cnt = 0; // has_signal = 0
+        has_signal = 0; // has_signal = 0
         wait_pri(2);
         $display("[%t] Tín hiệu mất sau 2 PRI, tracking = %b (Vẫn bám)", $realtime, tracking);
         wait_pri(3); // Đợi thêm 3 PRI nữa cho đủ LOSS_THR = 5

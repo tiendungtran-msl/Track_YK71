@@ -43,19 +43,19 @@ module pulse_gen #(
     input  wire [31:0] spd_width,      // Độ rộng xung CП3 (số chu kỳ CLK)
 
     // Các xung đầu ra
-    output wire        pulse_delay,    // Xung giữ chậm (CП3)
-    output wire        pulse_show_cen, // Xung hiển thị trung tâm (ЗИРС)
-    output wire        pulse_r,        // Xung đo cự ly (r)
+    (* IOB = "TRUE" *) output reg         pulse_delay,    // Xung giữ chậm (CП3)
+                       output reg         pulse_show_cen, // Xung hiển thị trung tâm (ЗИРС)
+                       output reg         pulse_r,        // Xung đo cự ly (r)
 
-    output wire        pulse_r_cds,    // Xung gửi tới khối CDS (rC.CDS)
-    output wire        pulse_connect,  // Xung liên hệ (ПРИВЯЗКИ)
-    output wire        pulse_sel,      // Xung kích bộ chọn 
+                       output reg         pulse_r_cds,    // Xung gửi tới khối CDS (rC.CDS)
+                       output reg         pulse_connect,  // Xung liên hệ (ПРИВЯЗКИ)
+                       output reg         pulse_sel,      // Xung kích bộ chọn 
 
-    output wire        r_GM,           // Xung hiển thị GM
-    output wire        strobe_1,       // Cửa sóng bám sát 1 (CSBS1)
-    output wire        strobe_2,       // Cửa sóng bám sát 2 (CSBS2)
+                       output reg         r_GM,           // Xung hiển thị GM
+    (* IOB = "TRUE" *) output reg         strobe_1,       // Cửa sóng bám sát 1 (CSBS1)
+    (* IOB = "TRUE" *) output reg         strobe_2,       // Cửa sóng bám sát 2 (CSBS2)
 
-    output wire        r0_YBK          // Xung mang thông tin cự ly
+    (* IOB = "TRUE" *) output reg         r0_YBK          // Xung mang thông tin cự ly
 );
 
     // =========================================================================
@@ -110,6 +110,7 @@ module pulse_gen #(
 
     // =========================================================================
     // KHỞI TẠO CÁC MỐC THỜI GIAN THEO SPD_WIDTH (Quy đổi cho chu kỳ 5ns)
+    // Pipeline các phép cộng vào thanh ghi tĩnh để cắt logic level
     // =========================================================================
     /*
       Quy đổi độ trễ từ μs -> số chu kỳ cho 200Mhz (nhân đôi so với 100Mhz):
@@ -119,48 +120,88 @@ module pulse_gen #(
        1.80 μs -> 360 cycles
        2.35 μs -> 470 cycles
     */
-    wire [31:0] t_r    = spd_width_latch + MULTI_WIDTH;  // pulse_r = Sườn xuống CП3 + 20 μs
-    wire [31:0] t_rcds = t_r    + 40;                    // rC.CDS  = r + 0.2 μs
-    wire [31:0] t_conn = t_r    + 340;                   // connect = r + 1.7 μs
-    wire [31:0] t_sel  = t_r    + 360;                   // sel     = r + 1.8 μs
-    wire [31:0] t_ybkr = t_r    + 470;                   // r0_YBK  = r + 2.35 μs
-    
-    wire [31:0] t_gm   = t_rcds + 260;                   // r_GM    = rC.CDS + 1.3 μs
-    wire [31:0] t_stb1 = t_rcds + 360;                   // csbs_1  = rC.CDS + 1.8 μs
-    wire [31:0] t_stb2 = t_stb1 + STROBE_W;              // csbs_2  = liền kề csbs_1
+    reg [31:0] t_r, t_rcds, t_conn, t_sel, t_ybkr, t_gm, t_stb1, t_stb2;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            t_r    <= 32'd0;
+            t_rcds <= 32'd0;
+            t_conn <= 32'd0;
+            t_sel  <= 32'd0;
+            t_ybkr <= 32'd0;
+            t_gm   <= 32'd0;
+            t_stb1 <= 32'd0;
+            t_stb2 <= 32'd0;
+        end else begin
+            // Việc tính các ngưỡng cộng thêm 1 chu kỳ clock là hoàn toàn an toàn, 
+            // vì frame_cnt cần tới hàng nghìn cycles (~ MULTI_WIDTH) mới chạm tới các ngưỡng này.
+            t_r    <= spd_width_latch + MULTI_WIDTH;
+            t_rcds <= spd_width_latch + (MULTI_WIDTH + 40);
+            t_conn <= spd_width_latch + (MULTI_WIDTH + 340);
+            t_sel  <= spd_width_latch + (MULTI_WIDTH + 360);
+            t_ybkr <= spd_width_latch + (MULTI_WIDTH + 470);
+            
+            t_gm   <= spd_width_latch + (MULTI_WIDTH + 40 + 260);
+            t_stb1 <= spd_width_latch + (MULTI_WIDTH + 40 + 360);
+            t_stb2 <= spd_width_latch + (MULTI_WIDTH + 40 + 360 + STROBE_W);
+        end
+    end
 
     // =========================================================================
     // XỬ LÝ LOGIC PHÁT XUNG
     // =========================================================================
     
-    // CП3: Kéo dài từ r0_YB đến độ rộng điều khiển spd_width_latch
-    assign pulse_delay    = frame_active && (frame_cnt < spd_width_latch);
+    wire [31:0] show_cen_delta = frame_cnt - spd_width_latch;
+    wire [31:0] pulse_r_delta  = frame_cnt - t_r;
+    wire [31:0] rcds_delta     = frame_cnt - t_rcds;
+    wire [31:0] conn_delta     = frame_cnt - t_conn;
+    wire [31:0] sel_delta      = frame_cnt - t_sel;
+    wire [31:0] ybkr_delta     = frame_cnt - t_ybkr;
+    wire [31:0] gm_delta       = frame_cnt - t_gm;
+    wire [31:0] stb1_delta     = frame_cnt - t_stb1;
+    wire [31:0] stb2_delta     = frame_cnt - t_stb2;
 
-    // ЗИРС: Xung ngắn báo hiệu trung tâm nhắm vào sườn xuống của CП3
-    assign pulse_show_cen = frame_active && (frame_cnt >= spd_width_latch) && (frame_cnt < spd_width_latch + PULSE_W);
+    wire pulse_delay_next    = frame_active && (frame_cnt < spd_width_latch);
+    wire pulse_show_cen_next = frame_active && (show_cen_delta < PULSE_W);
+    wire pulse_r_next        = frame_active && (pulse_r_delta < PULSE_W);
+    wire pulse_r_cds_next    = frame_active && (rcds_delta < PULSE_W);
+    wire pulse_connect_next  = frame_active && (conn_delta < PULSE_W);
+    wire pulse_sel_next      = frame_active && (sel_delta < PULSE_W);
+    wire r0_YBK_next         = frame_active && (ybkr_delta < PULSE_W);
+    wire r_GM_next           = frame_active && (gm_delta < PULSE_W);
+    wire strobe_1_next       = frame_active && (stb1_delta < STROBE_W);
+    wire strobe_2_next       = frame_active && (stb2_delta < STROBE_W);
 
-    // r: Xung khởi đầu cho chuỗi liên kết các xung trễ
-    assign pulse_r        = frame_active && (frame_cnt >= t_r) && (frame_cnt < t_r + PULSE_W);
+    // Thêm tầng pipeline nội bộ cho nhánh r0_YBK để giảm đường dài tới IOB FF.
+    reg r0_YBK_core;
 
-    // Xung rC.CDS
-    assign pulse_r_cds    = frame_active && (frame_cnt >= t_rcds) && (frame_cnt < t_rcds + PULSE_W);
-
-    // Xung liên hệ (ПРИВЯЗКИ)
-    assign pulse_connect  = frame_active && (frame_cnt >= t_conn) && (frame_cnt < t_conn + PULSE_W);
-
-    // Xung chọn cự ly
-    assign pulse_sel      = frame_active && (frame_cnt >= t_sel) && (frame_cnt < t_sel + PULSE_W);
-
-    // Xung r0_YBK mang thông tin cự ly
-    assign r0_YBK         = frame_active && (frame_cnt >= t_ybkr) && (frame_cnt < t_ybkr + PULSE_W);
-
-    // Xung hiển thị GM
-    assign r_GM           = frame_active && (frame_cnt >= t_gm) && (frame_cnt < t_gm + PULSE_W);
-
-    // Cửa sóng bám sát 1 (CSBS1)
-    assign strobe_1       = frame_active && (frame_cnt >= t_stb1) && (frame_cnt < t_stb1 + STROBE_W);
-
-    // Cửa sóng bám sát 2 (CSBS2)
-    assign strobe_2       = frame_active && (frame_cnt >= t_stb2) && (frame_cnt < t_stb2 + STROBE_W);
+    // Đăng ký toàn bộ ngõ ra để cắt đường logic dài từ khối nội bộ ra chân vật lý.
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            pulse_delay    <= 1'b0;
+            pulse_show_cen <= 1'b0;
+            pulse_r        <= 1'b0;
+            pulse_r_cds    <= 1'b0;
+            pulse_connect  <= 1'b0;
+            pulse_sel      <= 1'b0;
+            r0_YBK_core    <= 1'b0;
+            r0_YBK         <= 1'b0;
+            r_GM           <= 1'b0;
+            strobe_1       <= 1'b0;
+            strobe_2       <= 1'b0;
+        end else begin
+            pulse_delay    <= pulse_delay_next;
+            pulse_show_cen <= pulse_show_cen_next;
+            pulse_r        <= pulse_r_next;
+            pulse_r_cds    <= pulse_r_cds_next;
+            pulse_connect  <= pulse_connect_next;
+            pulse_sel      <= pulse_sel_next;
+            r0_YBK_core    <= r0_YBK_next;
+            r0_YBK         <= r0_YBK_core;
+            r_GM           <= r_GM_next;
+            strobe_1       <= strobe_1_next;
+            strobe_2       <= strobe_2_next;
+        end
+    end
 
 endmodule

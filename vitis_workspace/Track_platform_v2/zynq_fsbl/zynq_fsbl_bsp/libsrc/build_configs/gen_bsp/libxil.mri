@@ -1,0 +1,19 @@
+create libxil.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xadcps/src/libxadcps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/usbps/src/libusbps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/libuartps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/ttcps/src/libttcps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/libsdps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scuwdt/src/libscuwdt.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scutimer/src/libscutimer.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/libscugic.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/libqspips.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/iicps/src/libiicps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/gpiops/src/libgpiops.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/emacps/src/libemacps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/libdmaps.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/devcfg/src/libdevcfg.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/coresightps_dcc/src/libcoresightps_dcc.a
+addlib D:/Nhung/FPGA/Track/vitis_workspace/Track_platform_v2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/canps/src/libcanps.a
+save
+end

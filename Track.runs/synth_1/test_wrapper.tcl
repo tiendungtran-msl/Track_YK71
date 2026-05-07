@@ -57,7 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
+set_param bd.open.in_stealth_mode 1
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -68,21 +68,86 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Nhung/FPGA/Track/Track.cache/wt [current_project]
 set_property parent.project_path D:/Nhung/FPGA/Track/Track.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part myir.com:mys-7z020:part0:2.1 [current_project]
+set_property ip_repo_paths d:/Nhung/FPGA/ip_repo/controller_connect_1_0 [current_project]
+update_ip_catalog
 set_property ip_output_repo d:/Nhung/FPGA/Track/Track.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/hdl/test_wrapper.v
+read_verilog -library xil_defaultlib D:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/hdl/test_wrapper.v
 add_files D:/Nhung/FPGA/Track/Track.srcs/sources_1/bd/test/test.bd
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_clk_wiz_0_0/test_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_0/test_microblaze_0_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_0/test_microblaze_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_0/test_microblaze_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_dlmb_v10_0/test_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_ilmb_v10_0/test_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_dlmb_bram_if_cntlr_0/test_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_ilmb_bram_if_cntlr_0/test_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_lmb_bram_0/test_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_mdm_1_0/test_mdm_1_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_mdm_1_0/test_mdm_1_0_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_mdm_1_0/test_mdm_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_rst_ps7_0_200M_0/test_rst_ps7_0_200M_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_rst_ps7_0_200M_0/test_rst_ps7_0_200M_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_rst_ps7_0_200M_0/test_rst_ps7_0_200M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_1/bd_3e50_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_1/bd_3e50_psr_aclk_0.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_2/bd_3e50_arsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_3/bd_3e50_rsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_4/bd_3e50_awsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_5/bd_3e50_wsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_6/bd_3e50_bsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_10/bd_3e50_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_11/bd_3e50_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_12/bd_3e50_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_13/bd_3e50_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_14/bd_3e50_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_15/bd_3e50_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_16/bd_3e50_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_17/bd_3e50_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_18/bd_3e50_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_19/bd_3e50_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_20/bd_3e50_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_21/bd_3e50_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_23/bd_3e50_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_24/bd_3e50_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_25/bd_3e50_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_26/bd_3e50_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_27/bd_3e50_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_28/bd_3e50_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_30/bd_3e50_m02s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_31/bd_3e50_m02arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_32/bd_3e50_m02rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_33/bd_3e50_m02awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_34/bd_3e50_m02wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_35/bd_3e50_m02bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_37/bd_3e50_m03s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_38/bd_3e50_m03arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_39/bd_3e50_m03rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_40/bd_3e50_m03awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_41/bd_3e50_m03wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_42/bd_3e50_m03bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_44/bd_3e50_m04s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_45/bd_3e50_m04arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_46/bd_3e50_m04rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_47/bd_3e50_m04awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_48/bd_3e50_m04wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/bd_0/ip/ip_49/bd_3e50_m04bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_smartconnect_0_1/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/test_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_microblaze_0_0/data/mb_bootloop_le.elf]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

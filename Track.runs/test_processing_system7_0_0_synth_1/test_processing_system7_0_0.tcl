@@ -56,9 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "test_processing_system7_0_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -70,15 +67,17 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Nhung/FPGA/Track/Track.cache/wt [current_project]
 set_property parent.project_path D:/Nhung/FPGA/Track/Track.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part myir.com:mys-7z020:part0:2.1 [current_project]
+set_property ip_repo_paths d:/Nhung/FPGA/ip_repo/controller_connect_1_0 [current_project]
+update_ip_catalog
 set_property ip_output_repo d:/Nhung/FPGA/Track/Track.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/Nhung/FPGA/Track/Track.srcs/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0.xci
+read_ip -quiet D:/Nhung/FPGA/Track/Track.srcs/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0.xci
 set_property used_in_implementation false [get_files -all d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0.xdc]
 
 OPTRACE "Adding files" END { }

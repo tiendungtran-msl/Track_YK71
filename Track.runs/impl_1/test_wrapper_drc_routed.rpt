@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon May  4 10:30:57 2026
+| Date         : Thu May  7 15:15:57 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : report_drc -file test_wrapper_drc_routed.rpt -pb test_wrapper_drc_routed.pb -rpx test_wrapper_drc_routed.rpx
 | Design       : test_wrapper
@@ -24,30 +24,108 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 3
-+----------+----------+----------------------------+--------+
-| Rule     | Severity | Description                | Checks |
-+----------+----------+----------------------------+--------+
-| PDRC-134 | Warning  | SLICE_PairEqSame_B6B5_WARN | 1      |
-| PDRC-136 | Warning  | SLICE_PairEqSame_C6C5_WARN | 1      |
-| PDRC-138 | Warning  | SLICE_PairEqSame_D6D5_WARN | 1      |
-+----------+----------+----------------------------+--------+
+             Checks found: 18
++-----------+----------+----------------------------+--------+
+| Rule      | Severity | Description                | Checks |
++-----------+----------+----------------------------+--------+
+| PDRC-132  | Warning  | SLICE_PairEqSame_A6A5_WARN | 5      |
+| PDRC-134  | Warning  | SLICE_PairEqSame_B6B5_WARN | 2      |
+| PDRC-136  | Warning  | SLICE_PairEqSame_C6C5_WARN | 3      |
+| PDRC-138  | Warning  | SLICE_PairEqSame_D6D5_WARN | 4      |
+| PDRC-146  | Warning  | SLICE_PairEqSame_D6D5_WARN | 1      |
+| REQP-1615 | Warning  | use_IOB_register           | 3      |
++-----------+----------+----------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
+PDRC-132#1 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X23Y25 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-132#2 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X24Y23 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-132#3 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X24Y25 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-132#4 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X25Y23 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-132#5 Warning
+SLICE_PairEqSame_A6A5_WARN  
+Luts A6LUT and A5LUT in use in site SLICE_X29Y48 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
 PDRC-134#1 Warning
 SLICE_PairEqSame_B6B5_WARN  
-Luts B6LUT and B5LUT in use in site SLICE_X105Y103 with different equations without A6 pin connected to Global Logic High.
+Luts B6LUT and B5LUT in use in site SLICE_X25Y23 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-134#2 Warning
+SLICE_PairEqSame_B6B5_WARN  
+Luts B6LUT and B5LUT in use in site SLICE_X85Y86 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-136#1 Warning
 SLICE_PairEqSame_C6C5_WARN  
-Luts C6LUT and C5LUT in use in site SLICE_X105Y103 with different equations without A6 pin connected to Global Logic High.
+Luts C6LUT and C5LUT in use in site SLICE_X23Y46 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-136#2 Warning
+SLICE_PairEqSame_C6C5_WARN  
+Luts C6LUT and C5LUT in use in site SLICE_X24Y22 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-136#3 Warning
+SLICE_PairEqSame_C6C5_WARN  
+Luts C6LUT and C5LUT in use in site SLICE_X85Y86 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-138#1 Warning
 SLICE_PairEqSame_D6D5_WARN  
-Luts D6LUT and D5LUT in use in site SLICE_X105Y103 with different equations without A6 pin connected to Global Logic High.
+Luts D6LUT and D5LUT in use in site SLICE_X23Y28 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-138#2 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X23Y46 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-138#3 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X77Y48 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-138#4 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X85Y86 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-146#1 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X58Y74 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+REQP-1615#1 Warning
+use_IOB_register  
+The FDCE cell test_i/pulse_gen_0/inst/strobe_1_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
+Related violations: <none>
+
+REQP-1615#2 Warning
+use_IOB_register  
+The FDCE cell test_i/pulse_gen_0/inst/strobe_2_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
+Related violations: <none>
+
+REQP-1615#3 Warning
+use_IOB_register  
+The FDCE cell test_i/sync_0/inst/r0_YB_reg has IOB set to TRUE, but does not connect directly to an IO cell. Remove the constraint or ensure the FDCE is properly connected to an IO.
 Related violations: <none>
 
 

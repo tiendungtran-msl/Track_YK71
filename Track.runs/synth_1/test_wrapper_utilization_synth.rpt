@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon May  4 10:28:35 2026
+| Date         : Thu May  7 15:10:34 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : report_utilization -file test_wrapper_utilization_synth.rpt -pb test_wrapper_utilization_synth.pb
 | Design       : test_wrapper
@@ -156,17 +156,27 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+-----------------------------+------+
-|           Ref Name          | Used |
-+-----------------------------+------+
-| test_target_0_0             |    1 |
-| test_sync_0_0               |    1 |
-| test_pulse_gen_0_0          |    1 |
-| test_processing_system7_0_0 |    1 |
-| test_discriminator_0_0      |    1 |
-| test_controller_0_0         |    1 |
-| test_clk_wiz_0_0            |    1 |
-+-----------------------------+------+
++------------------------------+------+
+|           Ref Name           | Used |
++------------------------------+------+
+| test_target_0_0              |    1 |
+| test_sync_0_0                |    1 |
+| test_smartconnect_0_1        |    1 |
+| test_rst_ps7_0_200M_0        |    1 |
+| test_pulse_gen_0_0           |    1 |
+| test_processing_system7_0_0  |    1 |
+| test_microblaze_0_axi_intc_0 |    1 |
+| test_microblaze_0_0          |    1 |
+| test_mdm_1_0                 |    1 |
+| test_lmb_bram_0              |    1 |
+| test_ilmb_v10_0              |    1 |
+| test_ilmb_bram_if_cntlr_0    |    1 |
+| test_dlmb_v10_0              |    1 |
+| test_dlmb_bram_if_cntlr_0    |    1 |
+| test_discriminator_0_0       |    1 |
+| test_controller_connect_0_0  |    1 |
+| test_clk_wiz_0_0             |    1 |
++------------------------------+------+
 
 
 9. Instantiated Netlists

@@ -62,7 +62,7 @@
                  <0xf8007100 &adc 0xf8007100 0x21>;
                 #ranges-address-cells = <0x1>;
                 #ranges-size-cells = <0x1>;
-                phandle = <0x34>;
+                phandle = <0x3a>;
 
                 ps7_cortexa9_0: cpu@0 {
                         compatible = "arm,cortex-a9";
@@ -109,7 +109,7 @@
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
                 ranges;
-                phandle = <0x35>;
+                phandle = <0x3b>;
         };
 
         pmu@f8891000 {
@@ -317,7 +317,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x1>;
                         ranges = <0x0 0xfffc0000 0x10000>;
-                        phandle = <0x37>;
+                        phandle = <0x3d>;
 
                         ocm-sram@0 {
                                 reg = <0x0 0x10000>;
@@ -416,7 +416,6 @@
                         xlnx,eth-mode = <0x1>;
                         xlnx,enet-clk-freq-hz = <0x7735940>;
                         xlnx,enet-slcr-100mbps-div0 = <0x8>;
-                        xlnx,ptp-enet-clock = <0x4f790d8>;
                         local-mac-address = [00 0A 23 00 00 00];
                         xlnx,enet-slcr-100mbps-div1 = <0x5>;
                         xlnx,name = "ps7_ethernet_0";
@@ -471,14 +470,14 @@
                                 reg = <0x200 0x48>;
                                 #reset-cells = <0x1>;
                                 syscon = <0x20>;
-                                phandle = <0x3f>;
+                                phandle = <0x45>;
                         };
 
                         pinctrl0: pinctrl@700 {
                                 compatible = "xlnx,pinctrl-zynq";
                                 reg = <0x700 0x200>;
                                 syscon = <0x20>;
-                                phandle = <0x40>;
+                                phandle = <0x46>;
                         };
                 };
 
@@ -520,7 +519,7 @@
                 efuse: efuse@f800d000 {
                         compatible = "xlnx,zynq-efuse";
                         reg = <0xf800d000 0x20>;
-                        phandle = <0x41>;
+                        phandle = <0x47>;
                 };
 
                 global_timer: timer@f8f00200 {
@@ -562,7 +561,7 @@
                         compatible = "cdns,ttc";
                         clocks = <&clkc 0x6>;
                         reg = <0xf8002000 0x1000>;
-                        phandle = <0x42>;
+                        phandle = <0x48>;
                 };
 
                 scutimer: timer@f8f00600 {
@@ -614,7 +613,7 @@
                         interrupts = <0x0 0x9 0x1>;
                         reg = <0xf8005000 0x1000>;
                         timeout-sec = <0xa>;
-                        phandle = <0x44>;
+                        phandle = <0x4a>;
                 };
 
                 coresight: coresight@f8800000 {
@@ -859,7 +858,22 @@
 
                 ps7_qspi_linear_0: ps7_qspi_linear@fc000000 {
                         reg = <0xfc000000 0x1000000>;
-                        phandle = <0x49>;
+                        phandle = <0x4f>;
+                };
+        };
+
+        clock: clocks {
+                #address-cells = <0x1>;
+                #size-cells = <0x0>;
+                phandle = <0x52>;
+
+                clk_cpu_0: clk_cpu@0 {
+                        compatible = "fixed-clock";
+                        reg = <0x0>;
+                        clock-frequency = <0xbebc200>;
+                        clock-output-names = "clk_cpu";
+                        #clock-cells = <0x0>;
+                        phandle = <0x53>;
                 };
         };
 
@@ -869,7 +883,7 @@
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
                 firmware-name = "test_wrapper.bit.bin";
-                phandle = <0x4a>;
+                phandle = <0x39>;
 
                 clocking0: clocking0 {
                         compatible = "xlnx,fclk";
@@ -878,7 +892,80 @@
                         #clock-cells = <0x0>;
                         clock-output-names = "fabric_clk";
                         clocks = <&clkc 0xf>;
-                        phandle = <0x4b>;
+                        phandle = <0x54>;
+                };
+
+                microblaze_0_local_memory_dlmb_bram_if_cntlr: lmb_bram_if_cntlr@0 {
+                        xlnx,edk-special = "BRAM_CTRL";
+                        xlnx,write-access = <0x2>;
+                        compatible = "xlnx,lmb-bram-if-cntlr-4.0";
+                        xlnx,ecc-onoff-register = <0x0>;
+                        xlnx,ecc-onoff-reset-value = <0x1>;
+                        xlnx,s-axi-ctrl-protocol = "AXI4LITE";
+                        xlnx,mask = <0x21000000>;
+                        xlnx,mask1 = <0x800000>;
+                        xlnx,rable = <0x0>;
+                        xlnx,mask2 = <0x800000>;
+                        xlnx,fault-inject = <0x0>;
+                        xlnx,mask3 = <0x800000>;
+                        xlnx,arbitration = <0x0>;
+                        xlnx,num-lmb = <0x1>;
+                        xlnx,mask4 = <0x800000>;
+                        reg = <0x0 0x10000>;
+                        xlnx,s-axi-ctrl-addr-width = <0x20>;
+                        xlnx,mask5 = <0x800000>;
+                        xlnx,ecc-status-registers = <0x0>;
+                        xlnx,mask6 = <0x800000>;
+                        xlnx,lmb-protocol = <0x0>;
+                        xlnx,ce-counter-width = <0x0>;
+                        xlnx,mask7 = <0x800000>;
+                        xlnx,ecc = <0x0>;
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,lmb-dwidth = <0x20>;
+                        xlnx,ce-failing-registers = <0x0>;
+                        xlnx,interconnect = <0x0>;
+                        xlnx,ue-failing-registers = <0x0>;
+                        xlnx,data-width = <0x20>;
+                        xlnx,s-axi-ctrl-data-width = <0x20>;
+                        xlnx,bram-awidth = <0x20>;
+                        xlnx,lmb-awidth = <0x20>;
+                        phandle = <0x35>;
+                };
+
+                microblaze_0_local_memory_ilmb_bram_if_cntlr: lmb_bram_if_cntlr@1 {
+                        xlnx,edk-special = "BRAM_CTRL";
+                        xlnx,write-access = <0x2>;
+                        compatible = "xlnx,lmb-bram-if-cntlr-4.0";
+                        xlnx,ecc-onoff-register = <0x0>;
+                        xlnx,ecc-onoff-reset-value = <0x1>;
+                        xlnx,s-axi-ctrl-protocol = "AXI4LITE";
+                        xlnx,mask = <0x0>;
+                        xlnx,mask1 = <0x800000>;
+                        xlnx,rable = <0x0>;
+                        xlnx,mask2 = <0x800000>;
+                        xlnx,fault-inject = <0x0>;
+                        xlnx,mask3 = <0x800000>;
+                        xlnx,arbitration = <0x0>;
+                        xlnx,num-lmb = <0x1>;
+                        xlnx,mask4 = <0x800000>;
+                        reg = <0x0 0x10000>;
+                        xlnx,s-axi-ctrl-addr-width = <0x20>;
+                        xlnx,mask5 = <0x800000>;
+                        xlnx,ecc-status-registers = <0x0>;
+                        xlnx,mask6 = <0x800000>;
+                        xlnx,lmb-protocol = <0x0>;
+                        xlnx,ce-counter-width = <0x0>;
+                        xlnx,mask7 = <0x800000>;
+                        xlnx,ecc = <0x0>;
+                        xlnx,edk-iptype = "PERIPHERAL";
+                        xlnx,lmb-dwidth = <0x20>;
+                        xlnx,ce-failing-registers = <0x0>;
+                        xlnx,interconnect = <0x0>;
+                        xlnx,ue-failing-registers = <0x0>;
+                        xlnx,s-axi-ctrl-data-width = <0x20>;
+                        xlnx,bram-awidth = <0x20>;
+                        xlnx,lmb-awidth = <0x20>;
+                        phandle = <0x56>;
                 };
         };
 
@@ -900,7 +987,7 @@
                 phandle = <0x2>;
         };
 
-        ps7_ram_0_memory: memory@0 {
+        ps7_ram_0_memory: memory@00 {
                 compatible = "xlnx,ps7-ram-1.00.a";
                 xlnx,ip-name = "ps7_ram";
                 device_type = "memory";
@@ -923,11 +1010,12 @@
         };
 
         aliases {
-                serial0 = "/axi/serial@e0001000";
+                serial0 = "/axi/serial@e0000000";
                 spi0 = "/axi/spi@e000d000";
-                serial1 = "/axi/serial@e0000000";
-                serial2 = "/axi/coresight@f8800000";
+                serial1 = "/axi/serial@e0001000";
+                serial2 = "/amba_pl/serial@41400000";
                 i2c0 = "/axi/i2c@e0004000";
+                serial3 = "/axi/coresight@f8800000";
                 i2c1 = "/axi/i2c@e0005000";
                 ethernet0 = "/axi/ethernet@e000b000";
         };
@@ -989,11 +1077,15 @@
                 ps7_afi_2 = "/axi/ps7_afi@f800a000";
                 ps7_afi_3 = "/axi/ps7_afi@f800b000";
                 ps7_qspi_linear_0 = "/axi/ps7_qspi_linear@fc000000";
+                clock = "/clocks";
+                clk_cpu_0 = "/clocks/clk_cpu@0";
                 amba_pl = "/amba_pl";
                 clocking0 = "/amba_pl/clocking0";
+                microblaze_0_local_memory_dlmb_bram_if_cntlr = "/amba_pl/lmb_bram_if_cntlr@0";
+                microblaze_0_local_memory_ilmb_bram_if_cntlr = "/amba_pl/lmb_bram_if_cntlr@1";
                 ps7_qspi_linear_0_memory = "/memory@fc000000";
                 ps7_ddr_0_memory = "/memory@00100000";
-                ps7_ram_0_memory = "/memory@0";
+                ps7_ram_0_memory = "/memory@00";
                 ps7_ram_1_memory = "/memory@ffff0000";
         };
 };

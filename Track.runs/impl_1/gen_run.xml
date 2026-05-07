@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1777865129">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1778141308">
   <File Type="PA-TCL" Name="test_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="test_wrapper_reports.tcl"/>
   <File Type="INIT-TIMING" Name="test_wrapper_timing_summary_init.rpt"/>
@@ -52,12 +52,12 @@
   <File Type="ROUTE-RQS-PB" Name="test_wrapper_rqs_routed.pb"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="test_wrapper_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="test_wrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="discriminator_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="discriminator_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="discriminator_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="discriminator_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="discriminator_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="discriminator_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="test_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="test_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="test_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="test_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="test_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="test_wrapper_bus_skew_postroute_physopted.rpx"/>
   <File Type="BG-BIT" Name="test_wrapper.bit"/>
   <File Type="BG-BIN" Name="test_wrapper.bin"/>
   <File Type="BITSTR-MSK" Name="test_wrapper.msk"/>
@@ -89,7 +89,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/sync.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/src/sync.v"/>
-        <Attr Name="ImportTime" Val="1777433032"/>
+        <Attr Name="ImportTime" Val="1778033495"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,7 +98,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/target.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/src/target.v"/>
-        <Attr Name="ImportTime" Val="1777516368"/>
+        <Attr Name="ImportTime" Val="1778032252"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -107,7 +107,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/pulse_gen.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/src/pulse_gen.v"/>
-        <Attr Name="ImportTime" Val="1777518875"/>
+        <Attr Name="ImportTime" Val="1778038592"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -116,16 +116,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/discriminator.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/src/discriminator.v"/>
-        <Attr Name="ImportTime" Val="1777520079"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/src/controller.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/src/controller.v"/>
-        <Attr Name="ImportTime" Val="1777605129"/>
+        <Attr Name="ImportTime" Val="1777986644"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -140,6 +131,16 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/test/hdl/test_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/controller.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/src/controller.v"/>
+        <Attr Name="ImportTime" Val="1777605129"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -188,10 +189,17 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="test_target_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_pulse_gen_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_sync_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_controller_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="test_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_microblaze_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_ilmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_ilmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_microblaze_0_axi_intc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_mdm_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_pulse_gen_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_rst_ps7_0_200M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="test_discriminator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_target_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_sync_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_controller_connect_0_0"/>
 </GenRun>
