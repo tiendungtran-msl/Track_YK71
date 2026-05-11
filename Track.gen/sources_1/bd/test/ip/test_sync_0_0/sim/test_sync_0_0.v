@@ -57,6 +57,7 @@
 module test_sync_0_0 (
   clk,
   rst_n,
+  mode,
   r0_YB
 );
 
@@ -68,14 +69,21 @@ input wire clk;
 (* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 input wire rst_n;
+input wire [2 : 0] mode;
 output wire r0_YB;
 
   sync #(
     .PULSE_HIGH_CYCLES(280),
-    .PERIOD_CYCLES(112000)
+    .PERIOD_CYCLES(112000),
+    .PERIOD_SMALL_CYCLES(56000),
+    .PERIOD_FAST_T1_CYCLES(54400),
+    .PERIOD_FAST_T2_CYCLES(57600),
+    .PERIOD_SLOW_T1_CYCLES(50400),
+    .PERIOD_SLOW_T2_CYCLES(61600)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),
+    .mode(mode),
     .r0_YB(r0_YB)
   );
 endmodule

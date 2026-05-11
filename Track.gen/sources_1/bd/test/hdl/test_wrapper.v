@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-//Date        : Thu May  7 15:08:07 2026
+//Date        : Mon May 11 10:08:08 2026
 //Host        : MSN running 64-bit major release  (build 9200)
 //Command     : generate_target test_wrapper.bd
 //Design      : test_wrapper
@@ -32,12 +32,19 @@ module test_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    pulse_connect_0,
     pulse_delay_0,
+    pulse_r_0,
+    pulse_r_cds_0,
+    pulse_sel_0,
+    pulse_show_cen_0,
     pulse_target_0,
     r0_YBK_0,
     r0_YB_0,
+    rx_0,
     strobe_1_0,
-    strobe_2_0);
+    strobe_2_0,
+    tx_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -59,12 +66,19 @@ module test_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  output pulse_connect_0;
   output pulse_delay_0;
+  output pulse_r_0;
+  output pulse_r_cds_0;
+  output pulse_sel_0;
+  output pulse_show_cen_0;
   output pulse_target_0;
   output r0_YBK_0;
   output r0_YB_0;
+  input rx_0;
   output strobe_1_0;
   output strobe_2_0;
+  output tx_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -87,12 +101,19 @@ module test_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire pulse_connect_0;
   wire pulse_delay_0;
+  wire pulse_r_0;
+  wire pulse_r_cds_0;
+  wire pulse_sel_0;
+  wire pulse_show_cen_0;
   wire pulse_target_0;
   wire r0_YBK_0;
   wire r0_YB_0;
+  wire rx_0;
   wire strobe_1_0;
   wire strobe_2_0;
+  wire tx_0;
 
   test test_i
        (.DDR_addr(DDR_addr),
@@ -116,10 +137,17 @@ module test_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .pulse_connect_0(pulse_connect_0),
         .pulse_delay_0(pulse_delay_0),
+        .pulse_r_0(pulse_r_0),
+        .pulse_r_cds_0(pulse_r_cds_0),
+        .pulse_sel_0(pulse_sel_0),
+        .pulse_show_cen_0(pulse_show_cen_0),
         .pulse_target_0(pulse_target_0),
         .r0_YBK_0(r0_YBK_0),
         .r0_YB_0(r0_YB_0),
+        .rx_0(rx_0),
         .strobe_1_0(strobe_1_0),
-        .strobe_2_0(strobe_2_0));
+        .strobe_2_0(strobe_2_0),
+        .tx_0(tx_0));
 endmodule

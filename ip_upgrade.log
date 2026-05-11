@@ -1,6 +1,186 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
+| Date         : Mon May 11 10:07:30 2026
+| Host         : MSN running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_controller_connect_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of test_controller_connect_0_0 (xilinx.com:user:controller_connect:1.0) from (Rev. 10) to (Rev. 11)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
+| Date         : Fri May  8 10:25:03 2026
+| Host         : MSN running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_controller_connect_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of test_controller_connect_0_0 (xilinx.com:user:controller_connect:1.0) from (Rev. 9) to (Rev. 10)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'test_controller_connect_0_0'. These changes may impact your design.
+
+
+-Upgraded port 's00_axi_araddr' width 5 differs from original width 4
+
+-Upgraded port 's00_axi_awaddr' width 5 differs from original width 4
+
+-Upgrade has added port 'mode'
+
+-Upgrade has added port 'target_speed'
+
+
+3. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'C_S00_AXI_ADDR_WIDTH' from '5' to '4' has been ignored for IP 'test_controller_connect_0_0'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:controller_connect:1.0 -user_name test_controller_connect_0_0
+set_property -dict "\
+  CONFIG.C_INTR_ACTIVE_STATE {0xFFFFFFFF} \
+  CONFIG.C_INTR_SENSITIVITY {0xFFFFFFFF} \
+  CONFIG.C_IRQ_ACTIVE_STATE {1} \
+  CONFIG.C_IRQ_SENSITIVITY {1} \
+  CONFIG.C_NUM_OF_INTR {1} \
+  CONFIG.C_S00_AXI_ADDR_WIDTH {4} \
+  CONFIG.C_S00_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S00_AXI_DATA_WIDTH {32} \
+  CONFIG.C_S00_AXI_HIGHADDR {0x00000000} \
+  CONFIG.C_S_AXI_INTR_ADDR_WIDTH {5} \
+  CONFIG.C_S_AXI_INTR_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S_AXI_INTR_DATA_WIDTH {32} \
+  CONFIG.C_S_AXI_INTR_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {test_controller_connect_0_0} \
+  CONFIG.IRQ.PortWidth {1} \
+  CONFIG.IRQ.SENSITIVITY {LEVEL_HIGH} \
+  CONFIG.S00_AXI.ADDR_WIDTH {4} \
+  CONFIG.S00_AXI.ARUSER_WIDTH {0} \
+  CONFIG.S00_AXI.AWUSER_WIDTH {0} \
+  CONFIG.S00_AXI.BUSER_WIDTH {0} \
+  CONFIG.S00_AXI.CLK_DOMAIN {test_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S00_AXI.DATA_WIDTH {32} \
+  CONFIG.S00_AXI.FREQ_HZ {200000000} \
+  CONFIG.S00_AXI.HAS_BRESP {1} \
+  CONFIG.S00_AXI.HAS_BURST {0} \
+  CONFIG.S00_AXI.HAS_CACHE {0} \
+  CONFIG.S00_AXI.HAS_LOCK {0} \
+  CONFIG.S00_AXI.HAS_PROT {1} \
+  CONFIG.S00_AXI.HAS_QOS {0} \
+  CONFIG.S00_AXI.HAS_REGION {0} \
+  CONFIG.S00_AXI.HAS_RRESP {1} \
+  CONFIG.S00_AXI.HAS_WSTRB {1} \
+  CONFIG.S00_AXI.ID_WIDTH {0} \
+  CONFIG.S00_AXI.INSERT_VIP {0} \
+  CONFIG.S00_AXI.MAX_BURST_LENGTH {1} \
+  CONFIG.S00_AXI.NUM_READ_OUTSTANDING {1} \
+  CONFIG.S00_AXI.NUM_READ_THREADS {1} \
+  CONFIG.S00_AXI.NUM_WRITE_OUTSTANDING {1} \
+  CONFIG.S00_AXI.NUM_WRITE_THREADS {1} \
+  CONFIG.S00_AXI.PHASE {0.0} \
+  CONFIG.S00_AXI.PROTOCOL {AXI4LITE} \
+  CONFIG.S00_AXI.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S00_AXI.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S00_AXI.RUSER_WIDTH {0} \
+  CONFIG.S00_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S00_AXI.WIZ_DATA_WIDTH {32} \
+  CONFIG.S00_AXI.WIZ_NUM_REG {4} \
+  CONFIG.S00_AXI.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S00_AXI.WUSER_WIDTH {0} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_BUSIF {S00_AXI} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_PORT {} \
+  CONFIG.S00_AXI_CLK.ASSOCIATED_RESET {s00_axi_aresetn} \
+  CONFIG.S00_AXI_CLK.CLK_DOMAIN {test_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S00_AXI_CLK.FREQ_HZ {200000000} \
+  CONFIG.S00_AXI_CLK.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.S00_AXI_CLK.INSERT_VIP {0} \
+  CONFIG.S00_AXI_CLK.PHASE {0.0} \
+  CONFIG.S00_AXI_RST.INSERT_VIP {0} \
+  CONFIG.S00_AXI_RST.POLARITY {ACTIVE_LOW} \
+  CONFIG.S_AXI_INTR.ADDR_WIDTH {5} \
+  CONFIG.S_AXI_INTR.ARUSER_WIDTH {0} \
+  CONFIG.S_AXI_INTR.AWUSER_WIDTH {0} \
+  CONFIG.S_AXI_INTR.BUSER_WIDTH {0} \
+  CONFIG.S_AXI_INTR.CLK_DOMAIN {test_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S_AXI_INTR.DATA_WIDTH {32} \
+  CONFIG.S_AXI_INTR.FREQ_HZ {200000000} \
+  CONFIG.S_AXI_INTR.HAS_BRESP {1} \
+  CONFIG.S_AXI_INTR.HAS_BURST {0} \
+  CONFIG.S_AXI_INTR.HAS_CACHE {0} \
+  CONFIG.S_AXI_INTR.HAS_LOCK {0} \
+  CONFIG.S_AXI_INTR.HAS_PROT {1} \
+  CONFIG.S_AXI_INTR.HAS_QOS {0} \
+  CONFIG.S_AXI_INTR.HAS_REGION {0} \
+  CONFIG.S_AXI_INTR.HAS_RRESP {1} \
+  CONFIG.S_AXI_INTR.HAS_WSTRB {1} \
+  CONFIG.S_AXI_INTR.ID_WIDTH {0} \
+  CONFIG.S_AXI_INTR.INSERT_VIP {0} \
+  CONFIG.S_AXI_INTR.MAX_BURST_LENGTH {1} \
+  CONFIG.S_AXI_INTR.NUM_READ_OUTSTANDING {1} \
+  CONFIG.S_AXI_INTR.NUM_READ_THREADS {1} \
+  CONFIG.S_AXI_INTR.NUM_WRITE_OUTSTANDING {1} \
+  CONFIG.S_AXI_INTR.NUM_WRITE_THREADS {1} \
+  CONFIG.S_AXI_INTR.PHASE {0.0} \
+  CONFIG.S_AXI_INTR.PROTOCOL {AXI4LITE} \
+  CONFIG.S_AXI_INTR.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S_AXI_INTR.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI_INTR.RUSER_WIDTH {0} \
+  CONFIG.S_AXI_INTR.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S_AXI_INTR.WIZ_DATA_WIDTH {32} \
+  CONFIG.S_AXI_INTR.WIZ_NUM_REG {5} \
+  CONFIG.S_AXI_INTR.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI_INTR.WUSER_WIDTH {0} \
+  CONFIG.S_AXI_INTR_CLK.ASSOCIATED_BUSIF {S_AXI_INTR} \
+  CONFIG.S_AXI_INTR_CLK.ASSOCIATED_PORT {} \
+  CONFIG.S_AXI_INTR_CLK.ASSOCIATED_RESET {s_axi_intr_aresetn} \
+  CONFIG.S_AXI_INTR_CLK.CLK_DOMAIN {test_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S_AXI_INTR_CLK.FREQ_HZ {200000000} \
+  CONFIG.S_AXI_INTR_CLK.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.S_AXI_INTR_CLK.INSERT_VIP {0} \
+  CONFIG.S_AXI_INTR_CLK.PHASE {0.0} \
+  CONFIG.S_AXI_INTR_RST.INSERT_VIP {0} \
+  CONFIG.S_AXI_INTR_RST.POLARITY {ACTIVE_LOW} " [get_ips test_controller_connect_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
 | Date         : Thu May  7 15:07:30 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

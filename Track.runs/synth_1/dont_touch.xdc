@@ -60,4 +60,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_contro
 # IP: bd/test/ip/test_smartconnect_0_1/test_smartconnect_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_smartconnect_0_1 || ORIG_REF_NAME==test_smartconnect_0_1} -quiet] -quiet
 
+# IP: bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==test_axi_uartlite_0_0 || ORIG_REF_NAME==test_axi_uartlite_0_0} -quiet] -quiet
+
 # XDC: d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/test_ooc.xdc

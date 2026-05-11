@@ -103,7 +103,7 @@ test_processing_system7_0_0_sc::test_processing_system7_0_0_sc(const sc_core::sc
     model_param_props.addLong("C_USE_M_AXI_GP1", "0");
     model_param_props.addLong("C_USE_S_AXI_GP0", "0");
     model_param_props.addLong("C_USE_S_AXI_GP1", "0");
-    model_param_props.addLong("C_USE_S_AXI_HP0", "1");
+    model_param_props.addLong("C_USE_S_AXI_HP0", "0");
     model_param_props.addLong("C_USE_S_AXI_HP1", "0");
     model_param_props.addLong("C_USE_S_AXI_HP2", "0");
     model_param_props.addLong("C_USE_S_AXI_HP3", "0");
@@ -120,10 +120,6 @@ test_processing_system7_0_0_sc::test_processing_system7_0_0_sc(const sc_core::sc
     model_param_props.addString("COMPONENT_NAME", "test_processing_system7_0_0");
 
   mp_impl = new processing_system7_v5_5_tlm("inst", model_param_props);
-
-  // initialize AXI sockets
-  S_AXI_HP0_rd_socket = mp_impl->S_AXI_HP0_rd_socket;
-  S_AXI_HP0_wr_socket = mp_impl->S_AXI_HP0_wr_socket;
 }
 
 test_processing_system7_0_0_sc::~test_processing_system7_0_0_sc()

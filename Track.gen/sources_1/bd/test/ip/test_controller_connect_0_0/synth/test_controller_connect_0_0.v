@@ -48,17 +48,19 @@
 
 
 // IP VLNV: xilinx.com:user:controller_connect:1.0
-// IP Revision: 9
+// IP Revision: 11
 
 (* X_CORE_INFO = "controller_connect,Vivado 2024.2.2" *)
 (* CHECK_LICENSE_TYPE = "test_controller_connect_0_0,controller_connect,{}" *)
-(* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *)
+(* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module test_controller_connect_0_0 (
   error,
   has_signal,
   spd_width,
   r0_YB,
+  target_speed,
+  mode,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -108,6 +110,8 @@ input wire [31 : 0] error;
 input wire has_signal;
 output wire [31 : 0] spd_width;
 input wire r0_YB;
+output wire [31 : 0] target_speed;
+output wire [2 : 0] mode;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *)
 (* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
@@ -118,9 +122,9 @@ input wire s00_axi_aclk;
 input wire s00_axi_aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 (* X_INTERFACE_MODE = "slave" *)
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 200000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN test_processing_system7_0\
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 200000000, ID_WIDTH 0, ADDR_WIDTH 5, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN test_processing_system7_0\
 _0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
-input wire [3 : 0] s00_axi_awaddr;
+input wire [4 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
 input wire [2 : 0] s00_axi_awprot;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *)
@@ -142,7 +146,7 @@ output wire s00_axi_bvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI BREADY" *)
 input wire s00_axi_bready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR" *)
-input wire [3 : 0] s00_axi_araddr;
+input wire [4 : 0] s00_axi_araddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT" *)
 input wire [2 : 0] s00_axi_arprot;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID" *)
@@ -213,7 +217,7 @@ output wire irq;
 
   controller_connect #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
-    .C_S00_AXI_ADDR_WIDTH(4),  // Width of S_AXI address bus
+    .C_S00_AXI_ADDR_WIDTH(5),  // Width of S_AXI address bus
     .C_S_AXI_INTR_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S_AXI_INTR_ADDR_WIDTH(5),  // Width of S_AXI address bus
     .C_NUM_OF_INTR(1),  // Number of Interrupts
@@ -226,6 +230,8 @@ output wire irq;
     .has_signal(has_signal),
     .spd_width(spd_width),
     .r0_YB(r0_YB),
+    .target_speed(target_speed),
+    .mode(mode),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

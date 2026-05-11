@@ -67,17 +67,19 @@ typedef bit bit_as_bool;
 (* SC_MODULE_EXPORT *)
 module test_microblaze_0_xlconcat_0 (
   input bit [0 : 0] In0,
-  output bit [0 : 0] dout
+  input bit [0 : 0] In1,
+  output bit [1 : 0] dout
 );
 endmodule
 `endif
 
 `ifdef XCELIUM
 (* XMSC_MODULE_EXPORT *)
-module test_microblaze_0_xlconcat_0 (In0,dout)
+module test_microblaze_0_xlconcat_0 (In0,In1,dout)
 (* integer foreign = "SystemC";
 *);
   input bit [0 : 0] In0;
-  output wire [0 : 0] dout;
+  input bit [0 : 0] In1;
+  output wire [1 : 0] dout;
 endmodule
 `endif

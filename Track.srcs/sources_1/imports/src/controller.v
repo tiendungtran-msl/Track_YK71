@@ -26,8 +26,7 @@ module controller #(
 
     // Kết nối với Discriminator – Dữ liệu đã ổn định trước khi r0_YB nhịp tiếp theo đánh
     input  wire signed [31:0] error,
-    input  wire        [31:0] overlap1_cnt,      // Số mẫu trùng cửa sóng 1 (domain 400MHz)
-    input  wire        [31:0] overlap2_cnt,      // Số mẫu trùng cửa sóng 2 (domain 400MHz)
+    input  wire               has_signal,        // 1 khi có tín hiệu trùng (domain 400MHz)
 
     // Đầu ra cấp cho khối pulse_gen.spd_width
     output reg  [31:0] spd_width,
@@ -56,9 +55,6 @@ module controller #(
     reg signed [31:0] corr_residual; // Tích lũy phần dư để bù sai số lượng tử do dịch bit
 
     assign tracking = (state == ST_TRACK);
-
-    // Phát hiện có tín hiệu trùng (bất kỳ cửa sóng nào bắt được)
-    wire has_signal = (overlap1_cnt != 32'd0) || (overlap2_cnt != 32'd0);
 
     // ── Tính quỹ đạo tiếp theo cho chế độ TRACK ─────────────────────────────
     // Hệ số điều chỉnh: correction = (error + residual) / 2^GAIN_SHIFT

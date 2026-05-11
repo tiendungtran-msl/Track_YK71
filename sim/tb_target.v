@@ -9,6 +9,7 @@ module tb_target();
     reg clk;
     reg rst_n;
     reg r0_YB;
+    reg [31:0] target_speed;
 
     // Tín hiệu quan sát (Outputs from DUT)
     wire pulse_target;
@@ -26,12 +27,12 @@ module tb_target();
         .DELAY_MAX_CYCLES(80000),  
         .DELAY_MIN_CYCLES(20000),  
         .PULSE_WIDTH_CYCLES(80),   
-        .ACC_STEP_VAL(22020),  
         .ACC_FRAC_BITS(16)      
     ) dut (
         .clk(clk),
         .rst_n(rst_n),
         .r0_YB(r0_YB),
+        .target_speed(target_speed),
         .pulse_target(pulse_target)
     );
 
@@ -78,6 +79,7 @@ module tb_target();
         // 1. Khởi tạo giá trị ban đầu
         rst_n = 1'b0;
         r0_YB = 1'b0;
+        target_speed = 32'd22020;
         
         $display("--- BẮT ĐẦU MÔ PHỎNG ---");
 

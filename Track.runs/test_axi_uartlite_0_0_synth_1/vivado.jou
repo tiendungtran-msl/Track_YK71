@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Fri May  8 13:47:55 2026
+# Process ID         : 8600
+# Current directory  : D:/Nhung/FPGA/Track/Track.runs/test_axi_uartlite_0_0_synth_1
+# Command line       : vivado.exe -log test_axi_uartlite_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_axi_uartlite_0_0.tcl
+# Log file           : D:/Nhung/FPGA/Track/Track.runs/test_axi_uartlite_0_0_synth_1/test_axi_uartlite_0_0.vds
+# Journal file       : D:/Nhung/FPGA/Track/Track.runs/test_axi_uartlite_0_0_synth_1\vivado.jou
+# Running On         : MSN
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 5 5500U with Radeon Graphics         
+# CPU Frequency      : 2096 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 16497 MB
+# Swap memory        : 12348 MB
+# Total Virtual      : 28846 MB
+# Available Virtual  : 19652 MB
+#-----------------------------------------------------------
+source test_axi_uartlite_0_0.tcl -notrace

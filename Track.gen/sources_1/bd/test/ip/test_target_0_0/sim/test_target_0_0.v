@@ -58,6 +58,7 @@ module test_target_0_0 (
   clk,
   rst_n,
   r0_YB,
+  target_speed,
   pulse_target
 );
 
@@ -70,6 +71,7 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 input wire rst_n;
 input wire r0_YB;
+input wire [31 : 0] target_speed;
 output wire pulse_target;
 
   target #(
@@ -77,12 +79,12 @@ output wire pulse_target;
     .DELAY_MAX_CYCLES(80000),
     .DELAY_MIN_CYCLES(20000),
     .PULSE_WIDTH_CYCLES(80),
-    .ACC_STEP_VAL(22020),
     .ACC_FRAC_BITS(16)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),
     .r0_YB(r0_YB),
+    .target_speed(target_speed),
     .pulse_target(pulse_target)
   );
 endmodule

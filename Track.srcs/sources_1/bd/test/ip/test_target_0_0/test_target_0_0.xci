@@ -12,7 +12,6 @@
         "DELAY_MAX_CYCLES": [ { "value": "80000", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "DELAY_MIN_CYCLES": [ { "value": "20000", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "PULSE_WIDTH_CYCLES": [ { "value": "80", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "ACC_STEP_VAL": [ { "value": "22020", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ACC_FRAC_BITS": [ { "value": "16", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "test_target_0_0", "resolve_type": "user", "usage": "all" } ]
       },
@@ -21,7 +20,6 @@
         "DELAY_MAX_CYCLES": [ { "value": "80000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "DELAY_MIN_CYCLES": [ { "value": "20000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "PULSE_WIDTH_CYCLES": [ { "value": "80", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "ACC_STEP_VAL": [ { "value": "22020", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "ACC_FRAC_BITS": [ { "value": "16", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
@@ -53,6 +51,7 @@
         "clk": [ { "direction": "in" } ],
         "rst_n": [ { "direction": "in" } ],
         "r0_YB": [ { "direction": "in" } ],
+        "target_speed": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "pulse_target": [ { "direction": "out" } ]
       },
       "interfaces": {

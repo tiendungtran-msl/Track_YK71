@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-//Date        : Thu May  7 15:08:07 2026
+//Date        : Mon May 11 10:08:08 2026
 //Host        : MSN running 64-bit major release  (build 9200)
 //Command     : generate_target test.bd
 //Design      : test
@@ -223,7 +223,7 @@ module microblaze_0_local_memory_imp_1LG0PZ6
         .web({microblaze_0_ilmb_cntlr_WE[0],microblaze_0_ilmb_cntlr_WE[1],microblaze_0_ilmb_cntlr_WE[2],microblaze_0_ilmb_cntlr_WE[3]}));
 endmodule
 
-(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=18,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_clkrst_cnt=1,da_mb_cnt=2,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "test.hwdef" *) 
+(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=20,da_board_cnt=1,da_clkrst_cnt=1,da_mb_cnt=2,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "test.hwdef" *) 
 module test
    (DDR_addr,
     DDR_ba,
@@ -246,12 +246,19 @@ module test
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    pulse_connect_0,
     pulse_delay_0,
+    pulse_r_0,
+    pulse_r_cds_0,
+    pulse_sel_0,
+    pulse_show_cen_0,
     pulse_target_0,
     r0_YBK_0,
     r0_YB_0,
+    rx_0,
     strobe_1_0,
-    strobe_2_0);
+    strobe_2_0,
+    tx_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -273,12 +280,19 @@ module test
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  output pulse_connect_0;
   output pulse_delay_0;
+  output pulse_r_0;
+  output pulse_r_cds_0;
+  output pulse_sel_0;
+  output pulse_show_cen_0;
   output pulse_target_0;
   output r0_YBK_0;
   output r0_YB_0;
+  input rx_0;
   output strobe_1_0;
   output strobe_2_0;
+  output tx_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -301,10 +315,13 @@ module test
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire axi_uartlite_0_interrupt;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
   wire controller_connect_0_irq;
+  wire [2:0]controller_connect_0_mode;
   wire [31:0]controller_connect_0_spd_width;
+  wire [31:0]controller_connect_0_target_speed;
   wire [31:0]discriminator_0_error;
   wire discriminator_0_has_signal;
   wire mdm_1_debug_sys_rst;
@@ -359,10 +376,15 @@ module test
   wire [0:1]microblaze_0_interrupt_ACK;
   wire [31:0]microblaze_0_interrupt_ADDRESS;
   wire microblaze_0_interrupt_INTERRUPT;
-  wire [0:0]microblaze_0_intr;
+  wire [1:0]microblaze_0_intr;
   wire processing_system7_0_FCLK_RESET0_N;
+  wire pulse_connect_0;
   wire pulse_delay_0;
   wire pulse_gen_0_r_GM;
+  wire pulse_r_0;
+  wire pulse_r_cds_0;
+  wire pulse_sel_0;
+  wire pulse_show_cen_0;
   wire pulse_target_0;
   wire r0_YBK_0;
   wire r0_YB_0;
@@ -370,6 +392,7 @@ module test
   wire [0:0]rst_ps7_0_200M_interconnect_aresetn;
   wire rst_ps7_0_200M_mb_reset;
   wire [0:0]rst_ps7_0_200M_peripheral_aresetn;
+  wire rx_0;
   wire [8:0]smartconnect_0_M00_AXI_ARADDR;
   wire smartconnect_0_M00_AXI_ARREADY;
   wire smartconnect_0_M00_AXI_ARVALID;
@@ -404,44 +427,28 @@ module test
   wire smartconnect_0_M01_AXI_WREADY;
   wire [3:0]smartconnect_0_M01_AXI_WSTRB;
   wire smartconnect_0_M01_AXI_WVALID;
-  wire [31:0]smartconnect_0_M02_AXI_ARADDR;
-  wire [1:0]smartconnect_0_M02_AXI_ARBURST;
-  wire [3:0]smartconnect_0_M02_AXI_ARCACHE;
-  wire [3:0]smartconnect_0_M02_AXI_ARLEN;
-  wire [1:0]smartconnect_0_M02_AXI_ARLOCK;
-  wire [2:0]smartconnect_0_M02_AXI_ARPROT;
-  wire [3:0]smartconnect_0_M02_AXI_ARQOS;
+  wire [3:0]smartconnect_0_M02_AXI_ARADDR;
   wire smartconnect_0_M02_AXI_ARREADY;
-  wire [2:0]smartconnect_0_M02_AXI_ARSIZE;
   wire smartconnect_0_M02_AXI_ARVALID;
-  wire [31:0]smartconnect_0_M02_AXI_AWADDR;
-  wire [1:0]smartconnect_0_M02_AXI_AWBURST;
-  wire [3:0]smartconnect_0_M02_AXI_AWCACHE;
-  wire [3:0]smartconnect_0_M02_AXI_AWLEN;
-  wire [1:0]smartconnect_0_M02_AXI_AWLOCK;
-  wire [2:0]smartconnect_0_M02_AXI_AWPROT;
-  wire [3:0]smartconnect_0_M02_AXI_AWQOS;
+  wire [3:0]smartconnect_0_M02_AXI_AWADDR;
   wire smartconnect_0_M02_AXI_AWREADY;
-  wire [2:0]smartconnect_0_M02_AXI_AWSIZE;
   wire smartconnect_0_M02_AXI_AWVALID;
   wire smartconnect_0_M02_AXI_BREADY;
   wire [1:0]smartconnect_0_M02_AXI_BRESP;
   wire smartconnect_0_M02_AXI_BVALID;
-  wire [63:0]smartconnect_0_M02_AXI_RDATA;
-  wire smartconnect_0_M02_AXI_RLAST;
+  wire [31:0]smartconnect_0_M02_AXI_RDATA;
   wire smartconnect_0_M02_AXI_RREADY;
   wire [1:0]smartconnect_0_M02_AXI_RRESP;
   wire smartconnect_0_M02_AXI_RVALID;
-  wire [63:0]smartconnect_0_M02_AXI_WDATA;
-  wire smartconnect_0_M02_AXI_WLAST;
+  wire [31:0]smartconnect_0_M02_AXI_WDATA;
   wire smartconnect_0_M02_AXI_WREADY;
-  wire [7:0]smartconnect_0_M02_AXI_WSTRB;
+  wire [3:0]smartconnect_0_M02_AXI_WSTRB;
   wire smartconnect_0_M02_AXI_WVALID;
-  wire [3:0]smartconnect_0_M03_AXI_ARADDR;
+  wire [4:0]smartconnect_0_M03_AXI_ARADDR;
   wire [2:0]smartconnect_0_M03_AXI_ARPROT;
   wire smartconnect_0_M03_AXI_ARREADY;
   wire smartconnect_0_M03_AXI_ARVALID;
-  wire [3:0]smartconnect_0_M03_AXI_AWADDR;
+  wire [4:0]smartconnect_0_M03_AXI_AWADDR;
   wire [2:0]smartconnect_0_M03_AXI_AWPROT;
   wire smartconnect_0_M03_AXI_AWREADY;
   wire smartconnect_0_M03_AXI_AWVALID;
@@ -477,7 +484,31 @@ module test
   wire smartconnect_0_M04_AXI_WVALID;
   wire strobe_1_0;
   wire strobe_2_0;
+  wire tx_0;
 
+  test_axi_uartlite_0_0 axi_uartlite_0
+       (.interrupt(axi_uartlite_0_interrupt),
+        .rx(rx_0),
+        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_araddr(smartconnect_0_M02_AXI_ARADDR),
+        .s_axi_aresetn(rst_ps7_0_200M_peripheral_aresetn),
+        .s_axi_arready(smartconnect_0_M02_AXI_ARREADY),
+        .s_axi_arvalid(smartconnect_0_M02_AXI_ARVALID),
+        .s_axi_awaddr(smartconnect_0_M02_AXI_AWADDR),
+        .s_axi_awready(smartconnect_0_M02_AXI_AWREADY),
+        .s_axi_awvalid(smartconnect_0_M02_AXI_AWVALID),
+        .s_axi_bready(smartconnect_0_M02_AXI_BREADY),
+        .s_axi_bresp(smartconnect_0_M02_AXI_BRESP),
+        .s_axi_bvalid(smartconnect_0_M02_AXI_BVALID),
+        .s_axi_rdata(smartconnect_0_M02_AXI_RDATA),
+        .s_axi_rready(smartconnect_0_M02_AXI_RREADY),
+        .s_axi_rresp(smartconnect_0_M02_AXI_RRESP),
+        .s_axi_rvalid(smartconnect_0_M02_AXI_RVALID),
+        .s_axi_wdata(smartconnect_0_M02_AXI_WDATA),
+        .s_axi_wready(smartconnect_0_M02_AXI_WREADY),
+        .s_axi_wstrb(smartconnect_0_M02_AXI_WSTRB),
+        .s_axi_wvalid(smartconnect_0_M02_AXI_WVALID),
+        .tx(tx_0));
   test_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(microblaze_0_Clk),
         .clk_out1(clk_wiz_0_clk_out1),
@@ -487,6 +518,7 @@ module test
        (.error(discriminator_0_error),
         .has_signal(discriminator_0_has_signal),
         .irq(controller_connect_0_irq),
+        .mode(controller_connect_0_mode),
         .r0_YB(r0_YB_0),
         .s00_axi_aclk(microblaze_0_Clk),
         .s00_axi_araddr(smartconnect_0_M03_AXI_ARADDR),
@@ -530,7 +562,8 @@ module test
         .s_axi_intr_wready(smartconnect_0_M04_AXI_WREADY),
         .s_axi_intr_wstrb(smartconnect_0_M04_AXI_WSTRB),
         .s_axi_intr_wvalid(smartconnect_0_M04_AXI_WVALID),
-        .spd_width(controller_connect_0_spd_width));
+        .spd_width(controller_connect_0_spd_width),
+        .target_speed(controller_connect_0_target_speed));
   test_discriminator_0_0 discriminator_0
        (.clk(microblaze_0_Clk),
         .clk_fast(clk_wiz_0_clk_out1),
@@ -676,6 +709,7 @@ module test
         .SYS_Rst(rst_ps7_0_200M_bus_struct_reset));
   test_microblaze_0_xlconcat_0 microblaze_0_xlconcat
        (.In0(controller_connect_0_irq),
+        .In1(axi_uartlite_0_interrupt),
         .dout(microblaze_0_intr));
   test_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr),
@@ -703,49 +737,15 @@ module test
         .PS_CLK(FIXED_IO_ps_clk),
         .PS_PORB(FIXED_IO_ps_porb),
         .PS_SRSTB(FIXED_IO_ps_srstb),
-        .S_AXI_HP0_ACLK(microblaze_0_Clk),
-        .S_AXI_HP0_ARADDR(smartconnect_0_M02_AXI_ARADDR),
-        .S_AXI_HP0_ARBURST(smartconnect_0_M02_AXI_ARBURST),
-        .S_AXI_HP0_ARCACHE(smartconnect_0_M02_AXI_ARCACHE),
-        .S_AXI_HP0_ARID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP0_ARLEN(smartconnect_0_M02_AXI_ARLEN),
-        .S_AXI_HP0_ARLOCK(smartconnect_0_M02_AXI_ARLOCK),
-        .S_AXI_HP0_ARPROT(smartconnect_0_M02_AXI_ARPROT),
-        .S_AXI_HP0_ARQOS(smartconnect_0_M02_AXI_ARQOS),
-        .S_AXI_HP0_ARREADY(smartconnect_0_M02_AXI_ARREADY),
-        .S_AXI_HP0_ARSIZE(smartconnect_0_M02_AXI_ARSIZE),
-        .S_AXI_HP0_ARVALID(smartconnect_0_M02_AXI_ARVALID),
-        .S_AXI_HP0_AWADDR(smartconnect_0_M02_AXI_AWADDR),
-        .S_AXI_HP0_AWBURST(smartconnect_0_M02_AXI_AWBURST),
-        .S_AXI_HP0_AWCACHE(smartconnect_0_M02_AXI_AWCACHE),
-        .S_AXI_HP0_AWID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP0_AWLEN(smartconnect_0_M02_AXI_AWLEN),
-        .S_AXI_HP0_AWLOCK(smartconnect_0_M02_AXI_AWLOCK),
-        .S_AXI_HP0_AWPROT(smartconnect_0_M02_AXI_AWPROT),
-        .S_AXI_HP0_AWQOS(smartconnect_0_M02_AXI_AWQOS),
-        .S_AXI_HP0_AWREADY(smartconnect_0_M02_AXI_AWREADY),
-        .S_AXI_HP0_AWSIZE(smartconnect_0_M02_AXI_AWSIZE),
-        .S_AXI_HP0_AWVALID(smartconnect_0_M02_AXI_AWVALID),
-        .S_AXI_HP0_BREADY(smartconnect_0_M02_AXI_BREADY),
-        .S_AXI_HP0_BRESP(smartconnect_0_M02_AXI_BRESP),
-        .S_AXI_HP0_BVALID(smartconnect_0_M02_AXI_BVALID),
-        .S_AXI_HP0_RDATA(smartconnect_0_M02_AXI_RDATA),
-        .S_AXI_HP0_RDISSUECAP1_EN(1'b0),
-        .S_AXI_HP0_RLAST(smartconnect_0_M02_AXI_RLAST),
-        .S_AXI_HP0_RREADY(smartconnect_0_M02_AXI_RREADY),
-        .S_AXI_HP0_RRESP(smartconnect_0_M02_AXI_RRESP),
-        .S_AXI_HP0_RVALID(smartconnect_0_M02_AXI_RVALID),
-        .S_AXI_HP0_WDATA(smartconnect_0_M02_AXI_WDATA),
-        .S_AXI_HP0_WID({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_HP0_WLAST(smartconnect_0_M02_AXI_WLAST),
-        .S_AXI_HP0_WREADY(smartconnect_0_M02_AXI_WREADY),
-        .S_AXI_HP0_WRISSUECAP1_EN(1'b0),
-        .S_AXI_HP0_WSTRB(smartconnect_0_M02_AXI_WSTRB),
-        .S_AXI_HP0_WVALID(smartconnect_0_M02_AXI_WVALID),
         .USB0_VBUS_PWRFAULT(1'b0));
   test_pulse_gen_0_0 pulse_gen_0
        (.clk(microblaze_0_Clk),
+        .pulse_connect(pulse_connect_0),
         .pulse_delay(pulse_delay_0),
+        .pulse_r(pulse_r_0),
+        .pulse_r_cds(pulse_r_cds_0),
+        .pulse_sel(pulse_sel_0),
+        .pulse_show_cen(pulse_show_cen_0),
         .r0_YB(r0_YB_0),
         .r0_YBK(r0_YBK_0),
         .r_GM(pulse_gen_0_r_GM),
@@ -799,35 +799,19 @@ module test
         .M01_AXI_wstrb(smartconnect_0_M01_AXI_WSTRB),
         .M01_AXI_wvalid(smartconnect_0_M01_AXI_WVALID),
         .M02_AXI_araddr(smartconnect_0_M02_AXI_ARADDR),
-        .M02_AXI_arburst(smartconnect_0_M02_AXI_ARBURST),
-        .M02_AXI_arcache(smartconnect_0_M02_AXI_ARCACHE),
-        .M02_AXI_arlen(smartconnect_0_M02_AXI_ARLEN),
-        .M02_AXI_arlock(smartconnect_0_M02_AXI_ARLOCK),
-        .M02_AXI_arprot(smartconnect_0_M02_AXI_ARPROT),
-        .M02_AXI_arqos(smartconnect_0_M02_AXI_ARQOS),
         .M02_AXI_arready(smartconnect_0_M02_AXI_ARREADY),
-        .M02_AXI_arsize(smartconnect_0_M02_AXI_ARSIZE),
         .M02_AXI_arvalid(smartconnect_0_M02_AXI_ARVALID),
         .M02_AXI_awaddr(smartconnect_0_M02_AXI_AWADDR),
-        .M02_AXI_awburst(smartconnect_0_M02_AXI_AWBURST),
-        .M02_AXI_awcache(smartconnect_0_M02_AXI_AWCACHE),
-        .M02_AXI_awlen(smartconnect_0_M02_AXI_AWLEN),
-        .M02_AXI_awlock(smartconnect_0_M02_AXI_AWLOCK),
-        .M02_AXI_awprot(smartconnect_0_M02_AXI_AWPROT),
-        .M02_AXI_awqos(smartconnect_0_M02_AXI_AWQOS),
         .M02_AXI_awready(smartconnect_0_M02_AXI_AWREADY),
-        .M02_AXI_awsize(smartconnect_0_M02_AXI_AWSIZE),
         .M02_AXI_awvalid(smartconnect_0_M02_AXI_AWVALID),
         .M02_AXI_bready(smartconnect_0_M02_AXI_BREADY),
         .M02_AXI_bresp(smartconnect_0_M02_AXI_BRESP),
         .M02_AXI_bvalid(smartconnect_0_M02_AXI_BVALID),
         .M02_AXI_rdata(smartconnect_0_M02_AXI_RDATA),
-        .M02_AXI_rlast(smartconnect_0_M02_AXI_RLAST),
         .M02_AXI_rready(smartconnect_0_M02_AXI_RREADY),
         .M02_AXI_rresp(smartconnect_0_M02_AXI_RRESP),
         .M02_AXI_rvalid(smartconnect_0_M02_AXI_RVALID),
         .M02_AXI_wdata(smartconnect_0_M02_AXI_WDATA),
-        .M02_AXI_wlast(smartconnect_0_M02_AXI_WLAST),
         .M02_AXI_wready(smartconnect_0_M02_AXI_WREADY),
         .M02_AXI_wstrb(smartconnect_0_M02_AXI_WSTRB),
         .M02_AXI_wvalid(smartconnect_0_M02_AXI_WVALID),
@@ -892,11 +876,13 @@ module test
         .aresetn(rst_ps7_0_200M_interconnect_aresetn));
   test_sync_0_0 sync_0
        (.clk(microblaze_0_Clk),
+        .mode(controller_connect_0_mode),
         .r0_YB(r0_YB_0),
         .rst_n(processing_system7_0_FCLK_RESET0_N));
   test_target_0_0 target_0
        (.clk(microblaze_0_Clk),
         .pulse_target(pulse_target_0),
         .r0_YB(r0_YB_0),
-        .rst_n(processing_system7_0_FCLK_RESET0_N));
+        .rst_n(processing_system7_0_FCLK_RESET0_N),
+        .target_speed(controller_connect_0_target_speed));
 endmodule

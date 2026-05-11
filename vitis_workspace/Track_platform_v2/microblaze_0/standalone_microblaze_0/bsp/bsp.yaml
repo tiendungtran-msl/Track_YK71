@@ -64,6 +64,7 @@ os_config:
       options:
       - None
       - mdm_1
+      - axi_uartlite_0
       description: stdin peripheral
     standalone_stdout:
       name: standalone_stdout
@@ -74,6 +75,7 @@ os_config:
       options:
       - None
       - mdm_1
+      - axi_uartlite_0
       description: stdout peripheral
     standalone_ttc_select_cntr:
       name: standalone_ttc_select_cntr
@@ -149,6 +151,10 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
+  axi_uartlite_0:
+    driver: uartlite
+    ip_name: axi_uartlite
+    path: E:\Xilinx\Vitis\2024.2\data\embeddedsw\XilinxProcessorIPLib\drivers\uartlite_v3_11
   controller_connect_0: None
   mdm_1:
     driver: uartlite

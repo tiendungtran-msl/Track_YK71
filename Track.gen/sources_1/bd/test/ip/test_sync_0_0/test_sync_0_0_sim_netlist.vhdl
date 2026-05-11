@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Wed May  6 09:14:03 2026
+-- Date        : Mon May 11 00:38:08 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_sync_0_0/test_sync_0_0_sim_netlist.vhdl
@@ -18,6 +18,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity test_sync_0_0_sync is
   port (
     r0_YB : out STD_LOGIC;
+    mode : in STD_LOGIC_VECTOR ( 2 downto 0 );
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC
   );
@@ -26,493 +27,728 @@ entity test_sync_0_0_sync is
 end test_sync_0_0_sync;
 
 architecture STRUCTURE of test_sync_0_0_sync is
-  signal data0 : STD_LOGIC_VECTOR ( 16 downto 1 );
+  signal cds_phase_t2 : STD_LOGIC;
+  signal cds_phase_t2_i_1_n_0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
-  signal period_cnt : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal \period_cnt0_carry__0_n_0\ : STD_LOGIC;
-  signal \period_cnt0_carry__0_n_1\ : STD_LOGIC;
-  signal \period_cnt0_carry__0_n_2\ : STD_LOGIC;
-  signal \period_cnt0_carry__0_n_3\ : STD_LOGIC;
-  signal \period_cnt0_carry__1_n_0\ : STD_LOGIC;
-  signal \period_cnt0_carry__1_n_1\ : STD_LOGIC;
-  signal \period_cnt0_carry__1_n_2\ : STD_LOGIC;
-  signal \period_cnt0_carry__1_n_3\ : STD_LOGIC;
-  signal \period_cnt0_carry__2_n_1\ : STD_LOGIC;
-  signal \period_cnt0_carry__2_n_2\ : STD_LOGIC;
-  signal \period_cnt0_carry__2_n_3\ : STD_LOGIC;
-  signal period_cnt0_carry_n_0 : STD_LOGIC;
-  signal period_cnt0_carry_n_1 : STD_LOGIC;
-  signal period_cnt0_carry_n_2 : STD_LOGIC;
-  signal period_cnt0_carry_n_3 : STD_LOGIC;
-  signal \period_cnt[0]_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_2_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_3_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_4_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_5_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_6_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_7_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_i_8_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_n_0\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_n_1\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_n_2\ : STD_LOGIC;
+  signal \period_cnt1_carry__0_n_3\ : STD_LOGIC;
+  signal period_cnt1_carry_i_1_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_2_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_3_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_4_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_5_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_6_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_7_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_i_8_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_n_0 : STD_LOGIC;
+  signal period_cnt1_carry_n_1 : STD_LOGIC;
+  signal period_cnt1_carry_n_2 : STD_LOGIC;
+  signal period_cnt1_carry_n_3 : STD_LOGIC;
+  signal \period_cnt[0]_i_2_n_0\ : STD_LOGIC;
+  signal \period_cnt[0]_i_3_n_0\ : STD_LOGIC;
+  signal \period_cnt[0]_i_4_n_0\ : STD_LOGIC;
+  signal \period_cnt[0]_i_5_n_0\ : STD_LOGIC;
+  signal \period_cnt[0]_i_6_n_0\ : STD_LOGIC;
+  signal \period_cnt[12]_i_2_n_0\ : STD_LOGIC;
+  signal \period_cnt[12]_i_3_n_0\ : STD_LOGIC;
+  signal \period_cnt[12]_i_4_n_0\ : STD_LOGIC;
+  signal \period_cnt[12]_i_5_n_0\ : STD_LOGIC;
   signal \period_cnt[16]_i_2_n_0\ : STD_LOGIC;
-  signal \period_cnt[16]_i_3_n_0\ : STD_LOGIC;
-  signal \period_cnt[16]_i_4_n_0\ : STD_LOGIC;
-  signal \period_cnt[16]_i_5_n_0\ : STD_LOGIC;
-  signal period_cnt_0 : STD_LOGIC_VECTOR ( 16 downto 1 );
+  signal \period_cnt[4]_i_2_n_0\ : STD_LOGIC;
+  signal \period_cnt[4]_i_3_n_0\ : STD_LOGIC;
+  signal \period_cnt[4]_i_4_n_0\ : STD_LOGIC;
+  signal \period_cnt[4]_i_5_n_0\ : STD_LOGIC;
+  signal \period_cnt[8]_i_2_n_0\ : STD_LOGIC;
+  signal \period_cnt[8]_i_3_n_0\ : STD_LOGIC;
+  signal \period_cnt[8]_i_4_n_0\ : STD_LOGIC;
+  signal \period_cnt[8]_i_5_n_0\ : STD_LOGIC;
+  signal period_cnt_reg : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal \period_cnt_reg[0]_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_1\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_2\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_3\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_4\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_5\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_6\ : STD_LOGIC;
+  signal \period_cnt_reg[0]_i_1_n_7\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_1\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_2\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_3\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_4\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_5\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_6\ : STD_LOGIC;
+  signal \period_cnt_reg[12]_i_1_n_7\ : STD_LOGIC;
+  signal \period_cnt_reg[16]_i_1_n_7\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_1\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_2\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_3\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_4\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_5\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_6\ : STD_LOGIC;
+  signal \period_cnt_reg[4]_i_1_n_7\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_0\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_1\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_2\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_3\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_4\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_5\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_6\ : STD_LOGIC;
+  signal \period_cnt_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal r0_YB_i_2_n_0 : STD_LOGIC;
   signal r0_YB_i_3_n_0 : STD_LOGIC;
   signal r0_YB_i_4_n_0 : STD_LOGIC;
-  signal \NLW_period_cnt0_carry__2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal NLW_period_cnt1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_period_cnt1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_period_cnt_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_period_cnt_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  attribute COMPARATOR_THRESHOLD : integer;
+  attribute COMPARATOR_THRESHOLD of period_cnt1_carry : label is 11;
+  attribute COMPARATOR_THRESHOLD of \period_cnt1_carry__0\ : label is 11;
   attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of period_cnt0_carry : label is 35;
-  attribute ADDER_THRESHOLD of \period_cnt0_carry__0\ : label is 35;
-  attribute ADDER_THRESHOLD of \period_cnt0_carry__1\ : label is 35;
-  attribute ADDER_THRESHOLD of \period_cnt0_carry__2\ : label is 35;
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \period_cnt[16]_i_4\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of r0_YB_i_4 : label is "soft_lutpair0";
+  attribute ADDER_THRESHOLD of \period_cnt_reg[0]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \period_cnt_reg[12]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \period_cnt_reg[16]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \period_cnt_reg[4]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \period_cnt_reg[8]_i_1\ : label is 11;
   attribute IOB : string;
   attribute IOB of r0_YB_reg : label is "TRUE";
 begin
-period_cnt0_carry: unisim.vcomponents.CARRY4
+cds_phase_t2_i_1: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"48"
+    )
+        port map (
+      I0 => \period_cnt1_carry__0_n_0\,
+      I1 => mode(1),
+      I2 => cds_phase_t2,
+      O => cds_phase_t2_i_1_n_0
+    );
+cds_phase_t2_reg: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => '1',
+      CLR => r0_YB_i_2_n_0,
+      D => cds_phase_t2_i_1_n_0,
+      Q => cds_phase_t2
+    );
+period_cnt1_carry: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => period_cnt0_carry_n_0,
-      CO(2) => period_cnt0_carry_n_1,
-      CO(1) => period_cnt0_carry_n_2,
-      CO(0) => period_cnt0_carry_n_3,
-      CYINIT => period_cnt(0),
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => data0(4 downto 1),
-      S(3 downto 0) => period_cnt(4 downto 1)
+      CO(3) => period_cnt1_carry_n_0,
+      CO(2) => period_cnt1_carry_n_1,
+      CO(1) => period_cnt1_carry_n_2,
+      CO(0) => period_cnt1_carry_n_3,
+      CYINIT => period_cnt1_carry_i_1_n_0,
+      DI(3) => period_cnt1_carry_i_2_n_0,
+      DI(2) => period_cnt1_carry_i_3_n_0,
+      DI(1) => period_cnt1_carry_i_4_n_0,
+      DI(0) => '0',
+      O(3 downto 0) => NLW_period_cnt1_carry_O_UNCONNECTED(3 downto 0),
+      S(3) => period_cnt1_carry_i_5_n_0,
+      S(2) => period_cnt1_carry_i_6_n_0,
+      S(1) => period_cnt1_carry_i_7_n_0,
+      S(0) => period_cnt1_carry_i_8_n_0
     );
-\period_cnt0_carry__0\: unisim.vcomponents.CARRY4
+\period_cnt1_carry__0\: unisim.vcomponents.CARRY4
      port map (
-      CI => period_cnt0_carry_n_0,
-      CO(3) => \period_cnt0_carry__0_n_0\,
-      CO(2) => \period_cnt0_carry__0_n_1\,
-      CO(1) => \period_cnt0_carry__0_n_2\,
-      CO(0) => \period_cnt0_carry__0_n_3\,
+      CI => period_cnt1_carry_n_0,
+      CO(3) => \period_cnt1_carry__0_n_0\,
+      CO(2) => \period_cnt1_carry__0_n_1\,
+      CO(1) => \period_cnt1_carry__0_n_2\,
+      CO(0) => \period_cnt1_carry__0_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => data0(8 downto 5),
-      S(3 downto 0) => period_cnt(8 downto 5)
+      DI(3) => \period_cnt1_carry__0_i_1_n_0\,
+      DI(2) => \period_cnt1_carry__0_i_2_n_0\,
+      DI(1) => \period_cnt1_carry__0_i_3_n_0\,
+      DI(0) => \period_cnt1_carry__0_i_4_n_0\,
+      O(3 downto 0) => \NLW_period_cnt1_carry__0_O_UNCONNECTED\(3 downto 0),
+      S(3) => \period_cnt1_carry__0_i_5_n_0\,
+      S(2) => \period_cnt1_carry__0_i_6_n_0\,
+      S(1) => \period_cnt1_carry__0_i_7_n_0\,
+      S(0) => \period_cnt1_carry__0_i_8_n_0\
     );
-\period_cnt0_carry__1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \period_cnt0_carry__0_n_0\,
-      CO(3) => \period_cnt0_carry__1_n_0\,
-      CO(2) => \period_cnt0_carry__1_n_1\,
-      CO(1) => \period_cnt0_carry__1_n_2\,
-      CO(0) => \period_cnt0_carry__1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => data0(12 downto 9),
-      S(3 downto 0) => period_cnt(12 downto 9)
-    );
-\period_cnt0_carry__2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \period_cnt0_carry__1_n_0\,
-      CO(3) => \NLW_period_cnt0_carry__2_CO_UNCONNECTED\(3),
-      CO(2) => \period_cnt0_carry__2_n_1\,
-      CO(1) => \period_cnt0_carry__2_n_2\,
-      CO(0) => \period_cnt0_carry__2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => data0(16 downto 13),
-      S(3 downto 0) => period_cnt(16 downto 13)
-    );
-\period_cnt[0]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00000000FFFFFFFE"
+      INIT => X"AA08"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => period_cnt(0),
-      O => \period_cnt[0]_i_1_n_0\
+      I0 => period_cnt_reg(16),
+      I1 => mode(0),
+      I2 => mode(2),
+      I3 => mode(1),
+      O => \period_cnt1_carry__0_i_1_n_0\
     );
-\period_cnt[10]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"00A20000"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(10),
-      O => period_cnt_0(10)
+      I0 => period_cnt_reg(14),
+      I1 => mode(0),
+      I2 => mode(2),
+      I3 => mode(1),
+      I4 => period_cnt_reg(15),
+      O => \period_cnt1_carry__0_i_2_n_0\
     );
-\period_cnt[11]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"80CE000008ECC0C0"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(11),
-      O => period_cnt_0(11)
+      I0 => period_cnt_reg(12),
+      I1 => period_cnt_reg(13),
+      I2 => mode(0),
+      I3 => cds_phase_t2,
+      I4 => mode(1),
+      I5 => mode(2),
+      O => \period_cnt1_carry__0_i_3_n_0\
     );
-\period_cnt[12]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"ECCCEC88ECCCECCC"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(12),
-      O => period_cnt_0(12)
+      I0 => period_cnt_reg(10),
+      I1 => period_cnt_reg(11),
+      I2 => cds_phase_t2,
+      I3 => mode(1),
+      I4 => mode(2),
+      I5 => mode(0),
+      O => \period_cnt1_carry__0_i_4_n_0\
     );
-\period_cnt[13]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_5\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"0DF2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(13),
-      O => period_cnt_0(13)
+      I0 => mode(0),
+      I1 => mode(2),
+      I2 => mode(1),
+      I3 => period_cnt_reg(16),
+      O => \period_cnt1_carry__0_i_5_n_0\
     );
-\period_cnt[14]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_6\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"88884484"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(14),
-      O => period_cnt_0(14)
+      I0 => period_cnt_reg(14),
+      I1 => period_cnt_reg(15),
+      I2 => mode(0),
+      I3 => mode(2),
+      I4 => mode(1),
+      O => \period_cnt1_carry__0_i_6_n_0\
     );
-\period_cnt[15]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"4821888884122828"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(15),
-      O => period_cnt_0(15)
+      I0 => period_cnt_reg(12),
+      I1 => period_cnt_reg(13),
+      I2 => mode(0),
+      I3 => cds_phase_t2,
+      I4 => mode(1),
+      I5 => mode(2),
+      O => \period_cnt1_carry__0_i_7_n_0\
     );
-\period_cnt[16]_i_1\: unisim.vcomponents.LUT6
+\period_cnt1_carry__0_i_8\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"1222124412221222"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(16),
-      O => period_cnt_0(16)
+      I0 => period_cnt_reg(10),
+      I1 => period_cnt_reg(11),
+      I2 => cds_phase_t2,
+      I3 => mode(1),
+      I4 => mode(2),
+      I5 => mode(0),
+      O => \period_cnt1_carry__0_i_8_n_0\
     );
-\period_cnt[16]_i_2\: unisim.vcomponents.LUT4
+period_cnt1_carry_i_1: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7FFF"
+      INIT => X"8"
     )
         port map (
-      I0 => period_cnt(2),
-      I1 => period_cnt(8),
-      I2 => period_cnt(5),
-      I3 => period_cnt(6),
+      I0 => period_cnt_reg(0),
+      I1 => period_cnt_reg(1),
+      O => period_cnt1_carry_i_1_n_0
+    );
+period_cnt1_carry_i_2: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"ECE8ECEC"
+    )
+        port map (
+      I0 => period_cnt_reg(8),
+      I1 => period_cnt_reg(9),
+      I2 => mode(1),
+      I3 => mode(2),
+      I4 => mode(0),
+      O => period_cnt1_carry_i_2_n_0
+    );
+period_cnt1_carry_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0C80800CCC88CCCC"
+    )
+        port map (
+      I0 => period_cnt_reg(6),
+      I1 => period_cnt_reg(7),
+      I2 => cds_phase_t2,
+      I3 => mode(2),
+      I4 => mode(0),
+      I5 => mode(1),
+      O => period_cnt1_carry_i_3_n_0
+    );
+period_cnt1_carry_i_4: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"6000"
+    )
+        port map (
+      I0 => mode(0),
+      I1 => mode(2),
+      I2 => mode(1),
+      I3 => period_cnt_reg(5),
+      O => period_cnt1_carry_i_4_n_0
+    );
+period_cnt1_carry_i_5: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"12141212"
+    )
+        port map (
+      I0 => period_cnt_reg(8),
+      I1 => period_cnt_reg(9),
+      I2 => mode(1),
+      I3 => mode(2),
+      I4 => mode(0),
+      O => period_cnt1_carry_i_5_n_0
+    );
+period_cnt1_carry_i_6: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8248488222442222"
+    )
+        port map (
+      I0 => period_cnt_reg(6),
+      I1 => period_cnt_reg(7),
+      I2 => cds_phase_t2,
+      I3 => mode(2),
+      I4 => mode(0),
+      I5 => mode(1),
+      O => period_cnt1_carry_i_6_n_0
+    );
+period_cnt1_carry_i_7: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"88282888"
+    )
+        port map (
+      I0 => period_cnt_reg(4),
+      I1 => period_cnt_reg(5),
+      I2 => mode(1),
+      I3 => mode(2),
+      I4 => mode(0),
+      O => period_cnt1_carry_i_7_n_0
+    );
+period_cnt1_carry_i_8: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => period_cnt_reg(2),
+      I1 => period_cnt_reg(3),
+      O => period_cnt1_carry_i_8_n_0
+    );
+\period_cnt[0]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(0),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[0]_i_2_n_0\
+    );
+\period_cnt[0]_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(3),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[0]_i_3_n_0\
+    );
+\period_cnt[0]_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(2),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[0]_i_4_n_0\
+    );
+\period_cnt[0]_i_5\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(1),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[0]_i_5_n_0\
+    );
+\period_cnt[0]_i_6\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => period_cnt_reg(0),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[0]_i_6_n_0\
+    );
+\period_cnt[12]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(15),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[12]_i_2_n_0\
+    );
+\period_cnt[12]_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(14),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[12]_i_3_n_0\
+    );
+\period_cnt[12]_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(13),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[12]_i_4_n_0\
+    );
+\period_cnt[12]_i_5\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(12),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[12]_i_5_n_0\
+    );
+\period_cnt[16]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => period_cnt_reg(16),
+      I1 => \period_cnt1_carry__0_n_0\,
       O => \period_cnt[16]_i_2_n_0\
     );
-\period_cnt[16]_i_3\: unisim.vcomponents.LUT4
+\period_cnt[4]_i_2\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFD"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(4),
-      I1 => period_cnt(14),
-      I2 => period_cnt(9),
-      I3 => period_cnt(7),
-      O => \period_cnt[16]_i_3_n_0\
+      I0 => period_cnt_reg(7),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[4]_i_2_n_0\
     );
-\period_cnt[16]_i_4\: unisim.vcomponents.LUT4
+\period_cnt[4]_i_3\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7FFF"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(16),
-      I1 => period_cnt(15),
-      I2 => period_cnt(13),
-      I3 => period_cnt(3),
-      O => \period_cnt[16]_i_4_n_0\
+      I0 => period_cnt_reg(6),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[4]_i_3_n_0\
     );
-\period_cnt[16]_i_5\: unisim.vcomponents.LUT4
+\period_cnt[4]_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7FFF"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(0),
-      I1 => period_cnt(12),
-      I2 => period_cnt(1),
-      I3 => period_cnt(10),
-      O => \period_cnt[16]_i_5_n_0\
+      I0 => period_cnt_reg(5),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[4]_i_4_n_0\
     );
-\period_cnt[1]_i_1\: unisim.vcomponents.LUT6
+\period_cnt[4]_i_5\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(1),
-      O => period_cnt_0(1)
+      I0 => period_cnt_reg(4),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[4]_i_5_n_0\
     );
-\period_cnt[2]_i_1\: unisim.vcomponents.LUT6
+\period_cnt[8]_i_2\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(2),
-      O => period_cnt_0(2)
+      I0 => period_cnt_reg(11),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[8]_i_2_n_0\
     );
-\period_cnt[3]_i_1\: unisim.vcomponents.LUT6
+\period_cnt[8]_i_3\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(3),
-      O => period_cnt_0(3)
+      I0 => period_cnt_reg(10),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[8]_i_3_n_0\
     );
-\period_cnt[4]_i_1\: unisim.vcomponents.LUT6
+\period_cnt[8]_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(4),
-      O => period_cnt_0(4)
+      I0 => period_cnt_reg(9),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[8]_i_4_n_0\
     );
-\period_cnt[5]_i_1\: unisim.vcomponents.LUT6
+\period_cnt[8]_i_5\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FFFFFFFE00000000"
+      INIT => X"2"
     )
         port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(5),
-      O => period_cnt_0(5)
-    );
-\period_cnt[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFE00000000"
-    )
-        port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(6),
-      O => period_cnt_0(6)
-    );
-\period_cnt[7]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFE00000000"
-    )
-        port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(7),
-      O => period_cnt_0(7)
-    );
-\period_cnt[8]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFE00000000"
-    )
-        port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(8),
-      O => period_cnt_0(8)
-    );
-\period_cnt[9]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFE00000000"
-    )
-        port map (
-      I0 => period_cnt(11),
-      I1 => \period_cnt[16]_i_2_n_0\,
-      I2 => \period_cnt[16]_i_3_n_0\,
-      I3 => \period_cnt[16]_i_4_n_0\,
-      I4 => \period_cnt[16]_i_5_n_0\,
-      I5 => data0(9),
-      O => period_cnt_0(9)
+      I0 => period_cnt_reg(8),
+      I1 => \period_cnt1_carry__0_n_0\,
+      O => \period_cnt[8]_i_5_n_0\
     );
 \period_cnt_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => \period_cnt[0]_i_1_n_0\,
-      Q => period_cnt(0)
+      D => \period_cnt_reg[0]_i_1_n_7\,
+      Q => period_cnt_reg(0)
+    );
+\period_cnt_reg[0]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => \period_cnt_reg[0]_i_1_n_0\,
+      CO(2) => \period_cnt_reg[0]_i_1_n_1\,
+      CO(1) => \period_cnt_reg[0]_i_1_n_2\,
+      CO(0) => \period_cnt_reg[0]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 1) => B"000",
+      DI(0) => \period_cnt[0]_i_2_n_0\,
+      O(3) => \period_cnt_reg[0]_i_1_n_4\,
+      O(2) => \period_cnt_reg[0]_i_1_n_5\,
+      O(1) => \period_cnt_reg[0]_i_1_n_6\,
+      O(0) => \period_cnt_reg[0]_i_1_n_7\,
+      S(3) => \period_cnt[0]_i_3_n_0\,
+      S(2) => \period_cnt[0]_i_4_n_0\,
+      S(1) => \period_cnt[0]_i_5_n_0\,
+      S(0) => \period_cnt[0]_i_6_n_0\
     );
 \period_cnt_reg[10]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(10),
-      Q => period_cnt(10)
+      D => \period_cnt_reg[8]_i_1_n_5\,
+      Q => period_cnt_reg(10)
     );
 \period_cnt_reg[11]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(11),
-      Q => period_cnt(11)
+      D => \period_cnt_reg[8]_i_1_n_4\,
+      Q => period_cnt_reg(11)
     );
 \period_cnt_reg[12]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(12),
-      Q => period_cnt(12)
+      D => \period_cnt_reg[12]_i_1_n_7\,
+      Q => period_cnt_reg(12)
+    );
+\period_cnt_reg[12]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \period_cnt_reg[8]_i_1_n_0\,
+      CO(3) => \period_cnt_reg[12]_i_1_n_0\,
+      CO(2) => \period_cnt_reg[12]_i_1_n_1\,
+      CO(1) => \period_cnt_reg[12]_i_1_n_2\,
+      CO(0) => \period_cnt_reg[12]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \period_cnt_reg[12]_i_1_n_4\,
+      O(2) => \period_cnt_reg[12]_i_1_n_5\,
+      O(1) => \period_cnt_reg[12]_i_1_n_6\,
+      O(0) => \period_cnt_reg[12]_i_1_n_7\,
+      S(3) => \period_cnt[12]_i_2_n_0\,
+      S(2) => \period_cnt[12]_i_3_n_0\,
+      S(1) => \period_cnt[12]_i_4_n_0\,
+      S(0) => \period_cnt[12]_i_5_n_0\
     );
 \period_cnt_reg[13]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(13),
-      Q => period_cnt(13)
+      D => \period_cnt_reg[12]_i_1_n_6\,
+      Q => period_cnt_reg(13)
     );
 \period_cnt_reg[14]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(14),
-      Q => period_cnt(14)
+      D => \period_cnt_reg[12]_i_1_n_5\,
+      Q => period_cnt_reg(14)
     );
 \period_cnt_reg[15]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(15),
-      Q => period_cnt(15)
+      D => \period_cnt_reg[12]_i_1_n_4\,
+      Q => period_cnt_reg(15)
     );
 \period_cnt_reg[16]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(16),
-      Q => period_cnt(16)
+      D => \period_cnt_reg[16]_i_1_n_7\,
+      Q => period_cnt_reg(16)
+    );
+\period_cnt_reg[16]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \period_cnt_reg[12]_i_1_n_0\,
+      CO(3 downto 0) => \NLW_period_cnt_reg[16]_i_1_CO_UNCONNECTED\(3 downto 0),
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 1) => \NLW_period_cnt_reg[16]_i_1_O_UNCONNECTED\(3 downto 1),
+      O(0) => \period_cnt_reg[16]_i_1_n_7\,
+      S(3 downto 1) => B"000",
+      S(0) => \period_cnt[16]_i_2_n_0\
     );
 \period_cnt_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(1),
-      Q => period_cnt(1)
+      D => \period_cnt_reg[0]_i_1_n_6\,
+      Q => period_cnt_reg(1)
     );
 \period_cnt_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(2),
-      Q => period_cnt(2)
+      D => \period_cnt_reg[0]_i_1_n_5\,
+      Q => period_cnt_reg(2)
     );
 \period_cnt_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(3),
-      Q => period_cnt(3)
+      D => \period_cnt_reg[0]_i_1_n_4\,
+      Q => period_cnt_reg(3)
     );
 \period_cnt_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(4),
-      Q => period_cnt(4)
+      D => \period_cnt_reg[4]_i_1_n_7\,
+      Q => period_cnt_reg(4)
+    );
+\period_cnt_reg[4]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \period_cnt_reg[0]_i_1_n_0\,
+      CO(3) => \period_cnt_reg[4]_i_1_n_0\,
+      CO(2) => \period_cnt_reg[4]_i_1_n_1\,
+      CO(1) => \period_cnt_reg[4]_i_1_n_2\,
+      CO(0) => \period_cnt_reg[4]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \period_cnt_reg[4]_i_1_n_4\,
+      O(2) => \period_cnt_reg[4]_i_1_n_5\,
+      O(1) => \period_cnt_reg[4]_i_1_n_6\,
+      O(0) => \period_cnt_reg[4]_i_1_n_7\,
+      S(3) => \period_cnt[4]_i_2_n_0\,
+      S(2) => \period_cnt[4]_i_3_n_0\,
+      S(1) => \period_cnt[4]_i_4_n_0\,
+      S(0) => \period_cnt[4]_i_5_n_0\
     );
 \period_cnt_reg[5]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(5),
-      Q => period_cnt(5)
+      D => \period_cnt_reg[4]_i_1_n_6\,
+      Q => period_cnt_reg(5)
     );
 \period_cnt_reg[6]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(6),
-      Q => period_cnt(6)
+      D => \period_cnt_reg[4]_i_1_n_5\,
+      Q => period_cnt_reg(6)
     );
 \period_cnt_reg[7]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(7),
-      Q => period_cnt(7)
+      D => \period_cnt_reg[4]_i_1_n_4\,
+      Q => period_cnt_reg(7)
     );
 \period_cnt_reg[8]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(8),
-      Q => period_cnt(8)
+      D => \period_cnt_reg[8]_i_1_n_7\,
+      Q => period_cnt_reg(8)
+    );
+\period_cnt_reg[8]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \period_cnt_reg[4]_i_1_n_0\,
+      CO(3) => \period_cnt_reg[8]_i_1_n_0\,
+      CO(2) => \period_cnt_reg[8]_i_1_n_1\,
+      CO(1) => \period_cnt_reg[8]_i_1_n_2\,
+      CO(0) => \period_cnt_reg[8]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \period_cnt_reg[8]_i_1_n_4\,
+      O(2) => \period_cnt_reg[8]_i_1_n_5\,
+      O(1) => \period_cnt_reg[8]_i_1_n_6\,
+      O(0) => \period_cnt_reg[8]_i_1_n_7\,
+      S(3) => \period_cnt[8]_i_2_n_0\,
+      S(2) => \period_cnt[8]_i_3_n_0\,
+      S(1) => \period_cnt[8]_i_4_n_0\,
+      S(0) => \period_cnt[8]_i_5_n_0\
     );
 \period_cnt_reg[9]\: unisim.vcomponents.FDCE
      port map (
       C => clk,
       CE => '1',
       CLR => r0_YB_i_2_n_0,
-      D => period_cnt_0(9),
-      Q => period_cnt(9)
+      D => \period_cnt_reg[8]_i_1_n_6\,
+      Q => period_cnt_reg(9)
     );
 r0_YB_i_1: unisim.vcomponents.LUT6
     generic map(
@@ -521,10 +757,10 @@ r0_YB_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => r0_YB_i_3_n_0,
       I1 => r0_YB_i_4_n_0,
-      I2 => period_cnt(10),
-      I3 => period_cnt(9),
-      I4 => period_cnt(12),
-      I5 => period_cnt(11),
+      I2 => period_cnt_reg(10),
+      I3 => period_cnt_reg(9),
+      I4 => period_cnt_reg(12),
+      I5 => period_cnt_reg(11),
       O => p_0_in
     );
 r0_YB_i_2: unisim.vcomponents.LUT1
@@ -540,12 +776,12 @@ r0_YB_i_3: unisim.vcomponents.LUT6
       INIT => X"00000007FFFFFFFF"
     )
         port map (
-      I0 => period_cnt(3),
-      I1 => period_cnt(4),
-      I2 => period_cnt(5),
-      I3 => period_cnt(7),
-      I4 => period_cnt(6),
-      I5 => period_cnt(8),
+      I0 => period_cnt_reg(3),
+      I1 => period_cnt_reg(4),
+      I2 => period_cnt_reg(5),
+      I3 => period_cnt_reg(7),
+      I4 => period_cnt_reg(6),
+      I5 => period_cnt_reg(8),
       O => r0_YB_i_3_n_0
     );
 r0_YB_i_4: unisim.vcomponents.LUT4
@@ -553,10 +789,10 @@ r0_YB_i_4: unisim.vcomponents.LUT4
       INIT => X"FFFE"
     )
         port map (
-      I0 => period_cnt(14),
-      I1 => period_cnt(13),
-      I2 => period_cnt(16),
-      I3 => period_cnt(15),
+      I0 => period_cnt_reg(14),
+      I1 => period_cnt_reg(13),
+      I2 => period_cnt_reg(16),
+      I3 => period_cnt_reg(15),
       O => r0_YB_i_4_n_0
     );
 r0_YB_reg: unisim.vcomponents.FDCE
@@ -576,6 +812,7 @@ entity test_sync_0_0 is
   port (
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC;
+    mode : in STD_LOGIC_VECTOR ( 2 downto 0 );
     r0_YB : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -604,6 +841,7 @@ begin
 inst: entity work.test_sync_0_0_sync
      port map (
       clk => clk,
+      mode(2 downto 0) => mode(2 downto 0),
       r0_YB => r0_YB,
       rst_n => rst_n
     );

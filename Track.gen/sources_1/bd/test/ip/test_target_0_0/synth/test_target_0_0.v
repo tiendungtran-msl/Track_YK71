@@ -52,13 +52,14 @@
 
 (* X_CORE_INFO = "target,Vivado 2024.2.2" *)
 (* CHECK_LICENSE_TYPE = "test_target_0_0,target,{}" *)
-(* CORE_GENERATION_INFO = "test_target_0_0,target,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=target,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PRI_CYCLES=112000,DELAY_MAX_CYCLES=80000,DELAY_MIN_CYCLES=20000,PULSE_WIDTH_CYCLES=80,ACC_STEP_VAL=22020,ACC_FRAC_BITS=16}" *)
+(* CORE_GENERATION_INFO = "test_target_0_0,target,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=target,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PRI_CYCLES=112000,DELAY_MAX_CYCLES=80000,DELAY_MIN_CYCLES=20000,PULSE_WIDTH_CYCLES=80,ACC_FRAC_BITS=16}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module test_target_0_0 (
   clk,
   rst_n,
   r0_YB,
+  target_speed,
   pulse_target
 );
 
@@ -71,6 +72,7 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 input wire rst_n;
 input wire r0_YB;
+input wire [31 : 0] target_speed;
 output wire pulse_target;
 
   target #(
@@ -78,12 +80,12 @@ output wire pulse_target;
     .DELAY_MAX_CYCLES(80000),
     .DELAY_MIN_CYCLES(20000),
     .PULSE_WIDTH_CYCLES(80),
-    .ACC_STEP_VAL(22020),
     .ACC_FRAC_BITS(16)
   ) inst (
     .clk(clk),
     .rst_n(rst_n),
     .r0_YB(r0_YB),
+    .target_speed(target_speed),
     .pulse_target(pulse_target)
   );
 endmodule

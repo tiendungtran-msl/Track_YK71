@@ -2,11 +2,11 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Tue May  5 08:30:05 2026
+-- Date        : Fri May  8 13:49:25 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top test_dlmb_bram_if_cntlr_0 -prefix
---               test_dlmb_bram_if_cntlr_0_ test_ilmb_bram_if_cntlr_0_stub.vhdl
--- Design      : test_ilmb_bram_if_cntlr_0
+-- Command     : write_vhdl -force -mode synth_stub
+--               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_dlmb_bram_if_cntlr_0/test_dlmb_bram_if_cntlr_0_stub.vhdl
+-- Design      : test_dlmb_bram_if_cntlr_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
 -- --------------------------------------------------------------------------------
@@ -38,9 +38,9 @@ entity test_dlmb_bram_if_cntlr_0 is
   );
 
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of test_dlmb_bram_if_cntlr_0 : entity is "test_ilmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}";
+  attribute CHECK_LICENSE_TYPE of test_dlmb_bram_if_cntlr_0 : entity is "test_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of test_dlmb_bram_if_cntlr_0 : entity is "test_ilmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_bram_if_cntlr,x_ipVersion=4.0,x_ipCoreRevision=25,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_HIGHADDR=0x000000000000FFFF,C_BASEADDR=0x0000000000000000,C_NUM_LMB=1,C_MASK=0x0000000021000000,C_MASK1=0x0000000000800000,C_MASK2=0x0000000000800000,C_MASK3=0x0000000000800000,C_MASK4=0x0000000000800000,C_MASK5=0x0000000000800000,C_MASK6=0x0000000000800000,C_MASK7=0x0000000000800000,C_LMB_AWIDTH=32,C_LMB_DWIDTH=32,C_LMB_PROTOCOL=0,C_ARBITRATION=0,C_ECC=0,C_INTERCONNECT=0,C_FAULT_INJECT=0,C_CE_FAILING_REGISTERS=0,C_UE_FAILING_REGISTERS=0,C_ECC_STATUS_REGISTERS=0,C_ECC_ONOFF_REGISTER=0,C_ECC_ONOFF_RESET_VALUE=1,C_CE_COUNTER_WIDTH=0,C_WRITE_ACCESS=2,C_BRAM_AWIDTH=32,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32}";
+  attribute core_generation_info of test_dlmb_bram_if_cntlr_0 : entity is "test_dlmb_bram_if_cntlr_0,lmb_bram_if_cntlr,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_bram_if_cntlr,x_ipVersion=4.0,x_ipCoreRevision=25,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_HIGHADDR=0x000000000000FFFF,C_BASEADDR=0x0000000000000000,C_NUM_LMB=1,C_MASK=0x0000000040000000,C_MASK1=0x0000000000800000,C_MASK2=0x0000000000800000,C_MASK3=0x0000000000800000,C_MASK4=0x0000000000800000,C_MASK5=0x0000000000800000,C_MASK6=0x0000000000800000,C_MASK7=0x0000000000800000,C_LMB_AWIDTH=32,C_LMB_DWIDTH=32,C_LMB_PROTOCOL=0,C_ARBITRATION=0,C_ECC=0,C_INTERCONNECT=0,C_FAULT_INJECT=0,C_CE_FAILING_REGISTERS=0,C_UE_FAILING_REGISTERS=0,C_ECC_STATUS_REGISTERS=0,C_ECC_ONOFF_REGISTER=0,C_ECC_ONOFF_RESET_VALUE=1,C_CE_COUNTER_WIDTH=0,C_WRITE_ACCESS=2,C_BRAM_AWIDTH=32,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of test_dlmb_bram_if_cntlr_0 : entity is "yes";
 end test_dlmb_bram_if_cntlr_0;

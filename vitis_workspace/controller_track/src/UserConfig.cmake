@@ -29,6 +29,8 @@ set(USER_INCLUDE_DIRECTORIES
 )
 set(USER_COMPILE_SOURCES
 "main.c"
+"tracker.c"
+"uart_cmd.c"
 )
 
 # -----------------------------------------

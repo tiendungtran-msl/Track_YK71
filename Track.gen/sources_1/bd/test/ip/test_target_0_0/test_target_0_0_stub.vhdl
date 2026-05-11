@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Wed May  6 08:52:56 2026
+-- Date        : Mon May 11 09:13:39 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_stub.vhdl
@@ -18,13 +18,14 @@ entity test_target_0_0 is
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC;
     r0_YB : in STD_LOGIC;
+    target_speed : in STD_LOGIC_VECTOR ( 31 downto 0 );
     pulse_target : out STD_LOGIC
   );
 
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of test_target_0_0 : entity is "test_target_0_0,target,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of test_target_0_0 : entity is "test_target_0_0,target,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=target,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PRI_CYCLES=112000,DELAY_MAX_CYCLES=80000,DELAY_MIN_CYCLES=20000,PULSE_WIDTH_CYCLES=80,ACC_STEP_VAL=22020,ACC_FRAC_BITS=16}";
+  attribute CORE_GENERATION_INFO of test_target_0_0 : entity is "test_target_0_0,target,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=target,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PRI_CYCLES=112000,DELAY_MAX_CYCLES=80000,DELAY_MIN_CYCLES=20000,PULSE_WIDTH_CYCLES=80,ACC_FRAC_BITS=16}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of test_target_0_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;
@@ -35,7 +36,7 @@ architecture stub of test_target_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,r0_YB,pulse_target";
+  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,r0_YB,target_speed[31:0],pulse_target";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_MODE : string;

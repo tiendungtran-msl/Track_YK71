@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Wed May  6 09:14:03 2026
+-- Date        : Mon May 11 00:38:08 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_sync_0_0/test_sync_0_0_stub.vhdl
@@ -17,13 +17,14 @@ entity test_sync_0_0 is
   Port ( 
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC;
+    mode : in STD_LOGIC_VECTOR ( 2 downto 0 );
     r0_YB : out STD_LOGIC
   );
 
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of test_sync_0_0 : entity is "test_sync_0_0,sync,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of test_sync_0_0 : entity is "test_sync_0_0,sync,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=sync,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PULSE_HIGH_CYCLES=280,PERIOD_CYCLES=112000}";
+  attribute CORE_GENERATION_INFO of test_sync_0_0 : entity is "test_sync_0_0,sync,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=sync,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,PULSE_HIGH_CYCLES=280,PERIOD_CYCLES=112000,PERIOD_SMALL_CYCLES=56000,PERIOD_FAST_T1_CYCLES=54400,PERIOD_FAST_T2_CYCLES=57600,PERIOD_SLOW_T1_CYCLES=50400,PERIOD_SLOW_T2_CYCLES=61600}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of test_sync_0_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;
@@ -34,7 +35,7 @@ architecture stub of test_sync_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,r0_YB";
+  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,mode[2:0],r0_YB";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_MODE : string;

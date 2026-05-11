@@ -150,7 +150,7 @@ module tb_top;
         $dumpvars(0, strobe_1);
         $dumpvars(0, strobe_2);
         $dumpvars(0, r0_YBK);
-        $dumpvars(0, discriminator_inst.valid_reg);
+        $dumpvars(0, discriminator_inst.data_ready);
         $dumpvars(0, error);
         $dumpvars(0, has_signal);
         $dumpvars(0, spd_width);
@@ -235,7 +235,7 @@ module tb_top;
 
     // Monitor discriminator output each window finish
     always @(posedge clk_400) begin
-        if (discriminator_inst.valid_reg) begin
+        if (discriminator_inst.data_ready) begin
             valid_count = valid_count + 1;
 
             if (tracking) begin

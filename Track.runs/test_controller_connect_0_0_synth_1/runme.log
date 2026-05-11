@@ -8,12 +8,13 @@
   **** SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
   **** IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
   **** SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
-  **** Start of session at: Thu May  7 15:08:33 2026
+  **** Start of session at: Mon May 11 10:08:33 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source test_controller_connect_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 646.203 ; gain = 205.941
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 644.164 ; gain = 203.863
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Nhung/FPGA/ip_repo/controller_connect_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2024.2/data/ip'.
@@ -25,58 +26,55 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17468
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 10316
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1353.363 ; gain = 467.648
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1353.387 ; gain = 468.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'test_controller_connect_0_0' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_controller_connect_0_0/synth/test_controller_connect_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'controller_connect' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect.v:4]
-INFO: [Synth 8-6157] synthesizing module 'controller_connect_slave_lite_v1_0_S00_AXI' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-155] case statement is not full and has no default [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:144]
-INFO: [Synth 8-226] default block is never used [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:218]
-INFO: [Synth 8-155] case statement is not full and has no default [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:271]
-INFO: [Synth 8-6155] done synthesizing module 'controller_connect_slave_lite_v1_0_S00_AXI' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-6157] synthesizing module 'controller_connect_slave_lite_inter_v1_0_S_AXI_INTR' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'controller_connect_slave_lite_inter_v1_0_S_AXI_INTR' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:4]
-INFO: [Synth 8-6157] synthesizing module 'controller_core' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/src/controller_core.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'controller_core' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/src/controller_core.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'controller_connect' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect.v:4]
+INFO: [Synth 8-6157] synthesizing module 'controller_connect' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect.v:4]
+INFO: [Synth 8-6157] synthesizing module 'controller_connect_slave_lite_v1_0_S00_AXI' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:146]
+INFO: [Synth 8-155] case statement is not full and has no default [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:282]
+INFO: [Synth 8-6155] done synthesizing module 'controller_connect_slave_lite_v1_0_S00_AXI' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'controller_connect_slave_lite_inter_v1_0_S_AXI_INTR' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'controller_connect_slave_lite_inter_v1_0_S_AXI_INTR' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:4]
+INFO: [Synth 8-6157] synthesizing module 'controller_core' [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/src/controller_core.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'controller_core' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/src/controller_core.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'controller_connect' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'test_controller_connect_0_0' (0#1) [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_controller_connect_0_0/synth/test_controller_connect_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:210]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:211]
-WARNING: [Synth 8-6014] Unused sequential element intr_all_ff_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/4531/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:512]
-WARNING: [Synth 8-7129] Port core_ctrl_3[31] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[30] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[29] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[28] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[27] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[26] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[25] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[24] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[23] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[22] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[21] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[20] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[19] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[18] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[17] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[16] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[15] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[14] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[13] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[12] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[11] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[10] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[9] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[8] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[7] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[6] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[5] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[4] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[3] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[2] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[1] in module controller_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port core_ctrl_3[0] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:212]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v:213]
+WARNING: [Synth 8-6014] Unused sequential element intr_all_ff_reg was removed.  [d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ipshared/6eff/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v:512]
+WARNING: [Synth 8-7129] Port core_ctrl_4[31] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[30] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[29] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[28] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[27] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[26] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[25] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[24] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[23] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[22] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[21] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[20] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[19] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[18] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[17] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[16] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[15] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[14] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[13] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[12] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[11] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[10] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[9] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[8] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[7] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[6] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[5] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[4] in module controller_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port core_ctrl_4[3] in module controller_core is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module controller_connect_slave_lite_inter_v1_0_S_AXI_INTR is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module controller_connect_slave_lite_inter_v1_0_S_AXI_INTR is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module controller_connect_slave_lite_inter_v1_0_S_AXI_INTR is either unconnected or has no load
@@ -125,45 +123,45 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module controller_connect_slave_
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module controller_connect_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module controller_connect_slave_lite_v1_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1468.578 ; gain = 582.863
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1468.918 ; gain = 584.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1468.578 ; gain = 582.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1468.918 ; gain = 584.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1468.578 ; gain = 582.863
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1468.918 ; gain = 584.336
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1468.578 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1468.918 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1558.148 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.676 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1558.180 ; gain = 0.031
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1562.676 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.180 ; gain = 672.465
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1562.676 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.180 ; gain = 672.465
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1562.676 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.180 ; gain = 672.465
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1562.676 ; gain = 678.094
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'controller_connect_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'controller_connect_slave_lite_v1_0_S00_AXI'
@@ -184,30 +182,29 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using enc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'controller_connect_slave_lite_v1_0_S00_AXI'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.180 ; gain = 672.465
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.676 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    8 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 3     
-	                8 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 3     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 3     
 	                1 Bit    Registers := 23    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 4     
-	   4 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 5     
+	   6 Input   32 Bit        Muxes := 3     
 	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    2 Bit        Muxes := 5     
 	   2 Input    1 Bit        Muxes := 9     
 	   3 Input    1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
@@ -247,27 +244,30 @@ WARNING: [Synth 8-7129] Port s_axi_intr_wdata[23] in module test_controller_conn
 WARNING: [Synth 8-7129] Port s_axi_intr_wdata[22] in module test_controller_connect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_intr_wdata[21] in module test_controller_connect_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_intr_wdata[20] in module test_controller_connect_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_intr_wdata[19] in module test_controller_connect_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_intr_wdata[18] in module test_controller_connect_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_intr_wdata[17] in module test_controller_connect_0_0 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1558.180 ; gain = 672.465
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1562.676 ; gain = 678.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1660.387 ; gain = 774.672
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1663.957 ; gain = 779.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1660.609 ; gain = 774.895
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1664.180 ; gain = 779.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1679.730 ; gain = 794.016
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1683.262 ; gain = 798.680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -285,37 +285,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -331,40 +331,40 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |LUT1 |     5|
-|2     |LUT2 |    11|
-|3     |LUT3 |    11|
-|4     |LUT4 |    14|
-|5     |LUT5 |    26|
-|6     |LUT6 |    50|
-|7     |FDCE |    23|
-|8     |FDRE |    96|
+|1     |LUT1 |     3|
+|2     |LUT2 |     7|
+|3     |LUT3 |     5|
+|4     |LUT4 |    12|
+|5     |LUT5 |    41|
+|6     |LUT6 |    67|
+|7     |FDCE |     7|
+|8     |FDRE |   130|
 |9     |FDSE |     5|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1886.766 ; gain = 911.449
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1886.766 ; gain = 1001.051
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1890.098 ; gain = 911.758
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1890.098 ; gain = 1005.516
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1895.855 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1892.090 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1899.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1892.090 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: dd8e4005
+Synth Design complete | Checksum: db31cf99
 INFO: [Common 17-83] Releasing license: Synthesis
-35 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+34 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1899.516 ; gain = 1236.102
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1899.516 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 1892.090 ; gain = 1230.621
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1892.090 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Nhung/FPGA/Track/Track.runs/test_controller_connect_0_0_synth_1/test_controller_connect_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_controller_connect_0_0, cache-ID = 34aef30fc46ff42d
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_controller_connect_0_0, cache-ID = b71d786fbd66de27
 INFO: [Coretcl 2-1174] Renamed 4 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1899.516 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1892.090 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Nhung/FPGA/Track/Track.runs/test_controller_connect_0_0_synth_1/test_controller_connect_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file test_controller_connect_0_0_utilization_synth.rpt -pb test_controller_connect_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  7 15:09:27 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon May 11 10:09:34 2026...

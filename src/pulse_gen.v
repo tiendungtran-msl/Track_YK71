@@ -63,25 +63,57 @@ module pulse_gen #(
     // =========================================================================
     // Giới hạn max cho spd_width để không vượt PRI trừ đi khoảng an toàn.
     // Khoảng an toàn = MULTI_WIDTH + delay max (t_ybkr ≈ 480 cycles) + PULSE_W
-    localparam [31:0] SPD_WIDTH_MAX_SAFE = PRI_CYC - MULTI_WIDTH - 480 - PULSE_W;
+    localparam [17:0] PRI_GUARD_CYC       = MULTI_WIDTH + 480 + PULSE_W;
+    localparam [17:0] SPD_WIDTH_MAX_BOOT  = (PRI_CYC > (PRI_GUARD_CYC + 18'd1)) ?
+                                            (PRI_CYC - PRI_GUARD_CYC) : 18'd1;
     
-    reg [31:0] spd_width_latch;
-    wire [31:0] spd_width_clamped = (spd_width > SPD_WIDTH_MAX_SAFE) ? SPD_WIDTH_MAX_SAFE : spd_width;
-    wire [31:0] spd_width_reset   = (SPD_WIDTH_DEF > SPD_WIDTH_MAX_SAFE) ? SPD_WIDTH_MAX_SAFE : SPD_WIDTH_DEF;
+    // Tối ưu Register bit-width: Cần đếm tới PRI_CYC=112000 (cần 17 bits), dùng kích thước 18bits
+    // giúp tiết kiệm diện tích và giảm điện năng tiêu thụ (giảm toggle rate so với 32 bits).
+    reg [17:0] spd_width_latch;
+    reg [17:0] pri_counter;
+    reg [17:0] pri_cycles_latched;
+    wire [17:0] spd_width_reset   = (SPD_WIDTH_DEF > SPD_WIDTH_MAX_BOOT) ? SPD_WIDTH_MAX_BOOT : SPD_WIDTH_DEF[17:0];
+
+    function [17:0] clamp_spd_for_pri;
+        input [31:0] req_spd;
+        input [17:0] pri_cycles;
+        reg   [17:0] spd_max_dyn;
+        begin
+            if (pri_cycles > (PRI_GUARD_CYC + 18'd1))
+                spd_max_dyn = pri_cycles - PRI_GUARD_CYC;
+            else
+                spd_max_dyn = 18'd1;
+
+            if (req_spd > spd_max_dyn)
+                clamp_spd_for_pri = spd_max_dyn;
+            else
+                clamp_spd_for_pri = req_spd[17:0];
+        end
+    endfunction
 
     // Dò sườn lên của tín hiệu đồng bộ PRI (r0_YB)
     reg r0_yb_d;
     wire r0_yb_rise = r0_YB & ~r0_yb_d;
 
+    // Đưa logic tính max ra ngoài thành wire rời, tính trước clamp để giảm chi phí runtime.
+    wire [17:0] pri_cycles_next = (pri_counter != 18'd0) ? pri_counter : PRI_CYC[17:0];
+    wire [17:0] clamp_spd_next  = clamp_spd_for_pri(spd_width, pri_cycles_next);
+
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             r0_yb_d         <= 1'b0;
             spd_width_latch <= spd_width_reset;
+            pri_counter      <= 18'd0;
+            pri_cycles_latched <= PRI_CYC[17:0];
         end else begin
             r0_yb_d <= r0_YB;
-            // Chốt delay cự ly ở mỗi đầu khung PRI
+            // Chốt delay cự ly và PRI hiệu dụng ở mỗi đầu khung.
             if (r0_yb_rise) begin
-                spd_width_latch <= spd_width_clamped;
+                pri_cycles_latched <= pri_cycles_next;
+                spd_width_latch    <= clamp_spd_next;
+                pri_counter <= 18'd1;
+            end else if (pri_counter != 18'h3FFFF) begin
+                pri_counter <= pri_counter + 18'd1;
             end
         end
     end
@@ -89,21 +121,21 @@ module pulse_gen #(
     // =========================================================================
     // BỘ ĐẾM THỜI GIAN THEO KHUNG
     // =========================================================================
-    reg [31:0] frame_cnt;
+    reg [17:0] frame_cnt;
     reg        frame_active;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            frame_cnt    <= 32'd0;
+            frame_cnt    <= 18'd0;
             frame_active <= 1'b0;
         end else if (r0_yb_rise) begin
-            frame_cnt    <= 32'd1;     // Reset bộ đếm ở sườn lên (bắt đầu bằng 1 giống form cũ)
+            frame_cnt    <= 18'd1;     // Reset bộ đếm ở sườn lên (bắt đầu bằng 1 giống form cũ)
             frame_active <= 1'b1;
         end else if (frame_active) begin
-            if (frame_cnt == PRI_CYC - 1) begin
+            if (frame_cnt >= (pri_cycles_latched - 18'd1)) begin
                 frame_active <= 1'b0;  // Nghỉ đếm khi đủ chu kỳ
             end else begin
-                frame_cnt <= frame_cnt + 32'd1;
+                frame_cnt <= frame_cnt + 18'd1;
             end
         end
     end
@@ -120,18 +152,18 @@ module pulse_gen #(
        1.80 μs -> 360 cycles
        2.35 μs -> 470 cycles
     */
-    reg [31:0] t_r, t_rcds, t_conn, t_sel, t_ybkr, t_gm, t_stb1, t_stb2;
+    reg [17:0] t_r, t_rcds, t_conn, t_sel, t_ybkr, t_gm, t_stb1, t_stb2;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            t_r    <= 32'd0;
-            t_rcds <= 32'd0;
-            t_conn <= 32'd0;
-            t_sel  <= 32'd0;
-            t_ybkr <= 32'd0;
-            t_gm   <= 32'd0;
-            t_stb1 <= 32'd0;
-            t_stb2 <= 32'd0;
+            t_r    <= 18'd0;
+            t_rcds <= 18'd0;
+            t_conn <= 18'd0;
+            t_sel  <= 18'd0;
+            t_ybkr <= 18'd0;
+            t_gm   <= 18'd0;
+            t_stb1 <= 18'd0;
+            t_stb2 <= 18'd0;
         end else begin
             // Việc tính các ngưỡng cộng thêm 1 chu kỳ clock là hoàn toàn an toàn, 
             // vì frame_cnt cần tới hàng nghìn cycles (~ MULTI_WIDTH) mới chạm tới các ngưỡng này.
@@ -151,15 +183,15 @@ module pulse_gen #(
     // XỬ LÝ LOGIC PHÁT XUNG
     // =========================================================================
     
-    wire [31:0] show_cen_delta = frame_cnt - spd_width_latch;
-    wire [31:0] pulse_r_delta  = frame_cnt - t_r;
-    wire [31:0] rcds_delta     = frame_cnt - t_rcds;
-    wire [31:0] conn_delta     = frame_cnt - t_conn;
-    wire [31:0] sel_delta      = frame_cnt - t_sel;
-    wire [31:0] ybkr_delta     = frame_cnt - t_ybkr;
-    wire [31:0] gm_delta       = frame_cnt - t_gm;
-    wire [31:0] stb1_delta     = frame_cnt - t_stb1;
-    wire [31:0] stb2_delta     = frame_cnt - t_stb2;
+    wire [17:0] show_cen_delta = frame_cnt - spd_width_latch;
+    wire [17:0] pulse_r_delta  = frame_cnt - t_r;
+    wire [17:0] rcds_delta     = frame_cnt - t_rcds;
+    wire [17:0] conn_delta     = frame_cnt - t_conn;
+    wire [17:0] sel_delta      = frame_cnt - t_sel;
+    wire [17:0] ybkr_delta     = frame_cnt - t_ybkr;
+    wire [17:0] gm_delta       = frame_cnt - t_gm;
+    wire [17:0] stb1_delta     = frame_cnt - t_stb1;
+    wire [17:0] stb2_delta     = frame_cnt - t_stb2;
 
     wire pulse_delay_next    = frame_active && (frame_cnt < spd_width_latch);
     wire pulse_show_cen_next = frame_active && (show_cen_delta < PULSE_W);

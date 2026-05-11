@@ -62,7 +62,7 @@
                  <0xf8007100 &adc 0xf8007100 0x21>;
                 #ranges-address-cells = <0x1>;
                 #ranges-size-cells = <0x1>;
-                phandle = <0x3a>;
+                phandle = <0x3b>;
 
                 ps7_cortexa9_0: cpu@0 {
                         compatible = "arm,cortex-a9";
@@ -109,7 +109,7 @@
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
                 ranges;
-                phandle = <0x3b>;
+                phandle = <0x3c>;
         };
 
         pmu@f8891000 {
@@ -317,7 +317,7 @@
                         #address-cells = <0x1>;
                         #size-cells = <0x1>;
                         ranges = <0x0 0xfffc0000 0x10000>;
-                        phandle = <0x3d>;
+                        phandle = <0x3e>;
 
                         ocm-sram@0 {
                                 reg = <0x0 0x10000>;
@@ -470,14 +470,14 @@
                                 reg = <0x200 0x48>;
                                 #reset-cells = <0x1>;
                                 syscon = <0x20>;
-                                phandle = <0x45>;
+                                phandle = <0x46>;
                         };
 
                         pinctrl0: pinctrl@700 {
                                 compatible = "xlnx,pinctrl-zynq";
                                 reg = <0x700 0x200>;
                                 syscon = <0x20>;
-                                phandle = <0x46>;
+                                phandle = <0x47>;
                         };
                 };
 
@@ -519,7 +519,7 @@
                 efuse: efuse@f800d000 {
                         compatible = "xlnx,zynq-efuse";
                         reg = <0xf800d000 0x20>;
-                        phandle = <0x47>;
+                        phandle = <0x48>;
                 };
 
                 global_timer: timer@f8f00200 {
@@ -561,7 +561,7 @@
                         compatible = "cdns,ttc";
                         clocks = <&clkc 0x6>;
                         reg = <0xf8002000 0x1000>;
-                        phandle = <0x48>;
+                        phandle = <0x49>;
                 };
 
                 scutimer: timer@f8f00600 {
@@ -613,7 +613,7 @@
                         interrupts = <0x0 0x9 0x1>;
                         reg = <0xf8005000 0x1000>;
                         timeout-sec = <0xa>;
-                        phandle = <0x4a>;
+                        phandle = <0x4b>;
                 };
 
                 coresight: coresight@f8800000 {
@@ -883,7 +883,7 @@
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
                 firmware-name = "test_wrapper.bit.bin";
-                phandle = <0x39>;
+                phandle = <0x3a>;
 
                 clocking0: clocking0 {
                         compatible = "xlnx,fclk";
@@ -902,7 +902,7 @@
                         xlnx,ecc-onoff-register = <0x0>;
                         xlnx,ecc-onoff-reset-value = <0x1>;
                         xlnx,s-axi-ctrl-protocol = "AXI4LITE";
-                        xlnx,mask = <0x21000000>;
+                        xlnx,mask = <0x40000000>;
                         xlnx,mask1 = <0x800000>;
                         xlnx,rable = <0x0>;
                         xlnx,mask2 = <0x800000>;
@@ -965,7 +965,7 @@
                         xlnx,s-axi-ctrl-data-width = <0x20>;
                         xlnx,bram-awidth = <0x20>;
                         xlnx,lmb-awidth = <0x20>;
-                        phandle = <0x56>;
+                        phandle = <0x55>;
                 };
         };
 
@@ -1006,16 +1006,17 @@
         };
 
         chosen {
-                stdout-path = "serial0:115200n8";
+                stdout-path = "serial0:9600n8";
         };
 
         aliases {
+                serial4 = "/axi/coresight@f8800000";
                 serial0 = "/axi/serial@e0000000";
                 spi0 = "/axi/spi@e000d000";
                 serial1 = "/axi/serial@e0001000";
                 serial2 = "/amba_pl/serial@41400000";
                 i2c0 = "/axi/i2c@e0004000";
-                serial3 = "/axi/coresight@f8800000";
+                serial3 = "/amba_pl/serial@40600000";
                 i2c1 = "/axi/i2c@e0005000";
                 ethernet0 = "/axi/ethernet@e000b000";
         };

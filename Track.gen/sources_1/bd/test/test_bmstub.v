@@ -32,7 +32,14 @@ module test (
   strobe_2_0,
   strobe_1_0,
   pulse_delay_0,
-  r0_YBK_0
+  r0_YBK_0,
+  pulse_sel_0,
+  pulse_connect_0,
+  pulse_show_cen_0,
+  pulse_r_0,
+  pulse_r_cds_0,
+  tx_0,
+  rx_0
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *)
@@ -93,6 +100,20 @@ module test (
   output pulse_delay_0;
   (* X_INTERFACE_IGNORE = "true" *)
   output r0_YBK_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pulse_sel_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pulse_connect_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pulse_show_cen_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pulse_r_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output pulse_r_cds_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output tx_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input rx_0;
 
   // stub module has no contents
 

@@ -10,11 +10,21 @@
       "component_parameters": {
         "PULSE_HIGH_CYCLES": [ { "value": "280", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "PERIOD_CYCLES": [ { "value": "112000", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "PERIOD_SMALL_CYCLES": [ { "value": "56000", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "PERIOD_FAST_T1_CYCLES": [ { "value": "54400", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "PERIOD_FAST_T2_CYCLES": [ { "value": "57600", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "PERIOD_SLOW_T1_CYCLES": [ { "value": "50400", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "PERIOD_SLOW_T2_CYCLES": [ { "value": "61600", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "test_sync_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "PULSE_HIGH_CYCLES": [ { "value": "280", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "PERIOD_CYCLES": [ { "value": "112000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "PERIOD_CYCLES": [ { "value": "112000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "PERIOD_SMALL_CYCLES": [ { "value": "56000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "PERIOD_FAST_T1_CYCLES": [ { "value": "54400", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "PERIOD_FAST_T2_CYCLES": [ { "value": "57600", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "PERIOD_SLOW_T1_CYCLES": [ { "value": "50400", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "PERIOD_SLOW_T2_CYCLES": [ { "value": "61600", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],
@@ -44,6 +54,7 @@
       "ports": {
         "clk": [ { "direction": "in" } ],
         "rst_n": [ { "direction": "in" } ],
+        "mode": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
         "r0_YB": [ { "direction": "out" } ]
       },
       "interfaces": {

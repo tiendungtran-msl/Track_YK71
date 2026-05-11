@@ -55,7 +55,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ef116e71</spirit:value>
+            <spirit:value>75c0b512</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -68,7 +68,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ef116e71</spirit:value>
+            <spirit:value>75c0b512</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -122,6 +122,23 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>target_speed</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>pulse_target</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -157,11 +174,6 @@
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PULSE_WIDTH_CYCLES">80</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>ACC_STEP_VAL</spirit:name>
-        <spirit:displayName>Acc Step Val</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ACC_STEP_VAL">22020</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>ACC_FRAC_BITS</spirit:name>
         <spirit:displayName>Acc Frac Bits</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ACC_FRAC_BITS">16</spirit:value>
@@ -181,7 +193,7 @@
       <spirit:file>
         <spirit:name>xgui/target_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_374b184e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_78272f82</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -209,11 +221,6 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PULSE_WIDTH_CYCLES">80</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>ACC_STEP_VAL</spirit:name>
-      <spirit:displayName>Acc Step Val</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ACC_STEP_VAL">22020</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
       <spirit:name>ACC_FRAC_BITS</spirit:name>
       <spirit:displayName>Acc Frac Bits</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ACC_FRAC_BITS">16</spirit:value>
@@ -238,7 +245,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-05-06T01:51:05Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2026-05-11T02:10:41Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2.2</xilinx:xilinxVersion>

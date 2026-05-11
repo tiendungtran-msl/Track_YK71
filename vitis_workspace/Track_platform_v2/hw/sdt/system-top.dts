@@ -44,15 +44,16 @@
 		reg = <0xffff0000 0xfe00>;
 	};
 	chosen {
-		stdout-path = "serial0:115200n8";
+		stdout-path = "serial0:9600n8";
 	};
 	aliases {
+		serial4 = &coresight;
 		serial0 = &uart0;
 		spi0 = &qspi;
 		serial1 = &uart1;
 		serial2 = &mdm_1;
 		i2c0 = &i2c0;
-		serial3 = &coresight;
+		serial3 = &axi_uartlite_0;
 		i2c1 = &i2c1;
 		ethernet0 = &gem0;
 	};
@@ -101,7 +102,7 @@
 	cpus_microblaze_0: cpus_microblaze@0 {
 		address-map = <0x00000000 &microblaze_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x10000>, 
 			      <0x00000000 &microblaze_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x10000>, 
-			      <0x20000000 &ps7_ddr_0_memory 0x20000000 0x20000000>, 
+			      <0x40600000 &axi_uartlite_0 0x40600000 0x10000>, 
 			      <0x41200000 &microblaze_0_axi_intc 0x41200000 0x1000>, 
 			      <0x41400000 &mdm_1 0x41400000 0x1000>, 
 			      <0x43c00000 &controller_connect_0 0x43c00000 0x1000>;

@@ -137,7 +137,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f79780c</spirit:value>
+            <spirit:value>9:041ce690</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -149,7 +149,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2082452c</spirit:value>
+            <spirit:value>9:6e0126ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -160,7 +160,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2082452c</spirit:value>
+            <spirit:value>9:6e0126ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -174,11 +174,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 01:52:56 UTC 2026</spirit:value>
+            <spirit:value>Mon May 11 02:13:39 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2082452c</spirit:value>
+            <spirit:value>9:6e0126ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -189,7 +189,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2082452c</spirit:value>
+            <spirit:value>9:6e0126ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -205,11 +205,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 01:51:32 UTC 2026</spirit:value>
+            <spirit:value>Mon May 11 02:11:49 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f79780c</spirit:value>
+            <spirit:value>9:041ce690</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -225,11 +225,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 06 01:51:32 UTC 2026</spirit:value>
+            <spirit:value>Mon May 11 02:11:49 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2082452c</spirit:value>
+            <spirit:value>9:6e0126ec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -275,6 +275,23 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>target_speed</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>pulse_target</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -308,11 +325,6 @@
         <spirit:name>PULSE_WIDTH_CYCLES</spirit:name>
         <spirit:displayName>Pulse Width Cycles</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PULSE_WIDTH_CYCLES">80</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>ACC_STEP_VAL</spirit:name>
-        <spirit:displayName>Acc Step Val</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ACC_STEP_VAL">22020</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>ACC_FRAC_BITS</spirit:name>
@@ -403,11 +415,6 @@
       <spirit:name>PULSE_WIDTH_CYCLES</spirit:name>
       <spirit:displayName>Pulse Width Cycles</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.PULSE_WIDTH_CYCLES">80</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>ACC_STEP_VAL</spirit:name>
-      <spirit:displayName>Acc Step Val</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ACC_STEP_VAL">22020</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>ACC_FRAC_BITS</spirit:name>
