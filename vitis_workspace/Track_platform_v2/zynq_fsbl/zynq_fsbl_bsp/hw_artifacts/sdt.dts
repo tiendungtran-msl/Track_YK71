@@ -1253,9 +1253,9 @@
                         xlnx,rable = <0x0>;
                         xlnx,ip-name = "axi_uartlite";
                         reg = <0x40600000 0x10000>;
-                        xlnx,baudrate = <0x2580>;
+                        xlnx,baudrate = <0x1c200>;
                         clocks = <&clkc 0xf>;
-                        current-speed = <0x2580>;
+                        current-speed = <0x1c200>;
                         xlnx,use-parity = <0x0>;
                         xlnx,edk-iptype = "PERIPHERAL";
                         xlnx,odd-parity = <0x0>;
@@ -1454,7 +1454,7 @@
         };
 
         chosen {
-                stdout-path = "serial0:9600n8";
+                stdout-path = "serial0:115200n8";
         };
 
         aliases {

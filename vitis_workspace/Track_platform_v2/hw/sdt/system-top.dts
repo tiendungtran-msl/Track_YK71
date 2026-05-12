@@ -44,7 +44,7 @@
 		reg = <0xffff0000 0xfe00>;
 	};
 	chosen {
-		stdout-path = "serial0:9600n8";
+		stdout-path = "serial0:115200n8";
 	};
 	aliases {
 		serial4 = &coresight;

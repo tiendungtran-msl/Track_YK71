@@ -57,6 +57,8 @@ if {$::dispatch::connected} {
 
 OPTRACE "test_axi_uartlite_0_0_synth_1" START { ROLLUP_AUTO }
 set_param bd.open.in_stealth_mode 1
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }

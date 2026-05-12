@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Fri May  8 13:49:25 2026
+-- Date        : Mon May 11 14:10:58 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0_stub.vhdl
@@ -42,7 +42,7 @@ entity test_axi_uartlite_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of test_axi_uartlite_0_0 : entity is "test_axi_uartlite_0_0,axi_uartlite,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of test_axi_uartlite_0_0 : entity is "test_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=38,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ACLK_FREQ_HZ=200000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=9600,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
+  attribute core_generation_info of test_axi_uartlite_0_0 : entity is "test_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=38,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ACLK_FREQ_HZ=200000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=115200,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of test_axi_uartlite_0_0 : entity is "yes";
 end test_axi_uartlite_0_0;

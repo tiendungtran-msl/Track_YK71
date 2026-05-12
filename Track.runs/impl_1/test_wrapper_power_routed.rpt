@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date             : Mon May 11 10:14:37 2026
+| Date             : Mon May 11 14:16:14 2026
 | Host             : MSN running 64-bit major release  (build 9200)
 | Command          : report_power -file test_wrapper_power_routed.rpt -pb test_wrapper_power_summary_routed.pb -rpx test_wrapper_power_routed.rpx
 | Design           : test_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.816        |
+| Total On-Chip Power (W)  | 1.832        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.666        |
+| Dynamic (W)              | 1.682        |
 | Device Static (W)        | 0.150        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.1         |
-| Junction Temperature (C) | 45.9         |
+| Max Ambient (C)          | 63.9         |
+| Junction Temperature (C) | 46.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.029 |        8 |       --- |             --- |
-| Slice Logic              |     0.015 |     7670 |       --- |             --- |
+| Slice Logic              |     0.015 |     7672 |       --- |             --- |
 |   LUT as Logic           |     0.011 |     2831 |     53200 |            5.32 |
 |   LUT as Distributed RAM |     0.002 |       96 |     17400 |            0.55 |
 |   CARRY4                 |     0.001 |      216 |     13300 |            1.62 |
-|   Register               |    <0.001 |     2742 |    106400 |            2.58 |
+|   Register               |    <0.001 |     2744 |    106400 |            2.58 |
 |   F7/F8 Muxes            |    <0.001 |      109 |     53200 |            0.20 |
 |   LUT as Shift Register  |    <0.001 |       93 |     17400 |            0.53 |
 |   Others                 |    <0.001 |      902 |       --- |             --- |
-| Signals                  |     0.022 |     5033 |       --- |             --- |
-| Block RAM                |    <0.001 |       16 |       140 |           11.43 |
+| Signals                  |     0.022 |     5029 |       --- |             --- |
+| Block RAM                |     0.016 |       16 |       140 |           11.43 |
 | MMCM                     |     0.107 |        1 |         4 |           25.00 |
 | I/O                      |     0.004 |       13 |       125 |           10.40 |
 | PS7                      |     1.489 |        1 |       --- |             --- |
 | Static Power             |     0.150 |          |           |                 |
-| Total                    |     1.816 |          |           |                 |
+| Total                    |     1.832 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.083 |       0.067 |      0.016 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.098 |       0.081 |      0.016 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.075 |       0.059 |      0.016 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -86,7 +86,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -155,33 +155,35 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------------------+-----------+
-| Name                      | Power (W) |
-+---------------------------+-----------+
-| test_wrapper              |     1.666 |
-|   test_i                  |     1.662 |
-|     axi_uartlite_0        |     0.002 |
-|       U0                  |     0.002 |
-|     clk_wiz_0             |     0.108 |
-|       inst                |     0.108 |
-|     controller_connect_0  |     0.002 |
-|       inst                |     0.002 |
-|     discriminator_0       |     0.003 |
-|       inst                |     0.003 |
-|     mdm_1                 |     0.001 |
-|       U0                  |     0.001 |
-|     microblaze_0          |     0.029 |
-|       U0                  |     0.029 |
-|     microblaze_0_axi_intc |     0.003 |
-|       U0                  |     0.003 |
-|     processing_system7_0  |     1.489 |
-|       inst                |     1.489 |
-|     pulse_gen_0           |     0.008 |
-|       inst                |     0.008 |
-|     smartconnect_0        |     0.010 |
-|       inst                |     0.010 |
-|     target_0              |     0.004 |
-|       inst                |     0.004 |
-+---------------------------+-----------+
++-------------------------------+-----------+
+| Name                          | Power (W) |
++-------------------------------+-----------+
+| test_wrapper                  |     1.682 |
+|   test_i                      |     1.678 |
+|     axi_uartlite_0            |     0.002 |
+|       U0                      |     0.002 |
+|     clk_wiz_0                 |     0.108 |
+|       inst                    |     0.108 |
+|     controller_connect_0      |     0.002 |
+|       inst                    |     0.002 |
+|     discriminator_0           |     0.003 |
+|       inst                    |     0.003 |
+|     mdm_1                     |     0.001 |
+|       U0                      |     0.001 |
+|     microblaze_0              |     0.029 |
+|       U0                      |     0.029 |
+|     microblaze_0_axi_intc     |     0.003 |
+|       U0                      |     0.003 |
+|     microblaze_0_local_memory |     0.016 |
+|       lmb_bram                |     0.016 |
+|     processing_system7_0      |     1.489 |
+|       inst                    |     1.489 |
+|     pulse_gen_0               |     0.008 |
+|       inst                    |     0.008 |
+|     smartconnect_0            |     0.010 |
+|       inst                    |     0.010 |
+|     target_0                  |     0.004 |
+|       inst                    |     0.004 |
++-------------------------------+-----------+
 
 

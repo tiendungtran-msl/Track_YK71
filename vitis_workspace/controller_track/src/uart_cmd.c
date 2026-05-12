@@ -20,6 +20,15 @@
 /* ── Bộ đệm nhận lệnh ───────────────────────────────────────────────────── */
 static char    g_buf[CMD_BUF_LEN + 1U];
 static uint8_t g_buf_idx = 0U;
+static uint8_t g_prev_was_cr = 0U;
+
+/* Echo ký tự theo kiểu best-effort để ưu tiên hút RX FIFO ở baud cao */
+static void uart_try_echo(char c)
+{
+    if (!XUartLite_IsTransmitFull(USER_UART_BASE)) {
+        XUartLite_SendByte(USER_UART_BASE, (u8)c);
+    }
+}
 
 /* ── Hàm gửi chuỗi ra UARTLite ─────────────────────────────────────────── */
 static void uart_puts(const char *s)
@@ -298,6 +307,7 @@ static void process_command(char *line)
 void uart_cmd_init(void)
 {
     g_buf_idx = 0U;
+    g_prev_was_cr = 0U;
     g_buf[0]  = '\0';
     uart_println("=== Controller Track – UART Console ===");
     uart_println("Go 'HELP' de xem danh sach lenh.");
@@ -311,8 +321,17 @@ void uart_cmd_poll(void)
     while (!XUartLite_IsReceiveEmpty(USER_UART_BASE)) {
         char c = (char)XUartLite_RecvByte(USER_UART_BASE);
 
-        /* Echo lại ký tự vừa nhận */
-        XUartLite_SendByte(USER_UART_BASE, (u8)c);
+        /* Gom CRLF thành một ký tự kết thúc dòng để tránh chạy lệnh 2 lần */
+        if (g_prev_was_cr != 0U && c == '\n') {
+            g_prev_was_cr = 0U;
+            continue;
+        }
+        g_prev_was_cr = (c == '\r') ? 1U : 0U;
+
+        /* Echo lại ký tự nhập thường; ưu tiên không chặn luồng nhận */
+        if (c != '\r' && c != '\n' && c != '\b' && c != 0x7FU) {
+            uart_try_echo(c);
+        }
 
         if (c == '\r' || c == '\n') {
             /* Kết thúc lệnh */
