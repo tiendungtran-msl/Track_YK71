@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon May 11 14:16:01 2026
+| Date         : Wed May 13 09:20:09 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : report_drc -file test_wrapper_drc_routed.rpt -pb test_wrapper_drc_routed.pb -rpx test_wrapper_drc_routed.rpx
 | Design       : test_wrapper
@@ -24,14 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 9
+             Checks found: 11
 +-----------+----------+----------------------------+--------+
 | Rule      | Severity | Description                | Checks |
 +-----------+----------+----------------------------+--------+
-| PDRC-132  | Warning  | SLICE_PairEqSame_A6A5_WARN | 2      |
-| PDRC-138  | Warning  | SLICE_PairEqSame_D6D5_WARN | 1      |
-| PDRC-140  | Warning  | SLICE_PairEqSame_A6A5_WARN | 1      |
-| PDRC-142  | Warning  | SLICE_PairEqSame_B6B5_WARN | 1      |
+| PDRC-132  | Warning  | SLICE_PairEqSame_A6A5_WARN | 3      |
+| PDRC-144  | Warning  | SLICE_PairEqSame_C6C5_WARN | 2      |
+| PDRC-146  | Warning  | SLICE_PairEqSame_D6D5_WARN | 2      |
 | REQP-1615 | Warning  | use_IOB_register           | 3      |
 | RTSTAT-10 | Warning  | No routable loads          | 1      |
 +-----------+----------+----------------------------+--------+
@@ -40,27 +39,37 @@ Table of Contents
 -----------------
 PDRC-132#1 Warning
 SLICE_PairEqSame_A6A5_WARN  
-Luts A6LUT and A5LUT in use in site SLICE_X95Y59 with different equations without A6 pin connected to Global Logic High.
+Luts A6LUT and A5LUT in use in site SLICE_X55Y46 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 PDRC-132#2 Warning
 SLICE_PairEqSame_A6A5_WARN  
-Luts A6LUT and A5LUT in use in site SLICE_X95Y61 with different equations without A6 pin connected to Global Logic High.
+Luts A6LUT and A5LUT in use in site SLICE_X55Y48 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-PDRC-138#1 Warning
-SLICE_PairEqSame_D6D5_WARN  
-Luts D6LUT and D5LUT in use in site SLICE_X93Y59 with different equations without A6 pin connected to Global Logic High.
-Related violations: <none>
-
-PDRC-140#1 Warning
+PDRC-132#3 Warning
 SLICE_PairEqSame_A6A5_WARN  
-Luts A6LUT and A5LUT in use in site SLICE_X90Y58 with different equations without A6 pin connected to Global Logic High.
+Luts A6LUT and A5LUT in use in site SLICE_X63Y41 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
-PDRC-142#1 Warning
-SLICE_PairEqSame_B6B5_WARN  
-Luts B6LUT and B5LUT in use in site SLICE_X90Y58 with different equations without A6 pin connected to Global Logic High.
+PDRC-144#1 Warning
+SLICE_PairEqSame_C6C5_WARN  
+Luts C6LUT and C5LUT in use in site SLICE_X100Y78 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-144#2 Warning
+SLICE_PairEqSame_C6C5_WARN  
+Luts C6LUT and C5LUT in use in site SLICE_X104Y91 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-146#1 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X100Y78 with different equations without A6 pin connected to Global Logic High.
+Related violations: <none>
+
+PDRC-146#2 Warning
+SLICE_PairEqSame_D6D5_WARN  
+Luts D6LUT and D5LUT in use in site SLICE_X104Y91 with different equations without A6 pin connected to Global Logic High.
 Related violations: <none>
 
 REQP-1615#1 Warning
@@ -81,20 +90,20 @@ Related violations: <none>
 RTSTAT-10#1 Warning
 No routable loads  
 30 net(s) have no routable loads. The problem bus(es) and/or net(s) are test_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/smartconnect_0/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/smartconnect_0/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m02_nodes/m02_ar_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m02_nodes/m02_b_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m02_nodes/m02_w_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m03_nodes/m03_ar_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/m02_nodes/m02_aw_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/m03_nodes/m03_aw_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/smartconnect_0/inst/m03_nodes/m03_w_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/m04_nodes/m04_b_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/m04_nodes/m04_aw_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/smartconnect_0/inst/m04_nodes/m04_r_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/smartconnect_0/inst/m04_nodes/m04_w_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe
+test_i/smartconnect_0/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/s00_nodes/s00_b_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/smartconnect_0/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe
  (the first 15 of 30 listed nets/buses).
 Related violations: <none>
 

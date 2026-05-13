@@ -3,7 +3,7 @@
  * ============================================================================
  *
  * Module này quản lý FSM SEARCH ↔ TRACK và ISR của controller_connect_0.
- * Các tham số bám sát có thể thay đổi tại runtime qua uart_cmd.
+ * Tham số bộ điều khiển được cố định trong firmware để vận hành ổn định.
  * ============================================================================
  */
 
@@ -35,6 +35,7 @@
 /* ── Trạng thái FSM ─────────────────────────────────────────────────────── */
 #define ST_SEARCH   0U
 #define ST_TRACK    1U
+#define ST_MANUAL   2U
 
 /* ── Cấu hình tham số (ghi/đọc từ uart_cmd) ────────────────────────────── */
 typedef struct {
@@ -50,9 +51,7 @@ typedef struct {
 typedef struct {
     uint32_t state;
     uint32_t spd_width;
-    int32_t  corr_residual;
-    uint16_t lock_cnt;
-    uint16_t loss_cnt;
+    int32_t  manual_input;
 } TrackerStatus;
 
 /* ── API ─────────────────────────────────────────────────────────────────── */
@@ -93,5 +92,17 @@ uint32_t tracker_period_min_from_mode(uint32_t mode);
  *   reset_state=1: reset FSM về SEARCH và xóa bộ đếm.
  */
 void tracker_apply_mode_profile(uint32_t mode, uint8_t reset_state);
+
+/**
+ * tracker_set_manual_mode() - Bật/tắt chế độ điều khiển thủ công kiểu PI.
+ *   is_manual=1: vào ST_MANUAL, reset input về 0 và neo tích phân theo vị trí hiện tại.
+ *   is_manual=0: về ST_SEARCH, xoá bộ đếm nội bộ.
+ */
+void tracker_set_manual_mode(uint8_t is_manual);
+
+/**
+ * tracker_set_manual_rate() - Cập nhật giá trị tay quay (theta_v) cho ST_MANUAL.
+ */
+void tracker_set_manual_rate(int32_t rate);
 
 #endif /* TRACKER_H */

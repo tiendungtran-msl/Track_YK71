@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-//Date        : Mon May 11 14:08:35 2026
+//Date        : Wed May 13 09:14:23 2026
 //Host        : MSN running 64-bit major release  (build 9200)
 //Command     : generate_target test.bd
 //Design      : test
@@ -484,6 +484,7 @@ module test
   wire smartconnect_0_M04_AXI_WVALID;
   wire strobe_1_0;
   wire strobe_2_0;
+  wire [31:0]target_0_target_range_cycles;
   wire tx_0;
 
   test_axi_uartlite_0_0 axi_uartlite_0
@@ -563,6 +564,7 @@ module test
         .s_axi_intr_wstrb(smartconnect_0_M04_AXI_WSTRB),
         .s_axi_intr_wvalid(smartconnect_0_M04_AXI_WVALID),
         .spd_width(controller_connect_0_spd_width),
+        .target_range_cycles(target_0_target_range_cycles),
         .target_speed(controller_connect_0_target_speed));
   test_discriminator_0_0 discriminator_0
        (.clk(microblaze_0_Clk),
@@ -884,5 +886,6 @@ module test
         .pulse_target(pulse_target_0),
         .r0_YB(r0_YB_0),
         .rst_n(processing_system7_0_FCLK_RESET0_N),
+        .target_range_cycles(target_0_target_range_cycles),
         .target_speed(controller_connect_0_target_speed));
 endmodule

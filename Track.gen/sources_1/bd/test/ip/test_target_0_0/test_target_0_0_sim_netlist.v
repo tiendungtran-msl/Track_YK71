@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-// Date        : Mon May 11 09:13:39 2026
+// Date        : Wed May 13 08:06:14 2026
 // Host        : MSN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_sim_netlist.v
@@ -21,35 +21,96 @@ module test_target_0_0
     rst_n,
     r0_YB,
     target_speed,
-    pulse_target);
+    pulse_target,
+    target_range_cycles);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *) (* X_INTERFACE_MODE = "slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst_n;
   input r0_YB;
   input [31:0]target_speed;
   output pulse_target;
+  output [31:0]target_range_cycles;
 
+  wire \<const0> ;
   wire clk;
   wire pulse_target;
   wire r0_YB;
   wire rst_n;
+  wire [16:0]\^target_range_cycles ;
   wire [31:0]target_speed;
 
+  assign target_range_cycles[31] = \<const0> ;
+  assign target_range_cycles[30] = \<const0> ;
+  assign target_range_cycles[29] = \<const0> ;
+  assign target_range_cycles[28] = \<const0> ;
+  assign target_range_cycles[27] = \<const0> ;
+  assign target_range_cycles[26] = \<const0> ;
+  assign target_range_cycles[25] = \<const0> ;
+  assign target_range_cycles[24] = \<const0> ;
+  assign target_range_cycles[23] = \<const0> ;
+  assign target_range_cycles[22] = \<const0> ;
+  assign target_range_cycles[21] = \<const0> ;
+  assign target_range_cycles[20] = \<const0> ;
+  assign target_range_cycles[19] = \<const0> ;
+  assign target_range_cycles[18] = \<const0> ;
+  assign target_range_cycles[17] = \<const0> ;
+  assign target_range_cycles[16:0] = \^target_range_cycles [16:0];
+  GND GND
+       (.G(\<const0> ));
   test_target_0_0_target inst
        (.clk(clk),
         .pulse_target(pulse_target),
         .r0_YB(r0_YB),
         .rst_n(rst_n),
+        .target_range_cycles({\^target_range_cycles [16],\^target_range_cycles [13:11],\^target_range_cycles [7]}),
+        .\target_range_cycles_reg[0]_0 (\^target_range_cycles [0]),
+        .\target_range_cycles_reg[10]_0 (\^target_range_cycles [10]),
+        .\target_range_cycles_reg[14]_0 (\^target_range_cycles [14]),
+        .\target_range_cycles_reg[15]_0 (\^target_range_cycles [15]),
+        .\target_range_cycles_reg[1]_0 (\^target_range_cycles [1]),
+        .\target_range_cycles_reg[2]_0 (\^target_range_cycles [2]),
+        .\target_range_cycles_reg[3]_0 (\^target_range_cycles [3]),
+        .\target_range_cycles_reg[4]_0 (\^target_range_cycles [4]),
+        .\target_range_cycles_reg[5]_0 (\^target_range_cycles [5]),
+        .\target_range_cycles_reg[6]_0 (\^target_range_cycles [6]),
+        .\target_range_cycles_reg[8]_0 (\^target_range_cycles [8]),
+        .\target_range_cycles_reg[9]_0 (\^target_range_cycles [9]),
         .target_speed(target_speed));
 endmodule
 
 (* ORIG_REF_NAME = "target" *) 
 module test_target_0_0_target
-   (pulse_target,
+   (\target_range_cycles_reg[6]_0 ,
+    \target_range_cycles_reg[8]_0 ,
+    \target_range_cycles_reg[9]_0 ,
+    \target_range_cycles_reg[10]_0 ,
+    \target_range_cycles_reg[14]_0 ,
+    \target_range_cycles_reg[15]_0 ,
+    \target_range_cycles_reg[5]_0 ,
+    \target_range_cycles_reg[4]_0 ,
+    \target_range_cycles_reg[3]_0 ,
+    \target_range_cycles_reg[2]_0 ,
+    \target_range_cycles_reg[1]_0 ,
+    \target_range_cycles_reg[0]_0 ,
+    pulse_target,
+    target_range_cycles,
     r0_YB,
     clk,
     target_speed,
     rst_n);
+  output \target_range_cycles_reg[6]_0 ;
+  output \target_range_cycles_reg[8]_0 ;
+  output \target_range_cycles_reg[9]_0 ;
+  output \target_range_cycles_reg[10]_0 ;
+  output \target_range_cycles_reg[14]_0 ;
+  output \target_range_cycles_reg[15]_0 ;
+  output \target_range_cycles_reg[5]_0 ;
+  output \target_range_cycles_reg[4]_0 ;
+  output \target_range_cycles_reg[3]_0 ;
+  output \target_range_cycles_reg[2]_0 ;
+  output \target_range_cycles_reg[1]_0 ;
+  output \target_range_cycles_reg[0]_0 ;
   output pulse_target;
+  output [4:0]target_range_cycles;
   input r0_YB;
   input clk;
   input [31:0]target_speed;
@@ -220,15 +281,7 @@ module test_target_0_0_target
   wire \delay_current_reg[7]_i_2_n_1 ;
   wire \delay_current_reg[7]_i_2_n_2 ;
   wire \delay_current_reg[7]_i_2_n_3 ;
-  wire [16:0]delay_latched;
-  wire \delay_latched[13]_i_2_n_0 ;
-  wire \delay_latched[13]_i_3_n_0 ;
-  wire \delay_latched[14]_i_1_n_0 ;
-  wire \delay_latched[15]_i_2_n_0 ;
-  wire \delay_latched[15]_i_3_n_0 ;
-  wire \delay_latched[15]_i_4_n_0 ;
-  wire \delay_latched[15]_i_5_n_0 ;
-  wire \delay_latched[15]_i_6_n_0 ;
+  wire [16:7]delay_latched;
   wire [16:0]delay_req;
   wire [15:0]frac_accum;
   wire frac_pipe_valid;
@@ -486,9 +539,9 @@ module test_target_0_0_target
   wire \pri_cycles_latched[0]_i_1_n_0 ;
   wire \pri_cycles_latched[11]_i_1_n_0 ;
   wire \pri_cycles_latched[14]_i_1_n_0 ;
+  wire \pri_cycles_latched[15]_i_3_n_0 ;
   wire \pri_cycles_latched[15]_i_4_n_0 ;
   wire \pri_cycles_latched[15]_i_5_n_0 ;
-  wire \pri_cycles_latched[15]_i_6_n_0 ;
   wire \pri_cycles_latched[1]_i_1_n_0 ;
   wire \pri_cycles_latched[2]_i_1_n_0 ;
   wire \pri_cycles_latched[3]_i_1_n_0 ;
@@ -532,6 +585,27 @@ module test_target_0_0_target
   wire r0_yb_d;
   wire rst_n;
   wire sync_rise;
+  wire [4:0]target_range_cycles;
+  wire \target_range_cycles[13]_i_2_n_0 ;
+  wire \target_range_cycles[13]_i_3_n_0 ;
+  wire \target_range_cycles[14]_i_1_n_0 ;
+  wire \target_range_cycles[15]_i_2_n_0 ;
+  wire \target_range_cycles[15]_i_3_n_0 ;
+  wire \target_range_cycles[15]_i_4_n_0 ;
+  wire \target_range_cycles[15]_i_5_n_0 ;
+  wire \target_range_cycles[15]_i_6_n_0 ;
+  wire \target_range_cycles_reg[0]_0 ;
+  wire \target_range_cycles_reg[10]_0 ;
+  wire \target_range_cycles_reg[14]_0 ;
+  wire \target_range_cycles_reg[15]_0 ;
+  wire \target_range_cycles_reg[1]_0 ;
+  wire \target_range_cycles_reg[2]_0 ;
+  wire \target_range_cycles_reg[3]_0 ;
+  wire \target_range_cycles_reg[4]_0 ;
+  wire \target_range_cycles_reg[5]_0 ;
+  wire \target_range_cycles_reg[6]_0 ;
+  wire \target_range_cycles_reg[8]_0 ;
+  wire \target_range_cycles_reg[9]_0 ;
   wire [31:0]target_speed;
   wire [3:0]NLW__carry_O_UNCONNECTED;
   wire [3:0]NLW__carry__0_O_UNCONNECTED;
@@ -573,7 +647,7 @@ module test_target_0_0_target
        (.CI(_carry_n_0),
         .CO({_carry__0_n_0,_carry__0_n_1,_carry__0_n_2,_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({_carry__0_i_1_n_0,_carry__0_i_2_n_0,_carry__0_i_3_n_0,delay_latched[4]}),
+        .DI({_carry__0_i_1_n_0,_carry__0_i_2_n_0,_carry__0_i_3_n_0,\target_range_cycles_reg[4]_0 }),
         .O(NLW__carry__0_O_UNCONNECTED[3:0]),
         .S({_carry__0_i_4_n_0,_carry__0_i_5_n_0,_carry__0_i_6_n_0,_carry__0_i_7_n_0}));
   LUT2 #(
@@ -586,12 +660,12 @@ module test_target_0_0_target
     .INIT(4'hB)) 
     _carry__0_i_2
        (.I0(frame_cnt_reg[5]),
-        .I1(delay_latched[5]),
+        .I1(\target_range_cycles_reg[5]_0 ),
         .O(_carry__0_i_2_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     _carry__0_i_3
-       (.I0(delay_latched[5]),
+       (.I0(\target_range_cycles_reg[5]_0 ),
         .I1(frame_cnt_reg[5]),
         .O(_carry__0_i_3_n_0));
   LUT4 #(
@@ -599,29 +673,29 @@ module test_target_0_0_target
     _carry__0_i_4
        (.I0(delay_latched[7]),
         .I1(frame_cnt_reg[7]),
-        .I2(delay_latched[6]),
+        .I2(\target_range_cycles_reg[6]_0 ),
         .I3(frame_cnt_reg[6]),
         .O(_carry__0_i_4_n_0));
   LUT4 #(
     .INIT(16'h2DD2)) 
     _carry__0_i_5
-       (.I0(delay_latched[5]),
+       (.I0(\target_range_cycles_reg[5]_0 ),
         .I1(frame_cnt_reg[5]),
-        .I2(delay_latched[6]),
+        .I2(\target_range_cycles_reg[6]_0 ),
         .I3(frame_cnt_reg[6]),
         .O(_carry__0_i_5_n_0));
   LUT3 #(
     .INIT(8'h69)) 
     _carry__0_i_6
-       (.I0(delay_latched[5]),
+       (.I0(\target_range_cycles_reg[5]_0 ),
         .I1(frame_cnt_reg[5]),
-        .I2(delay_latched[4]),
+        .I2(\target_range_cycles_reg[4]_0 ),
         .O(_carry__0_i_6_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     _carry__0_i_7
        (.I0(frame_cnt_reg[4]),
-        .I1(delay_latched[4]),
+        .I1(\target_range_cycles_reg[4]_0 ),
         .O(_carry__0_i_7_n_0));
   CARRY4 _carry__1
        (.CI(_carry__0_n_0),
@@ -634,19 +708,19 @@ module test_target_0_0_target
     .INIT(4'hB)) 
     _carry__1_i_1
        (.I0(frame_cnt_reg[10]),
-        .I1(delay_latched[10]),
+        .I1(\target_range_cycles_reg[10]_0 ),
         .O(_carry__1_i_1_n_0));
   LUT2 #(
     .INIT(4'hB)) 
     _carry__1_i_2
        (.I0(frame_cnt_reg[9]),
-        .I1(delay_latched[9]),
+        .I1(\target_range_cycles_reg[9]_0 ),
         .O(_carry__1_i_2_n_0));
   LUT2 #(
     .INIT(4'hB)) 
     _carry__1_i_3
        (.I0(frame_cnt_reg[8]),
-        .I1(delay_latched[8]),
+        .I1(\target_range_cycles_reg[8]_0 ),
         .O(_carry__1_i_3_n_0));
   LUT2 #(
     .INIT(4'hB)) 
@@ -657,7 +731,7 @@ module test_target_0_0_target
   LUT4 #(
     .INIT(16'hD22D)) 
     _carry__1_i_5
-       (.I0(delay_latched[10]),
+       (.I0(\target_range_cycles_reg[10]_0 ),
         .I1(frame_cnt_reg[10]),
         .I2(delay_latched[11]),
         .I3(frame_cnt_reg[11]),
@@ -665,17 +739,17 @@ module test_target_0_0_target
   LUT4 #(
     .INIT(16'hD22D)) 
     _carry__1_i_6
-       (.I0(delay_latched[9]),
+       (.I0(\target_range_cycles_reg[9]_0 ),
         .I1(frame_cnt_reg[9]),
-        .I2(delay_latched[10]),
+        .I2(\target_range_cycles_reg[10]_0 ),
         .I3(frame_cnt_reg[10]),
         .O(_carry__1_i_6_n_0));
   LUT4 #(
     .INIT(16'hD22D)) 
     _carry__1_i_7
-       (.I0(delay_latched[8]),
+       (.I0(\target_range_cycles_reg[8]_0 ),
         .I1(frame_cnt_reg[8]),
-        .I2(delay_latched[9]),
+        .I2(\target_range_cycles_reg[9]_0 ),
         .I3(frame_cnt_reg[9]),
         .O(_carry__1_i_7_n_0));
   LUT4 #(
@@ -683,7 +757,7 @@ module test_target_0_0_target
     _carry__1_i_8
        (.I0(delay_latched[7]),
         .I1(frame_cnt_reg[7]),
-        .I2(delay_latched[8]),
+        .I2(\target_range_cycles_reg[8]_0 ),
         .I3(frame_cnt_reg[8]),
         .O(_carry__1_i_8_n_0));
   CARRY4 _carry__2
@@ -697,7 +771,7 @@ module test_target_0_0_target
     .INIT(4'hB)) 
     _carry__2_i_1
        (.I0(frame_cnt_reg[14]),
-        .I1(delay_latched[14]),
+        .I1(\target_range_cycles_reg[14]_0 ),
         .O(_carry__2_i_1_n_0));
   LUT2 #(
     .INIT(4'hB)) 
@@ -720,9 +794,9 @@ module test_target_0_0_target
   LUT4 #(
     .INIT(16'hD22D)) 
     _carry__2_i_5
-       (.I0(delay_latched[14]),
+       (.I0(\target_range_cycles_reg[14]_0 ),
         .I1(frame_cnt_reg[14]),
-        .I2(delay_latched[15]),
+        .I2(\target_range_cycles_reg[15]_0 ),
         .I3(frame_cnt_reg[15]),
         .O(_carry__2_i_5_n_0));
   LUT4 #(
@@ -730,7 +804,7 @@ module test_target_0_0_target
     _carry__2_i_6
        (.I0(delay_latched[13]),
         .I1(frame_cnt_reg[13]),
-        .I2(delay_latched[14]),
+        .I2(\target_range_cycles_reg[14]_0 ),
         .I3(frame_cnt_reg[14]),
         .O(_carry__2_i_6_n_0));
   LUT4 #(
@@ -760,7 +834,7 @@ module test_target_0_0_target
     .INIT(4'hB)) 
     _carry__3_i_1
        (.I0(frame_cnt_reg[15]),
-        .I1(delay_latched[15]),
+        .I1(\target_range_cycles_reg[15]_0 ),
         .O(_carry__3_i_1_n_0));
   LUT2 #(
     .INIT(4'hB)) 
@@ -771,7 +845,7 @@ module test_target_0_0_target
   LUT4 #(
     .INIT(16'hD22D)) 
     _carry__3_i_3
-       (.I0(delay_latched[15]),
+       (.I0(\target_range_cycles_reg[15]_0 ),
         .I1(frame_cnt_reg[15]),
         .I2(delay_latched[16]),
         .I3(frame_cnt_reg[16]),
@@ -780,25 +854,25 @@ module test_target_0_0_target
     .INIT(4'h9)) 
     _carry_i_1
        (.I0(frame_cnt_reg[3]),
-        .I1(delay_latched[3]),
+        .I1(\target_range_cycles_reg[3]_0 ),
         .O(_carry_i_1_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     _carry_i_2
        (.I0(frame_cnt_reg[2]),
-        .I1(delay_latched[2]),
+        .I1(\target_range_cycles_reg[2]_0 ),
         .O(_carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     _carry_i_3
        (.I0(frame_cnt_reg[1]),
-        .I1(delay_latched[1]),
+        .I1(\target_range_cycles_reg[1]_0 ),
         .O(_carry_i_3_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     _carry_i_4
        (.I0(frame_cnt_reg[0]),
-        .I1(delay_latched[0]),
+        .I1(\target_range_cycles_reg[0]_0 ),
         .O(_carry_i_4_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 delay_current1__23_carry
@@ -1491,232 +1565,6 @@ module test_target_0_0_target
         .CLR(pulse_target_i_2_n_0),
         .D(\delay_current[9]_i_1_n_0 ),
         .Q(delay_current[9]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[0]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[0]),
-        .O(clamp_delay_return[0]));
-  LUT6 #(
-    .INIT(64'hFFFF000000070000)) 
-    \delay_latched[10]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[10]),
-        .O(clamp_delay_return[10]));
-  LUT6 #(
-    .INIT(64'hFFFF0007FFFFFFFF)) 
-    \delay_latched[11]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(delay_current[11]),
-        .I5(\delay_latched[15]_i_2_n_0 ),
-        .O(clamp_delay_return[11]));
-  LUT6 #(
-    .INIT(64'hFFF80000FFFFFFFF)) 
-    \delay_latched[12]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(delay_current[12]),
-        .I5(\delay_latched[15]_i_2_n_0 ),
-        .O(clamp_delay_return[12]));
-  LUT6 #(
-    .INIT(64'hFFF80000FFFFFFFF)) 
-    \delay_latched[13]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(delay_current[13]),
-        .I5(\delay_latched[15]_i_2_n_0 ),
-        .O(clamp_delay_return[13]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF4000)) 
-    \delay_latched[13]_i_2 
-       (.I0(\delay_latched[13]_i_3_n_0 ),
-        .I1(delay_current[9]),
-        .I2(delay_current[11]),
-        .I3(delay_current[10]),
-        .I4(delay_current[13]),
-        .I5(delay_current[12]),
-        .O(\delay_latched[13]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \delay_latched[13]_i_3 
-       (.I0(delay_current[7]),
-        .I1(delay_current[6]),
-        .I2(delay_current[8]),
-        .I3(delay_current[5]),
-        .O(\delay_latched[13]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'h45)) 
-    \delay_latched[14]_i_1 
-       (.I0(delay_current[16]),
-        .I1(delay_current[14]),
-        .I2(delay_current[15]),
-        .O(\delay_latched[14]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \delay_latched[15]_i_1 
-       (.I0(delay_current[15]),
-        .I1(\delay_latched[15]_i_2_n_0 ),
-        .O(clamp_delay_return[15]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h1110FFFF)) 
-    \delay_latched[15]_i_2 
-       (.I0(delay_current[14]),
-        .I1(delay_current[15]),
-        .I2(\delay_latched[15]_i_3_n_0 ),
-        .I3(\delay_latched[15]_i_4_n_0 ),
-        .I4(delay_current[16]),
-        .O(\delay_latched[15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000100FFFF)) 
-    \delay_latched[15]_i_3 
-       (.I0(delay_current[2]),
-        .I1(delay_current[3]),
-        .I2(delay_current[1]),
-        .I3(\delay_latched[15]_i_5_n_0 ),
-        .I4(delay_current[7]),
-        .I5(\delay_latched[15]_i_6_n_0 ),
-        .O(\delay_latched[15]_i_3_n_0 ));
-  LUT3 #(
-    .INIT(8'h7F)) 
-    \delay_latched[15]_i_4 
-       (.I0(delay_current[11]),
-        .I1(delay_current[13]),
-        .I2(delay_current[12]),
-        .O(\delay_latched[15]_i_4_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \delay_latched[15]_i_5 
-       (.I0(delay_current[6]),
-        .I1(delay_current[0]),
-        .I2(delay_current[5]),
-        .I3(delay_current[4]),
-        .O(\delay_latched[15]_i_5_n_0 ));
-  LUT3 #(
-    .INIT(8'hFE)) 
-    \delay_latched[15]_i_6 
-       (.I0(delay_current[8]),
-        .I1(delay_current[10]),
-        .I2(delay_current[9]),
-        .O(\delay_latched[15]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[1]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[1]),
-        .O(clamp_delay_return[1]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[2]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[2]),
-        .O(clamp_delay_return[2]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[3]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[3]),
-        .O(clamp_delay_return[3]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[4]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[4]),
-        .O(clamp_delay_return[4]));
-  LUT6 #(
-    .INIT(64'hFFFF000000070000)) 
-    \delay_latched[5]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[5]),
-        .O(clamp_delay_return[5]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[6]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[6]),
-        .O(clamp_delay_return[6]));
-  LUT6 #(
-    .INIT(64'hFFF80000FFFFFFFF)) 
-    \delay_latched[7]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(delay_current[7]),
-        .I5(\delay_latched[15]_i_2_n_0 ),
-        .O(clamp_delay_return[7]));
-  LUT6 #(
-    .INIT(64'hFFF8000000000000)) 
-    \delay_latched[8]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[8]),
-        .O(clamp_delay_return[8]));
-  LUT6 #(
-    .INIT(64'hFFFF000000070000)) 
-    \delay_latched[9]_i_1 
-       (.I0(\delay_latched[13]_i_2_n_0 ),
-        .I1(delay_current[14]),
-        .I2(delay_current[16]),
-        .I3(delay_current[15]),
-        .I4(\delay_latched[15]_i_2_n_0 ),
-        .I5(delay_current[9]),
-        .O(clamp_delay_return[9]));
-  FDCE \delay_latched_reg[0] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[0]),
-        .Q(delay_latched[0]));
-  FDCE \delay_latched_reg[10] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[10]),
-        .Q(delay_latched[10]));
   FDPE \delay_latched_reg[11] 
        (.C(clk),
         .CE(sync_rise),
@@ -1735,78 +1583,18 @@ module test_target_0_0_target
         .D(clamp_delay_return[13]),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_latched[13]));
-  FDCE \delay_latched_reg[14] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(\delay_latched[14]_i_1_n_0 ),
-        .Q(delay_latched[14]));
-  FDCE \delay_latched_reg[15] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[15]),
-        .Q(delay_latched[15]));
   FDPE \delay_latched_reg[16] 
        (.C(clk),
         .CE(sync_rise),
         .D(delay_current[16]),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_latched[16]));
-  FDCE \delay_latched_reg[1] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[1]),
-        .Q(delay_latched[1]));
-  FDCE \delay_latched_reg[2] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[2]),
-        .Q(delay_latched[2]));
-  FDCE \delay_latched_reg[3] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[3]),
-        .Q(delay_latched[3]));
-  FDCE \delay_latched_reg[4] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[4]),
-        .Q(delay_latched[4]));
-  FDCE \delay_latched_reg[5] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[5]),
-        .Q(delay_latched[5]));
-  FDCE \delay_latched_reg[6] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[6]),
-        .Q(delay_latched[6]));
   FDPE \delay_latched_reg[7] 
        (.C(clk),
         .CE(sync_rise),
         .D(clamp_delay_return[7]),
         .PRE(pulse_target_i_2_n_0),
         .Q(delay_latched[7]));
-  FDCE \delay_latched_reg[8] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[8]),
-        .Q(delay_latched[8]));
-  FDCE \delay_latched_reg[9] 
-       (.C(clk),
-        .CE(sync_rise),
-        .CLR(pulse_target_i_2_n_0),
-        .D(clamp_delay_return[9]),
-        .Q(delay_latched[9]));
   LUT3 #(
     .INIT(8'h8A)) 
     \frac_accum[15]_i_1 
@@ -3184,58 +2972,52 @@ module test_target_0_0_target
        (.I0(pri_cycles_next1),
         .I1(pri_counter_reg[14]),
         .O(\pri_cycles_latched[14]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \pri_cycles_latched[15]_i_1 
-       (.I0(r0_YB),
-        .I1(r0_yb_d),
-        .O(sync_rise));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'hB)) 
-    \pri_cycles_latched[15]_i_2 
+    \pri_cycles_latched[15]_i_1 
        (.I0(pri_counter_reg[15]),
         .I1(pri_cycles_next1),
         .O(pri_cycles_next[15]));
   LUT6 #(
     .INIT(64'hFFFFFFFEFFFFFFFF)) 
-    \pri_cycles_latched[15]_i_3 
-       (.I0(\pri_cycles_latched[15]_i_4_n_0 ),
+    \pri_cycles_latched[15]_i_2 
+       (.I0(\pri_cycles_latched[15]_i_3_n_0 ),
         .I1(pri_counter_reg[8]),
         .I2(pri_counter_reg[7]),
         .I3(pri_counter_reg[6]),
         .I4(pri_counter_reg[5]),
-        .I5(\pri_cycles_latched[15]_i_5_n_0 ),
+        .I5(\pri_cycles_latched[15]_i_4_n_0 ),
         .O(pri_cycles_next1));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
-    \pri_cycles_latched[15]_i_4 
+    \pri_cycles_latched[15]_i_3 
        (.I0(pri_counter_reg[2]),
         .I1(pri_counter_reg[0]),
         .I2(pri_counter_reg[1]),
         .I3(pri_counter_reg[4]),
         .I4(pri_counter_reg[3]),
-        .O(\pri_cycles_latched[15]_i_4_n_0 ));
+        .O(\pri_cycles_latched[15]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h00000001)) 
-    \pri_cycles_latched[15]_i_5 
+    \pri_cycles_latched[15]_i_4 
        (.I0(pri_counter_reg[13]),
         .I1(pri_counter_reg[14]),
         .I2(pri_counter_reg[16]),
         .I3(pri_counter_reg[15]),
-        .I4(\pri_cycles_latched[15]_i_6_n_0 ),
-        .O(\pri_cycles_latched[15]_i_5_n_0 ));
+        .I4(\pri_cycles_latched[15]_i_5_n_0 ),
+        .O(\pri_cycles_latched[15]_i_4_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \pri_cycles_latched[15]_i_6 
+    \pri_cycles_latched[15]_i_5 
        (.I0(pri_counter_reg[10]),
         .I1(pri_counter_reg[9]),
         .I2(pri_counter_reg[12]),
         .I3(pri_counter_reg[11]),
-        .O(\pri_cycles_latched[15]_i_6_n_0 ));
+        .O(\pri_cycles_latched[15]_i_5_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h4)) 
@@ -3429,8 +3211,8 @@ module test_target_0_0_target
     .INIT(16'h2F02)) 
     pulse_target2_carry__0_i_1
        (.I0(frame_cnt_reg[14]),
-        .I1(delay_latched[14]),
-        .I2(delay_latched[15]),
+        .I1(\target_range_cycles_reg[14]_0 ),
+        .I2(\target_range_cycles_reg[15]_0 ),
         .I3(frame_cnt_reg[15]),
         .O(pulse_target2_carry__0_i_1_n_0));
   LUT4 #(
@@ -3445,7 +3227,7 @@ module test_target_0_0_target
     .INIT(16'h2F02)) 
     pulse_target2_carry__0_i_3
        (.I0(frame_cnt_reg[10]),
-        .I1(delay_latched[10]),
+        .I1(\target_range_cycles_reg[10]_0 ),
         .I2(delay_latched[11]),
         .I3(frame_cnt_reg[11]),
         .O(pulse_target2_carry__0_i_3_n_0));
@@ -3453,17 +3235,17 @@ module test_target_0_0_target
     .INIT(16'h2F02)) 
     pulse_target2_carry__0_i_4
        (.I0(frame_cnt_reg[8]),
-        .I1(delay_latched[8]),
-        .I2(delay_latched[9]),
+        .I1(\target_range_cycles_reg[8]_0 ),
+        .I2(\target_range_cycles_reg[9]_0 ),
         .I3(frame_cnt_reg[9]),
         .O(pulse_target2_carry__0_i_4_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pulse_target2_carry__0_i_5
        (.I0(frame_cnt_reg[14]),
-        .I1(delay_latched[14]),
+        .I1(\target_range_cycles_reg[14]_0 ),
         .I2(frame_cnt_reg[15]),
-        .I3(delay_latched[15]),
+        .I3(\target_range_cycles_reg[15]_0 ),
         .O(pulse_target2_carry__0_i_5_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -3477,7 +3259,7 @@ module test_target_0_0_target
     .INIT(16'h9009)) 
     pulse_target2_carry__0_i_7
        (.I0(frame_cnt_reg[10]),
-        .I1(delay_latched[10]),
+        .I1(\target_range_cycles_reg[10]_0 ),
         .I2(frame_cnt_reg[11]),
         .I3(delay_latched[11]),
         .O(pulse_target2_carry__0_i_7_n_0));
@@ -3485,9 +3267,9 @@ module test_target_0_0_target
     .INIT(16'h9009)) 
     pulse_target2_carry__0_i_8
        (.I0(frame_cnt_reg[8]),
-        .I1(delay_latched[8]),
+        .I1(\target_range_cycles_reg[8]_0 ),
         .I2(frame_cnt_reg[9]),
-        .I3(delay_latched[9]),
+        .I3(\target_range_cycles_reg[9]_0 ),
         .O(pulse_target2_carry__0_i_8_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 pulse_target2_carry__1
@@ -3513,7 +3295,7 @@ module test_target_0_0_target
     .INIT(16'h2F02)) 
     pulse_target2_carry_i_1
        (.I0(frame_cnt_reg[6]),
-        .I1(delay_latched[6]),
+        .I1(\target_range_cycles_reg[6]_0 ),
         .I2(delay_latched[7]),
         .I3(frame_cnt_reg[7]),
         .O(pulse_target2_carry_i_1_n_0));
@@ -3521,31 +3303,31 @@ module test_target_0_0_target
     .INIT(16'h2F02)) 
     pulse_target2_carry_i_2
        (.I0(frame_cnt_reg[4]),
-        .I1(delay_latched[4]),
-        .I2(delay_latched[5]),
+        .I1(\target_range_cycles_reg[4]_0 ),
+        .I2(\target_range_cycles_reg[5]_0 ),
         .I3(frame_cnt_reg[5]),
         .O(pulse_target2_carry_i_2_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     pulse_target2_carry_i_3
        (.I0(frame_cnt_reg[2]),
-        .I1(delay_latched[2]),
-        .I2(delay_latched[3]),
+        .I1(\target_range_cycles_reg[2]_0 ),
+        .I2(\target_range_cycles_reg[3]_0 ),
         .I3(frame_cnt_reg[3]),
         .O(pulse_target2_carry_i_3_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     pulse_target2_carry_i_4
        (.I0(frame_cnt_reg[0]),
-        .I1(delay_latched[0]),
-        .I2(delay_latched[1]),
+        .I1(\target_range_cycles_reg[0]_0 ),
+        .I2(\target_range_cycles_reg[1]_0 ),
         .I3(frame_cnt_reg[1]),
         .O(pulse_target2_carry_i_4_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pulse_target2_carry_i_5
        (.I0(frame_cnt_reg[6]),
-        .I1(delay_latched[6]),
+        .I1(\target_range_cycles_reg[6]_0 ),
         .I2(frame_cnt_reg[7]),
         .I3(delay_latched[7]),
         .O(pulse_target2_carry_i_5_n_0));
@@ -3553,25 +3335,25 @@ module test_target_0_0_target
     .INIT(16'h9009)) 
     pulse_target2_carry_i_6
        (.I0(frame_cnt_reg[4]),
-        .I1(delay_latched[4]),
+        .I1(\target_range_cycles_reg[4]_0 ),
         .I2(frame_cnt_reg[5]),
-        .I3(delay_latched[5]),
+        .I3(\target_range_cycles_reg[5]_0 ),
         .O(pulse_target2_carry_i_6_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pulse_target2_carry_i_7
        (.I0(frame_cnt_reg[2]),
-        .I1(delay_latched[2]),
+        .I1(\target_range_cycles_reg[2]_0 ),
         .I2(frame_cnt_reg[3]),
-        .I3(delay_latched[3]),
+        .I3(\target_range_cycles_reg[3]_0 ),
         .O(pulse_target2_carry_i_7_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pulse_target2_carry_i_8
        (.I0(frame_cnt_reg[0]),
-        .I1(delay_latched[0]),
+        .I1(\target_range_cycles_reg[0]_0 ),
         .I2(frame_cnt_reg[1]),
-        .I3(delay_latched[1]),
+        .I3(\target_range_cycles_reg[1]_0 ),
         .O(pulse_target2_carry_i_8_n_0));
   LUT3 #(
     .INIT(8'h20)) 
@@ -3597,6 +3379,328 @@ module test_target_0_0_target
         .CLR(pulse_target_i_2_n_0),
         .D(r0_YB),
         .Q(r0_yb_d));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[0]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[0]),
+        .O(clamp_delay_return[0]));
+  LUT6 #(
+    .INIT(64'hFFFF000000070000)) 
+    \target_range_cycles[10]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[10]),
+        .O(clamp_delay_return[10]));
+  LUT6 #(
+    .INIT(64'hFFFF0007FFFFFFFF)) 
+    \target_range_cycles[11]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(delay_current[11]),
+        .I5(\target_range_cycles[15]_i_2_n_0 ),
+        .O(clamp_delay_return[11]));
+  LUT6 #(
+    .INIT(64'hFFF80000FFFFFFFF)) 
+    \target_range_cycles[12]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(delay_current[12]),
+        .I5(\target_range_cycles[15]_i_2_n_0 ),
+        .O(clamp_delay_return[12]));
+  LUT6 #(
+    .INIT(64'hFFF80000FFFFFFFF)) 
+    \target_range_cycles[13]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(delay_current[13]),
+        .I5(\target_range_cycles[15]_i_2_n_0 ),
+        .O(clamp_delay_return[13]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFF4000)) 
+    \target_range_cycles[13]_i_2 
+       (.I0(\target_range_cycles[13]_i_3_n_0 ),
+        .I1(delay_current[9]),
+        .I2(delay_current[11]),
+        .I3(delay_current[10]),
+        .I4(delay_current[13]),
+        .I5(delay_current[12]),
+        .O(\target_range_cycles[13]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \target_range_cycles[13]_i_3 
+       (.I0(delay_current[7]),
+        .I1(delay_current[6]),
+        .I2(delay_current[8]),
+        .I3(delay_current[5]),
+        .O(\target_range_cycles[13]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h45)) 
+    \target_range_cycles[14]_i_1 
+       (.I0(delay_current[16]),
+        .I1(delay_current[14]),
+        .I2(delay_current[15]),
+        .O(\target_range_cycles[14]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \target_range_cycles[15]_i_1 
+       (.I0(delay_current[15]),
+        .I1(\target_range_cycles[15]_i_2_n_0 ),
+        .O(clamp_delay_return[15]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h1110FFFF)) 
+    \target_range_cycles[15]_i_2 
+       (.I0(delay_current[14]),
+        .I1(delay_current[15]),
+        .I2(\target_range_cycles[15]_i_3_n_0 ),
+        .I3(\target_range_cycles[15]_i_4_n_0 ),
+        .I4(delay_current[16]),
+        .O(\target_range_cycles[15]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000000100FFFF)) 
+    \target_range_cycles[15]_i_3 
+       (.I0(delay_current[2]),
+        .I1(delay_current[3]),
+        .I2(delay_current[1]),
+        .I3(\target_range_cycles[15]_i_5_n_0 ),
+        .I4(delay_current[7]),
+        .I5(\target_range_cycles[15]_i_6_n_0 ),
+        .O(\target_range_cycles[15]_i_3_n_0 ));
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \target_range_cycles[15]_i_4 
+       (.I0(delay_current[11]),
+        .I1(delay_current[13]),
+        .I2(delay_current[12]),
+        .O(\target_range_cycles[15]_i_4_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \target_range_cycles[15]_i_5 
+       (.I0(delay_current[6]),
+        .I1(delay_current[0]),
+        .I2(delay_current[5]),
+        .I3(delay_current[4]),
+        .O(\target_range_cycles[15]_i_5_n_0 ));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \target_range_cycles[15]_i_6 
+       (.I0(delay_current[8]),
+        .I1(delay_current[10]),
+        .I2(delay_current[9]),
+        .O(\target_range_cycles[15]_i_6_n_0 ));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \target_range_cycles[16]_i_1 
+       (.I0(r0_YB),
+        .I1(r0_yb_d),
+        .O(sync_rise));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[1]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[1]),
+        .O(clamp_delay_return[1]));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[2]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[2]),
+        .O(clamp_delay_return[2]));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[3]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[3]),
+        .O(clamp_delay_return[3]));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[4]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[4]),
+        .O(clamp_delay_return[4]));
+  LUT6 #(
+    .INIT(64'hFFFF000000070000)) 
+    \target_range_cycles[5]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[5]),
+        .O(clamp_delay_return[5]));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[6]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[6]),
+        .O(clamp_delay_return[6]));
+  LUT6 #(
+    .INIT(64'hFFF80000FFFFFFFF)) 
+    \target_range_cycles[7]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(delay_current[7]),
+        .I5(\target_range_cycles[15]_i_2_n_0 ),
+        .O(clamp_delay_return[7]));
+  LUT6 #(
+    .INIT(64'hFFF8000000000000)) 
+    \target_range_cycles[8]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[8]),
+        .O(clamp_delay_return[8]));
+  LUT6 #(
+    .INIT(64'hFFFF000000070000)) 
+    \target_range_cycles[9]_i_1 
+       (.I0(\target_range_cycles[13]_i_2_n_0 ),
+        .I1(delay_current[14]),
+        .I2(delay_current[16]),
+        .I3(delay_current[15]),
+        .I4(\target_range_cycles[15]_i_2_n_0 ),
+        .I5(delay_current[9]),
+        .O(clamp_delay_return[9]));
+  FDCE \target_range_cycles_reg[0] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[0]),
+        .Q(\target_range_cycles_reg[0]_0 ));
+  FDCE \target_range_cycles_reg[10] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[10]),
+        .Q(\target_range_cycles_reg[10]_0 ));
+  FDCE \target_range_cycles_reg[11] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[11]),
+        .Q(target_range_cycles[1]));
+  FDCE \target_range_cycles_reg[12] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[12]),
+        .Q(target_range_cycles[2]));
+  FDCE \target_range_cycles_reg[13] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[13]),
+        .Q(target_range_cycles[3]));
+  FDCE \target_range_cycles_reg[14] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(\target_range_cycles[14]_i_1_n_0 ),
+        .Q(\target_range_cycles_reg[14]_0 ));
+  FDCE \target_range_cycles_reg[15] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[15]),
+        .Q(\target_range_cycles_reg[15]_0 ));
+  FDCE \target_range_cycles_reg[16] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(delay_current[16]),
+        .Q(target_range_cycles[4]));
+  FDCE \target_range_cycles_reg[1] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[1]),
+        .Q(\target_range_cycles_reg[1]_0 ));
+  FDCE \target_range_cycles_reg[2] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[2]),
+        .Q(\target_range_cycles_reg[2]_0 ));
+  FDCE \target_range_cycles_reg[3] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[3]),
+        .Q(\target_range_cycles_reg[3]_0 ));
+  FDCE \target_range_cycles_reg[4] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[4]),
+        .Q(\target_range_cycles_reg[4]_0 ));
+  FDCE \target_range_cycles_reg[5] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[5]),
+        .Q(\target_range_cycles_reg[5]_0 ));
+  FDCE \target_range_cycles_reg[6] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[6]),
+        .Q(\target_range_cycles_reg[6]_0 ));
+  FDCE \target_range_cycles_reg[7] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[7]),
+        .Q(target_range_cycles[0]));
+  FDCE \target_range_cycles_reg[8] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[8]),
+        .Q(\target_range_cycles_reg[8]_0 ));
+  FDCE \target_range_cycles_reg[9] 
+       (.C(clk),
+        .CE(sync_rise),
+        .CLR(pulse_target_i_2_n_0),
+        .D(clamp_delay_return[9]),
+        .Q(\target_range_cycles_reg[9]_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

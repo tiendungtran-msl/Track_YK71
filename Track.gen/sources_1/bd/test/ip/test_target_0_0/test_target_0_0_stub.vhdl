@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Mon May 11 09:13:39 2026
+-- Date        : Wed May 13 08:06:14 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_stub.vhdl
@@ -19,7 +19,8 @@ entity test_target_0_0 is
     rst_n : in STD_LOGIC;
     r0_YB : in STD_LOGIC;
     target_speed : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    pulse_target : out STD_LOGIC
+    pulse_target : out STD_LOGIC;
+    target_range_cycles : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
 
   attribute CHECK_LICENSE_TYPE : string;
@@ -36,7 +37,7 @@ architecture stub of test_target_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,r0_YB,target_speed[31:0],pulse_target";
+  attribute black_box_pad_pin of stub : architecture is "clk,rst_n,r0_YB,target_speed[31:0],pulse_target,target_range_cycles[31:0]";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_MODE : string;

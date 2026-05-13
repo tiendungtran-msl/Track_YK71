@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
--- Date        : Mon May 11 09:13:39 2026
+-- Date        : Wed May 13 08:06:14 2026
 -- Host        : MSN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_target_0_0/test_target_0_0_sim_netlist.vhdl
@@ -17,7 +17,20 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity test_target_0_0_target is
   port (
+    \target_range_cycles_reg[6]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[8]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[9]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[10]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[14]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[15]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[5]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[4]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[3]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[2]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[1]_0\ : out STD_LOGIC;
+    \target_range_cycles_reg[0]_0\ : out STD_LOGIC;
     pulse_target : out STD_LOGIC;
+    target_range_cycles : out STD_LOGIC_VECTOR ( 4 downto 0 );
     r0_YB : in STD_LOGIC;
     clk : in STD_LOGIC;
     target_speed : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -192,15 +205,7 @@ architecture STRUCTURE of test_target_0_0_target is
   signal \delay_current_reg[7]_i_2_n_1\ : STD_LOGIC;
   signal \delay_current_reg[7]_i_2_n_2\ : STD_LOGIC;
   signal \delay_current_reg[7]_i_2_n_3\ : STD_LOGIC;
-  signal delay_latched : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal \delay_latched[13]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_latched[13]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_latched[14]_i_1_n_0\ : STD_LOGIC;
-  signal \delay_latched[15]_i_2_n_0\ : STD_LOGIC;
-  signal \delay_latched[15]_i_3_n_0\ : STD_LOGIC;
-  signal \delay_latched[15]_i_4_n_0\ : STD_LOGIC;
-  signal \delay_latched[15]_i_5_n_0\ : STD_LOGIC;
-  signal \delay_latched[15]_i_6_n_0\ : STD_LOGIC;
+  signal delay_latched : STD_LOGIC_VECTOR ( 16 downto 7 );
   signal delay_req : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal frac_accum : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal frac_pipe_valid : STD_LOGIC;
@@ -458,9 +463,9 @@ architecture STRUCTURE of test_target_0_0_target is
   signal \pri_cycles_latched[0]_i_1_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[11]_i_1_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[14]_i_1_n_0\ : STD_LOGIC;
+  signal \pri_cycles_latched[15]_i_3_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[15]_i_4_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[15]_i_5_n_0\ : STD_LOGIC;
-  signal \pri_cycles_latched[15]_i_6_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[1]_i_1_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[2]_i_1_n_0\ : STD_LOGIC;
   signal \pri_cycles_latched[3]_i_1_n_0\ : STD_LOGIC;
@@ -501,6 +506,26 @@ architecture STRUCTURE of test_target_0_0_target is
   signal pulse_target_i_2_n_0 : STD_LOGIC;
   signal r0_yb_d : STD_LOGIC;
   signal sync_rise : STD_LOGIC;
+  signal \target_range_cycles[13]_i_2_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[13]_i_3_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[14]_i_1_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[15]_i_2_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[15]_i_3_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[15]_i_4_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[15]_i_5_n_0\ : STD_LOGIC;
+  signal \target_range_cycles[15]_i_6_n_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[0]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[10]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[14]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[15]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[1]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[2]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[3]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[4]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[5]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[6]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[8]_0\ : STD_LOGIC;
+  signal \^target_range_cycles_reg[9]_0\ : STD_LOGIC;
   signal \NLW__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -548,8 +573,6 @@ architecture STRUCTURE of test_target_0_0_target is
   attribute ADDER_THRESHOLD of \delay_current_reg[16]_i_2\ : label is 35;
   attribute ADDER_THRESHOLD of \delay_current_reg[3]_i_2\ : label is 35;
   attribute ADDER_THRESHOLD of \delay_current_reg[7]_i_2\ : label is 35;
-  attribute SOFT_HLUTNM of \delay_latched[14]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \delay_latched[15]_i_2\ : label is "soft_lutpair0";
   attribute ADDER_THRESHOLD of \frac_sum_pipe_reg[11]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \frac_sum_pipe_reg[15]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \frac_sum_pipe_reg[19]_i_1\ : label is 35;
@@ -585,10 +608,10 @@ architecture STRUCTURE of test_target_0_0_target is
   attribute SOFT_HLUTNM of \pri_cycles_latched[12]_i_1\ : label is "soft_lutpair15";
   attribute SOFT_HLUTNM of \pri_cycles_latched[13]_i_1\ : label is "soft_lutpair16";
   attribute SOFT_HLUTNM of \pri_cycles_latched[14]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_2\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_4\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_5\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_6\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_3\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_4\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \pri_cycles_latched[15]_i_5\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \pri_cycles_latched[16]_inv_i_1\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \pri_cycles_latched[1]_i_1\ : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of \pri_cycles_latched[2]_i_1\ : label is "soft_lutpair12";
@@ -604,7 +627,21 @@ architecture STRUCTURE of test_target_0_0_target is
   attribute COMPARATOR_THRESHOLD of pulse_target2_carry : label is 11;
   attribute COMPARATOR_THRESHOLD of \pulse_target2_carry__0\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \pulse_target2_carry__1\ : label is 11;
+  attribute SOFT_HLUTNM of \target_range_cycles[14]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \target_range_cycles[15]_i_2\ : label is "soft_lutpair0";
 begin
+  \target_range_cycles_reg[0]_0\ <= \^target_range_cycles_reg[0]_0\;
+  \target_range_cycles_reg[10]_0\ <= \^target_range_cycles_reg[10]_0\;
+  \target_range_cycles_reg[14]_0\ <= \^target_range_cycles_reg[14]_0\;
+  \target_range_cycles_reg[15]_0\ <= \^target_range_cycles_reg[15]_0\;
+  \target_range_cycles_reg[1]_0\ <= \^target_range_cycles_reg[1]_0\;
+  \target_range_cycles_reg[2]_0\ <= \^target_range_cycles_reg[2]_0\;
+  \target_range_cycles_reg[3]_0\ <= \^target_range_cycles_reg[3]_0\;
+  \target_range_cycles_reg[4]_0\ <= \^target_range_cycles_reg[4]_0\;
+  \target_range_cycles_reg[5]_0\ <= \^target_range_cycles_reg[5]_0\;
+  \target_range_cycles_reg[6]_0\ <= \^target_range_cycles_reg[6]_0\;
+  \target_range_cycles_reg[8]_0\ <= \^target_range_cycles_reg[8]_0\;
+  \target_range_cycles_reg[9]_0\ <= \^target_range_cycles_reg[9]_0\;
 \_carry\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -631,7 +668,7 @@ begin
       DI(3) => \_carry__0_i_1_n_0\,
       DI(2) => \_carry__0_i_2_n_0\,
       DI(1) => \_carry__0_i_3_n_0\,
-      DI(0) => delay_latched(4),
+      DI(0) => \^target_range_cycles_reg[4]_0\,
       O(3 downto 0) => \NLW__carry__0_O_UNCONNECTED\(3 downto 0),
       S(3) => \_carry__0_i_4_n_0\,
       S(2) => \_carry__0_i_5_n_0\,
@@ -653,7 +690,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(5),
-      I1 => delay_latched(5),
+      I1 => \^target_range_cycles_reg[5]_0\,
       O => \_carry__0_i_2_n_0\
     );
 \_carry__0_i_3\: unisim.vcomponents.LUT2
@@ -661,7 +698,7 @@ begin
       INIT => X"6"
     )
         port map (
-      I0 => delay_latched(5),
+      I0 => \^target_range_cycles_reg[5]_0\,
       I1 => frame_cnt_reg(5),
       O => \_carry__0_i_3_n_0\
     );
@@ -672,7 +709,7 @@ begin
         port map (
       I0 => delay_latched(7),
       I1 => frame_cnt_reg(7),
-      I2 => delay_latched(6),
+      I2 => \^target_range_cycles_reg[6]_0\,
       I3 => frame_cnt_reg(6),
       O => \_carry__0_i_4_n_0\
     );
@@ -681,9 +718,9 @@ begin
       INIT => X"2DD2"
     )
         port map (
-      I0 => delay_latched(5),
+      I0 => \^target_range_cycles_reg[5]_0\,
       I1 => frame_cnt_reg(5),
-      I2 => delay_latched(6),
+      I2 => \^target_range_cycles_reg[6]_0\,
       I3 => frame_cnt_reg(6),
       O => \_carry__0_i_5_n_0\
     );
@@ -692,9 +729,9 @@ begin
       INIT => X"69"
     )
         port map (
-      I0 => delay_latched(5),
+      I0 => \^target_range_cycles_reg[5]_0\,
       I1 => frame_cnt_reg(5),
-      I2 => delay_latched(4),
+      I2 => \^target_range_cycles_reg[4]_0\,
       O => \_carry__0_i_6_n_0\
     );
 \_carry__0_i_7\: unisim.vcomponents.LUT2
@@ -703,7 +740,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(4),
-      I1 => delay_latched(4),
+      I1 => \^target_range_cycles_reg[4]_0\,
       O => \_carry__0_i_7_n_0\
     );
 \_carry__1\: unisim.vcomponents.CARRY4
@@ -730,7 +767,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(10),
-      I1 => delay_latched(10),
+      I1 => \^target_range_cycles_reg[10]_0\,
       O => \_carry__1_i_1_n_0\
     );
 \_carry__1_i_2\: unisim.vcomponents.LUT2
@@ -739,7 +776,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(9),
-      I1 => delay_latched(9),
+      I1 => \^target_range_cycles_reg[9]_0\,
       O => \_carry__1_i_2_n_0\
     );
 \_carry__1_i_3\: unisim.vcomponents.LUT2
@@ -748,7 +785,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(8),
-      I1 => delay_latched(8),
+      I1 => \^target_range_cycles_reg[8]_0\,
       O => \_carry__1_i_3_n_0\
     );
 \_carry__1_i_4\: unisim.vcomponents.LUT2
@@ -765,7 +802,7 @@ begin
       INIT => X"D22D"
     )
         port map (
-      I0 => delay_latched(10),
+      I0 => \^target_range_cycles_reg[10]_0\,
       I1 => frame_cnt_reg(10),
       I2 => delay_latched(11),
       I3 => frame_cnt_reg(11),
@@ -776,9 +813,9 @@ begin
       INIT => X"D22D"
     )
         port map (
-      I0 => delay_latched(9),
+      I0 => \^target_range_cycles_reg[9]_0\,
       I1 => frame_cnt_reg(9),
-      I2 => delay_latched(10),
+      I2 => \^target_range_cycles_reg[10]_0\,
       I3 => frame_cnt_reg(10),
       O => \_carry__1_i_6_n_0\
     );
@@ -787,9 +824,9 @@ begin
       INIT => X"D22D"
     )
         port map (
-      I0 => delay_latched(8),
+      I0 => \^target_range_cycles_reg[8]_0\,
       I1 => frame_cnt_reg(8),
-      I2 => delay_latched(9),
+      I2 => \^target_range_cycles_reg[9]_0\,
       I3 => frame_cnt_reg(9),
       O => \_carry__1_i_7_n_0\
     );
@@ -800,7 +837,7 @@ begin
         port map (
       I0 => delay_latched(7),
       I1 => frame_cnt_reg(7),
-      I2 => delay_latched(8),
+      I2 => \^target_range_cycles_reg[8]_0\,
       I3 => frame_cnt_reg(8),
       O => \_carry__1_i_8_n_0\
     );
@@ -828,7 +865,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(14),
-      I1 => delay_latched(14),
+      I1 => \^target_range_cycles_reg[14]_0\,
       O => \_carry__2_i_1_n_0\
     );
 \_carry__2_i_2\: unisim.vcomponents.LUT2
@@ -863,9 +900,9 @@ begin
       INIT => X"D22D"
     )
         port map (
-      I0 => delay_latched(14),
+      I0 => \^target_range_cycles_reg[14]_0\,
       I1 => frame_cnt_reg(14),
-      I2 => delay_latched(15),
+      I2 => \^target_range_cycles_reg[15]_0\,
       I3 => frame_cnt_reg(15),
       O => \_carry__2_i_5_n_0\
     );
@@ -876,7 +913,7 @@ begin
         port map (
       I0 => delay_latched(13),
       I1 => frame_cnt_reg(13),
-      I2 => delay_latched(14),
+      I2 => \^target_range_cycles_reg[14]_0\,
       I3 => frame_cnt_reg(14),
       O => \_carry__2_i_6_n_0\
     );
@@ -922,7 +959,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(15),
-      I1 => delay_latched(15),
+      I1 => \^target_range_cycles_reg[15]_0\,
       O => \_carry__3_i_1_n_0\
     );
 \_carry__3_i_2\: unisim.vcomponents.LUT2
@@ -939,7 +976,7 @@ begin
       INIT => X"D22D"
     )
         port map (
-      I0 => delay_latched(15),
+      I0 => \^target_range_cycles_reg[15]_0\,
       I1 => frame_cnt_reg(15),
       I2 => delay_latched(16),
       I3 => frame_cnt_reg(16),
@@ -951,7 +988,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(3),
-      I1 => delay_latched(3),
+      I1 => \^target_range_cycles_reg[3]_0\,
       O => \_carry_i_1_n_0\
     );
 \_carry_i_2\: unisim.vcomponents.LUT2
@@ -960,7 +997,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(2),
-      I1 => delay_latched(2),
+      I1 => \^target_range_cycles_reg[2]_0\,
       O => \_carry_i_2_n_0\
     );
 \_carry_i_3\: unisim.vcomponents.LUT2
@@ -969,7 +1006,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(1),
-      I1 => delay_latched(1),
+      I1 => \^target_range_cycles_reg[1]_0\,
       O => \_carry_i_3_n_0\
     );
 \_carry_i_4\: unisim.vcomponents.LUT2
@@ -978,7 +1015,7 @@ begin
     )
         port map (
       I0 => frame_cnt_reg(0),
-      I1 => delay_latched(0),
+      I1 => \^target_range_cycles_reg[0]_0\,
       O => \_carry_i_4_n_0\
     );
 \delay_current1__23_carry\: unisim.vcomponents.CARRY4
@@ -1991,303 +2028,6 @@ delay_current1_carry_i_1: unisim.vcomponents.LUT1
       D => \delay_current[9]_i_1_n_0\,
       Q => delay_current(9)
     );
-\delay_latched[0]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(0),
-      O => clamp_delay_return(0)
-    );
-\delay_latched[10]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF000000070000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(10),
-      O => clamp_delay_return(10)
-    );
-\delay_latched[11]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF0007FFFFFFFF"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => delay_current(11),
-      I5 => \delay_latched[15]_i_2_n_0\,
-      O => clamp_delay_return(11)
-    );
-\delay_latched[12]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF80000FFFFFFFF"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => delay_current(12),
-      I5 => \delay_latched[15]_i_2_n_0\,
-      O => clamp_delay_return(12)
-    );
-\delay_latched[13]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF80000FFFFFFFF"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => delay_current(13),
-      I5 => \delay_latched[15]_i_2_n_0\,
-      O => clamp_delay_return(13)
-    );
-\delay_latched[13]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFF4000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_3_n_0\,
-      I1 => delay_current(9),
-      I2 => delay_current(11),
-      I3 => delay_current(10),
-      I4 => delay_current(13),
-      I5 => delay_current(12),
-      O => \delay_latched[13]_i_2_n_0\
-    );
-\delay_latched[13]_i_3\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0001"
-    )
-        port map (
-      I0 => delay_current(7),
-      I1 => delay_current(6),
-      I2 => delay_current(8),
-      I3 => delay_current(5),
-      O => \delay_latched[13]_i_3_n_0\
-    );
-\delay_latched[14]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"45"
-    )
-        port map (
-      I0 => delay_current(16),
-      I1 => delay_current(14),
-      I2 => delay_current(15),
-      O => \delay_latched[14]_i_1_n_0\
-    );
-\delay_latched[15]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => delay_current(15),
-      I1 => \delay_latched[15]_i_2_n_0\,
-      O => clamp_delay_return(15)
-    );
-\delay_latched[15]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"1110FFFF"
-    )
-        port map (
-      I0 => delay_current(14),
-      I1 => delay_current(15),
-      I2 => \delay_latched[15]_i_3_n_0\,
-      I3 => \delay_latched[15]_i_4_n_0\,
-      I4 => delay_current(16),
-      O => \delay_latched[15]_i_2_n_0\
-    );
-\delay_latched[15]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000000100FFFF"
-    )
-        port map (
-      I0 => delay_current(2),
-      I1 => delay_current(3),
-      I2 => delay_current(1),
-      I3 => \delay_latched[15]_i_5_n_0\,
-      I4 => delay_current(7),
-      I5 => \delay_latched[15]_i_6_n_0\,
-      O => \delay_latched[15]_i_3_n_0\
-    );
-\delay_latched[15]_i_4\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"7F"
-    )
-        port map (
-      I0 => delay_current(11),
-      I1 => delay_current(13),
-      I2 => delay_current(12),
-      O => \delay_latched[15]_i_4_n_0\
-    );
-\delay_latched[15]_i_5\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0001"
-    )
-        port map (
-      I0 => delay_current(6),
-      I1 => delay_current(0),
-      I2 => delay_current(5),
-      I3 => delay_current(4),
-      O => \delay_latched[15]_i_5_n_0\
-    );
-\delay_latched[15]_i_6\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"FE"
-    )
-        port map (
-      I0 => delay_current(8),
-      I1 => delay_current(10),
-      I2 => delay_current(9),
-      O => \delay_latched[15]_i_6_n_0\
-    );
-\delay_latched[1]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(1),
-      O => clamp_delay_return(1)
-    );
-\delay_latched[2]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(2),
-      O => clamp_delay_return(2)
-    );
-\delay_latched[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(3),
-      O => clamp_delay_return(3)
-    );
-\delay_latched[4]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(4),
-      O => clamp_delay_return(4)
-    );
-\delay_latched[5]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF000000070000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(5),
-      O => clamp_delay_return(5)
-    );
-\delay_latched[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(6),
-      O => clamp_delay_return(6)
-    );
-\delay_latched[7]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF80000FFFFFFFF"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => delay_current(7),
-      I5 => \delay_latched[15]_i_2_n_0\,
-      O => clamp_delay_return(7)
-    );
-\delay_latched[8]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFF8000000000000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(8),
-      O => clamp_delay_return(8)
-    );
-\delay_latched[9]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF000000070000"
-    )
-        port map (
-      I0 => \delay_latched[13]_i_2_n_0\,
-      I1 => delay_current(14),
-      I2 => delay_current(16),
-      I3 => delay_current(15),
-      I4 => \delay_latched[15]_i_2_n_0\,
-      I5 => delay_current(9),
-      O => clamp_delay_return(9)
-    );
-\delay_latched_reg[0]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(0),
-      Q => delay_latched(0)
-    );
-\delay_latched_reg[10]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(10),
-      Q => delay_latched(10)
-    );
 \delay_latched_reg[11]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
@@ -2312,22 +2052,6 @@ delay_current1_carry_i_1: unisim.vcomponents.LUT1
       PRE => pulse_target_i_2_n_0,
       Q => delay_latched(13)
     );
-\delay_latched_reg[14]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => \delay_latched[14]_i_1_n_0\,
-      Q => delay_latched(14)
-    );
-\delay_latched_reg[15]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(15),
-      Q => delay_latched(15)
-    );
 \delay_latched_reg[16]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
@@ -2336,54 +2060,6 @@ delay_current1_carry_i_1: unisim.vcomponents.LUT1
       PRE => pulse_target_i_2_n_0,
       Q => delay_latched(16)
     );
-\delay_latched_reg[1]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(1),
-      Q => delay_latched(1)
-    );
-\delay_latched_reg[2]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(2),
-      Q => delay_latched(2)
-    );
-\delay_latched_reg[3]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(3),
-      Q => delay_latched(3)
-    );
-\delay_latched_reg[4]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(4),
-      Q => delay_latched(4)
-    );
-\delay_latched_reg[5]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(5),
-      Q => delay_latched(5)
-    );
-\delay_latched_reg[6]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(6),
-      Q => delay_latched(6)
-    );
 \delay_latched_reg[7]\: unisim.vcomponents.FDPE
      port map (
       C => clk,
@@ -2391,22 +2067,6 @@ delay_current1_carry_i_1: unisim.vcomponents.LUT1
       D => clamp_delay_return(7),
       PRE => pulse_target_i_2_n_0,
       Q => delay_latched(7)
-    );
-\delay_latched_reg[8]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(8),
-      Q => delay_latched(8)
-    );
-\delay_latched_reg[9]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => sync_rise,
-      CLR => pulse_target_i_2_n_0,
-      D => clamp_delay_return(9),
-      Q => delay_latched(9)
     );
 \frac_accum[15]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -4451,15 +4111,6 @@ frame_cnt2_carry_i_4: unisim.vcomponents.LUT1
     );
 \pri_cycles_latched[15]_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => r0_YB,
-      I1 => r0_yb_d,
-      O => sync_rise
-    );
-\pri_cycles_latched[15]_i_2\: unisim.vcomponents.LUT2
-    generic map(
       INIT => X"B"
     )
         port map (
@@ -4467,20 +4118,20 @@ frame_cnt2_carry_i_4: unisim.vcomponents.LUT1
       I1 => pri_cycles_next1,
       O => pri_cycles_next(15)
     );
-\pri_cycles_latched[15]_i_3\: unisim.vcomponents.LUT6
+\pri_cycles_latched[15]_i_2\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFEFFFFFFFF"
     )
         port map (
-      I0 => \pri_cycles_latched[15]_i_4_n_0\,
+      I0 => \pri_cycles_latched[15]_i_3_n_0\,
       I1 => pri_counter_reg(8),
       I2 => pri_counter_reg(7),
       I3 => pri_counter_reg(6),
       I4 => pri_counter_reg(5),
-      I5 => \pri_cycles_latched[15]_i_5_n_0\,
+      I5 => \pri_cycles_latched[15]_i_4_n_0\,
       O => pri_cycles_next1
     );
-\pri_cycles_latched[15]_i_4\: unisim.vcomponents.LUT5
+\pri_cycles_latched[15]_i_3\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"FFFFFFFE"
     )
@@ -4490,9 +4141,9 @@ frame_cnt2_carry_i_4: unisim.vcomponents.LUT1
       I2 => pri_counter_reg(1),
       I3 => pri_counter_reg(4),
       I4 => pri_counter_reg(3),
-      O => \pri_cycles_latched[15]_i_4_n_0\
+      O => \pri_cycles_latched[15]_i_3_n_0\
     );
-\pri_cycles_latched[15]_i_5\: unisim.vcomponents.LUT5
+\pri_cycles_latched[15]_i_4\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00000001"
     )
@@ -4501,10 +4152,10 @@ frame_cnt2_carry_i_4: unisim.vcomponents.LUT1
       I1 => pri_counter_reg(14),
       I2 => pri_counter_reg(16),
       I3 => pri_counter_reg(15),
-      I4 => \pri_cycles_latched[15]_i_6_n_0\,
-      O => \pri_cycles_latched[15]_i_5_n_0\
+      I4 => \pri_cycles_latched[15]_i_5_n_0\,
+      O => \pri_cycles_latched[15]_i_4_n_0\
     );
-\pri_cycles_latched[15]_i_6\: unisim.vcomponents.LUT4
+\pri_cycles_latched[15]_i_5\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FFFE"
     )
@@ -4513,7 +4164,7 @@ frame_cnt2_carry_i_4: unisim.vcomponents.LUT1
       I1 => pri_counter_reg(9),
       I2 => pri_counter_reg(12),
       I3 => pri_counter_reg(11),
-      O => \pri_cycles_latched[15]_i_6_n_0\
+      O => \pri_cycles_latched[15]_i_5_n_0\
     );
 \pri_cycles_latched[16]_inv_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -4783,8 +4434,8 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(14),
-      I1 => delay_latched(14),
-      I2 => delay_latched(15),
+      I1 => \^target_range_cycles_reg[14]_0\,
+      I2 => \^target_range_cycles_reg[15]_0\,
       I3 => frame_cnt_reg(15),
       O => \pulse_target2_carry__0_i_1_n_0\
     );
@@ -4805,7 +4456,7 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(10),
-      I1 => delay_latched(10),
+      I1 => \^target_range_cycles_reg[10]_0\,
       I2 => delay_latched(11),
       I3 => frame_cnt_reg(11),
       O => \pulse_target2_carry__0_i_3_n_0\
@@ -4816,8 +4467,8 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(8),
-      I1 => delay_latched(8),
-      I2 => delay_latched(9),
+      I1 => \^target_range_cycles_reg[8]_0\,
+      I2 => \^target_range_cycles_reg[9]_0\,
       I3 => frame_cnt_reg(9),
       O => \pulse_target2_carry__0_i_4_n_0\
     );
@@ -4827,9 +4478,9 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(14),
-      I1 => delay_latched(14),
+      I1 => \^target_range_cycles_reg[14]_0\,
       I2 => frame_cnt_reg(15),
-      I3 => delay_latched(15),
+      I3 => \^target_range_cycles_reg[15]_0\,
       O => \pulse_target2_carry__0_i_5_n_0\
     );
 \pulse_target2_carry__0_i_6\: unisim.vcomponents.LUT4
@@ -4849,7 +4500,7 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(10),
-      I1 => delay_latched(10),
+      I1 => \^target_range_cycles_reg[10]_0\,
       I2 => frame_cnt_reg(11),
       I3 => delay_latched(11),
       O => \pulse_target2_carry__0_i_7_n_0\
@@ -4860,9 +4511,9 @@ pulse_target2_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => frame_cnt_reg(8),
-      I1 => delay_latched(8),
+      I1 => \^target_range_cycles_reg[8]_0\,
       I2 => frame_cnt_reg(9),
-      I3 => delay_latched(9),
+      I3 => \^target_range_cycles_reg[9]_0\,
       O => \pulse_target2_carry__0_i_8_n_0\
     );
 \pulse_target2_carry__1\: unisim.vcomponents.CARRY4
@@ -4901,7 +4552,7 @@ pulse_target2_carry_i_1: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(6),
-      I1 => delay_latched(6),
+      I1 => \^target_range_cycles_reg[6]_0\,
       I2 => delay_latched(7),
       I3 => frame_cnt_reg(7),
       O => pulse_target2_carry_i_1_n_0
@@ -4912,8 +4563,8 @@ pulse_target2_carry_i_2: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(4),
-      I1 => delay_latched(4),
-      I2 => delay_latched(5),
+      I1 => \^target_range_cycles_reg[4]_0\,
+      I2 => \^target_range_cycles_reg[5]_0\,
       I3 => frame_cnt_reg(5),
       O => pulse_target2_carry_i_2_n_0
     );
@@ -4923,8 +4574,8 @@ pulse_target2_carry_i_3: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(2),
-      I1 => delay_latched(2),
-      I2 => delay_latched(3),
+      I1 => \^target_range_cycles_reg[2]_0\,
+      I2 => \^target_range_cycles_reg[3]_0\,
       I3 => frame_cnt_reg(3),
       O => pulse_target2_carry_i_3_n_0
     );
@@ -4934,8 +4585,8 @@ pulse_target2_carry_i_4: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(0),
-      I1 => delay_latched(0),
-      I2 => delay_latched(1),
+      I1 => \^target_range_cycles_reg[0]_0\,
+      I2 => \^target_range_cycles_reg[1]_0\,
       I3 => frame_cnt_reg(1),
       O => pulse_target2_carry_i_4_n_0
     );
@@ -4945,7 +4596,7 @@ pulse_target2_carry_i_5: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(6),
-      I1 => delay_latched(6),
+      I1 => \^target_range_cycles_reg[6]_0\,
       I2 => frame_cnt_reg(7),
       I3 => delay_latched(7),
       O => pulse_target2_carry_i_5_n_0
@@ -4956,9 +4607,9 @@ pulse_target2_carry_i_6: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(4),
-      I1 => delay_latched(4),
+      I1 => \^target_range_cycles_reg[4]_0\,
       I2 => frame_cnt_reg(5),
-      I3 => delay_latched(5),
+      I3 => \^target_range_cycles_reg[5]_0\,
       O => pulse_target2_carry_i_6_n_0
     );
 pulse_target2_carry_i_7: unisim.vcomponents.LUT4
@@ -4967,9 +4618,9 @@ pulse_target2_carry_i_7: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(2),
-      I1 => delay_latched(2),
+      I1 => \^target_range_cycles_reg[2]_0\,
       I2 => frame_cnt_reg(3),
-      I3 => delay_latched(3),
+      I3 => \^target_range_cycles_reg[3]_0\,
       O => pulse_target2_carry_i_7_n_0
     );
 pulse_target2_carry_i_8: unisim.vcomponents.LUT4
@@ -4978,9 +4629,9 @@ pulse_target2_carry_i_8: unisim.vcomponents.LUT4
     )
         port map (
       I0 => frame_cnt_reg(0),
-      I1 => delay_latched(0),
+      I1 => \^target_range_cycles_reg[0]_0\,
       I2 => frame_cnt_reg(1),
-      I3 => delay_latched(1),
+      I3 => \^target_range_cycles_reg[1]_0\,
       O => pulse_target2_carry_i_8_n_0
     );
 pulse_target_i_1: unisim.vcomponents.LUT3
@@ -5017,6 +4668,432 @@ r0_yb_d_reg: unisim.vcomponents.FDCE
       D => r0_YB,
       Q => r0_yb_d
     );
+\target_range_cycles[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(0),
+      O => clamp_delay_return(0)
+    );
+\target_range_cycles[10]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF000000070000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(10),
+      O => clamp_delay_return(10)
+    );
+\target_range_cycles[11]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF0007FFFFFFFF"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => delay_current(11),
+      I5 => \target_range_cycles[15]_i_2_n_0\,
+      O => clamp_delay_return(11)
+    );
+\target_range_cycles[12]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF80000FFFFFFFF"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => delay_current(12),
+      I5 => \target_range_cycles[15]_i_2_n_0\,
+      O => clamp_delay_return(12)
+    );
+\target_range_cycles[13]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF80000FFFFFFFF"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => delay_current(13),
+      I5 => \target_range_cycles[15]_i_2_n_0\,
+      O => clamp_delay_return(13)
+    );
+\target_range_cycles[13]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFF4000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_3_n_0\,
+      I1 => delay_current(9),
+      I2 => delay_current(11),
+      I3 => delay_current(10),
+      I4 => delay_current(13),
+      I5 => delay_current(12),
+      O => \target_range_cycles[13]_i_2_n_0\
+    );
+\target_range_cycles[13]_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0001"
+    )
+        port map (
+      I0 => delay_current(7),
+      I1 => delay_current(6),
+      I2 => delay_current(8),
+      I3 => delay_current(5),
+      O => \target_range_cycles[13]_i_3_n_0\
+    );
+\target_range_cycles[14]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"45"
+    )
+        port map (
+      I0 => delay_current(16),
+      I1 => delay_current(14),
+      I2 => delay_current(15),
+      O => \target_range_cycles[14]_i_1_n_0\
+    );
+\target_range_cycles[15]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => delay_current(15),
+      I1 => \target_range_cycles[15]_i_2_n_0\,
+      O => clamp_delay_return(15)
+    );
+\target_range_cycles[15]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"1110FFFF"
+    )
+        port map (
+      I0 => delay_current(14),
+      I1 => delay_current(15),
+      I2 => \target_range_cycles[15]_i_3_n_0\,
+      I3 => \target_range_cycles[15]_i_4_n_0\,
+      I4 => delay_current(16),
+      O => \target_range_cycles[15]_i_2_n_0\
+    );
+\target_range_cycles[15]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000000100FFFF"
+    )
+        port map (
+      I0 => delay_current(2),
+      I1 => delay_current(3),
+      I2 => delay_current(1),
+      I3 => \target_range_cycles[15]_i_5_n_0\,
+      I4 => delay_current(7),
+      I5 => \target_range_cycles[15]_i_6_n_0\,
+      O => \target_range_cycles[15]_i_3_n_0\
+    );
+\target_range_cycles[15]_i_4\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => delay_current(11),
+      I1 => delay_current(13),
+      I2 => delay_current(12),
+      O => \target_range_cycles[15]_i_4_n_0\
+    );
+\target_range_cycles[15]_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0001"
+    )
+        port map (
+      I0 => delay_current(6),
+      I1 => delay_current(0),
+      I2 => delay_current(5),
+      I3 => delay_current(4),
+      O => \target_range_cycles[15]_i_5_n_0\
+    );
+\target_range_cycles[15]_i_6\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => delay_current(8),
+      I1 => delay_current(10),
+      I2 => delay_current(9),
+      O => \target_range_cycles[15]_i_6_n_0\
+    );
+\target_range_cycles[16]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => r0_YB,
+      I1 => r0_yb_d,
+      O => sync_rise
+    );
+\target_range_cycles[1]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(1),
+      O => clamp_delay_return(1)
+    );
+\target_range_cycles[2]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(2),
+      O => clamp_delay_return(2)
+    );
+\target_range_cycles[3]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(3),
+      O => clamp_delay_return(3)
+    );
+\target_range_cycles[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(4),
+      O => clamp_delay_return(4)
+    );
+\target_range_cycles[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF000000070000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(5),
+      O => clamp_delay_return(5)
+    );
+\target_range_cycles[6]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(6),
+      O => clamp_delay_return(6)
+    );
+\target_range_cycles[7]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF80000FFFFFFFF"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => delay_current(7),
+      I5 => \target_range_cycles[15]_i_2_n_0\,
+      O => clamp_delay_return(7)
+    );
+\target_range_cycles[8]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFF8000000000000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(8),
+      O => clamp_delay_return(8)
+    );
+\target_range_cycles[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF000000070000"
+    )
+        port map (
+      I0 => \target_range_cycles[13]_i_2_n_0\,
+      I1 => delay_current(14),
+      I2 => delay_current(16),
+      I3 => delay_current(15),
+      I4 => \target_range_cycles[15]_i_2_n_0\,
+      I5 => delay_current(9),
+      O => clamp_delay_return(9)
+    );
+\target_range_cycles_reg[0]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(0),
+      Q => \^target_range_cycles_reg[0]_0\
+    );
+\target_range_cycles_reg[10]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(10),
+      Q => \^target_range_cycles_reg[10]_0\
+    );
+\target_range_cycles_reg[11]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(11),
+      Q => target_range_cycles(1)
+    );
+\target_range_cycles_reg[12]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(12),
+      Q => target_range_cycles(2)
+    );
+\target_range_cycles_reg[13]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(13),
+      Q => target_range_cycles(3)
+    );
+\target_range_cycles_reg[14]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => \target_range_cycles[14]_i_1_n_0\,
+      Q => \^target_range_cycles_reg[14]_0\
+    );
+\target_range_cycles_reg[15]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(15),
+      Q => \^target_range_cycles_reg[15]_0\
+    );
+\target_range_cycles_reg[16]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => delay_current(16),
+      Q => target_range_cycles(4)
+    );
+\target_range_cycles_reg[1]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(1),
+      Q => \^target_range_cycles_reg[1]_0\
+    );
+\target_range_cycles_reg[2]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(2),
+      Q => \^target_range_cycles_reg[2]_0\
+    );
+\target_range_cycles_reg[3]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(3),
+      Q => \^target_range_cycles_reg[3]_0\
+    );
+\target_range_cycles_reg[4]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(4),
+      Q => \^target_range_cycles_reg[4]_0\
+    );
+\target_range_cycles_reg[5]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(5),
+      Q => \^target_range_cycles_reg[5]_0\
+    );
+\target_range_cycles_reg[6]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(6),
+      Q => \^target_range_cycles_reg[6]_0\
+    );
+\target_range_cycles_reg[7]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(7),
+      Q => target_range_cycles(0)
+    );
+\target_range_cycles_reg[8]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(8),
+      Q => \^target_range_cycles_reg[8]_0\
+    );
+\target_range_cycles_reg[9]\: unisim.vcomponents.FDCE
+     port map (
+      C => clk,
+      CE => sync_rise,
+      CLR => pulse_target_i_2_n_0,
+      D => clamp_delay_return(9),
+      Q => \^target_range_cycles_reg[9]_0\
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -5028,7 +5105,8 @@ entity test_target_0_0 is
     rst_n : in STD_LOGIC;
     r0_YB : in STD_LOGIC;
     target_speed : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    pulse_target : out STD_LOGIC
+    pulse_target : out STD_LOGIC;
+    target_range_cycles : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of test_target_0_0 : entity is true;
@@ -5043,6 +5121,8 @@ entity test_target_0_0 is
 end test_target_0_0;
 
 architecture STRUCTURE of test_target_0_0 is
+  signal \<const0>\ : STD_LOGIC;
+  signal \^target_range_cycles\ : STD_LOGIC_VECTOR ( 16 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_MODE : string;
@@ -5053,12 +5133,47 @@ architecture STRUCTURE of test_target_0_0 is
   attribute X_INTERFACE_MODE of rst_n : signal is "slave";
   attribute X_INTERFACE_PARAMETER of rst_n : signal is "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
+  target_range_cycles(31) <= \<const0>\;
+  target_range_cycles(30) <= \<const0>\;
+  target_range_cycles(29) <= \<const0>\;
+  target_range_cycles(28) <= \<const0>\;
+  target_range_cycles(27) <= \<const0>\;
+  target_range_cycles(26) <= \<const0>\;
+  target_range_cycles(25) <= \<const0>\;
+  target_range_cycles(24) <= \<const0>\;
+  target_range_cycles(23) <= \<const0>\;
+  target_range_cycles(22) <= \<const0>\;
+  target_range_cycles(21) <= \<const0>\;
+  target_range_cycles(20) <= \<const0>\;
+  target_range_cycles(19) <= \<const0>\;
+  target_range_cycles(18) <= \<const0>\;
+  target_range_cycles(17) <= \<const0>\;
+  target_range_cycles(16 downto 0) <= \^target_range_cycles\(16 downto 0);
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 inst: entity work.test_target_0_0_target
      port map (
       clk => clk,
       pulse_target => pulse_target,
       r0_YB => r0_YB,
       rst_n => rst_n,
+      target_range_cycles(4) => \^target_range_cycles\(16),
+      target_range_cycles(3 downto 1) => \^target_range_cycles\(13 downto 11),
+      target_range_cycles(0) => \^target_range_cycles\(7),
+      \target_range_cycles_reg[0]_0\ => \^target_range_cycles\(0),
+      \target_range_cycles_reg[10]_0\ => \^target_range_cycles\(10),
+      \target_range_cycles_reg[14]_0\ => \^target_range_cycles\(14),
+      \target_range_cycles_reg[15]_0\ => \^target_range_cycles\(15),
+      \target_range_cycles_reg[1]_0\ => \^target_range_cycles\(1),
+      \target_range_cycles_reg[2]_0\ => \^target_range_cycles\(2),
+      \target_range_cycles_reg[3]_0\ => \^target_range_cycles\(3),
+      \target_range_cycles_reg[4]_0\ => \^target_range_cycles\(4),
+      \target_range_cycles_reg[5]_0\ => \^target_range_cycles\(5),
+      \target_range_cycles_reg[6]_0\ => \^target_range_cycles\(6),
+      \target_range_cycles_reg[8]_0\ => \^target_range_cycles\(8),
+      \target_range_cycles_reg[9]_0\ => \^target_range_cycles\(9),
       target_speed(31 downto 0) => target_speed(31 downto 0)
     );
 end STRUCTURE;

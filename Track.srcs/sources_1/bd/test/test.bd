@@ -1360,6 +1360,11 @@
           },
           "pulse_target": {
             "direction": "O"
+          },
+          "target_range_cycles": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
           }
         }
       },
@@ -1841,7 +1846,7 @@
       },
       "controller_connect_0": {
         "vlnv": "xilinx.com:user:controller_connect:1.0",
-        "ip_revision": "11",
+        "ip_revision": "14",
         "xci_name": "test_controller_connect_0_0",
         "xci_path": "ip\\test_controller_connect_0_0\\test_controller_connect_0_0.xci",
         "inst_hier_path": "controller_connect_0"
@@ -2178,9 +2183,9 @@
           "smartconnect_0/aclk",
           "discriminator_0/clk",
           "axi_uartlite_0/s_axi_aclk",
-          "pulse_gen_0/clk",
           "sync_0/clk",
           "target_0/clk",
+          "pulse_gen_0/clk",
           "controller_connect_0/s00_axi_aclk",
           "controller_connect_0/s_axi_intr_aclk"
         ]
@@ -2197,9 +2202,9 @@
           "clk_wiz_0/resetn",
           "rst_ps7_0_200M/ext_reset_in",
           "discriminator_0/rst_n",
-          "pulse_gen_0/rst_n",
           "sync_0/rst_n",
-          "target_0/rst_n"
+          "target_0/rst_n",
+          "pulse_gen_0/rst_n"
         ]
       },
       "pulse_gen_0_pulse_connect": {
@@ -2303,8 +2308,8 @@
         "ports": [
           "sync_0/r0_YB",
           "r0_YB_0",
-          "pulse_gen_0/r0_YB",
           "target_0/r0_YB",
+          "pulse_gen_0/r0_YB",
           "controller_connect_0/r0_YB"
         ]
       },
@@ -2313,6 +2318,12 @@
           "target_0/pulse_target",
           "pulse_target_0",
           "discriminator_0/pulse_target"
+        ]
+      },
+      "target_0_target_range_cycles": {
+        "ports": [
+          "target_0/target_range_cycles",
+          "controller_connect_0/target_range_cycles"
         ]
       }
     },

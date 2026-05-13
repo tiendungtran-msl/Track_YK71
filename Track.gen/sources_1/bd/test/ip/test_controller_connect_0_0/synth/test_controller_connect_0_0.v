@@ -48,15 +48,16 @@
 
 
 // IP VLNV: xilinx.com:user:controller_connect:1.0
-// IP Revision: 11
+// IP Revision: 14
 
 (* X_CORE_INFO = "controller_connect,Vivado 2024.2.2" *)
 (* CHECK_LICENSE_TYPE = "test_controller_connect_0_0,controller_connect,{}" *)
-(* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *)
+(* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=14,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module test_controller_connect_0_0 (
   error,
   has_signal,
+  target_range_cycles,
   spd_width,
   r0_YB,
   target_speed,
@@ -108,6 +109,7 @@ module test_controller_connect_0_0 (
 
 input wire [31 : 0] error;
 input wire has_signal;
+input wire [31 : 0] target_range_cycles;
 output wire [31 : 0] spd_width;
 input wire r0_YB;
 output wire [31 : 0] target_speed;
@@ -228,6 +230,7 @@ output wire irq;
   ) inst (
     .error(error),
     .has_signal(has_signal),
+    .target_range_cycles(target_range_cycles),
     .spd_width(spd_width),
     .r0_YB(r0_YB),
     .target_speed(target_speed),

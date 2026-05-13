@@ -17,6 +17,8 @@
 		// Users to add ports here
         input  wire [31:0] core_status_0, // Map to slv_reg0 (Read Only from AXI)
         input  wire [31:0] core_status_1, // Map to slv_reg1 (Read Only from AXI)
+		input  wire [31:0] core_status_2, // Map to slv_reg5 (Read Only from AXI)
+		input  wire [31:0] core_status_3, // Map to slv_reg6 (Read Only from AXI)
         output wire [31:0] core_ctrl_2,   // Map from slv_reg2 (Write from AXI)
         output wire [31:0] core_ctrl_3,   // Map from slv_reg3 (Write from AXI)
         output wire [31:0] core_ctrl_4,   // Map from slv_reg4 (Write from AXI)
@@ -314,8 +316,15 @@
 	          end                                       
 	        end                                         
 	// Implement memory mapped register select and read logic generation
-	// Thay vì lấy thanh ghi mềm, đọc trực tiếp trạng thái từ core ở register 0 và 1 (Read-Only registers)
-	  assign S_AXI_RDATA = (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h0) ? core_status_0 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h1) ? core_status_1 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h2) ? slv_reg2 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h3) ? slv_reg3 : (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h4) ? slv_reg4 : 0; 
+	// Thanh ghi RO từ core: reg0=error, reg1=status, reg5=target_range, reg6=measured_range.
+	  assign S_AXI_RDATA = (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h0) ? core_status_0 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h1) ? core_status_1 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h2) ? slv_reg2 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h3) ? slv_reg3 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h4) ? slv_reg4 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h5) ? core_status_2 :
+	                      (axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] == 3'h6) ? core_status_3 :
+	                      0;
 	// Add user logic here
     assign core_ctrl_2 = slv_reg2;
     assign core_ctrl_3 = slv_reg3;

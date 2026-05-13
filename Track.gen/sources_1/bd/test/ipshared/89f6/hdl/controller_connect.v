@@ -26,6 +26,7 @@
 		// Users to add ports here
         input  wire [31:0] error,         // Từ Discriminator cấp vào
         input  wire        has_signal,    // Từ Discriminator
+		input  wire [31:0] target_range_cycles,   // Từ target: cự ly mô phỏng (cycles)
         output wire [31:0] spd_width,     // Xuất ra khối pulse_gen
         input  wire        r0_YB,         // Xung đồng bộ để tạo ngắt
         output wire [31:0] target_speed,  // Xuất ra khối target
@@ -85,6 +86,8 @@
 	// Không ghi I/O vì các dây này là cầu nối giữa AXI Wrapper và Core
 		wire [31:0] core_status_0;
 		wire [31:0] core_status_1;
+		wire [31:0] core_status_2;
+		wire [31:0] core_status_3;
 		wire [31:0] core_ctrl_2;
 		wire [31:0] core_ctrl_3;
 		wire [31:0] core_ctrl_4;
@@ -96,6 +99,8 @@
 	) controller_connect_slave_lite_v1_0_S00_AXI_inst (
 		.core_status_0(core_status_0),
 		.core_status_1(core_status_1),
+		.core_status_2(core_status_2),
+		.core_status_3(core_status_3),
 		.core_ctrl_2(core_ctrl_2),
 		.core_ctrl_3(core_ctrl_3),
 		.core_ctrl_4(core_ctrl_4),
@@ -166,6 +171,7 @@
         // Giao tiếp ra ngoài
         .error(error),
         .has_signal(has_signal),
+		.target_range_cycles(target_range_cycles),
         .spd_width(spd_width),
         .r0_YB(r0_YB),
         .target_speed(target_speed),
@@ -174,6 +180,8 @@
         // Giao tiếp AXI Wrapper
         .core_status_0(core_status_0),
         .core_status_1(core_status_1),
+		.core_status_2(core_status_2),
+		.core_status_3(core_status_3),
         .core_ctrl_2(core_ctrl_2),
         .core_ctrl_3(core_ctrl_3),
         .core_ctrl_4(core_ctrl_4),

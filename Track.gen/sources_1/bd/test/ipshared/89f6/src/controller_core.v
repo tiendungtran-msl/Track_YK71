@@ -9,6 +9,7 @@ module controller_core (
     input  wire               r0_YB,         // Xung đồng bộ PRI để tạo ngắt
     input  wire signed [31:0] error,         // Sai lệch cự ly từ Discriminator
     input  wire               has_signal,    // Tín hiệu bám từ Discriminator
+    input  wire        [31:0] target_range_cycles,   // Cự ly mô phỏng mục tiêu (cycles)
     output wire        [31:0] spd_width,     // Vị trí cửa sóng xuất ra Pulse_gen
     output wire        [31:0] target_speed,  // Vận tốc mô phỏng mục tiêu
     output wire        [2:0]  mode,          // Chọn chế độ cho Sync
@@ -16,6 +17,8 @@ module controller_core (
     // Giao tiếp với AXI Wrapper (Register Map Variables)
     output wire [31:0] core_status_0, // Map tới Register 0 (Chỉ đọc)
     output wire [31:0] core_status_1, // Map tới Register 1 (Chỉ đọc)
+    output wire [31:0] core_status_2, // Map tới Register 5 (Chỉ đọc)
+    output wire [31:0] core_status_3, // Map tới Register 6 (Chỉ đọc)
     input  wire [31:0] core_ctrl_2,   // Map từ Register 2 (Ghi xuống)
     input  wire [31:0] core_ctrl_3,   // Map từ Register 3 (Ghi xuống)
     input  wire [31:0] core_ctrl_4,   // Map từ Register 4 (Ghi xuống)
@@ -29,6 +32,8 @@ module controller_core (
     // REG_STATUS map tinh gon:
     // [0] has_signal, [1] r0_YB live, [2] core_irq live, [31:3] reserved.
     assign core_status_1 = {29'd0, core_irq, r0_YB, has_signal};
+    assign core_status_2 = target_range_cycles;
+    assign core_status_3 = 32'd0;
 
     // 2. Lấy điều khiển từ AXI Register (Từ góc nhìn AXI ghi xuống)
     assign spd_width    = core_ctrl_2;

@@ -13,6 +13,7 @@
  * │ 0x08   │ RW      │ spd_width [31:0]  → pulse_gen                        │
  * │ 0x0C   │ RW      │ target_speed [31:0] → target                         │
  * │ 0x10   │ RW      │ mode [2:0] → sync                                    │
+ * │ 0x14   │ RO      │ target_range_cycles [31:0] (từ target)               │
  * └────────┴─────────┴──────────────────────────────────────────────────────┘
  */
 
@@ -30,6 +31,7 @@
 #define REG_SPD_WIDTH       0x08U   /* spd_width [31:0]    (Read-Write) */
 #define REG_TARGET_SPD      0x0CU   /* target_speed [31:0] (Read-Write) */
 #define REG_MODE            0x10U   /* mode [2:0]          (Read-Write) */
+#define REG_TARGET_RANGE    0x14U   /* target range cycles (Read-Only)  */
 
 /* Bit-field helpers for REG_STATUS */
 #define STATUS_HAS_SIGNAL   (1U << 0)

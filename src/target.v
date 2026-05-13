@@ -15,7 +15,8 @@ module target #(
     input  wire r0_YB,         // Xung đồng bộ radar (PRI Trigger)
     input  wire [31:0] target_speed, // Tốc độ mục tiêu điều khiển từ bên ngoài (Microblaze)
     
-    output reg  pulse_target   // Tín hiệu video mô phỏng mục tiêu
+    output reg  pulse_target,  // Tín hiệu video mô phỏng mục tiêu
+    output reg [31:0] target_range_cycles // Cự ly mô phỏng mục tiêu (đơn vị: cycles)
 );
 
     // =========================================================================
@@ -83,6 +84,7 @@ module target #(
             pri_counter   <= {CNT_W{1'b0}};
             pri_cycles_latched <= PRI_CYCLES[CNT_W-1:0];
             pulse_target  <= 1'b0;
+            target_range_cycles <= 32'd0;
         end else begin
             // 1. Chốt sườn xung PRI
             r0_yb_d <= r0_YB;
@@ -93,6 +95,7 @@ module target #(
                 frame_cnt     <= {CNT_W{1'b0}};
                 pri_cycles_latched <= pri_cycles_next;
                 delay_latched <= clamp_delay(delay_current);
+                target_range_cycles <= {{(32-CNT_W){1'b0}}, clamp_delay(delay_current)};
 
                 frac_sum_pipe <= {{(32-ACC_FRAC_BITS){1'b0}}, frac_accum} + target_speed;
                 frac_pipe_valid <= 1'b1;

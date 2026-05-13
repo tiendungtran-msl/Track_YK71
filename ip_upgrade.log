@@ -1,6 +1,72 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
+| Date         : Wed May 13 09:13:06 2026
+| Host         : MSN running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_controller_connect_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of test_controller_connect_0_0 (xilinx.com:user:controller_connect:1.0) from (Rev. 13) to (Rev. 14)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'test_controller_connect_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'measured_range_cycles'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
+| Date         : Wed May 13 07:55:33 2026
+| Host         : MSN running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_controller_connect_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of test_controller_connect_0_0 (xilinx.com:user:controller_connect:1.0) from (Rev. 11) to (Rev. 13)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'test_controller_connect_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'measured_range_cycles'
+
+-Upgrade has added port 'target_range_cycles'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
 | Date         : Mon May 11 10:07:30 2026
 | Host         : MSN running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

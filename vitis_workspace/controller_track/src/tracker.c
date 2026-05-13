@@ -9,19 +9,7 @@
 
 static uint32_t calc_spd_ceiling(uint32_t pri_min)
 {
-    uint32_t ceiling;
-
-    if (pri_min > TIMING_GUARD) {
-        ceiling = pri_min - TIMING_GUARD;
-    } else {
-        ceiling = 1U;
-    }
-
-    if (ceiling < 2U) {
-        ceiling = 2U;
-    }
-
-    return ceiling;
+    return (pri_min > (TIMING_GUARD + 1U)) ? (pri_min - TIMING_GUARD) : 2U;
 }
 
 /* ── Biến trạng thái nội bộ (chỉ ISR ghi; main loop đọc bản sao) ─────── */
@@ -32,7 +20,16 @@ static volatile uint32_t g_state;
 static volatile uint16_t g_lock_cnt;
 static volatile uint16_t g_loss_cnt;
 static volatile int32_t  g_corr_residual;
+static volatile int32_t  g_manual_input;
+static volatile int64_t  g_manual_integral;
 static volatile uint32_t g_scan_dir;   /* 1 = tăng (ra xa), 0 = giảm (vào gần) */
+
+/* Default PI gains (scaled by 16). 
+ * If kv = 6 and input = 100, scan rate is 600/16 = 37 cycles/PRI (~ scan_step)
+ * If kp = 6 and input = 100, jump is 600/16 = 37 cycles.
+ */
+#define MANUAL_KP_DEFAULT   6
+#define MANUAL_KV_DEFAULT   6
 
 /* ── tracker_init ─────────────────────────────────────────────────────── */
 void tracker_init(const TrackerConfig *cfg)
@@ -49,6 +46,8 @@ void tracker_init(const TrackerConfig *cfg)
     g_lock_cnt      = 0U;
     g_loss_cnt      = 0U;
     g_corr_residual = 0;
+    g_manual_input  = 0;
+    g_manual_integral = (int64_t)g_spd_width << 4;
     g_scan_dir      = 1U;
 
     CC_WRITE(REG_SPD_WIDTH, g_spd_width);
@@ -107,10 +106,40 @@ void tracker_apply_mode_profile(uint32_t mode, uint8_t reset_state)
         g_lock_cnt      = 0U;
         g_loss_cnt      = 0U;
         g_corr_residual = 0;
+        g_manual_input  = 0;
+        g_manual_integral = (int64_t)g_spd_width << 4;
         g_scan_dir      = 1U;
     }
 
     CC_WRITE(REG_SPD_WIDTH, g_spd_width);
+    Xil_ExceptionEnable();
+}
+
+void tracker_set_manual_mode(uint8_t is_manual)
+{
+    Xil_ExceptionDisable();
+
+    if (is_manual != 0U) {
+        g_state          = ST_MANUAL;
+        g_manual_input   = 0;
+        g_manual_integral = (int64_t)g_spd_width << 4;
+    } else {
+        g_state = ST_SEARCH;
+        g_manual_input = 0;
+        g_manual_integral = (int64_t)g_spd_width << 4;
+    }
+
+    g_lock_cnt      = 0U;
+    g_loss_cnt      = 0U;
+    g_corr_residual = 0;
+
+    Xil_ExceptionEnable();
+}
+
+void tracker_set_manual_rate(int32_t rate)
+{
+    Xil_ExceptionDisable();
+    g_manual_input = rate;
     Xil_ExceptionEnable();
 }
 
@@ -172,7 +201,7 @@ void tracker_isr(void *unused)
             g_corr_residual = 0;
         }
 
-    } else { /* ST_TRACK */
+    } else if (g_state == ST_TRACK) {
 
         if (!has_signal) {
             g_corr_residual = 0;
@@ -199,6 +228,37 @@ void tracker_isr(void *unused)
 
             g_loss_cnt = 0U;
         }
+    } else if (g_state == ST_MANUAL) {
+        /* PI thủ công. Các hệ số MKP, MKV được thiết kế theo tỉ lệ thu phóng 16 (shift 4).
+         * Giúp đồng bộ tốc độ quay thủ công tối đa với scan_step của auto-tracking.
+         */
+        const int64_t kp = (int64_t)MANUAL_KP_DEFAULT;
+        const int64_t kv = (int64_t)MANUAL_KV_DEFAULT;
+
+        /* Tích phân cộng dồn (scaled by 16) */
+        g_manual_integral += (int64_t)g_manual_input * kv;
+        
+        /* Chuyển đổi lại giá trị không thu phóng để kết hợp P */
+        const int64_t spd_next = (g_manual_integral >> 4) + (((int64_t)g_manual_input * kp) >> 4);
+
+        if (spd_next <= (int64_t)spd_min) {
+            spd = spd_min;
+            g_manual_integral = (int64_t)spd_min << 4;
+        } else if (spd_next >= (int64_t)spd_max) {
+            spd = spd_max;
+            g_manual_integral = (int64_t)spd_max << 4;
+        } else {
+            spd = (uint32_t)spd_next;
+        }
+
+        g_lock_cnt      = 0U;
+        g_loss_cnt      = 0U;
+        g_corr_residual = 0;
+    } else {
+        g_state = ST_SEARCH;
+        g_lock_cnt = 0U;
+        g_loss_cnt = 0U;
+        g_corr_residual = 0;
     }
 
     /* Ghi kết quả ra phần cứng */
@@ -219,11 +279,9 @@ TrackerStatus tracker_get_status(void)
     TrackerStatus s;
     /* Tắt ngắt trong thời gian sao chép để đảm bảo nhất quán */
     Xil_ExceptionDisable();
-    s.state         = g_state;
-    s.spd_width     = g_spd_width;
-    s.corr_residual = g_corr_residual;
-    s.lock_cnt      = g_lock_cnt;
-    s.loss_cnt      = g_loss_cnt;
+    s.state        = g_state;
+    s.spd_width    = g_spd_width;
+    s.manual_input = g_manual_input;
     Xil_ExceptionEnable();
     return s;
 }

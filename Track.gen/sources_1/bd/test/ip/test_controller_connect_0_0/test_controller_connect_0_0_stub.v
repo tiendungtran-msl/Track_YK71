@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-// Date        : Mon May 11 10:09:34 2026
+// Date        : Wed May 13 09:15:43 2026
 // Host        : MSN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/Nhung/FPGA/Track/Track.gen/sources_1/bd/test/ip/test_controller_connect_0_0/test_controller_connect_0_0_stub.v
@@ -14,24 +14,25 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "test_controller_connect_0_0,controller_connect,{}" *) (* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "test_controller_connect_0_0,controller_connect,{}" *) (* CORE_GENERATION_INFO = "test_controller_connect_0_0,controller_connect,{x_ipProduct=Vivado 2024.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=controller_connect,x_ipVersion=1.0,x_ipCoreRevision=14,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S_AXI_INTR_DATA_WIDTH=32,C_S_AXI_INTR_ADDR_WIDTH=5,C_NUM_OF_INTR=1,C_INTR_SENSITIVITY=0xFFFFFFFF,C_INTR_ACTIVE_STATE=0xFFFFFFFF,C_IRQ_SENSITIVITY=1,C_IRQ_ACTIVE_STATE=1}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* X_CORE_INFO = "controller_connect,Vivado 2024.2.2" *) 
-module test_controller_connect_0_0(error, has_signal, spd_width, r0_YB, 
-  target_speed, mode, s00_axi_aclk, s00_axi_aresetn, s00_axi_awaddr, s00_axi_awprot, 
-  s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, s00_axi_wstrb, s00_axi_wvalid, 
-  s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, s00_axi_bready, s00_axi_araddr, 
-  s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, s00_axi_rdata, s00_axi_rresp, 
-  s00_axi_rvalid, s00_axi_rready, s_axi_intr_aclk, s_axi_intr_aresetn, s_axi_intr_awaddr, 
-  s_axi_intr_awprot, s_axi_intr_awvalid, s_axi_intr_awready, s_axi_intr_wdata, 
-  s_axi_intr_wstrb, s_axi_intr_wvalid, s_axi_intr_wready, s_axi_intr_bresp, 
-  s_axi_intr_bvalid, s_axi_intr_bready, s_axi_intr_araddr, s_axi_intr_arprot, 
-  s_axi_intr_arvalid, s_axi_intr_arready, s_axi_intr_rdata, s_axi_intr_rresp, 
-  s_axi_intr_rvalid, s_axi_intr_rready, irq)
-/* synthesis syn_black_box black_box_pad_pin="error[31:0],has_signal,spd_width[31:0],r0_YB,target_speed[31:0],mode[2:0],s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s_axi_intr_aresetn,s_axi_intr_awaddr[4:0],s_axi_intr_awprot[2:0],s_axi_intr_awvalid,s_axi_intr_awready,s_axi_intr_wdata[31:0],s_axi_intr_wstrb[3:0],s_axi_intr_wvalid,s_axi_intr_wready,s_axi_intr_bresp[1:0],s_axi_intr_bvalid,s_axi_intr_bready,s_axi_intr_araddr[4:0],s_axi_intr_arprot[2:0],s_axi_intr_arvalid,s_axi_intr_arready,s_axi_intr_rdata[31:0],s_axi_intr_rresp[1:0],s_axi_intr_rvalid,s_axi_intr_rready,irq" */
+module test_controller_connect_0_0(error, has_signal, target_range_cycles, 
+  spd_width, r0_YB, target_speed, mode, s00_axi_aclk, s00_axi_aresetn, s00_axi_awaddr, 
+  s00_axi_awprot, s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, s00_axi_wstrb, 
+  s00_axi_wvalid, s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, s00_axi_bready, 
+  s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, s00_axi_rdata, 
+  s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, s_axi_intr_aclk, s_axi_intr_aresetn, 
+  s_axi_intr_awaddr, s_axi_intr_awprot, s_axi_intr_awvalid, s_axi_intr_awready, 
+  s_axi_intr_wdata, s_axi_intr_wstrb, s_axi_intr_wvalid, s_axi_intr_wready, 
+  s_axi_intr_bresp, s_axi_intr_bvalid, s_axi_intr_bready, s_axi_intr_araddr, 
+  s_axi_intr_arprot, s_axi_intr_arvalid, s_axi_intr_arready, s_axi_intr_rdata, 
+  s_axi_intr_rresp, s_axi_intr_rvalid, s_axi_intr_rready, irq)
+/* synthesis syn_black_box black_box_pad_pin="error[31:0],has_signal,target_range_cycles[31:0],spd_width[31:0],r0_YB,target_speed[31:0],mode[2:0],s00_axi_aresetn,s00_axi_awaddr[4:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[4:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s_axi_intr_aresetn,s_axi_intr_awaddr[4:0],s_axi_intr_awprot[2:0],s_axi_intr_awvalid,s_axi_intr_awready,s_axi_intr_wdata[31:0],s_axi_intr_wstrb[3:0],s_axi_intr_wvalid,s_axi_intr_wready,s_axi_intr_bresp[1:0],s_axi_intr_bvalid,s_axi_intr_bready,s_axi_intr_araddr[4:0],s_axi_intr_arprot[2:0],s_axi_intr_arvalid,s_axi_intr_arready,s_axi_intr_rdata[31:0],s_axi_intr_rresp[1:0],s_axi_intr_rvalid,s_axi_intr_rready,irq" */
 /* synthesis syn_force_seq_prim="s00_axi_aclk" */
 /* synthesis syn_force_seq_prim="s_axi_intr_aclk" */;
   input [31:0]error;
   input has_signal;
+  input [31:0]target_range_cycles;
   output [31:0]spd_width;
   input r0_YB;
   output [31:0]target_speed;

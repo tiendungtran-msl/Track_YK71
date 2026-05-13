@@ -12,7 +12,6 @@
 #include <stdlib.h>
 
 #include "xuartlite_l.h"   /* XUartLite_RecvByte / SendByte / IsReceiveEmpty */
-#include "xil_exception.h"
 
 /* ── Hằng số nội bộ ─────────────────────────────────────────────────────── */
 #define CMD_BUF_LEN   80U   /* chiều dài tối đa một lệnh (ký tự) */
@@ -86,13 +85,14 @@ static int parse_u32(const char *s, uint32_t *out)
     return 0;
 }
 
-static uint32_t spd_max_limit_for_mode(uint32_t mode)
+static int parse_i32(const char *s, int32_t *out)
 {
-    const uint32_t pri_min = tracker_period_min_from_mode(mode);
-    if (pri_min > TIMING_GUARD) {
-        return pri_min - TIMING_GUARD;
-    }
-    return 1U;
+    if (s == NULL || *s == '\0') return -1;
+    char *end;
+    long v = strtol(s, &end, 0);
+    if (end == s || *end != '\0') return -1;
+    *out = (int32_t)v;
+    return 0;
 }
 
 /* ── Xử lý lệnh ─────────────────────────────────────────────────────────── */
@@ -100,17 +100,12 @@ static uint32_t spd_max_limit_for_mode(uint32_t mode)
 static void cmd_help(void)
 {
     uart_println("--- Danh sach lenh ---");
-    uart_println("  SET SPD_MIN  <val>  : Can duoi cua song (xung nhip)");
-    uart_println("  SET SPD_MAX  <val>  : Can tren cua song");
-    uart_println("  SET STEP     <val>  : Buoc quet");
-    uart_println("  SET GAIN     <val>  : GAIN_SHIFT (gain=1/2^val)");
-    uart_println("  SET LOCK     <val>  : Nguong khoa (so PRI)");
-    uart_println("  SET LOSS     <val>  : Nguong mat khoa (so PRI)");
     uart_println("  SET TARGET   <val>  : Toc do muc tieu -> REG_TARGET_SPD");
     uart_println("  SET MODE     <val>  : Che do Sync [0-3], legacy [6,7] -> REG_MODE");
     uart_println("                           0:Large 1:Small 2:FastCDS 3:SlowCDS");
+    uart_println("  SET STATE    <AUTO|MANUAL> : Chuyen FSM tu dong/thu cong");
+    uart_println("  SET RATE     <val>  : Gia tri tay quay (+/-) cho PI ST_MANUAL");
     uart_println("  STATUS              : Trang thai tracker + phan cung");
-    uart_println("  GET CONFIG          : Cau hinh tham so hien tai");
     uart_println("  RESET               : Khoi phuc tham so mac dinh");
     uart_println("  HELP                : Danh sach nay");
 }
@@ -120,12 +115,17 @@ static void cmd_status(void)
     TrackerStatus st = tracker_get_status();
     uint32_t hw_status  = CC_READ(REG_STATUS);
     int32_t  hw_error   = (int32_t)CC_READ(REG_ERROR);
-    uint32_t hw_target  = CC_READ(REG_TARGET_SPD);
     uint32_t hw_mode    = CC_READ(REG_MODE) & 0x7U;
-    uint32_t hw_pri_min = tracker_period_min_from_mode(hw_mode);
+    uint32_t hw_target_rng = CC_READ(REG_TARGET_RANGE);
 
     uart_puts("STATE=");
-    uart_puts(st.state == ST_TRACK ? "TRACK" : "SEARCH");
+    if (st.state == ST_TRACK) {
+        uart_puts("TRACK");
+    } else if (st.state == ST_MANUAL) {
+        uart_puts("MANUAL");
+    } else {
+        uart_puts("SEARCH");
+    }
 
     uart_puts("  SPD="); uart_put_u32(st.spd_width);
     uart_puts("  ERR="); uart_put_i32(hw_error);
@@ -133,28 +133,10 @@ static void cmd_status(void)
     uart_puts("  SIG=");
     uart_puts((hw_status & STATUS_HAS_SIGNAL) ? "1" : "0");
 
-    uart_puts("  R0YB=");
-    uart_puts((hw_status & STATUS_R0_YB) ? "1" : "0");
+    uart_puts("  MAN_IN="); uart_put_i32(st.manual_input);
 
-    uart_puts("  LOCK_CNT="); uart_put_u32(st.lock_cnt);
-    uart_puts("  LOSS_CNT="); uart_put_u32(st.loss_cnt);
-    uart_puts("  RESIDUAL="); uart_put_i32(st.corr_residual);
-
-    uart_puts("  TARGET="); uart_put_u32(hw_target);
+    uart_puts("  TGT_RNG="); uart_put_u32(hw_target_rng);
     uart_puts("  MODE=");   uart_put_u32(hw_mode);
-    uart_puts("  PRI_MIN="); uart_put_u32(hw_pri_min);
-    uart_puts("\r\n");
-}
-
-static void cmd_get_config(void)
-{
-    TrackerConfig *c = tracker_get_config();
-    uart_puts("SPD_MIN=");  uart_put_u32(c->spd_min);
-    uart_puts("  SPD_MAX="); uart_put_u32(c->spd_max);
-    uart_puts("  STEP=");    uart_put_u32(c->scan_step);
-    uart_puts("  GAIN=");    uart_put_u32(c->gain_shift);
-    uart_puts("  LOCK=");    uart_put_u32(c->lock_thr);
-    uart_puts("  LOSS=");    uart_put_u32(c->loss_thr);
     uart_puts("\r\n");
 }
 
@@ -183,50 +165,39 @@ static void cmd_set(const char *param, const char *val_str)
         return;
     }
 
+    if (strcmp(param, "STATE") == 0) {
+        if ((strcmp(val_str, "MANUAL") == 0) || (strcmp(val_str, "2") == 0)) {
+            tracker_set_manual_mode(1U);
+        } else if ((strcmp(val_str, "AUTO") == 0) || (strcmp(val_str, "0") == 0)) {
+            tracker_set_manual_mode(0U);
+        } else {
+            uart_println("ERR: STATE hop le: AUTO | MANUAL");
+            return;
+        }
+
+        uart_println("OK");
+        return;
+    }
+
+    if (strcmp(param, "RATE") == 0) {
+        int32_t rate;
+        if (parse_i32(val_str, &rate) != 0) {
+            uart_println("ERR: RATE khong hop le");
+            return;
+        }
+
+        tracker_set_manual_rate(rate);
+        uart_println("OK");
+        return;
+    }
+
     uint32_t val;
     if (parse_u32(val_str, &val) != 0) {
         uart_println("ERR: Gia tri khong hop le");
         return;
     }
 
-    TrackerConfig *c = tracker_get_config();
-    uint32_t active_mode = CC_READ(REG_MODE) & 0x7U;
-    uint32_t spd_limit = spd_max_limit_for_mode(active_mode);
-
-    if (strcmp(param, "SPD_MIN") == 0) {
-        if (val >= c->spd_max) { uart_println("ERR: SPD_MIN phai < SPD_MAX"); return; }
-        Xil_ExceptionDisable();
-        c->spd_min = val;
-        Xil_ExceptionEnable();
-        tracker_apply_mode_profile(active_mode, 0U);
-    } else if (strcmp(param, "SPD_MAX") == 0) {
-        if (val <= c->spd_min) { uart_println("ERR: SPD_MAX phai > SPD_MIN"); return; }
-        if (val > spd_limit)   { uart_println("ERR: SPD_MAX vuot gioi han mode hien tai"); return; }
-        Xil_ExceptionDisable();
-        c->spd_max = val;
-        Xil_ExceptionEnable();
-    } else if (strcmp(param, "STEP") == 0) {
-        if (val == 0U) { uart_println("ERR: STEP phai > 0"); return; }
-        Xil_ExceptionDisable();
-        c->scan_step = val;
-        Xil_ExceptionEnable();
-        tracker_apply_mode_profile(active_mode, 0U);
-    } else if (strcmp(param, "GAIN") == 0) {
-        if (val > 16U) { uart_println("ERR: GAIN_SHIFT phai <= 16"); return; }
-        Xil_ExceptionDisable();
-        c->gain_shift = val;
-        Xil_ExceptionEnable();
-    } else if (strcmp(param, "LOCK") == 0) {
-        if (val == 0U) { uart_println("ERR: LOCK phai >= 1"); return; }
-        Xil_ExceptionDisable();
-        c->lock_thr = val;
-        Xil_ExceptionEnable();
-    } else if (strcmp(param, "LOSS") == 0) {
-        if (val == 0U) { uart_println("ERR: LOSS phai >= 1"); return; }
-        Xil_ExceptionDisable();
-        c->loss_thr = val;
-        Xil_ExceptionEnable();
-    } else if (strcmp(param, "TARGET") == 0) {
+    if (strcmp(param, "TARGET") == 0) {
         CC_WRITE(REG_TARGET_SPD, val);
     } else if (strcmp(param, "MODE") == 0) {
         if ((val > 3U) && (val != SYNC_MODE_SLOW_CDS_LEGACY) && (val != SYNC_MODE_FAST_CDS_LEGACY)) {
@@ -275,12 +246,6 @@ static void process_command(char *line)
         cmd_status();
     } else if (strcmp(tok, "RESET") == 0) {
         cmd_reset();
-    } else if (strcmp(tok, "GET") == 0) {
-        if (rest != NULL && strcmp(rest, "CONFIG") == 0) {
-            cmd_get_config();
-        } else {
-            uart_println("ERR: Cu phap: GET CONFIG");
-        }
     } else if (strcmp(tok, "SET") == 0) {
         /* SET <PARAM> <VAL> */
         char *param   = rest;

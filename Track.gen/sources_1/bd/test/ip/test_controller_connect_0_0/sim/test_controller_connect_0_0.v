@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:controller_connect:1.0
-// IP Revision: 11
+// IP Revision: 14
 
 `timescale 1ns/1ps
 
@@ -56,6 +56,7 @@
 module test_controller_connect_0_0 (
   error,
   has_signal,
+  target_range_cycles,
   spd_width,
   r0_YB,
   target_speed,
@@ -107,6 +108,7 @@ module test_controller_connect_0_0 (
 
 input wire [31 : 0] error;
 input wire has_signal;
+input wire [31 : 0] target_range_cycles;
 output wire [31 : 0] spd_width;
 input wire r0_YB;
 output wire [31 : 0] target_speed;
@@ -227,6 +229,7 @@ output wire irq;
   ) inst (
     .error(error),
     .has_signal(has_signal),
+    .target_range_cycles(target_range_cycles),
     .spd_width(spd_width),
     .r0_YB(r0_YB),
     .target_speed(target_speed),

@@ -1202,7 +1202,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1216,11 +1216,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:09:34 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:15:43 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1234,11 +1234,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:08:08 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:14:24 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1249,7 +1249,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1265,11 +1265,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:08:08 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:14:24 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ba416227</spirit:value>
+            <spirit:value>9:9609f4f3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1285,11 +1285,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:08:08 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:14:24 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ba416227</spirit:value>
+            <spirit:value>9:9609f4f3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1305,11 +1305,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:08:08 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:14:24 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1325,11 +1325,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 11 03:08:08 UTC 2026</spirit:value>
+            <spirit:value>Wed May 13 02:14:24 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9999152</spirit:value>
+            <spirit:value>9:52d451e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1356,6 +1356,23 @@
         <spirit:name>has_signal</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>target_range_cycles</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>
@@ -2208,19 +2225,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/src/controller_core.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/src/controller_core.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2235,19 +2252,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect_slave_lite_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect_slave_lite_inter_v1_0_S_AXI_INTR.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/src/controller_core.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/src/controller_core.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6eff/hdl/controller_connect.v</spirit:name>
+        <spirit:name>../../ipshared/89f6/hdl/controller_connect.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2400,7 +2417,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Controller Connecting</xilinx:displayName>
-      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreRevision>14</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.IRQ.PortWidth" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.IRQ.SENSITIVITY" xilinx:valuePermission="bd"/>
@@ -2490,8 +2507,8 @@
       <xilinx:xilinxVersion>2024.2.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f2c4514d"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="74e1175e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a8b44a07"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="ccc45111"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="667dbded"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="ebc04d78"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b0020beb"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cca8be29"/>
     </xilinx:packagingInfo>

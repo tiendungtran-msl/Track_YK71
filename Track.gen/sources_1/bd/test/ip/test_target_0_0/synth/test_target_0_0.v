@@ -60,7 +60,8 @@ module test_target_0_0 (
   rst_n,
   r0_YB,
   target_speed,
-  pulse_target
+  pulse_target,
+  target_range_cycles
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
@@ -74,6 +75,7 @@ input wire rst_n;
 input wire r0_YB;
 input wire [31 : 0] target_speed;
 output wire pulse_target;
+output wire [31 : 0] target_range_cycles;
 
   target #(
     .PRI_CYCLES(112000),
@@ -86,6 +88,7 @@ output wire pulse_target;
     .rst_n(rst_n),
     .r0_YB(r0_YB),
     .target_speed(target_speed),
-    .pulse_target(pulse_target)
+    .pulse_target(pulse_target),
+    .target_range_cycles(target_range_cycles)
   );
 endmodule
