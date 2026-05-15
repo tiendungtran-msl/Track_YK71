@@ -11,7 +11,7 @@
 //  
 //  pulse_show_cen (ЗИРС): Xung hiển thị trung tâm, ở sườn xuống của CП3
 //
-//  Từ sườn xuống CП3 -> trễ 20us (MULTI_WIDTH) -> phát xung r.
+//  Từ sườn xuống CП    3 -> trễ 20us (MULTI_WIDTH) -> phát xung r.
 //
 //  Từ xung r:
 //        r ──────────┬──(+0.2 μs)──► pulse_r_cds   (rC.CDS)

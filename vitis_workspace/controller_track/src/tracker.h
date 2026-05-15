@@ -39,7 +39,7 @@
 
 /* ── Cấu hình tham số (ghi/đọc từ uart_cmd) ────────────────────────────── */
 typedef struct {
-    uint32_t spd_min;     /* cận dưới cửa sóng (chu kỳ đồng hồ)          */
+    uint32_t spd_min;     /* cận dưới cửa sóng                             */
     uint32_t spd_max;     /* cận trên cửa sóng                             */
     uint32_t scan_step;   /* bước dịch khi sục sạo                         */
     uint32_t gain_shift;  /* hệ số chia correction = error >> gain_shift   */

@@ -7,6 +7,7 @@
 #include "hw_regs.h"
 #include "xil_exception.h"
 
+// Tính toán cận trên động cho spd_width dựa trên PRI tối thiểu của mode.
 static uint32_t calc_spd_ceiling(uint32_t pri_min)
 {
     return (pri_min > (TIMING_GUARD + 1U)) ? (pri_min - TIMING_GUARD) : 2U;
@@ -24,12 +25,14 @@ static volatile int32_t  g_manual_input;
 static volatile int64_t  g_manual_integral;
 static volatile uint32_t g_scan_dir;   /* 1 = tăng (ra xa), 0 = giảm (vào gần) */
 
-/* Default PI gains (scaled by 16). 
- * If kv = 6 and input = 100, scan rate is 600/16 = 37 cycles/PRI (~ scan_step)
- * If kp = 6 and input = 100, jump is 600/16 = 37 cycles.
+/*
+ * Manual PI fixed-point scale.
+ * shift=8 giúp dải tay quay -100..100 mượt hơn: input nhỏ dịch chuyển rất nhỏ,
+ * input lớn vẫn tăng tốc đủ để quét toàn dải.
  */
-#define MANUAL_KP_DEFAULT   6
-#define MANUAL_KV_DEFAULT   6
+#define MANUAL_PI_SHIFT     6
+#define MANUAL_KP_DEFAULT   1
+#define MANUAL_KV_DEFAULT   1
 
 /* ── tracker_init ─────────────────────────────────────────────────────── */
 void tracker_init(const TrackerConfig *cfg)
@@ -47,7 +50,7 @@ void tracker_init(const TrackerConfig *cfg)
     g_loss_cnt      = 0U;
     g_corr_residual = 0;
     g_manual_input  = 0;
-    g_manual_integral = (int64_t)g_spd_width << 4;
+    g_manual_integral = (int64_t)g_spd_width << MANUAL_PI_SHIFT;
     g_scan_dir      = 1U;
 
     CC_WRITE(REG_SPD_WIDTH, g_spd_width);
@@ -107,7 +110,7 @@ void tracker_apply_mode_profile(uint32_t mode, uint8_t reset_state)
         g_loss_cnt      = 0U;
         g_corr_residual = 0;
         g_manual_input  = 0;
-        g_manual_integral = (int64_t)g_spd_width << 4;
+        g_manual_integral = (int64_t)g_spd_width << MANUAL_PI_SHIFT;
         g_scan_dir      = 1U;
     }
 
@@ -122,11 +125,11 @@ void tracker_set_manual_mode(uint8_t is_manual)
     if (is_manual != 0U) {
         g_state          = ST_MANUAL;
         g_manual_input   = 0;
-        g_manual_integral = (int64_t)g_spd_width << 4;
+        g_manual_integral = (int64_t)g_spd_width << MANUAL_PI_SHIFT;
     } else {
         g_state = ST_SEARCH;
         g_manual_input = 0;
-        g_manual_integral = (int64_t)g_spd_width << 4;
+        g_manual_integral = (int64_t)g_spd_width << MANUAL_PI_SHIFT;
     }
 
     g_lock_cnt      = 0U;
@@ -217,9 +220,9 @@ void tracker_isr(void *unused)
             }
         } else {
             /* Hiệu chỉnh tích lũy phần dư (fractional gain) */
-            const int64_t numer      = (int64_t)error + (int64_t)g_corr_residual;
-            const int32_t correction = (int32_t)(numer >> gain_sh);
-            g_corr_residual = (int32_t)(numer - ((int64_t)correction << gain_sh));
+            const int64_t numer      = (int64_t)error + (int64_t)g_corr_residual; // Tổng sai số có phần dư
+            const int32_t correction = (int32_t)(numer >> gain_sh); // Lượng sẽ điều chỉnh
+            g_corr_residual = (int32_t)(numer - ((int64_t)correction << gain_sh)); // Phần dư sau điều chỉnh
 
             const int64_t spd_next = (int64_t)spd - (int64_t)correction;
             if      (spd_next <= (int64_t)spd_min) spd = spd_min;
@@ -229,24 +232,25 @@ void tracker_isr(void *unused)
             g_loss_cnt = 0U;
         }
     } else if (g_state == ST_MANUAL) {
-        /* PI thủ công. Các hệ số MKP, MKV được thiết kế theo tỉ lệ thu phóng 16 (shift 4).
-         * Giúp đồng bộ tốc độ quay thủ công tối đa với scan_step của auto-tracking.
+        /* PI thủ công với độ phân giải cao quanh vùng tay quay nhỏ.
+         * shift lớn hơn giúp giảm vọt và chỉnh tinh dễ hơn.
          */
         const int64_t kp = (int64_t)MANUAL_KP_DEFAULT;
         const int64_t kv = (int64_t)MANUAL_KV_DEFAULT;
 
-        /* Tích phân cộng dồn (scaled by 16) */
+        /* Tích phân cộng dồn theo fixed-point */
         g_manual_integral += (int64_t)g_manual_input * kv;
         
         /* Chuyển đổi lại giá trị không thu phóng để kết hợp P */
-        const int64_t spd_next = (g_manual_integral >> 4) + (((int64_t)g_manual_input * kp) >> 4);
+        const int64_t spd_next = (g_manual_integral >> MANUAL_PI_SHIFT)
+                       + (((int64_t)g_manual_input * kp) >> MANUAL_PI_SHIFT);
 
         if (spd_next <= (int64_t)spd_min) {
             spd = spd_min;
-            g_manual_integral = (int64_t)spd_min << 4;
+            g_manual_integral = (int64_t)spd_min << MANUAL_PI_SHIFT;
         } else if (spd_next >= (int64_t)spd_max) {
             spd = spd_max;
-            g_manual_integral = (int64_t)spd_max << 4;
+            g_manual_integral = (int64_t)spd_max << MANUAL_PI_SHIFT;
         } else {
             spd = (uint32_t)spd_next;
         }

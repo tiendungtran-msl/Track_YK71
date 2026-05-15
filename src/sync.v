@@ -11,7 +11,7 @@ module sync #(
 	parameter integer PERIOD_FAST_T1_CYCLES = 54400,
 	// Cự ly nhỏ + CDS (Tốc độ mục tiêu lớn): T2 = 288us (57600 cycles)
 	parameter integer PERIOD_FAST_T2_CYCLES = 57600,
-	// Cựற்ப nhỏ + CDS (Tốc độ mục tiêu nhỏ): T1 = 252us (50400 cycles)
+	// Cự ly nhỏ + CDS (Tốc độ mục tiêu nhỏ): T1 = 252us (50400 cycles)
 	parameter integer PERIOD_SLOW_T1_CYCLES = 50400,
 	// Cự ly nhỏ + CDS (Tốc độ mục tiêu nhỏ): T2 = 308us (61600 cycles)
 	parameter integer PERIOD_SLOW_T2_CYCLES = 61600

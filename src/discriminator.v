@@ -43,6 +43,7 @@ module discriminator (
     reg [2:0] r_gm_ff;
     reg [1:0] stb1_ff, stb2_ff, tgt_ff;
 
+    // Đồng bộ tín hiệu đầu vào vào miền 400 MHz để bắt sườn và tránh lỗi metastability
     always @(posedge clk_fast or negedge rst_n) begin
         if (!rst_n) begin
             r_gm_ff <= 3'b0;
@@ -68,6 +69,7 @@ module discriminator (
     reg             window_active;
     reg             window_active_d;
 
+    // Tạo cửa sổ hoạt động 400 MHz
     always @(posedge clk_fast or negedge rst_n) begin
         if (!rst_n) begin
             win_cnt         <= {WIN_W{1'b0}};

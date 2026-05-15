@@ -24,7 +24,7 @@
 #include "xil_io.h"
 
 /* ── Controller-Connect AXI offsets ─────────────────────────────────────── */
-#define CC_BASE             XPAR_CONTROLLER_CONNECT_0_BASEADDR
+#define CC_BASE             XPAR_CONTROLLER_CONNECT_0_BASEADDR  // 0x43c00000
 
 #define REG_ERROR           0x00U   /* error [31:0]        (Read-Only)  */
 #define REG_STATUS          0x04U   /* status word         (Read-Only)  */
